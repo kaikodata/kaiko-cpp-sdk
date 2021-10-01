@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.15)
 project(kaikosdk)
 
-include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake)
+# check for enabling inclusion in other cmake-based project
+if(EXISTS "${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake")
+  include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake)
+endif()
 
 FILE(GLOB_RECURSE Sources ${PROJECT_SOURCE_DIR}/*.cc)
 add_library(kaikosdk ${Sources})
