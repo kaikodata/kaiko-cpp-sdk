@@ -291,6 +291,60 @@ StreamAggregatesVWAPServiceV1::Service::~Service() {
 }
 
 
+static const char* StreamIndexServiceV1_method_names[] = {
+  "/kaikosdk.StreamIndexServiceV1/Subscribe",
+};
+
+std::unique_ptr< StreamIndexServiceV1::Stub> StreamIndexServiceV1::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< StreamIndexServiceV1::Stub> stub(new StreamIndexServiceV1::Stub(channel, options));
+  return stub;
+}
+
+StreamIndexServiceV1::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Subscribe_(StreamIndexServiceV1_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  {}
+
+::grpc::ClientReader< ::kaikosdk::StreamIndexServiceResponseV1>* StreamIndexServiceV1::Stub::SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexServiceRequestV1& request) {
+  return ::grpc::internal::ClientReaderFactory< ::kaikosdk::StreamIndexServiceResponseV1>::Create(channel_.get(), rpcmethod_Subscribe_, context, request);
+}
+
+void StreamIndexServiceV1::Stub::async::Subscribe(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexServiceRequestV1* request, ::grpc::ClientReadReactor< ::kaikosdk::StreamIndexServiceResponseV1>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::kaikosdk::StreamIndexServiceResponseV1>::Create(stub_->channel_.get(), stub_->rpcmethod_Subscribe_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamIndexServiceResponseV1>* StreamIndexServiceV1::Stub::AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexServiceRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamIndexServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamIndexServiceResponseV1>* StreamIndexServiceV1::Stub::PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexServiceRequestV1& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamIndexServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, false, nullptr);
+}
+
+StreamIndexServiceV1::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      StreamIndexServiceV1_method_names[0],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< StreamIndexServiceV1::Service, ::kaikosdk::StreamIndexServiceRequestV1, ::kaikosdk::StreamIndexServiceResponseV1>(
+          [](StreamIndexServiceV1::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::kaikosdk::StreamIndexServiceRequestV1* req,
+             ::grpc::ServerWriter<::kaikosdk::StreamIndexServiceResponseV1>* writer) {
+               return service->Subscribe(ctx, req, writer);
+             }, this)));
+}
+
+StreamIndexServiceV1::Service::~Service() {
+}
+
+::grpc::Status StreamIndexServiceV1::Service::Subscribe(::grpc::ServerContext* context, const ::kaikosdk::StreamIndexServiceRequestV1* request, ::grpc::ServerWriter< ::kaikosdk::StreamIndexServiceResponseV1>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
 static const char* StreamMarketUpdateServiceV1_method_names[] = {
   "/kaikosdk.StreamMarketUpdateServiceV1/Subscribe",
 };

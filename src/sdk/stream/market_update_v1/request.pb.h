@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "sdk/core/data_interval.pb.h"
 #include "sdk/core/instrument_criteria.pb.h"
 #include "sdk/stream/market_update_v1/commodity.pb.h"
 // @@protoc_insertion_point(includes)
@@ -177,6 +178,7 @@ class StreamMarketUpdateRequestV1 final :
   enum : int {
     kCommoditiesFieldNumber = 2,
     kInstrumentCriteriaFieldNumber = 1,
+    kIntervalFieldNumber = 3,
   };
   // repeated .kaikosdk.StreamMarketUpdateCommodity commodities = 2;
   int commodities_size() const;
@@ -213,6 +215,24 @@ class StreamMarketUpdateRequestV1 final :
       ::kaikosdk::InstrumentCriteria* instrument_criteria);
   ::kaikosdk::InstrumentCriteria* unsafe_arena_release_instrument_criteria();
 
+  // .kaikosdk.DataInterval interval = 3;
+  bool has_interval() const;
+  private:
+  bool _internal_has_interval() const;
+  public:
+  void clear_interval();
+  const ::kaikosdk::DataInterval& interval() const;
+  PROTOBUF_FUTURE_MUST_USE_RESULT ::kaikosdk::DataInterval* release_interval();
+  ::kaikosdk::DataInterval* mutable_interval();
+  void set_allocated_interval(::kaikosdk::DataInterval* interval);
+  private:
+  const ::kaikosdk::DataInterval& _internal_interval() const;
+  ::kaikosdk::DataInterval* _internal_mutable_interval();
+  public:
+  void unsafe_arena_set_allocated_interval(
+      ::kaikosdk::DataInterval* interval);
+  ::kaikosdk::DataInterval* unsafe_arena_release_interval();
+
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamMarketUpdateRequestV1)
  private:
   class _Internal;
@@ -223,6 +243,7 @@ class StreamMarketUpdateRequestV1 final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int> commodities_;
   mutable std::atomic<int> _commodities_cached_byte_size_;
   ::kaikosdk::InstrumentCriteria* instrument_criteria_;
+  ::kaikosdk::DataInterval* interval_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto;
 };
@@ -357,6 +378,85 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
 StreamMarketUpdateRequestV1::mutable_commodities() {
   // @@protoc_insertion_point(field_mutable_list:kaikosdk.StreamMarketUpdateRequestV1.commodities)
   return _internal_mutable_commodities();
+}
+
+// .kaikosdk.DataInterval interval = 3;
+inline bool StreamMarketUpdateRequestV1::_internal_has_interval() const {
+  return this != internal_default_instance() && interval_ != nullptr;
+}
+inline bool StreamMarketUpdateRequestV1::has_interval() const {
+  return _internal_has_interval();
+}
+inline const ::kaikosdk::DataInterval& StreamMarketUpdateRequestV1::_internal_interval() const {
+  const ::kaikosdk::DataInterval* p = interval_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::DataInterval&>(
+      ::kaikosdk::_DataInterval_default_instance_);
+}
+inline const ::kaikosdk::DataInterval& StreamMarketUpdateRequestV1::interval() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamMarketUpdateRequestV1.interval)
+  return _internal_interval();
+}
+inline void StreamMarketUpdateRequestV1::unsafe_arena_set_allocated_interval(
+    ::kaikosdk::DataInterval* interval) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval_);
+  }
+  interval_ = interval;
+  if (interval) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamMarketUpdateRequestV1.interval)
+}
+inline ::kaikosdk::DataInterval* StreamMarketUpdateRequestV1::release_interval() {
+  
+  ::kaikosdk::DataInterval* temp = interval_;
+  interval_ = nullptr;
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::kaikosdk::DataInterval* StreamMarketUpdateRequestV1::unsafe_arena_release_interval() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamMarketUpdateRequestV1.interval)
+  
+  ::kaikosdk::DataInterval* temp = interval_;
+  interval_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::DataInterval* StreamMarketUpdateRequestV1::_internal_mutable_interval() {
+  
+  if (interval_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::DataInterval>(GetArenaForAllocation());
+    interval_ = p;
+  }
+  return interval_;
+}
+inline ::kaikosdk::DataInterval* StreamMarketUpdateRequestV1::mutable_interval() {
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamMarketUpdateRequestV1.interval)
+  return _internal_mutable_interval();
+}
+inline void StreamMarketUpdateRequestV1::set_allocated_interval(::kaikosdk::DataInterval* interval) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval_);
+  }
+  if (interval) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval));
+    if (message_arena != submessage_arena) {
+      interval = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, interval, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  interval_ = interval;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamMarketUpdateRequestV1.interval)
 }
 
 #ifdef __GNUC__

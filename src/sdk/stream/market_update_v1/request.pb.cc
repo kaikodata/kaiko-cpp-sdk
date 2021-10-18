@@ -21,7 +21,8 @@ constexpr StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : commodities_()
   , _commodities_cached_byte_size_()
-  , instrument_criteria_(nullptr){}
+  , instrument_criteria_(nullptr)
+  , interval_(nullptr){}
 struct StreamMarketUpdateRequestV1DefaultTypeInternal {
   constexpr StreamMarketUpdateRequestV1DefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -44,6 +45,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2fmarket_5fupdate
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateRequestV1, instrument_criteria_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateRequestV1, commodities_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateRequestV1, interval_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::kaikosdk::StreamMarketUpdateRequestV1)},
@@ -55,26 +57,29 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n)sdk/stream/market_update_v1/request.pr"
-  "oto\022\010kaikosdk\032\"sdk/core/instrument_crite"
-  "ria.proto\032+sdk/stream/market_update_v1/c"
-  "ommodity.proto\"\224\001\n\033StreamMarketUpdateReq"
-  "uestV1\0229\n\023instrument_criteria\030\001 \001(\0132\034.ka"
-  "ikosdk.InstrumentCriteria\022:\n\013commodities"
-  "\030\002 \003(\0162%.kaikosdk.StreamMarketUpdateComm"
-  "odityB\233\001\n%com.kaiko.sdk.stream.market_up"
-  "date_v1P\001ZOgithub.com/challengerdeep/kai"
-  "ko-go-sdk/stream/market_update_v1;market"
-  "_update_v1\252\002\036KaikoSdk.Stream.MarketUpdat"
-  "eV1b\006proto3"
+  "oto\022\010kaikosdk\032\034sdk/core/data_interval.pr"
+  "oto\032\"sdk/core/instrument_criteria.proto\032"
+  "+sdk/stream/market_update_v1/commodity.p"
+  "roto\"\276\001\n\033StreamMarketUpdateRequestV1\0229\n\023"
+  "instrument_criteria\030\001 \001(\0132\034.kaikosdk.Ins"
+  "trumentCriteria\022:\n\013commodities\030\002 \003(\0162%.k"
+  "aikosdk.StreamMarketUpdateCommodity\022(\n\010i"
+  "nterval\030\003 \001(\0132\026.kaikosdk.DataIntervalB\233\001"
+  "\n%com.kaiko.sdk.stream.market_update_v1P"
+  "\001ZOgithub.com/challengerdeep/kaiko-go-sd"
+  "k/stream/market_update_v1;market_update_"
+  "v1\252\002\036KaikoSdk.Stream.MarketUpdateV1b\006pro"
+  "to3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps[2] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps[3] = {
+  &::descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto,
   &::descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto,
   &::descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto = {
-  false, false, 451, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, "sdk/stream/market_update_v1/request.proto", 
-  &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps, 2, 1,
+  false, false, 523, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, "sdk/stream/market_update_v1/request.proto", 
+  &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps, 3, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto,
 };
@@ -91,17 +96,28 @@ namespace kaikosdk {
 class StreamMarketUpdateRequestV1::_Internal {
  public:
   static const ::kaikosdk::InstrumentCriteria& instrument_criteria(const StreamMarketUpdateRequestV1* msg);
+  static const ::kaikosdk::DataInterval& interval(const StreamMarketUpdateRequestV1* msg);
 };
 
 const ::kaikosdk::InstrumentCriteria&
 StreamMarketUpdateRequestV1::_Internal::instrument_criteria(const StreamMarketUpdateRequestV1* msg) {
   return *msg->instrument_criteria_;
 }
+const ::kaikosdk::DataInterval&
+StreamMarketUpdateRequestV1::_Internal::interval(const StreamMarketUpdateRequestV1* msg) {
+  return *msg->interval_;
+}
 void StreamMarketUpdateRequestV1::clear_instrument_criteria() {
   if (GetArenaForAllocation() == nullptr && instrument_criteria_ != nullptr) {
     delete instrument_criteria_;
   }
   instrument_criteria_ = nullptr;
+}
+void StreamMarketUpdateRequestV1::clear_interval() {
+  if (GetArenaForAllocation() == nullptr && interval_ != nullptr) {
+    delete interval_;
+  }
+  interval_ = nullptr;
 }
 StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
@@ -119,11 +135,19 @@ StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(const StreamMarketUpdat
   } else {
     instrument_criteria_ = nullptr;
   }
+  if (from._internal_has_interval()) {
+    interval_ = new ::kaikosdk::DataInterval(*from.interval_);
+  } else {
+    interval_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamMarketUpdateRequestV1)
 }
 
 void StreamMarketUpdateRequestV1::SharedCtor() {
-instrument_criteria_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&instrument_criteria_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&interval_) -
+    reinterpret_cast<char*>(&instrument_criteria_)) + sizeof(interval_));
 }
 
 StreamMarketUpdateRequestV1::~StreamMarketUpdateRequestV1() {
@@ -135,6 +159,7 @@ StreamMarketUpdateRequestV1::~StreamMarketUpdateRequestV1() {
 void StreamMarketUpdateRequestV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete instrument_criteria_;
+  if (this != internal_default_instance()) delete interval_;
 }
 
 void StreamMarketUpdateRequestV1::ArenaDtor(void* object) {
@@ -158,6 +183,10 @@ void StreamMarketUpdateRequestV1::Clear() {
     delete instrument_criteria_;
   }
   instrument_criteria_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && interval_ != nullptr) {
+    delete interval_;
+  }
+  interval_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -183,6 +212,13 @@ const char* StreamMarketUpdateRequestV1::_InternalParse(const char* ptr, ::PROTO
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_add_commodities(static_cast<::kaikosdk::StreamMarketUpdateCommodity>(val));
+        } else goto handle_unusual;
+        continue;
+      // .kaikosdk.DataInterval interval = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_interval(), ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -231,6 +267,14 @@ failure:
     }
   }
 
+  // .kaikosdk.DataInterval interval = 3;
+  if (this->has_interval()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::interval(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -272,6 +316,13 @@ size_t StreamMarketUpdateRequestV1::ByteSizeLong() const {
         *instrument_criteria_);
   }
 
+  // .kaikosdk.DataInterval interval = 3;
+  if (this->has_interval()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *interval_);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -307,6 +358,9 @@ void StreamMarketUpdateRequestV1::MergeFrom(const StreamMarketUpdateRequestV1& f
   if (from.has_instrument_criteria()) {
     _internal_mutable_instrument_criteria()->::kaikosdk::InstrumentCriteria::MergeFrom(from._internal_instrument_criteria());
   }
+  if (from.has_interval()) {
+    _internal_mutable_interval()->::kaikosdk::DataInterval::MergeFrom(from._internal_interval());
+  }
 }
 
 void StreamMarketUpdateRequestV1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -331,7 +385,12 @@ void StreamMarketUpdateRequestV1::InternalSwap(StreamMarketUpdateRequestV1* othe
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   commodities_.InternalSwap(&other->commodities_);
-  swap(instrument_criteria_, other->instrument_criteria_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(StreamMarketUpdateRequestV1, interval_)
+      + sizeof(StreamMarketUpdateRequestV1::interval_)
+      - PROTOBUF_FIELD_OFFSET(StreamMarketUpdateRequestV1, instrument_criteria_)>(
+          reinterpret_cast<char*>(&instrument_criteria_),
+          reinterpret_cast<char*>(&other->instrument_criteria_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamMarketUpdateRequestV1::GetMetadata() const {
