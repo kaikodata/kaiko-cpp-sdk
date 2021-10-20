@@ -72,32 +72,16 @@ struct StreamIndexServiceResponseBaseAssetDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StreamIndexServiceResponseBaseAssetDefaultTypeInternal _StreamIndexServiceResponseBaseAsset_default_instance_;
-constexpr StreamIndexServiceResponseRounding::StreamIndexServiceResponseRounding(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : method_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , decimals_(nullptr){}
-struct StreamIndexServiceResponseRoundingDefaultTypeInternal {
-  constexpr StreamIndexServiceResponseRoundingDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~StreamIndexServiceResponseRoundingDefaultTypeInternal() {}
-  union {
-    StreamIndexServiceResponseRounding _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StreamIndexServiceResponseRoundingDefaultTypeInternal _StreamIndexServiceResponseRounding_default_instance_;
 constexpr StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : percentages_()
-  , bases_()
+  : bases_()
   , exchanges_()
+  , percentages_()
   , index_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , event_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , quote_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , interval_(nullptr)
-  , ts_event_(nullptr)
-  , rounding_trade_(nullptr)
-  , rounding_aggregation_(nullptr)
-  , rounding_price_(nullptr){}
+  , ts_event_(nullptr){}
 struct StreamIndexServiceResponseV1DefaultTypeInternal {
   constexpr StreamIndexServiceResponseV1DefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -108,7 +92,7 @@ struct StreamIndexServiceResponseV1DefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StreamIndexServiceResponseV1DefaultTypeInternal _StreamIndexServiceResponseV1_default_instance_;
 }  // namespace kaikosdk
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fstream_2findex_5fv1_2fresponse_2eproto[6];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fstream_2findex_5fv1_2fresponse_2eproto[5];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2findex_5fv1_2fresponse_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2findex_5fv1_2fresponse_2eproto = nullptr;
 
@@ -145,13 +129,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2findex_5fv1_2fre
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseBaseAsset, asset_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseBaseAsset, weight_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseRounding, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseRounding, method_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseRounding, decimals_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -162,9 +139,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2findex_5fv1_2fre
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, quote_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, bases_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, exchanges_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, rounding_trade_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, rounding_aggregation_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, rounding_price_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, percentages_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, ts_event_),
 };
@@ -173,8 +147,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 8, -1, sizeof(::kaikosdk::StreamIndexServiceResponsePairs)},
   { 16, -1, sizeof(::kaikosdk::StreamIndexServiceResponseInstruments)},
   { 24, -1, sizeof(::kaikosdk::StreamIndexServiceResponseBaseAsset)},
-  { 31, -1, sizeof(::kaikosdk::StreamIndexServiceResponseRounding)},
-  { 38, -1, sizeof(::kaikosdk::StreamIndexServiceResponseV1)},
+  { 31, -1, sizeof(::kaikosdk::StreamIndexServiceResponseV1)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -182,55 +155,44 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_StreamIndexServiceResponsePairs_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_StreamIndexServiceResponseInstruments_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_StreamIndexServiceResponseBaseAsset_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_StreamIndexServiceResponseRounding_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_StreamIndexServiceResponseV1_default_instance_),
 };
 
 const char descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"sdk/stream/index_v1/response.proto\022\010ka"
   "ikosdk\032\037google/protobuf/timestamp.proto\032"
-  "\036google/protobuf/wrappers.proto\032\034sdk/cor"
-  "e/data_interval.proto\"\203\001\n$StreamIndexSer"
-  "viceResponsePercentage\022\022\n\npercentage\030\001 \001"
-  "(\001\022\r\n\005price\030\002 \001(\001\0228\n\005pairs\030\003 \003(\0132).kaiko"
-  "sdk.StreamIndexServiceResponsePairs\"\205\001\n\037"
-  "StreamIndexServiceResponsePairs\022\014\n\004pair\030"
-  "\001 \001(\t\022\016\n\006weight\030\002 \001(\001\022D\n\013instruments\030\003 \003"
-  "(\0132/.kaikosdk.StreamIndexServiceResponse"
-  "Instruments\"X\n%StreamIndexServiceRespons"
-  "eInstruments\022\020\n\010exchange\030\001 \001(\t\022\r\n\005price\030"
-  "\002 \001(\001\022\016\n\006volume\030\003 \001(\001\"D\n#StreamIndexServ"
-  "iceResponseBaseAsset\022\r\n\005asset\030\001 \001(\t\022\016\n\006w"
-  "eight\030\002 \001(\001\"d\n\"StreamIndexServiceRespons"
-  "eRounding\022\016\n\006method\030\001 \001(\t\022.\n\010decimals\030\002 "
-  "\001(\0132\034.google.protobuf.UInt32Value\"\233\004\n\034St"
-  "reamIndexServiceResponseV1\022\022\n\nindex_code"
-  "\030\001 \001(\t\022\022\n\nevent_type\030\002 \001(\t\022(\n\010interval\030\003"
-  " \001(\0132\026.kaikosdk.DataInterval\022\r\n\005quote\030\006 "
-  "\001(\t\022<\n\005bases\030\007 \003(\0132-.kaikosdk.StreamInde"
-  "xServiceResponseBaseAsset\022\021\n\texchanges\030\010"
-  " \003(\t\022D\n\016rounding_trade\030\t \001(\0132,.kaikosdk."
-  "StreamIndexServiceResponseRounding\022J\n\024ro"
-  "unding_aggregation\030\n \001(\0132,.kaikosdk.Stre"
-  "amIndexServiceResponseRounding\022D\n\016roundi"
-  "ng_price\030\013 \001(\0132,.kaikosdk.StreamIndexSer"
-  "viceResponseRounding\022C\n\013percentages\030\004 \003("
-  "\0132..kaikosdk.StreamIndexServiceResponseP"
-  "ercentage\022,\n\010ts_event\030\005 \001(\0132\032.google.pro"
-  "tobuf.TimestampB|\n\035com.kaiko.sdk.stream."
-  "index_v1P\001Z\?github.com/challengerdeep/ka"
-  "iko-go-sdk/stream/index_v1;index_v1\252\002\027Ka"
-  "ikoSdk.Stream.IndexV1b\006proto3"
+  "\034sdk/core/data_interval.proto\"\203\001\n$Stream"
+  "IndexServiceResponsePercentage\022\022\n\npercen"
+  "tage\030\001 \001(\001\022\r\n\005price\030\002 \001(\001\0228\n\005pairs\030\003 \003(\013"
+  "2).kaikosdk.StreamIndexServiceResponsePa"
+  "irs\"\205\001\n\037StreamIndexServiceResponsePairs\022"
+  "\014\n\004pair\030\001 \001(\t\022\016\n\006weight\030\002 \001(\001\022D\n\013instrum"
+  "ents\030\003 \003(\0132/.kaikosdk.StreamIndexService"
+  "ResponseInstruments\"X\n%StreamIndexServic"
+  "eResponseInstruments\022\020\n\010exchange\030\001 \001(\t\022\r"
+  "\n\005price\030\002 \001(\001\022\016\n\006volume\030\003 \001(\001\"D\n#StreamI"
+  "ndexServiceResponseBaseAsset\022\r\n\005asset\030\001 "
+  "\001(\t\022\016\n\006weight\030\002 \001(\001\"\303\002\n\034StreamIndexServi"
+  "ceResponseV1\022\022\n\nindex_code\030\001 \001(\t\022\022\n\neven"
+  "t_type\030\002 \001(\t\022(\n\010interval\030\003 \001(\0132\026.kaikosd"
+  "k.DataInterval\022\r\n\005quote\030\004 \001(\t\022<\n\005bases\030\005"
+  " \003(\0132-.kaikosdk.StreamIndexServiceRespon"
+  "seBaseAsset\022\021\n\texchanges\030\006 \003(\t\022C\n\013percen"
+  "tages\030\007 \003(\0132..kaikosdk.StreamIndexServic"
+  "eResponsePercentage\022,\n\010ts_event\030\010 \001(\0132\032."
+  "google.protobuf.TimestampB|\n\035com.kaiko.s"
+  "dk.stream.index_v1P\001Z\?github.com/challen"
+  "gerdeep/kaiko-go-sdk/stream/index_v1;ind"
+  "ex_v1\252\002\027KaikoSdk.Stream.IndexV1b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps[3] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
-  &::descriptor_table_google_2fprotobuf_2fwrappers_2eproto,
   &::descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto = {
-  false, false, 1349, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, "sdk/stream/index_v1/response.proto", 
-  &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps, 3, 6,
+  false, false, 999, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, "sdk/stream/index_v1/response.proto", 
+  &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps, 2, 5,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
 };
@@ -1252,283 +1214,15 @@ void StreamIndexServiceResponseBaseAsset::InternalSwap(StreamIndexServiceRespons
 
 // ===================================================================
 
-class StreamIndexServiceResponseRounding::_Internal {
- public:
-  static const PROTOBUF_NAMESPACE_ID::UInt32Value& decimals(const StreamIndexServiceResponseRounding* msg);
-};
-
-const PROTOBUF_NAMESPACE_ID::UInt32Value&
-StreamIndexServiceResponseRounding::_Internal::decimals(const StreamIndexServiceResponseRounding* msg) {
-  return *msg->decimals_;
-}
-void StreamIndexServiceResponseRounding::clear_decimals() {
-  if (GetArenaForAllocation() == nullptr && decimals_ != nullptr) {
-    delete decimals_;
-  }
-  decimals_ = nullptr;
-}
-StreamIndexServiceResponseRounding::StreamIndexServiceResponseRounding(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamIndexServiceResponseRounding)
-}
-StreamIndexServiceResponseRounding::StreamIndexServiceResponseRounding(const StreamIndexServiceResponseRounding& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  method_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_method().empty()) {
-    method_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_method(), 
-      GetArenaForAllocation());
-  }
-  if (from._internal_has_decimals()) {
-    decimals_ = new PROTOBUF_NAMESPACE_ID::UInt32Value(*from.decimals_);
-  } else {
-    decimals_ = nullptr;
-  }
-  // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceResponseRounding)
-}
-
-void StreamIndexServiceResponseRounding::SharedCtor() {
-method_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-decimals_ = nullptr;
-}
-
-StreamIndexServiceResponseRounding::~StreamIndexServiceResponseRounding() {
-  // @@protoc_insertion_point(destructor:kaikosdk.StreamIndexServiceResponseRounding)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void StreamIndexServiceResponseRounding::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  method_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete decimals_;
-}
-
-void StreamIndexServiceResponseRounding::ArenaDtor(void* object) {
-  StreamIndexServiceResponseRounding* _this = reinterpret_cast< StreamIndexServiceResponseRounding* >(object);
-  (void)_this;
-}
-void StreamIndexServiceResponseRounding::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void StreamIndexServiceResponseRounding::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void StreamIndexServiceResponseRounding::Clear() {
-// @@protoc_insertion_point(message_clear_start:kaikosdk.StreamIndexServiceResponseRounding)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  method_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && decimals_ != nullptr) {
-    delete decimals_;
-  }
-  decimals_ = nullptr;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* StreamIndexServiceResponseRounding::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string method = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_method();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamIndexServiceResponseRounding.method"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .google.protobuf.UInt32Value decimals = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_decimals(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* StreamIndexServiceResponseRounding::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:kaikosdk.StreamIndexServiceResponseRounding)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string method = 1;
-  if (!this->method().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_method().data(), static_cast<int>(this->_internal_method().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "kaikosdk.StreamIndexServiceResponseRounding.method");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_method(), target);
-  }
-
-  // .google.protobuf.UInt32Value decimals = 2;
-  if (this->has_decimals()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::decimals(this), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.StreamIndexServiceResponseRounding)
-  return target;
-}
-
-size_t StreamIndexServiceResponseRounding::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:kaikosdk.StreamIndexServiceResponseRounding)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string method = 1;
-  if (!this->method().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_method());
-  }
-
-  // .google.protobuf.UInt32Value decimals = 2;
-  if (this->has_decimals()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *decimals_);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void StreamIndexServiceResponseRounding::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamIndexServiceResponseRounding)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamIndexServiceResponseRounding* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamIndexServiceResponseRounding>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamIndexServiceResponseRounding)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamIndexServiceResponseRounding)
-    MergeFrom(*source);
-  }
-}
-
-void StreamIndexServiceResponseRounding::MergeFrom(const StreamIndexServiceResponseRounding& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamIndexServiceResponseRounding)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from.method().empty()) {
-    _internal_set_method(from._internal_method());
-  }
-  if (from.has_decimals()) {
-    _internal_mutable_decimals()->PROTOBUF_NAMESPACE_ID::UInt32Value::MergeFrom(from._internal_decimals());
-  }
-}
-
-void StreamIndexServiceResponseRounding::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamIndexServiceResponseRounding)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void StreamIndexServiceResponseRounding::CopyFrom(const StreamIndexServiceResponseRounding& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:kaikosdk.StreamIndexServiceResponseRounding)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool StreamIndexServiceResponseRounding::IsInitialized() const {
-  return true;
-}
-
-void StreamIndexServiceResponseRounding::InternalSwap(StreamIndexServiceResponseRounding* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &method_, GetArenaForAllocation(),
-      &other->method_, other->GetArenaForAllocation()
-  );
-  swap(decimals_, other->decimals_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata StreamIndexServiceResponseRounding::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2findex_5fv1_2fresponse_2eproto[4]);
-}
-
-// ===================================================================
-
 class StreamIndexServiceResponseV1::_Internal {
  public:
   static const ::kaikosdk::DataInterval& interval(const StreamIndexServiceResponseV1* msg);
-  static const ::kaikosdk::StreamIndexServiceResponseRounding& rounding_trade(const StreamIndexServiceResponseV1* msg);
-  static const ::kaikosdk::StreamIndexServiceResponseRounding& rounding_aggregation(const StreamIndexServiceResponseV1* msg);
-  static const ::kaikosdk::StreamIndexServiceResponseRounding& rounding_price(const StreamIndexServiceResponseV1* msg);
   static const PROTOBUF_NAMESPACE_ID::Timestamp& ts_event(const StreamIndexServiceResponseV1* msg);
 };
 
 const ::kaikosdk::DataInterval&
 StreamIndexServiceResponseV1::_Internal::interval(const StreamIndexServiceResponseV1* msg) {
   return *msg->interval_;
-}
-const ::kaikosdk::StreamIndexServiceResponseRounding&
-StreamIndexServiceResponseV1::_Internal::rounding_trade(const StreamIndexServiceResponseV1* msg) {
-  return *msg->rounding_trade_;
-}
-const ::kaikosdk::StreamIndexServiceResponseRounding&
-StreamIndexServiceResponseV1::_Internal::rounding_aggregation(const StreamIndexServiceResponseV1* msg) {
-  return *msg->rounding_aggregation_;
-}
-const ::kaikosdk::StreamIndexServiceResponseRounding&
-StreamIndexServiceResponseV1::_Internal::rounding_price(const StreamIndexServiceResponseV1* msg) {
-  return *msg->rounding_price_;
 }
 const PROTOBUF_NAMESPACE_ID::Timestamp&
 StreamIndexServiceResponseV1::_Internal::ts_event(const StreamIndexServiceResponseV1* msg) {
@@ -1548,18 +1242,18 @@ void StreamIndexServiceResponseV1::clear_ts_event() {
 }
 StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  percentages_(arena),
   bases_(arena),
-  exchanges_(arena) {
+  exchanges_(arena),
+  percentages_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamIndexServiceResponseV1)
 }
 StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(const StreamIndexServiceResponseV1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      percentages_(from.percentages_),
       bases_(from.bases_),
-      exchanges_(from.exchanges_) {
+      exchanges_(from.exchanges_),
+      percentages_(from.percentages_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   index_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_index_code().empty()) {
@@ -1586,21 +1280,6 @@ StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(const StreamIndexServ
   } else {
     ts_event_ = nullptr;
   }
-  if (from._internal_has_rounding_trade()) {
-    rounding_trade_ = new ::kaikosdk::StreamIndexServiceResponseRounding(*from.rounding_trade_);
-  } else {
-    rounding_trade_ = nullptr;
-  }
-  if (from._internal_has_rounding_aggregation()) {
-    rounding_aggregation_ = new ::kaikosdk::StreamIndexServiceResponseRounding(*from.rounding_aggregation_);
-  } else {
-    rounding_aggregation_ = nullptr;
-  }
-  if (from._internal_has_rounding_price()) {
-    rounding_price_ = new ::kaikosdk::StreamIndexServiceResponseRounding(*from.rounding_price_);
-  } else {
-    rounding_price_ = nullptr;
-  }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceResponseV1)
 }
 
@@ -1610,8 +1289,8 @@ event_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 quote_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&interval_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&rounding_price_) -
-    reinterpret_cast<char*>(&interval_)) + sizeof(rounding_price_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&ts_event_) -
+    reinterpret_cast<char*>(&interval_)) + sizeof(ts_event_));
 }
 
 StreamIndexServiceResponseV1::~StreamIndexServiceResponseV1() {
@@ -1627,9 +1306,6 @@ void StreamIndexServiceResponseV1::SharedDtor() {
   quote_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete interval_;
   if (this != internal_default_instance()) delete ts_event_;
-  if (this != internal_default_instance()) delete rounding_trade_;
-  if (this != internal_default_instance()) delete rounding_aggregation_;
-  if (this != internal_default_instance()) delete rounding_price_;
 }
 
 void StreamIndexServiceResponseV1::ArenaDtor(void* object) {
@@ -1648,9 +1324,9 @@ void StreamIndexServiceResponseV1::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  percentages_.Clear();
   bases_.Clear();
   exchanges_.Clear();
+  percentages_.Clear();
   index_code_.ClearToEmpty();
   event_type_.ClearToEmpty();
   quote_.ClearToEmpty();
@@ -1662,18 +1338,6 @@ void StreamIndexServiceResponseV1::Clear() {
     delete ts_event_;
   }
   ts_event_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && rounding_trade_ != nullptr) {
-    delete rounding_trade_;
-  }
-  rounding_trade_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && rounding_aggregation_ != nullptr) {
-    delete rounding_aggregation_;
-  }
-  rounding_aggregation_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && rounding_price_ != nullptr) {
-    delete rounding_price_;
-  }
-  rounding_price_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1708,49 +1372,30 @@ const char* StreamIndexServiceResponseV1::_InternalParse(const char* ptr, ::PROT
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .kaikosdk.StreamIndexServiceResponsePercentage percentages = 4;
+      // string quote = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_percentages(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // .google.protobuf.Timestamp ts_event = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_ts_event(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string quote = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_quote();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamIndexServiceResponseV1.quote"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+      // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_bases(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated string exchanges = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+      // repeated string exchanges = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1759,27 +1404,25 @@ const char* StreamIndexServiceResponseV1::_InternalParse(const char* ptr, ::PROT
             CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamIndexServiceResponseV1.exchanges"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
-      // .kaikosdk.StreamIndexServiceResponseRounding rounding_trade = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          ptr = ctx->ParseMessage(_internal_mutable_rounding_trade(), ptr);
-          CHK_(ptr);
+      // repeated .kaikosdk.StreamIndexServiceResponsePercentage percentages = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_percentages(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
         } else goto handle_unusual;
         continue;
-      // .kaikosdk.StreamIndexServiceResponseRounding rounding_aggregation = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          ptr = ctx->ParseMessage(_internal_mutable_rounding_aggregation(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .kaikosdk.StreamIndexServiceResponseRounding rounding_price = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
-          ptr = ctx->ParseMessage(_internal_mutable_rounding_price(), ptr);
+      // .google.protobuf.Timestamp ts_event = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_ts_event(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1840,72 +1483,48 @@ failure:
         3, _Internal::interval(this), target, stream);
   }
 
-  // repeated .kaikosdk.StreamIndexServiceResponsePercentage percentages = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_percentages_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, this->_internal_percentages(i), target, stream);
-  }
-
-  // .google.protobuf.Timestamp ts_event = 5;
-  if (this->has_ts_event()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::ts_event(this), target, stream);
-  }
-
-  // string quote = 6;
+  // string quote = 4;
   if (!this->quote().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_quote().data(), static_cast<int>(this->_internal_quote().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "kaikosdk.StreamIndexServiceResponseV1.quote");
     target = stream->WriteStringMaybeAliased(
-        6, this->_internal_quote(), target);
+        4, this->_internal_quote(), target);
   }
 
-  // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 7;
+  // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_bases_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(7, this->_internal_bases(i), target, stream);
+      InternalWriteMessage(5, this->_internal_bases(i), target, stream);
   }
 
-  // repeated string exchanges = 8;
+  // repeated string exchanges = 6;
   for (int i = 0, n = this->_internal_exchanges_size(); i < n; i++) {
     const auto& s = this->_internal_exchanges(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "kaikosdk.StreamIndexServiceResponseV1.exchanges");
-    target = stream->WriteString(8, s, target);
+    target = stream->WriteString(6, s, target);
   }
 
-  // .kaikosdk.StreamIndexServiceResponseRounding rounding_trade = 9;
-  if (this->has_rounding_trade()) {
+  // repeated .kaikosdk.StreamIndexServiceResponsePercentage percentages = 7;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_percentages_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(7, this->_internal_percentages(i), target, stream);
+  }
+
+  // .google.protobuf.Timestamp ts_event = 8;
+  if (this->has_ts_event()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        9, _Internal::rounding_trade(this), target, stream);
-  }
-
-  // .kaikosdk.StreamIndexServiceResponseRounding rounding_aggregation = 10;
-  if (this->has_rounding_aggregation()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        10, _Internal::rounding_aggregation(this), target, stream);
-  }
-
-  // .kaikosdk.StreamIndexServiceResponseRounding rounding_price = 11;
-  if (this->has_rounding_price()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        11, _Internal::rounding_price(this), target, stream);
+        8, _Internal::ts_event(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1924,26 +1543,26 @@ size_t StreamIndexServiceResponseV1::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .kaikosdk.StreamIndexServiceResponsePercentage percentages = 4;
-  total_size += 1UL * this->_internal_percentages_size();
-  for (const auto& msg : this->percentages_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 7;
+  // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 5;
   total_size += 1UL * this->_internal_bases_size();
   for (const auto& msg : this->bases_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated string exchanges = 8;
+  // repeated string exchanges = 6;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(exchanges_.size());
   for (int i = 0, n = exchanges_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
       exchanges_.Get(i));
+  }
+
+  // repeated .kaikosdk.StreamIndexServiceResponsePercentage percentages = 7;
+  total_size += 1UL * this->_internal_percentages_size();
+  for (const auto& msg : this->percentages_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // string index_code = 1;
@@ -1960,7 +1579,7 @@ size_t StreamIndexServiceResponseV1::ByteSizeLong() const {
         this->_internal_event_type());
   }
 
-  // string quote = 6;
+  // string quote = 4;
   if (!this->quote().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -1974,32 +1593,11 @@ size_t StreamIndexServiceResponseV1::ByteSizeLong() const {
         *interval_);
   }
 
-  // .google.protobuf.Timestamp ts_event = 5;
+  // .google.protobuf.Timestamp ts_event = 8;
   if (this->has_ts_event()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ts_event_);
-  }
-
-  // .kaikosdk.StreamIndexServiceResponseRounding rounding_trade = 9;
-  if (this->has_rounding_trade()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *rounding_trade_);
-  }
-
-  // .kaikosdk.StreamIndexServiceResponseRounding rounding_aggregation = 10;
-  if (this->has_rounding_aggregation()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *rounding_aggregation_);
-  }
-
-  // .kaikosdk.StreamIndexServiceResponseRounding rounding_price = 11;
-  if (this->has_rounding_price()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *rounding_price_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2033,9 +1631,9 @@ void StreamIndexServiceResponseV1::MergeFrom(const StreamIndexServiceResponseV1&
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  percentages_.MergeFrom(from.percentages_);
   bases_.MergeFrom(from.bases_);
   exchanges_.MergeFrom(from.exchanges_);
+  percentages_.MergeFrom(from.percentages_);
   if (!from.index_code().empty()) {
     _internal_set_index_code(from._internal_index_code());
   }
@@ -2050,15 +1648,6 @@ void StreamIndexServiceResponseV1::MergeFrom(const StreamIndexServiceResponseV1&
   }
   if (from.has_ts_event()) {
     _internal_mutable_ts_event()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_ts_event());
-  }
-  if (from.has_rounding_trade()) {
-    _internal_mutable_rounding_trade()->::kaikosdk::StreamIndexServiceResponseRounding::MergeFrom(from._internal_rounding_trade());
-  }
-  if (from.has_rounding_aggregation()) {
-    _internal_mutable_rounding_aggregation()->::kaikosdk::StreamIndexServiceResponseRounding::MergeFrom(from._internal_rounding_aggregation());
-  }
-  if (from.has_rounding_price()) {
-    _internal_mutable_rounding_price()->::kaikosdk::StreamIndexServiceResponseRounding::MergeFrom(from._internal_rounding_price());
   }
 }
 
@@ -2083,9 +1672,9 @@ bool StreamIndexServiceResponseV1::IsInitialized() const {
 void StreamIndexServiceResponseV1::InternalSwap(StreamIndexServiceResponseV1* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  percentages_.InternalSwap(&other->percentages_);
   bases_.InternalSwap(&other->bases_);
   exchanges_.InternalSwap(&other->exchanges_);
+  percentages_.InternalSwap(&other->percentages_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &index_code_, GetArenaForAllocation(),
@@ -2102,8 +1691,8 @@ void StreamIndexServiceResponseV1::InternalSwap(StreamIndexServiceResponseV1* ot
       &other->quote_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(StreamIndexServiceResponseV1, rounding_price_)
-      + sizeof(StreamIndexServiceResponseV1::rounding_price_)
+      PROTOBUF_FIELD_OFFSET(StreamIndexServiceResponseV1, ts_event_)
+      + sizeof(StreamIndexServiceResponseV1::ts_event_)
       - PROTOBUF_FIELD_OFFSET(StreamIndexServiceResponseV1, interval_)>(
           reinterpret_cast<char*>(&interval_),
           reinterpret_cast<char*>(&other->interval_));
@@ -2112,7 +1701,7 @@ void StreamIndexServiceResponseV1::InternalSwap(StreamIndexServiceResponseV1* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamIndexServiceResponseV1::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2findex_5fv1_2fresponse_2eproto[5]);
+      file_level_metadata_sdk_2fstream_2findex_5fv1_2fresponse_2eproto[4]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2129,9 +1718,6 @@ template<> PROTOBUF_NOINLINE ::kaikosdk::StreamIndexServiceResponseInstruments* 
 }
 template<> PROTOBUF_NOINLINE ::kaikosdk::StreamIndexServiceResponseBaseAsset* Arena::CreateMaybeMessage< ::kaikosdk::StreamIndexServiceResponseBaseAsset >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::StreamIndexServiceResponseBaseAsset >(arena);
-}
-template<> PROTOBUF_NOINLINE ::kaikosdk::StreamIndexServiceResponseRounding* Arena::CreateMaybeMessage< ::kaikosdk::StreamIndexServiceResponseRounding >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::kaikosdk::StreamIndexServiceResponseRounding >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kaikosdk::StreamIndexServiceResponseV1* Arena::CreateMaybeMessage< ::kaikosdk::StreamIndexServiceResponseV1 >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::StreamIndexServiceResponseV1 >(arena);
