@@ -37,6 +37,8 @@
 #include "sdk/stream/aggregates_direct_exchange_rate_v1/response.pb.h"
 #include "sdk/stream/aggregates_spot_exchange_rate_v1/request.pb.h"
 #include "sdk/stream/aggregates_spot_exchange_rate_v1/response.pb.h"
+#include "sdk/stream/derivatives_price_v2/request.pb.h"
+#include "sdk/stream/derivatives_price_v2/response.pb.h"
 #include "sdk/stream/index_v1/request.pb.h"
 #include "sdk/stream/index_v1/response.pb.h"
 #include "sdk/stream/market_update_v1/request.pb.h"
