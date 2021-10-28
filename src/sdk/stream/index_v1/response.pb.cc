@@ -210,11 +210,14 @@ class StreamIndexServiceResponsePercentage::_Internal {
  public:
 };
 
-StreamIndexServiceResponsePercentage::StreamIndexServiceResponsePercentage(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+StreamIndexServiceResponsePercentage::StreamIndexServiceResponsePercentage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   pairs_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamIndexServiceResponsePercentage)
 }
 StreamIndexServiceResponsePercentage::StreamIndexServiceResponsePercentage(const StreamIndexServiceResponsePercentage& from)
@@ -227,7 +230,7 @@ StreamIndexServiceResponsePercentage::StreamIndexServiceResponsePercentage(const
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceResponsePercentage)
 }
 
-void StreamIndexServiceResponsePercentage::SharedCtor() {
+inline void StreamIndexServiceResponsePercentage::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&percentage_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&price_) -
@@ -236,11 +239,12 @@ void StreamIndexServiceResponsePercentage::SharedCtor() {
 
 StreamIndexServiceResponsePercentage::~StreamIndexServiceResponsePercentage() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamIndexServiceResponsePercentage)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamIndexServiceResponsePercentage::SharedDtor() {
+inline void StreamIndexServiceResponsePercentage::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
@@ -329,13 +333,13 @@ failure:
   (void) cached_has_bits;
 
   // double percentage = 1;
-  if (!(this->percentage() <= 0 && this->percentage() >= 0)) {
+  if (!(this->_internal_percentage() <= 0 && this->_internal_percentage() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_percentage(), target);
   }
 
   // double price = 2;
-  if (!(this->price() <= 0 && this->price() >= 0)) {
+  if (!(this->_internal_price() <= 0 && this->_internal_price() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_price(), target);
   }
@@ -372,12 +376,12 @@ size_t StreamIndexServiceResponsePercentage::ByteSizeLong() const {
   }
 
   // double percentage = 1;
-  if (!(this->percentage() <= 0 && this->percentage() >= 0)) {
+  if (!(this->_internal_percentage() <= 0 && this->_internal_percentage() >= 0)) {
     total_size += 1 + 8;
   }
 
   // double price = 2;
-  if (!(this->price() <= 0 && this->price() >= 0)) {
+  if (!(this->_internal_price() <= 0 && this->_internal_price() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -390,42 +394,33 @@ size_t StreamIndexServiceResponsePercentage::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamIndexServiceResponsePercentage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamIndexServiceResponsePercentage)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamIndexServiceResponsePercentage* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamIndexServiceResponsePercentage>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamIndexServiceResponsePercentage)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamIndexServiceResponsePercentage)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamIndexServiceResponsePercentage::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamIndexServiceResponsePercentage::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamIndexServiceResponsePercentage::GetClassData() const { return &_class_data_; }
+
+void StreamIndexServiceResponsePercentage::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamIndexServiceResponsePercentage *>(to)->MergeFrom(
+      static_cast<const StreamIndexServiceResponsePercentage &>(from));
 }
+
 
 void StreamIndexServiceResponsePercentage::MergeFrom(const StreamIndexServiceResponsePercentage& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamIndexServiceResponsePercentage)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   pairs_.MergeFrom(from.pairs_);
-  if (!(from.percentage() <= 0 && from.percentage() >= 0)) {
+  if (!(from._internal_percentage() <= 0 && from._internal_percentage() >= 0)) {
     _internal_set_percentage(from._internal_percentage());
   }
-  if (!(from.price() <= 0 && from.price() >= 0)) {
+  if (!(from._internal_price() <= 0 && from._internal_price() >= 0)) {
     _internal_set_price(from._internal_price());
   }
-}
-
-void StreamIndexServiceResponsePercentage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamIndexServiceResponsePercentage)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamIndexServiceResponsePercentage::CopyFrom(const StreamIndexServiceResponsePercentage& from) {
@@ -463,11 +458,14 @@ class StreamIndexServiceResponsePairs::_Internal {
  public:
 };
 
-StreamIndexServiceResponsePairs::StreamIndexServiceResponsePairs(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+StreamIndexServiceResponsePairs::StreamIndexServiceResponsePairs(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   instruments_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamIndexServiceResponsePairs)
 }
 StreamIndexServiceResponsePairs::StreamIndexServiceResponsePairs(const StreamIndexServiceResponsePairs& from)
@@ -483,18 +481,19 @@ StreamIndexServiceResponsePairs::StreamIndexServiceResponsePairs(const StreamInd
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceResponsePairs)
 }
 
-void StreamIndexServiceResponsePairs::SharedCtor() {
+inline void StreamIndexServiceResponsePairs::SharedCtor() {
 pair_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 weight_ = 0;
 }
 
 StreamIndexServiceResponsePairs::~StreamIndexServiceResponsePairs() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamIndexServiceResponsePairs)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamIndexServiceResponsePairs::SharedDtor() {
+inline void StreamIndexServiceResponsePairs::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   pair_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -585,7 +584,7 @@ failure:
   (void) cached_has_bits;
 
   // string pair = 1;
-  if (!this->pair().empty()) {
+  if (!this->_internal_pair().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_pair().data(), static_cast<int>(this->_internal_pair().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -595,7 +594,7 @@ failure:
   }
 
   // double weight = 2;
-  if (!(this->weight() <= 0 && this->weight() >= 0)) {
+  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_weight(), target);
   }
@@ -632,14 +631,14 @@ size_t StreamIndexServiceResponsePairs::ByteSizeLong() const {
   }
 
   // string pair = 1;
-  if (!this->pair().empty()) {
+  if (!this->_internal_pair().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_pair());
   }
 
   // double weight = 2;
-  if (!(this->weight() <= 0 && this->weight() >= 0)) {
+  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -652,42 +651,33 @@ size_t StreamIndexServiceResponsePairs::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamIndexServiceResponsePairs::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamIndexServiceResponsePairs)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamIndexServiceResponsePairs* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamIndexServiceResponsePairs>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamIndexServiceResponsePairs)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamIndexServiceResponsePairs)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamIndexServiceResponsePairs::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamIndexServiceResponsePairs::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamIndexServiceResponsePairs::GetClassData() const { return &_class_data_; }
+
+void StreamIndexServiceResponsePairs::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamIndexServiceResponsePairs *>(to)->MergeFrom(
+      static_cast<const StreamIndexServiceResponsePairs &>(from));
 }
+
 
 void StreamIndexServiceResponsePairs::MergeFrom(const StreamIndexServiceResponsePairs& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamIndexServiceResponsePairs)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   instruments_.MergeFrom(from.instruments_);
-  if (!from.pair().empty()) {
+  if (!from._internal_pair().empty()) {
     _internal_set_pair(from._internal_pair());
   }
-  if (!(from.weight() <= 0 && from.weight() >= 0)) {
+  if (!(from._internal_weight() <= 0 && from._internal_weight() >= 0)) {
     _internal_set_weight(from._internal_weight());
   }
-}
-
-void StreamIndexServiceResponsePairs::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamIndexServiceResponsePairs)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamIndexServiceResponsePairs::CopyFrom(const StreamIndexServiceResponsePairs& from) {
@@ -725,10 +715,13 @@ class StreamIndexServiceResponseInstruments::_Internal {
  public:
 };
 
-StreamIndexServiceResponseInstruments::StreamIndexServiceResponseInstruments(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+StreamIndexServiceResponseInstruments::StreamIndexServiceResponseInstruments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamIndexServiceResponseInstruments)
 }
 StreamIndexServiceResponseInstruments::StreamIndexServiceResponseInstruments(const StreamIndexServiceResponseInstruments& from)
@@ -745,7 +738,7 @@ StreamIndexServiceResponseInstruments::StreamIndexServiceResponseInstruments(con
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceResponseInstruments)
 }
 
-void StreamIndexServiceResponseInstruments::SharedCtor() {
+inline void StreamIndexServiceResponseInstruments::SharedCtor() {
 exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&price_) - reinterpret_cast<char*>(this)),
@@ -755,11 +748,12 @@ exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
 
 StreamIndexServiceResponseInstruments::~StreamIndexServiceResponseInstruments() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamIndexServiceResponseInstruments)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamIndexServiceResponseInstruments::SharedDtor() {
+inline void StreamIndexServiceResponseInstruments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   exchange_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -846,7 +840,7 @@ failure:
   (void) cached_has_bits;
 
   // string exchange = 1;
-  if (!this->exchange().empty()) {
+  if (!this->_internal_exchange().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_exchange().data(), static_cast<int>(this->_internal_exchange().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -856,13 +850,13 @@ failure:
   }
 
   // double price = 2;
-  if (!(this->price() <= 0 && this->price() >= 0)) {
+  if (!(this->_internal_price() <= 0 && this->_internal_price() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_price(), target);
   }
 
   // double volume = 3;
-  if (!(this->volume() <= 0 && this->volume() >= 0)) {
+  if (!(this->_internal_volume() <= 0 && this->_internal_volume() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_volume(), target);
   }
@@ -884,19 +878,19 @@ size_t StreamIndexServiceResponseInstruments::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string exchange = 1;
-  if (!this->exchange().empty()) {
+  if (!this->_internal_exchange().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_exchange());
   }
 
   // double price = 2;
-  if (!(this->price() <= 0 && this->price() >= 0)) {
+  if (!(this->_internal_price() <= 0 && this->_internal_price() >= 0)) {
     total_size += 1 + 8;
   }
 
   // double volume = 3;
-  if (!(this->volume() <= 0 && this->volume() >= 0)) {
+  if (!(this->_internal_volume() <= 0 && this->_internal_volume() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -909,44 +903,35 @@ size_t StreamIndexServiceResponseInstruments::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamIndexServiceResponseInstruments::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamIndexServiceResponseInstruments)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamIndexServiceResponseInstruments* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamIndexServiceResponseInstruments>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamIndexServiceResponseInstruments)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamIndexServiceResponseInstruments)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamIndexServiceResponseInstruments::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamIndexServiceResponseInstruments::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamIndexServiceResponseInstruments::GetClassData() const { return &_class_data_; }
+
+void StreamIndexServiceResponseInstruments::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamIndexServiceResponseInstruments *>(to)->MergeFrom(
+      static_cast<const StreamIndexServiceResponseInstruments &>(from));
 }
+
 
 void StreamIndexServiceResponseInstruments::MergeFrom(const StreamIndexServiceResponseInstruments& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamIndexServiceResponseInstruments)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.exchange().empty()) {
+  if (!from._internal_exchange().empty()) {
     _internal_set_exchange(from._internal_exchange());
   }
-  if (!(from.price() <= 0 && from.price() >= 0)) {
+  if (!(from._internal_price() <= 0 && from._internal_price() >= 0)) {
     _internal_set_price(from._internal_price());
   }
-  if (!(from.volume() <= 0 && from.volume() >= 0)) {
+  if (!(from._internal_volume() <= 0 && from._internal_volume() >= 0)) {
     _internal_set_volume(from._internal_volume());
   }
-}
-
-void StreamIndexServiceResponseInstruments::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamIndexServiceResponseInstruments)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamIndexServiceResponseInstruments::CopyFrom(const StreamIndexServiceResponseInstruments& from) {
@@ -988,10 +973,13 @@ class StreamIndexServiceResponseBaseAsset::_Internal {
  public:
 };
 
-StreamIndexServiceResponseBaseAsset::StreamIndexServiceResponseBaseAsset(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+StreamIndexServiceResponseBaseAsset::StreamIndexServiceResponseBaseAsset(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamIndexServiceResponseBaseAsset)
 }
 StreamIndexServiceResponseBaseAsset::StreamIndexServiceResponseBaseAsset(const StreamIndexServiceResponseBaseAsset& from)
@@ -1006,18 +994,19 @@ StreamIndexServiceResponseBaseAsset::StreamIndexServiceResponseBaseAsset(const S
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceResponseBaseAsset)
 }
 
-void StreamIndexServiceResponseBaseAsset::SharedCtor() {
+inline void StreamIndexServiceResponseBaseAsset::SharedCtor() {
 asset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 weight_ = 0;
 }
 
 StreamIndexServiceResponseBaseAsset::~StreamIndexServiceResponseBaseAsset() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamIndexServiceResponseBaseAsset)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamIndexServiceResponseBaseAsset::SharedDtor() {
+inline void StreamIndexServiceResponseBaseAsset::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   asset_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1095,7 +1084,7 @@ failure:
   (void) cached_has_bits;
 
   // string asset = 1;
-  if (!this->asset().empty()) {
+  if (!this->_internal_asset().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_asset().data(), static_cast<int>(this->_internal_asset().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1105,7 +1094,7 @@ failure:
   }
 
   // double weight = 2;
-  if (!(this->weight() <= 0 && this->weight() >= 0)) {
+  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_weight(), target);
   }
@@ -1127,14 +1116,14 @@ size_t StreamIndexServiceResponseBaseAsset::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string asset = 1;
-  if (!this->asset().empty()) {
+  if (!this->_internal_asset().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_asset());
   }
 
   // double weight = 2;
-  if (!(this->weight() <= 0 && this->weight() >= 0)) {
+  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -1147,41 +1136,32 @@ size_t StreamIndexServiceResponseBaseAsset::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamIndexServiceResponseBaseAsset::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamIndexServiceResponseBaseAsset)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamIndexServiceResponseBaseAsset* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamIndexServiceResponseBaseAsset>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamIndexServiceResponseBaseAsset)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamIndexServiceResponseBaseAsset)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamIndexServiceResponseBaseAsset::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamIndexServiceResponseBaseAsset::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamIndexServiceResponseBaseAsset::GetClassData() const { return &_class_data_; }
+
+void StreamIndexServiceResponseBaseAsset::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamIndexServiceResponseBaseAsset *>(to)->MergeFrom(
+      static_cast<const StreamIndexServiceResponseBaseAsset &>(from));
 }
+
 
 void StreamIndexServiceResponseBaseAsset::MergeFrom(const StreamIndexServiceResponseBaseAsset& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamIndexServiceResponseBaseAsset)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.asset().empty()) {
+  if (!from._internal_asset().empty()) {
     _internal_set_asset(from._internal_asset());
   }
-  if (!(from.weight() <= 0 && from.weight() >= 0)) {
+  if (!(from._internal_weight() <= 0 && from._internal_weight() >= 0)) {
     _internal_set_weight(from._internal_weight());
   }
-}
-
-void StreamIndexServiceResponseBaseAsset::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamIndexServiceResponseBaseAsset)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamIndexServiceResponseBaseAsset::CopyFrom(const StreamIndexServiceResponseBaseAsset& from) {
@@ -1240,13 +1220,16 @@ void StreamIndexServiceResponseV1::clear_ts_event() {
   }
   ts_event_ = nullptr;
 }
-StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   bases_(arena),
   exchanges_(arena),
   percentages_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamIndexServiceResponseV1)
 }
 StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(const StreamIndexServiceResponseV1& from)
@@ -1283,7 +1266,7 @@ StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(const StreamIndexServ
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceResponseV1)
 }
 
-void StreamIndexServiceResponseV1::SharedCtor() {
+inline void StreamIndexServiceResponseV1::SharedCtor() {
 index_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 event_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 quote_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1295,11 +1278,12 @@ quote_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlread
 
 StreamIndexServiceResponseV1::~StreamIndexServiceResponseV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamIndexServiceResponseV1)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamIndexServiceResponseV1::SharedDtor() {
+inline void StreamIndexServiceResponseV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   index_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   event_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1456,7 +1440,7 @@ failure:
   (void) cached_has_bits;
 
   // string index_code = 1;
-  if (!this->index_code().empty()) {
+  if (!this->_internal_index_code().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_index_code().data(), static_cast<int>(this->_internal_index_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1466,7 +1450,7 @@ failure:
   }
 
   // string event_type = 2;
-  if (!this->event_type().empty()) {
+  if (!this->_internal_event_type().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_event_type().data(), static_cast<int>(this->_internal_event_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1476,7 +1460,7 @@ failure:
   }
 
   // .kaikosdk.DataInterval interval = 3;
-  if (this->has_interval()) {
+  if (this->_internal_has_interval()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1484,7 +1468,7 @@ failure:
   }
 
   // string quote = 4;
-  if (!this->quote().empty()) {
+  if (!this->_internal_quote().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_quote().data(), static_cast<int>(this->_internal_quote().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1520,7 +1504,7 @@ failure:
   }
 
   // .google.protobuf.Timestamp ts_event = 8;
-  if (this->has_ts_event()) {
+  if (this->_internal_has_ts_event()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1566,35 +1550,35 @@ size_t StreamIndexServiceResponseV1::ByteSizeLong() const {
   }
 
   // string index_code = 1;
-  if (!this->index_code().empty()) {
+  if (!this->_internal_index_code().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_index_code());
   }
 
   // string event_type = 2;
-  if (!this->event_type().empty()) {
+  if (!this->_internal_event_type().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_event_type());
   }
 
   // string quote = 4;
-  if (!this->quote().empty()) {
+  if (!this->_internal_quote().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_quote());
   }
 
   // .kaikosdk.DataInterval interval = 3;
-  if (this->has_interval()) {
+  if (this->_internal_has_interval()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *interval_);
   }
 
   // .google.protobuf.Timestamp ts_event = 8;
-  if (this->has_ts_event()) {
+  if (this->_internal_has_ts_event()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ts_event_);
@@ -1609,53 +1593,44 @@ size_t StreamIndexServiceResponseV1::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamIndexServiceResponseV1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamIndexServiceResponseV1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamIndexServiceResponseV1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamIndexServiceResponseV1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamIndexServiceResponseV1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamIndexServiceResponseV1)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamIndexServiceResponseV1::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamIndexServiceResponseV1::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamIndexServiceResponseV1::GetClassData() const { return &_class_data_; }
+
+void StreamIndexServiceResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamIndexServiceResponseV1 *>(to)->MergeFrom(
+      static_cast<const StreamIndexServiceResponseV1 &>(from));
 }
+
 
 void StreamIndexServiceResponseV1::MergeFrom(const StreamIndexServiceResponseV1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamIndexServiceResponseV1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   bases_.MergeFrom(from.bases_);
   exchanges_.MergeFrom(from.exchanges_);
   percentages_.MergeFrom(from.percentages_);
-  if (!from.index_code().empty()) {
+  if (!from._internal_index_code().empty()) {
     _internal_set_index_code(from._internal_index_code());
   }
-  if (!from.event_type().empty()) {
+  if (!from._internal_event_type().empty()) {
     _internal_set_event_type(from._internal_event_type());
   }
-  if (!from.quote().empty()) {
+  if (!from._internal_quote().empty()) {
     _internal_set_quote(from._internal_quote());
   }
-  if (from.has_interval()) {
+  if (from._internal_has_interval()) {
     _internal_mutable_interval()->::kaikosdk::DataInterval::MergeFrom(from._internal_interval());
   }
-  if (from.has_ts_event()) {
+  if (from._internal_has_ts_event()) {
     _internal_mutable_ts_event()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_ts_event());
   }
-}
-
-void StreamIndexServiceResponseV1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamIndexServiceResponseV1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamIndexServiceResponseV1::CopyFrom(const StreamIndexServiceResponseV1& from) {

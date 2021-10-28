@@ -135,11 +135,6 @@ void StreamDerivativesPriceResponseV2_ValuesEntry_DoNotUse::MergeFrom(const Stre
       &descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto_once,
       file_level_metadata_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto[0]);
 }
-void StreamDerivativesPriceResponseV2_ValuesEntry_DoNotUse::MergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
-  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
-}
-
 
 // ===================================================================
 
@@ -180,11 +175,14 @@ void StreamDerivativesPriceResponseV2::clear_ts_event() {
   }
   ts_event_ = nullptr;
 }
-StreamDerivativesPriceResponseV2::StreamDerivativesPriceResponseV2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+StreamDerivativesPriceResponseV2::StreamDerivativesPriceResponseV2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   values_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamDerivativesPriceResponseV2)
 }
 StreamDerivativesPriceResponseV2::StreamDerivativesPriceResponseV2(const StreamDerivativesPriceResponseV2& from)
@@ -224,7 +222,7 @@ StreamDerivativesPriceResponseV2::StreamDerivativesPriceResponseV2(const StreamD
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamDerivativesPriceResponseV2)
 }
 
-void StreamDerivativesPriceResponseV2::SharedCtor() {
+inline void StreamDerivativesPriceResponseV2::SharedCtor() {
 class__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -236,11 +234,12 @@ exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
 
 StreamDerivativesPriceResponseV2::~StreamDerivativesPriceResponseV2() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamDerivativesPriceResponseV2)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamDerivativesPriceResponseV2::SharedDtor() {
+inline void StreamDerivativesPriceResponseV2::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   class__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -385,7 +384,7 @@ failure:
   (void) cached_has_bits;
 
   // string class = 1;
-  if (!this->class_().empty()) {
+  if (!this->_internal_class_().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_class_().data(), static_cast<int>(this->_internal_class_().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -395,7 +394,7 @@ failure:
   }
 
   // string code = 2;
-  if (!this->code().empty()) {
+  if (!this->_internal_code().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -405,7 +404,7 @@ failure:
   }
 
   // string exchange = 3;
-  if (!this->exchange().empty()) {
+  if (!this->_internal_exchange().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_exchange().data(), static_cast<int>(this->_internal_exchange().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -461,7 +460,7 @@ failure:
   }
 
   // .kaikosdk.TimestampValue ts_exchange = 5;
-  if (this->has_ts_exchange()) {
+  if (this->_internal_has_ts_exchange()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -469,7 +468,7 @@ failure:
   }
 
   // .kaikosdk.TimestampValue ts_collection = 6;
-  if (this->has_ts_collection()) {
+  if (this->_internal_has_ts_collection()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -477,7 +476,7 @@ failure:
   }
 
   // .google.protobuf.Timestamp ts_event = 7;
-  if (this->has_ts_event()) {
+  if (this->_internal_has_ts_event()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -510,42 +509,42 @@ size_t StreamDerivativesPriceResponseV2::ByteSizeLong() const {
   }
 
   // string class = 1;
-  if (!this->class_().empty()) {
+  if (!this->_internal_class_().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_class_());
   }
 
   // string code = 2;
-  if (!this->code().empty()) {
+  if (!this->_internal_code().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_code());
   }
 
   // string exchange = 3;
-  if (!this->exchange().empty()) {
+  if (!this->_internal_exchange().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_exchange());
   }
 
   // .kaikosdk.TimestampValue ts_exchange = 5;
-  if (this->has_ts_exchange()) {
+  if (this->_internal_has_ts_exchange()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ts_exchange_);
   }
 
   // .kaikosdk.TimestampValue ts_collection = 6;
-  if (this->has_ts_collection()) {
+  if (this->_internal_has_ts_collection()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ts_collection_);
   }
 
   // .google.protobuf.Timestamp ts_event = 7;
-  if (this->has_ts_event()) {
+  if (this->_internal_has_ts_event()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ts_event_);
@@ -560,54 +559,45 @@ size_t StreamDerivativesPriceResponseV2::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamDerivativesPriceResponseV2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamDerivativesPriceResponseV2)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamDerivativesPriceResponseV2* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamDerivativesPriceResponseV2>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamDerivativesPriceResponseV2)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamDerivativesPriceResponseV2)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamDerivativesPriceResponseV2::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamDerivativesPriceResponseV2::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamDerivativesPriceResponseV2::GetClassData() const { return &_class_data_; }
+
+void StreamDerivativesPriceResponseV2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamDerivativesPriceResponseV2 *>(to)->MergeFrom(
+      static_cast<const StreamDerivativesPriceResponseV2 &>(from));
 }
+
 
 void StreamDerivativesPriceResponseV2::MergeFrom(const StreamDerivativesPriceResponseV2& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamDerivativesPriceResponseV2)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   values_.MergeFrom(from.values_);
-  if (!from.class_().empty()) {
+  if (!from._internal_class_().empty()) {
     _internal_set_class_(from._internal_class_());
   }
-  if (!from.code().empty()) {
+  if (!from._internal_code().empty()) {
     _internal_set_code(from._internal_code());
   }
-  if (!from.exchange().empty()) {
+  if (!from._internal_exchange().empty()) {
     _internal_set_exchange(from._internal_exchange());
   }
-  if (from.has_ts_exchange()) {
+  if (from._internal_has_ts_exchange()) {
     _internal_mutable_ts_exchange()->::kaikosdk::TimestampValue::MergeFrom(from._internal_ts_exchange());
   }
-  if (from.has_ts_collection()) {
+  if (from._internal_has_ts_collection()) {
     _internal_mutable_ts_collection()->::kaikosdk::TimestampValue::MergeFrom(from._internal_ts_collection());
   }
-  if (from.has_ts_event()) {
+  if (from._internal_has_ts_event()) {
     _internal_mutable_ts_event()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_ts_event());
   }
-}
-
-void StreamDerivativesPriceResponseV2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamDerivativesPriceResponseV2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamDerivativesPriceResponseV2::CopyFrom(const StreamDerivativesPriceResponseV2& from) {

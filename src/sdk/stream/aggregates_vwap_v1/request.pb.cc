@@ -99,10 +99,13 @@ void StreamAggregatesVWAPRequestV1::clear_instrument_criteria() {
   }
   instrument_criteria_ = nullptr;
 }
-StreamAggregatesVWAPRequestV1::StreamAggregatesVWAPRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+StreamAggregatesVWAPRequestV1::StreamAggregatesVWAPRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamAggregatesVWAPRequestV1)
 }
 StreamAggregatesVWAPRequestV1::StreamAggregatesVWAPRequestV1(const StreamAggregatesVWAPRequestV1& from)
@@ -121,18 +124,19 @@ StreamAggregatesVWAPRequestV1::StreamAggregatesVWAPRequestV1(const StreamAggrega
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamAggregatesVWAPRequestV1)
 }
 
-void StreamAggregatesVWAPRequestV1::SharedCtor() {
+inline void StreamAggregatesVWAPRequestV1::SharedCtor() {
 aggregate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 instrument_criteria_ = nullptr;
 }
 
 StreamAggregatesVWAPRequestV1::~StreamAggregatesVWAPRequestV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamAggregatesVWAPRequestV1)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamAggregatesVWAPRequestV1::SharedDtor() {
+inline void StreamAggregatesVWAPRequestV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   aggregate_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete instrument_criteria_;
@@ -214,7 +218,7 @@ failure:
   (void) cached_has_bits;
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
-  if (this->has_instrument_criteria()) {
+  if (this->_internal_has_instrument_criteria()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -222,7 +226,7 @@ failure:
   }
 
   // string aggregate = 2;
-  if (!this->aggregate().empty()) {
+  if (!this->_internal_aggregate().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_aggregate().data(), static_cast<int>(this->_internal_aggregate().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -248,14 +252,14 @@ size_t StreamAggregatesVWAPRequestV1::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string aggregate = 2;
-  if (!this->aggregate().empty()) {
+  if (!this->_internal_aggregate().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_aggregate());
   }
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
-  if (this->has_instrument_criteria()) {
+  if (this->_internal_has_instrument_criteria()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *instrument_criteria_);
@@ -270,41 +274,32 @@ size_t StreamAggregatesVWAPRequestV1::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamAggregatesVWAPRequestV1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamAggregatesVWAPRequestV1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamAggregatesVWAPRequestV1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamAggregatesVWAPRequestV1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamAggregatesVWAPRequestV1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamAggregatesVWAPRequestV1)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamAggregatesVWAPRequestV1::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamAggregatesVWAPRequestV1::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamAggregatesVWAPRequestV1::GetClassData() const { return &_class_data_; }
+
+void StreamAggregatesVWAPRequestV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamAggregatesVWAPRequestV1 *>(to)->MergeFrom(
+      static_cast<const StreamAggregatesVWAPRequestV1 &>(from));
 }
+
 
 void StreamAggregatesVWAPRequestV1::MergeFrom(const StreamAggregatesVWAPRequestV1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamAggregatesVWAPRequestV1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.aggregate().empty()) {
+  if (!from._internal_aggregate().empty()) {
     _internal_set_aggregate(from._internal_aggregate());
   }
-  if (from.has_instrument_criteria()) {
+  if (from._internal_has_instrument_criteria()) {
     _internal_mutable_instrument_criteria()->::kaikosdk::InstrumentCriteria::MergeFrom(from._internal_instrument_criteria());
   }
-}
-
-void StreamAggregatesVWAPRequestV1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamAggregatesVWAPRequestV1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamAggregatesVWAPRequestV1::CopyFrom(const StreamAggregatesVWAPRequestV1& from) {

@@ -83,10 +83,13 @@ class InstrumentCriteria::_Internal {
  public:
 };
 
-InstrumentCriteria::InstrumentCriteria(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+InstrumentCriteria::InstrumentCriteria(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.InstrumentCriteria)
 }
 InstrumentCriteria::InstrumentCriteria(const InstrumentCriteria& from)
@@ -110,7 +113,7 @@ InstrumentCriteria::InstrumentCriteria(const InstrumentCriteria& from)
   // @@protoc_insertion_point(copy_constructor:kaikosdk.InstrumentCriteria)
 }
 
-void InstrumentCriteria::SharedCtor() {
+inline void InstrumentCriteria::SharedCtor() {
 exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 instrument_class_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -118,11 +121,12 @@ code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 
 InstrumentCriteria::~InstrumentCriteria() {
   // @@protoc_insertion_point(destructor:kaikosdk.InstrumentCriteria)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void InstrumentCriteria::SharedDtor() {
+inline void InstrumentCriteria::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   exchange_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   instrument_class_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -214,7 +218,7 @@ failure:
   (void) cached_has_bits;
 
   // string exchange = 1;
-  if (!this->exchange().empty()) {
+  if (!this->_internal_exchange().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_exchange().data(), static_cast<int>(this->_internal_exchange().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -224,7 +228,7 @@ failure:
   }
 
   // string instrument_class = 2;
-  if (!this->instrument_class().empty()) {
+  if (!this->_internal_instrument_class().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_instrument_class().data(), static_cast<int>(this->_internal_instrument_class().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -234,7 +238,7 @@ failure:
   }
 
   // string code = 3;
-  if (!this->code().empty()) {
+  if (!this->_internal_code().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -260,21 +264,21 @@ size_t InstrumentCriteria::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string exchange = 1;
-  if (!this->exchange().empty()) {
+  if (!this->_internal_exchange().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_exchange());
   }
 
   // string instrument_class = 2;
-  if (!this->instrument_class().empty()) {
+  if (!this->_internal_instrument_class().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_instrument_class());
   }
 
   // string code = 3;
-  if (!this->code().empty()) {
+  if (!this->_internal_code().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_code());
@@ -289,44 +293,35 @@ size_t InstrumentCriteria::ByteSizeLong() const {
   return total_size;
 }
 
-void InstrumentCriteria::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.InstrumentCriteria)
-  GOOGLE_DCHECK_NE(&from, this);
-  const InstrumentCriteria* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<InstrumentCriteria>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.InstrumentCriteria)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.InstrumentCriteria)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InstrumentCriteria::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InstrumentCriteria::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InstrumentCriteria::GetClassData() const { return &_class_data_; }
+
+void InstrumentCriteria::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<InstrumentCriteria *>(to)->MergeFrom(
+      static_cast<const InstrumentCriteria &>(from));
 }
+
 
 void InstrumentCriteria::MergeFrom(const InstrumentCriteria& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.InstrumentCriteria)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.exchange().empty()) {
+  if (!from._internal_exchange().empty()) {
     _internal_set_exchange(from._internal_exchange());
   }
-  if (!from.instrument_class().empty()) {
+  if (!from._internal_instrument_class().empty()) {
     _internal_set_instrument_class(from._internal_instrument_class());
   }
-  if (!from.code().empty()) {
+  if (!from._internal_code().empty()) {
     _internal_set_code(from._internal_code());
   }
-}
-
-void InstrumentCriteria::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.InstrumentCriteria)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void InstrumentCriteria::CopyFrom(const InstrumentCriteria& from) {

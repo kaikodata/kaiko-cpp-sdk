@@ -95,10 +95,13 @@ void StreamTradesRequestV1::clear_instrument_criteria() {
   }
   instrument_criteria_ = nullptr;
 }
-StreamTradesRequestV1::StreamTradesRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+StreamTradesRequestV1::StreamTradesRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamTradesRequestV1)
 }
 StreamTradesRequestV1::StreamTradesRequestV1(const StreamTradesRequestV1& from)
@@ -112,17 +115,18 @@ StreamTradesRequestV1::StreamTradesRequestV1(const StreamTradesRequestV1& from)
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamTradesRequestV1)
 }
 
-void StreamTradesRequestV1::SharedCtor() {
+inline void StreamTradesRequestV1::SharedCtor() {
 instrument_criteria_ = nullptr;
 }
 
 StreamTradesRequestV1::~StreamTradesRequestV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamTradesRequestV1)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamTradesRequestV1::SharedDtor() {
+inline void StreamTradesRequestV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete instrument_criteria_;
 }
@@ -193,7 +197,7 @@ failure:
   (void) cached_has_bits;
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
-  if (this->has_instrument_criteria()) {
+  if (this->_internal_has_instrument_criteria()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -217,7 +221,7 @@ size_t StreamTradesRequestV1::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
-  if (this->has_instrument_criteria()) {
+  if (this->_internal_has_instrument_criteria()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *instrument_criteria_);
@@ -232,38 +236,29 @@ size_t StreamTradesRequestV1::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamTradesRequestV1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamTradesRequestV1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamTradesRequestV1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamTradesRequestV1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamTradesRequestV1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamTradesRequestV1)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamTradesRequestV1::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamTradesRequestV1::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamTradesRequestV1::GetClassData() const { return &_class_data_; }
+
+void StreamTradesRequestV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamTradesRequestV1 *>(to)->MergeFrom(
+      static_cast<const StreamTradesRequestV1 &>(from));
 }
+
 
 void StreamTradesRequestV1::MergeFrom(const StreamTradesRequestV1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamTradesRequestV1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_instrument_criteria()) {
+  if (from._internal_has_instrument_criteria()) {
     _internal_mutable_instrument_criteria()->::kaikosdk::InstrumentCriteria::MergeFrom(from._internal_instrument_criteria());
   }
-}
-
-void StreamTradesRequestV1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamTradesRequestV1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamTradesRequestV1::CopyFrom(const StreamTradesRequestV1& from) {

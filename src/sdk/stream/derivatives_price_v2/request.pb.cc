@@ -97,10 +97,13 @@ void StreamDerivativesPriceRequestV2::clear_instrument_criteria() {
   }
   instrument_criteria_ = nullptr;
 }
-StreamDerivativesPriceRequestV2::StreamDerivativesPriceRequestV2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+StreamDerivativesPriceRequestV2::StreamDerivativesPriceRequestV2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamDerivativesPriceRequestV2)
 }
 StreamDerivativesPriceRequestV2::StreamDerivativesPriceRequestV2(const StreamDerivativesPriceRequestV2& from)
@@ -114,17 +117,18 @@ StreamDerivativesPriceRequestV2::StreamDerivativesPriceRequestV2(const StreamDer
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamDerivativesPriceRequestV2)
 }
 
-void StreamDerivativesPriceRequestV2::SharedCtor() {
+inline void StreamDerivativesPriceRequestV2::SharedCtor() {
 instrument_criteria_ = nullptr;
 }
 
 StreamDerivativesPriceRequestV2::~StreamDerivativesPriceRequestV2() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamDerivativesPriceRequestV2)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamDerivativesPriceRequestV2::SharedDtor() {
+inline void StreamDerivativesPriceRequestV2::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete instrument_criteria_;
 }
@@ -195,7 +199,7 @@ failure:
   (void) cached_has_bits;
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
-  if (this->has_instrument_criteria()) {
+  if (this->_internal_has_instrument_criteria()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -219,7 +223,7 @@ size_t StreamDerivativesPriceRequestV2::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
-  if (this->has_instrument_criteria()) {
+  if (this->_internal_has_instrument_criteria()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *instrument_criteria_);
@@ -234,38 +238,29 @@ size_t StreamDerivativesPriceRequestV2::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamDerivativesPriceRequestV2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamDerivativesPriceRequestV2)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamDerivativesPriceRequestV2* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamDerivativesPriceRequestV2>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamDerivativesPriceRequestV2)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamDerivativesPriceRequestV2)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamDerivativesPriceRequestV2::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamDerivativesPriceRequestV2::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamDerivativesPriceRequestV2::GetClassData() const { return &_class_data_; }
+
+void StreamDerivativesPriceRequestV2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamDerivativesPriceRequestV2 *>(to)->MergeFrom(
+      static_cast<const StreamDerivativesPriceRequestV2 &>(from));
 }
+
 
 void StreamDerivativesPriceRequestV2::MergeFrom(const StreamDerivativesPriceRequestV2& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamDerivativesPriceRequestV2)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_instrument_criteria()) {
+  if (from._internal_has_instrument_criteria()) {
     _internal_mutable_instrument_criteria()->::kaikosdk::InstrumentCriteria::MergeFrom(from._internal_instrument_criteria());
   }
-}
-
-void StreamDerivativesPriceRequestV2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamDerivativesPriceRequestV2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamDerivativesPriceRequestV2::CopyFrom(const StreamDerivativesPriceRequestV2& from) {

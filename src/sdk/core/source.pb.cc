@@ -87,11 +87,14 @@ class Source::_Internal {
 void Source::clear_data() {
   data_.Clear();
 }
-Source::Source(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+Source::Source(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   data_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.Source)
 }
 Source::Source(const Source& from)
@@ -106,17 +109,18 @@ Source::Source(const Source& from)
   // @@protoc_insertion_point(copy_constructor:kaikosdk.Source)
 }
 
-void Source::SharedCtor() {
+inline void Source::SharedCtor() {
 price_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Source::~Source() {
   // @@protoc_insertion_point(destructor:kaikosdk.Source)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Source::SharedDtor() {
+inline void Source::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   price_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -207,7 +211,7 @@ failure:
   }
 
   // string price = 2;
-  if (!this->price().empty()) {
+  if (!this->_internal_price().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_price().data(), static_cast<int>(this->_internal_price().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -240,7 +244,7 @@ size_t Source::ByteSizeLong() const {
   }
 
   // string price = 2;
-  if (!this->price().empty()) {
+  if (!this->_internal_price().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_price());
@@ -255,39 +259,30 @@ size_t Source::ByteSizeLong() const {
   return total_size;
 }
 
-void Source::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.Source)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Source* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Source>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.Source)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.Source)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Source::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Source::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Source::GetClassData() const { return &_class_data_; }
+
+void Source::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<Source *>(to)->MergeFrom(
+      static_cast<const Source &>(from));
 }
+
 
 void Source::MergeFrom(const Source& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.Source)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   data_.MergeFrom(from.data_);
-  if (!from.price().empty()) {
+  if (!from._internal_price().empty()) {
     _internal_set_price(from._internal_price());
   }
-}
-
-void Source::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.Source)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Source::CopyFrom(const Source& from) {

@@ -88,10 +88,13 @@ class StreamAggregatesDirectExchangeRateRequestV1::_Internal {
  public:
 };
 
-StreamAggregatesDirectExchangeRateRequestV1::StreamAggregatesDirectExchangeRateRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+StreamAggregatesDirectExchangeRateRequestV1::StreamAggregatesDirectExchangeRateRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamAggregatesDirectExchangeRateRequestV1)
 }
 StreamAggregatesDirectExchangeRateRequestV1::StreamAggregatesDirectExchangeRateRequestV1(const StreamAggregatesDirectExchangeRateRequestV1& from)
@@ -111,7 +114,7 @@ StreamAggregatesDirectExchangeRateRequestV1::StreamAggregatesDirectExchangeRateR
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamAggregatesDirectExchangeRateRequestV1)
 }
 
-void StreamAggregatesDirectExchangeRateRequestV1::SharedCtor() {
+inline void StreamAggregatesDirectExchangeRateRequestV1::SharedCtor() {
 code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 aggregate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 sources_ = false;
@@ -119,11 +122,12 @@ sources_ = false;
 
 StreamAggregatesDirectExchangeRateRequestV1::~StreamAggregatesDirectExchangeRateRequestV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamAggregatesDirectExchangeRateRequestV1)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamAggregatesDirectExchangeRateRequestV1::SharedDtor() {
+inline void StreamAggregatesDirectExchangeRateRequestV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   aggregate_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -212,7 +216,7 @@ failure:
   (void) cached_has_bits;
 
   // string code = 1;
-  if (!this->code().empty()) {
+  if (!this->_internal_code().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -222,7 +226,7 @@ failure:
   }
 
   // string aggregate = 2;
-  if (!this->aggregate().empty()) {
+  if (!this->_internal_aggregate().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_aggregate().data(), static_cast<int>(this->_internal_aggregate().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -232,7 +236,7 @@ failure:
   }
 
   // bool sources = 3;
-  if (this->sources() != 0) {
+  if (this->_internal_sources() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_sources(), target);
   }
@@ -254,21 +258,21 @@ size_t StreamAggregatesDirectExchangeRateRequestV1::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string code = 1;
-  if (!this->code().empty()) {
+  if (!this->_internal_code().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_code());
   }
 
   // string aggregate = 2;
-  if (!this->aggregate().empty()) {
+  if (!this->_internal_aggregate().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_aggregate());
   }
 
   // bool sources = 3;
-  if (this->sources() != 0) {
+  if (this->_internal_sources() != 0) {
     total_size += 1 + 1;
   }
 
@@ -281,44 +285,35 @@ size_t StreamAggregatesDirectExchangeRateRequestV1::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamAggregatesDirectExchangeRateRequestV1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamAggregatesDirectExchangeRateRequestV1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamAggregatesDirectExchangeRateRequestV1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamAggregatesDirectExchangeRateRequestV1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamAggregatesDirectExchangeRateRequestV1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamAggregatesDirectExchangeRateRequestV1)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamAggregatesDirectExchangeRateRequestV1::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamAggregatesDirectExchangeRateRequestV1::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamAggregatesDirectExchangeRateRequestV1::GetClassData() const { return &_class_data_; }
+
+void StreamAggregatesDirectExchangeRateRequestV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamAggregatesDirectExchangeRateRequestV1 *>(to)->MergeFrom(
+      static_cast<const StreamAggregatesDirectExchangeRateRequestV1 &>(from));
 }
+
 
 void StreamAggregatesDirectExchangeRateRequestV1::MergeFrom(const StreamAggregatesDirectExchangeRateRequestV1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamAggregatesDirectExchangeRateRequestV1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.code().empty()) {
+  if (!from._internal_code().empty()) {
     _internal_set_code(from._internal_code());
   }
-  if (!from.aggregate().empty()) {
+  if (!from._internal_aggregate().empty()) {
     _internal_set_aggregate(from._internal_aggregate());
   }
-  if (from.sources() != 0) {
+  if (from._internal_sources() != 0) {
     _internal_set_sources(from._internal_sources());
   }
-}
-
-void StreamAggregatesDirectExchangeRateRequestV1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamAggregatesDirectExchangeRateRequestV1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamAggregatesDirectExchangeRateRequestV1::CopyFrom(const StreamAggregatesDirectExchangeRateRequestV1& from) {

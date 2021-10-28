@@ -108,10 +108,13 @@ void DataInterval::clear_end_time() {
   }
   end_time_ = nullptr;
 }
-DataInterval::DataInterval(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+DataInterval::DataInterval(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.DataInterval)
 }
 DataInterval::DataInterval(const DataInterval& from)
@@ -130,7 +133,7 @@ DataInterval::DataInterval(const DataInterval& from)
   // @@protoc_insertion_point(copy_constructor:kaikosdk.DataInterval)
 }
 
-void DataInterval::SharedCtor() {
+inline void DataInterval::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&start_time_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&end_time_) -
@@ -139,11 +142,12 @@ void DataInterval::SharedCtor() {
 
 DataInterval::~DataInterval() {
   // @@protoc_insertion_point(destructor:kaikosdk.DataInterval)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void DataInterval::SharedDtor() {
+inline void DataInterval::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete start_time_;
   if (this != internal_default_instance()) delete end_time_;
@@ -226,7 +230,7 @@ failure:
   (void) cached_has_bits;
 
   // .google.protobuf.Timestamp start_time = 1;
-  if (this->has_start_time()) {
+  if (this->_internal_has_start_time()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -234,7 +238,7 @@ failure:
   }
 
   // .google.protobuf.Timestamp end_time = 2;
-  if (this->has_end_time()) {
+  if (this->_internal_has_end_time()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -258,14 +262,14 @@ size_t DataInterval::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // .google.protobuf.Timestamp start_time = 1;
-  if (this->has_start_time()) {
+  if (this->_internal_has_start_time()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *start_time_);
   }
 
   // .google.protobuf.Timestamp end_time = 2;
-  if (this->has_end_time()) {
+  if (this->_internal_has_end_time()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *end_time_);
@@ -280,41 +284,32 @@ size_t DataInterval::ByteSizeLong() const {
   return total_size;
 }
 
-void DataInterval::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.DataInterval)
-  GOOGLE_DCHECK_NE(&from, this);
-  const DataInterval* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DataInterval>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.DataInterval)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.DataInterval)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DataInterval::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    DataInterval::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DataInterval::GetClassData() const { return &_class_data_; }
+
+void DataInterval::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<DataInterval *>(to)->MergeFrom(
+      static_cast<const DataInterval &>(from));
 }
+
 
 void DataInterval::MergeFrom(const DataInterval& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.DataInterval)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_start_time()) {
+  if (from._internal_has_start_time()) {
     _internal_mutable_start_time()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_start_time());
   }
-  if (from.has_end_time()) {
+  if (from._internal_has_end_time()) {
     _internal_mutable_end_time()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_end_time());
   }
-}
-
-void DataInterval::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.DataInterval)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void DataInterval::CopyFrom(const DataInterval& from) {

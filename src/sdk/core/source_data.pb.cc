@@ -85,10 +85,13 @@ class SourceData::_Internal {
  public:
 };
 
-SourceData::SourceData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+SourceData::SourceData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.SourceData)
 }
 SourceData::SourceData(const SourceData& from)
@@ -113,7 +116,7 @@ SourceData::SourceData(const SourceData& from)
   // @@protoc_insertion_point(copy_constructor:kaikosdk.SourceData)
 }
 
-void SourceData::SharedCtor() {
+inline void SourceData::SharedCtor() {
 exchange_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 price_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 volume_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -122,11 +125,12 @@ count_ = int64_t{0};
 
 SourceData::~SourceData() {
   // @@protoc_insertion_point(destructor:kaikosdk.SourceData)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void SourceData::SharedDtor() {
+inline void SourceData::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   exchange_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   price_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -226,7 +230,7 @@ failure:
   (void) cached_has_bits;
 
   // string exchange_code = 1;
-  if (!this->exchange_code().empty()) {
+  if (!this->_internal_exchange_code().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_exchange_code().data(), static_cast<int>(this->_internal_exchange_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -236,13 +240,13 @@ failure:
   }
 
   // int64 count = 2;
-  if (this->count() != 0) {
+  if (this->_internal_count() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_count(), target);
   }
 
   // string price = 3;
-  if (!this->price().empty()) {
+  if (!this->_internal_price().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_price().data(), static_cast<int>(this->_internal_price().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -252,7 +256,7 @@ failure:
   }
 
   // string volume = 4;
-  if (!this->volume().empty()) {
+  if (!this->_internal_volume().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_volume().data(), static_cast<int>(this->_internal_volume().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -278,28 +282,28 @@ size_t SourceData::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string exchange_code = 1;
-  if (!this->exchange_code().empty()) {
+  if (!this->_internal_exchange_code().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_exchange_code());
   }
 
   // string price = 3;
-  if (!this->price().empty()) {
+  if (!this->_internal_price().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_price());
   }
 
   // string volume = 4;
-  if (!this->volume().empty()) {
+  if (!this->_internal_volume().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_volume());
   }
 
   // int64 count = 2;
-  if (this->count() != 0) {
+  if (this->_internal_count() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_count());
@@ -314,47 +318,38 @@ size_t SourceData::ByteSizeLong() const {
   return total_size;
 }
 
-void SourceData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.SourceData)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SourceData* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SourceData>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.SourceData)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.SourceData)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SourceData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    SourceData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SourceData::GetClassData() const { return &_class_data_; }
+
+void SourceData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<SourceData *>(to)->MergeFrom(
+      static_cast<const SourceData &>(from));
 }
+
 
 void SourceData::MergeFrom(const SourceData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.SourceData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.exchange_code().empty()) {
+  if (!from._internal_exchange_code().empty()) {
     _internal_set_exchange_code(from._internal_exchange_code());
   }
-  if (!from.price().empty()) {
+  if (!from._internal_price().empty()) {
     _internal_set_price(from._internal_price());
   }
-  if (!from.volume().empty()) {
+  if (!from._internal_volume().empty()) {
     _internal_set_volume(from._internal_volume());
   }
-  if (from.count() != 0) {
+  if (from._internal_count() != 0) {
     _internal_set_count(from._internal_count());
   }
-}
-
-void SourceData::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.SourceData)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SourceData::CopyFrom(const SourceData& from) {

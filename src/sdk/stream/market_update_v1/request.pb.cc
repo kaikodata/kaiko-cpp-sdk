@@ -20,7 +20,7 @@ namespace kaikosdk {
 constexpr StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : commodities_()
-  , _commodities_cached_byte_size_()
+  , _commodities_cached_byte_size_(0)
   , instrument_criteria_(nullptr)
   , interval_(nullptr){}
 struct StreamMarketUpdateRequestV1DefaultTypeInternal {
@@ -119,11 +119,14 @@ void StreamMarketUpdateRequestV1::clear_interval() {
   }
   interval_ = nullptr;
 }
-StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   commodities_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamMarketUpdateRequestV1)
 }
 StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(const StreamMarketUpdateRequestV1& from)
@@ -143,7 +146,7 @@ StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(const StreamMarketUpdat
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamMarketUpdateRequestV1)
 }
 
-void StreamMarketUpdateRequestV1::SharedCtor() {
+inline void StreamMarketUpdateRequestV1::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&instrument_criteria_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&interval_) -
@@ -152,11 +155,12 @@ void StreamMarketUpdateRequestV1::SharedCtor() {
 
 StreamMarketUpdateRequestV1::~StreamMarketUpdateRequestV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamMarketUpdateRequestV1)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamMarketUpdateRequestV1::SharedDtor() {
+inline void StreamMarketUpdateRequestV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete instrument_criteria_;
   if (this != internal_default_instance()) delete interval_;
@@ -251,7 +255,7 @@ failure:
   (void) cached_has_bits;
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
-  if (this->has_instrument_criteria()) {
+  if (this->_internal_has_instrument_criteria()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -268,7 +272,7 @@ failure:
   }
 
   // .kaikosdk.DataInterval interval = 3;
-  if (this->has_interval()) {
+  if (this->_internal_has_interval()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -310,14 +314,14 @@ size_t StreamMarketUpdateRequestV1::ByteSizeLong() const {
   }
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
-  if (this->has_instrument_criteria()) {
+  if (this->_internal_has_instrument_criteria()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *instrument_criteria_);
   }
 
   // .kaikosdk.DataInterval interval = 3;
-  if (this->has_interval()) {
+  if (this->_internal_has_interval()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *interval_);
@@ -332,42 +336,33 @@ size_t StreamMarketUpdateRequestV1::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamMarketUpdateRequestV1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamMarketUpdateRequestV1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamMarketUpdateRequestV1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamMarketUpdateRequestV1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamMarketUpdateRequestV1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamMarketUpdateRequestV1)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamMarketUpdateRequestV1::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamMarketUpdateRequestV1::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamMarketUpdateRequestV1::GetClassData() const { return &_class_data_; }
+
+void StreamMarketUpdateRequestV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamMarketUpdateRequestV1 *>(to)->MergeFrom(
+      static_cast<const StreamMarketUpdateRequestV1 &>(from));
 }
+
 
 void StreamMarketUpdateRequestV1::MergeFrom(const StreamMarketUpdateRequestV1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamMarketUpdateRequestV1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   commodities_.MergeFrom(from.commodities_);
-  if (from.has_instrument_criteria()) {
+  if (from._internal_has_instrument_criteria()) {
     _internal_mutable_instrument_criteria()->::kaikosdk::InstrumentCriteria::MergeFrom(from._internal_instrument_criteria());
   }
-  if (from.has_interval()) {
+  if (from._internal_has_interval()) {
     _internal_mutable_interval()->::kaikosdk::DataInterval::MergeFrom(from._internal_interval());
   }
-}
-
-void StreamMarketUpdateRequestV1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamMarketUpdateRequestV1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamMarketUpdateRequestV1::CopyFrom(const StreamMarketUpdateRequestV1& from) {

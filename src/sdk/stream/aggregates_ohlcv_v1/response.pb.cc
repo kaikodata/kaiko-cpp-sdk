@@ -123,10 +123,13 @@ void StreamAggregatesOHLCVResponseV1::clear_timestamp() {
   }
   timestamp_ = nullptr;
 }
-StreamAggregatesOHLCVResponseV1::StreamAggregatesOHLCVResponseV1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+StreamAggregatesOHLCVResponseV1::StreamAggregatesOHLCVResponseV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamAggregatesOHLCVResponseV1)
 }
 StreamAggregatesOHLCVResponseV1::StreamAggregatesOHLCVResponseV1(const StreamAggregatesOHLCVResponseV1& from)
@@ -195,7 +198,7 @@ StreamAggregatesOHLCVResponseV1::StreamAggregatesOHLCVResponseV1(const StreamAgg
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamAggregatesOHLCVResponseV1)
 }
 
-void StreamAggregatesOHLCVResponseV1::SharedCtor() {
+inline void StreamAggregatesOHLCVResponseV1::SharedCtor() {
 aggregate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 class__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 close_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -212,11 +215,12 @@ timestamp_ = nullptr;
 
 StreamAggregatesOHLCVResponseV1::~StreamAggregatesOHLCVResponseV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamAggregatesOHLCVResponseV1)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void StreamAggregatesOHLCVResponseV1::SharedDtor() {
+inline void StreamAggregatesOHLCVResponseV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   aggregate_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   class__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -408,7 +412,7 @@ failure:
   (void) cached_has_bits;
 
   // string aggregate = 1;
-  if (!this->aggregate().empty()) {
+  if (!this->_internal_aggregate().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_aggregate().data(), static_cast<int>(this->_internal_aggregate().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -418,7 +422,7 @@ failure:
   }
 
   // string class = 2;
-  if (!this->class_().empty()) {
+  if (!this->_internal_class_().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_class_().data(), static_cast<int>(this->_internal_class_().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -428,7 +432,7 @@ failure:
   }
 
   // string close = 3;
-  if (!this->close().empty()) {
+  if (!this->_internal_close().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_close().data(), static_cast<int>(this->_internal_close().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -438,7 +442,7 @@ failure:
   }
 
   // string exchange = 4;
-  if (!this->exchange().empty()) {
+  if (!this->_internal_exchange().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_exchange().data(), static_cast<int>(this->_internal_exchange().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -448,7 +452,7 @@ failure:
   }
 
   // string high = 5;
-  if (!this->high().empty()) {
+  if (!this->_internal_high().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_high().data(), static_cast<int>(this->_internal_high().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -458,7 +462,7 @@ failure:
   }
 
   // string low = 6;
-  if (!this->low().empty()) {
+  if (!this->_internal_low().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_low().data(), static_cast<int>(this->_internal_low().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -468,7 +472,7 @@ failure:
   }
 
   // string open = 7;
-  if (!this->open().empty()) {
+  if (!this->_internal_open().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_open().data(), static_cast<int>(this->_internal_open().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -478,7 +482,7 @@ failure:
   }
 
   // string sequence_id = 8;
-  if (!this->sequence_id().empty()) {
+  if (!this->_internal_sequence_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_sequence_id().data(), static_cast<int>(this->_internal_sequence_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -488,7 +492,7 @@ failure:
   }
 
   // string code = 9;
-  if (!this->code().empty()) {
+  if (!this->_internal_code().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -498,7 +502,7 @@ failure:
   }
 
   // .google.protobuf.Timestamp timestamp = 10;
-  if (this->has_timestamp()) {
+  if (this->_internal_has_timestamp()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -506,7 +510,7 @@ failure:
   }
 
   // string uid = 11;
-  if (!this->uid().empty()) {
+  if (!this->_internal_uid().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_uid().data(), static_cast<int>(this->_internal_uid().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -516,7 +520,7 @@ failure:
   }
 
   // string volume = 12;
-  if (!this->volume().empty()) {
+  if (!this->_internal_volume().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_volume().data(), static_cast<int>(this->_internal_volume().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -542,84 +546,84 @@ size_t StreamAggregatesOHLCVResponseV1::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string aggregate = 1;
-  if (!this->aggregate().empty()) {
+  if (!this->_internal_aggregate().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_aggregate());
   }
 
   // string class = 2;
-  if (!this->class_().empty()) {
+  if (!this->_internal_class_().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_class_());
   }
 
   // string close = 3;
-  if (!this->close().empty()) {
+  if (!this->_internal_close().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_close());
   }
 
   // string exchange = 4;
-  if (!this->exchange().empty()) {
+  if (!this->_internal_exchange().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_exchange());
   }
 
   // string high = 5;
-  if (!this->high().empty()) {
+  if (!this->_internal_high().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_high());
   }
 
   // string low = 6;
-  if (!this->low().empty()) {
+  if (!this->_internal_low().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_low());
   }
 
   // string open = 7;
-  if (!this->open().empty()) {
+  if (!this->_internal_open().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_open());
   }
 
   // string sequence_id = 8;
-  if (!this->sequence_id().empty()) {
+  if (!this->_internal_sequence_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_sequence_id());
   }
 
   // string code = 9;
-  if (!this->code().empty()) {
+  if (!this->_internal_code().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_code());
   }
 
   // string uid = 11;
-  if (!this->uid().empty()) {
+  if (!this->_internal_uid().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_uid());
   }
 
   // string volume = 12;
-  if (!this->volume().empty()) {
+  if (!this->_internal_volume().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_volume());
   }
 
   // .google.protobuf.Timestamp timestamp = 10;
-  if (this->has_timestamp()) {
+  if (this->_internal_has_timestamp()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *timestamp_);
@@ -634,71 +638,62 @@ size_t StreamAggregatesOHLCVResponseV1::ByteSizeLong() const {
   return total_size;
 }
 
-void StreamAggregatesOHLCVResponseV1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:kaikosdk.StreamAggregatesOHLCVResponseV1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StreamAggregatesOHLCVResponseV1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StreamAggregatesOHLCVResponseV1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:kaikosdk.StreamAggregatesOHLCVResponseV1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:kaikosdk.StreamAggregatesOHLCVResponseV1)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamAggregatesOHLCVResponseV1::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    StreamAggregatesOHLCVResponseV1::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamAggregatesOHLCVResponseV1::GetClassData() const { return &_class_data_; }
+
+void StreamAggregatesOHLCVResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<StreamAggregatesOHLCVResponseV1 *>(to)->MergeFrom(
+      static_cast<const StreamAggregatesOHLCVResponseV1 &>(from));
 }
+
 
 void StreamAggregatesOHLCVResponseV1::MergeFrom(const StreamAggregatesOHLCVResponseV1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamAggregatesOHLCVResponseV1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from.aggregate().empty()) {
+  if (!from._internal_aggregate().empty()) {
     _internal_set_aggregate(from._internal_aggregate());
   }
-  if (!from.class_().empty()) {
+  if (!from._internal_class_().empty()) {
     _internal_set_class_(from._internal_class_());
   }
-  if (!from.close().empty()) {
+  if (!from._internal_close().empty()) {
     _internal_set_close(from._internal_close());
   }
-  if (!from.exchange().empty()) {
+  if (!from._internal_exchange().empty()) {
     _internal_set_exchange(from._internal_exchange());
   }
-  if (!from.high().empty()) {
+  if (!from._internal_high().empty()) {
     _internal_set_high(from._internal_high());
   }
-  if (!from.low().empty()) {
+  if (!from._internal_low().empty()) {
     _internal_set_low(from._internal_low());
   }
-  if (!from.open().empty()) {
+  if (!from._internal_open().empty()) {
     _internal_set_open(from._internal_open());
   }
-  if (!from.sequence_id().empty()) {
+  if (!from._internal_sequence_id().empty()) {
     _internal_set_sequence_id(from._internal_sequence_id());
   }
-  if (!from.code().empty()) {
+  if (!from._internal_code().empty()) {
     _internal_set_code(from._internal_code());
   }
-  if (!from.uid().empty()) {
+  if (!from._internal_uid().empty()) {
     _internal_set_uid(from._internal_uid());
   }
-  if (!from.volume().empty()) {
+  if (!from._internal_volume().empty()) {
     _internal_set_volume(from._internal_volume());
   }
-  if (from.has_timestamp()) {
+  if (from._internal_has_timestamp()) {
     _internal_mutable_timestamp()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_timestamp());
   }
-}
-
-void StreamAggregatesOHLCVResponseV1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:kaikosdk.StreamAggregatesOHLCVResponseV1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamAggregatesOHLCVResponseV1::CopyFrom(const StreamAggregatesOHLCVResponseV1& from) {
