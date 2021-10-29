@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "sdk/stream/index_v1/commodity.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_sdk_2fstream_2findex_5fv1_2frequest_2eproto
@@ -180,9 +181,26 @@ class StreamIndexServiceRequestV1 final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kCommoditiesFieldNumber = 2,
     kIndexCodeFieldNumber = 1,
-    kEventTypeFieldNumber = 2,
   };
+  // repeated .kaikosdk.StreamIndexCommodity commodities = 2;
+  int commodities_size() const;
+  private:
+  int _internal_commodities_size() const;
+  public:
+  void clear_commodities();
+  private:
+  ::kaikosdk::StreamIndexCommodity _internal_commodities(int index) const;
+  void _internal_add_commodities(::kaikosdk::StreamIndexCommodity value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* _internal_mutable_commodities();
+  public:
+  ::kaikosdk::StreamIndexCommodity commodities(int index) const;
+  void set_commodities(int index, ::kaikosdk::StreamIndexCommodity value);
+  void add_commodities(::kaikosdk::StreamIndexCommodity value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>& commodities() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* mutable_commodities();
+
   // string index_code = 1;
   void clear_index_code();
   const std::string& index_code() const;
@@ -197,20 +215,6 @@ class StreamIndexServiceRequestV1 final :
   std::string* _internal_mutable_index_code();
   public:
 
-  // string event_type = 2;
-  void clear_event_type();
-  const std::string& event_type() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_event_type(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_event_type();
-  PROTOBUF_MUST_USE_RESULT std::string* release_event_type();
-  void set_allocated_event_type(std::string* event_type);
-  private:
-  const std::string& _internal_event_type() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_event_type(const std::string& value);
-  std::string* _internal_mutable_event_type();
-  public:
-
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamIndexServiceRequestV1)
  private:
   class _Internal;
@@ -218,8 +222,9 @@ class StreamIndexServiceRequestV1 final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int> commodities_;
+  mutable std::atomic<int> _commodities_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr index_code_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr event_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_sdk_2fstream_2findex_5fv1_2frequest_2eproto;
 };
@@ -280,50 +285,47 @@ inline void StreamIndexServiceRequestV1::set_allocated_index_code(std::string* i
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceRequestV1.index_code)
 }
 
-// string event_type = 2;
-inline void StreamIndexServiceRequestV1::clear_event_type() {
-  event_type_.ClearToEmpty();
+// repeated .kaikosdk.StreamIndexCommodity commodities = 2;
+inline int StreamIndexServiceRequestV1::_internal_commodities_size() const {
+  return commodities_.size();
 }
-inline const std::string& StreamIndexServiceRequestV1::event_type() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceRequestV1.event_type)
-  return _internal_event_type();
+inline int StreamIndexServiceRequestV1::commodities_size() const {
+  return _internal_commodities_size();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void StreamIndexServiceRequestV1::set_event_type(ArgT0&& arg0, ArgT... args) {
- 
- event_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceRequestV1.event_type)
+inline void StreamIndexServiceRequestV1::clear_commodities() {
+  commodities_.Clear();
 }
-inline std::string* StreamIndexServiceRequestV1::mutable_event_type() {
-  std::string* _s = _internal_mutable_event_type();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceRequestV1.event_type)
-  return _s;
+inline ::kaikosdk::StreamIndexCommodity StreamIndexServiceRequestV1::_internal_commodities(int index) const {
+  return static_cast< ::kaikosdk::StreamIndexCommodity >(commodities_.Get(index));
 }
-inline const std::string& StreamIndexServiceRequestV1::_internal_event_type() const {
-  return event_type_.Get();
+inline ::kaikosdk::StreamIndexCommodity StreamIndexServiceRequestV1::commodities(int index) const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceRequestV1.commodities)
+  return _internal_commodities(index);
 }
-inline void StreamIndexServiceRequestV1::_internal_set_event_type(const std::string& value) {
-  
-  event_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+inline void StreamIndexServiceRequestV1::set_commodities(int index, ::kaikosdk::StreamIndexCommodity value) {
+  commodities_.Set(index, value);
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceRequestV1.commodities)
 }
-inline std::string* StreamIndexServiceRequestV1::_internal_mutable_event_type() {
-  
-  return event_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+inline void StreamIndexServiceRequestV1::_internal_add_commodities(::kaikosdk::StreamIndexCommodity value) {
+  commodities_.Add(value);
 }
-inline std::string* StreamIndexServiceRequestV1::release_event_type() {
-  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceRequestV1.event_type)
-  return event_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline void StreamIndexServiceRequestV1::add_commodities(::kaikosdk::StreamIndexCommodity value) {
+  _internal_add_commodities(value);
+  // @@protoc_insertion_point(field_add:kaikosdk.StreamIndexServiceRequestV1.commodities)
 }
-inline void StreamIndexServiceRequestV1::set_allocated_event_type(std::string* event_type) {
-  if (event_type != nullptr) {
-    
-  } else {
-    
-  }
-  event_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), event_type,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceRequestV1.event_type)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>&
+StreamIndexServiceRequestV1::commodities() const {
+  // @@protoc_insertion_point(field_list:kaikosdk.StreamIndexServiceRequestV1.commodities)
+  return commodities_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
+StreamIndexServiceRequestV1::_internal_mutable_commodities() {
+  return &commodities_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
+StreamIndexServiceRequestV1::mutable_commodities() {
+  // @@protoc_insertion_point(field_mutable_list:kaikosdk.StreamIndexServiceRequestV1.commodities)
+  return _internal_mutable_commodities();
 }
 
 #ifdef __GNUC__

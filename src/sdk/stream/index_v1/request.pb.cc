@@ -19,8 +19,9 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace kaikosdk {
 constexpr StreamIndexServiceRequestV1::StreamIndexServiceRequestV1(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : index_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , event_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : commodities_()
+  , _commodities_cached_byte_size_(0)
+  , index_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct StreamIndexServiceRequestV1DefaultTypeInternal {
   constexpr StreamIndexServiceRequestV1DefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -42,7 +43,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2findex_5fv1_2fre
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceRequestV1, index_code_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceRequestV1, event_type_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceRequestV1, commodities_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::kaikosdk::StreamIndexServiceRequestV1)},
@@ -54,17 +55,21 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2frequest_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n!sdk/stream/index_v1/request.proto\022\010kai"
-  "kosdk\"E\n\033StreamIndexServiceRequestV1\022\022\n\n"
-  "index_code\030\001 \001(\t\022\022\n\nevent_type\030\002 \001(\tB|\n\035"
-  "com.kaiko.sdk.stream.index_v1P\001Z\?github."
-  "com/challengerdeep/kaiko-go-sdk/stream/i"
-  "ndex_v1;index_v1\252\002\027KaikoSdk.Stream.Index"
-  "V1b\006proto3"
+  "kosdk\032#sdk/stream/index_v1/commodity.pro"
+  "to\"f\n\033StreamIndexServiceRequestV1\022\022\n\nind"
+  "ex_code\030\001 \001(\t\0223\n\013commodities\030\002 \003(\0162\036.kai"
+  "kosdk.StreamIndexCommodityB|\n\035com.kaiko."
+  "sdk.stream.index_v1P\001Z\?github.com/challe"
+  "ngerdeep/kaiko-go-sdk/stream/index_v1;in"
+  "dex_v1\252\002\027KaikoSdk.Stream.IndexV1b\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2findex_5fv1_2frequest_2eproto_deps[1] = {
+  &::descriptor_table_sdk_2fstream_2findex_5fv1_2fcommodity_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2findex_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fv1_2frequest_2eproto = {
-  false, false, 250, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2frequest_2eproto, "sdk/stream/index_v1/request.proto", 
-  &descriptor_table_sdk_2fstream_2findex_5fv1_2frequest_2eproto_once, nullptr, 0, 1,
+  false, false, 320, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2frequest_2eproto, "sdk/stream/index_v1/request.proto", 
+  &descriptor_table_sdk_2fstream_2findex_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fv1_2frequest_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2findex_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2findex_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2findex_5fv1_2frequest_2eproto,
 };
@@ -84,7 +89,8 @@ class StreamIndexServiceRequestV1::_Internal {
 
 StreamIndexServiceRequestV1::StreamIndexServiceRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  commodities_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -92,16 +98,12 @@ StreamIndexServiceRequestV1::StreamIndexServiceRequestV1(::PROTOBUF_NAMESPACE_ID
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamIndexServiceRequestV1)
 }
 StreamIndexServiceRequestV1::StreamIndexServiceRequestV1(const StreamIndexServiceRequestV1& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      commodities_(from.commodities_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   index_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_index_code().empty()) {
     index_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_index_code(), 
-      GetArenaForAllocation());
-  }
-  event_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_event_type().empty()) {
-    event_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_event_type(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceRequestV1)
@@ -109,7 +111,6 @@ StreamIndexServiceRequestV1::StreamIndexServiceRequestV1(const StreamIndexServic
 
 inline void StreamIndexServiceRequestV1::SharedCtor() {
 index_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-event_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 StreamIndexServiceRequestV1::~StreamIndexServiceRequestV1() {
@@ -122,7 +123,6 @@ StreamIndexServiceRequestV1::~StreamIndexServiceRequestV1() {
 inline void StreamIndexServiceRequestV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   index_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  event_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void StreamIndexServiceRequestV1::ArenaDtor(void* object) {
@@ -141,8 +141,8 @@ void StreamIndexServiceRequestV1::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  commodities_.Clear();
   index_code_.ClearToEmpty();
-  event_type_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -161,13 +161,15 @@ const char* StreamIndexServiceRequestV1::_InternalParse(const char* ptr, ::PROTO
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string event_type = 2;
+      // repeated .kaikosdk.StreamIndexCommodity commodities = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_event_type();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamIndexServiceRequestV1.event_type"));
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_commodities(), ptr, ctx);
           CHK_(ptr);
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_add_commodities(static_cast<::kaikosdk::StreamIndexCommodity>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -209,14 +211,13 @@ failure:
         1, this->_internal_index_code(), target);
   }
 
-  // string event_type = 2;
-  if (!this->_internal_event_type().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_event_type().data(), static_cast<int>(this->_internal_event_type().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "kaikosdk.StreamIndexServiceRequestV1.event_type");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_event_type(), target);
+  // repeated .kaikosdk.StreamIndexCommodity commodities = 2;
+  {
+    int byte_size = _commodities_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteEnumPacked(
+          2, commodities_, byte_size, target);
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -235,18 +236,29 @@ size_t StreamIndexServiceRequestV1::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated .kaikosdk.StreamIndexCommodity commodities = 2;
+  {
+    size_t data_size = 0;
+    unsigned int count = static_cast<unsigned int>(this->_internal_commodities_size());for (unsigned int i = 0; i < count; i++) {
+      data_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
+        this->_internal_commodities(static_cast<int>(i)));
+    }
+    if (data_size > 0) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+    }
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _commodities_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
   // string index_code = 1;
   if (!this->_internal_index_code().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_index_code());
-  }
-
-  // string event_type = 2;
-  if (!this->_internal_event_type().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_event_type());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -277,11 +289,9 @@ void StreamIndexServiceRequestV1::MergeFrom(const StreamIndexServiceRequestV1& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  commodities_.MergeFrom(from.commodities_);
   if (!from._internal_index_code().empty()) {
     _internal_set_index_code(from._internal_index_code());
-  }
-  if (!from._internal_event_type().empty()) {
-    _internal_set_event_type(from._internal_event_type());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -300,15 +310,11 @@ bool StreamIndexServiceRequestV1::IsInitialized() const {
 void StreamIndexServiceRequestV1::InternalSwap(StreamIndexServiceRequestV1* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  commodities_.InternalSwap(&other->commodities_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &index_code_, GetArenaForAllocation(),
       &other->index_code_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &event_type_, GetArenaForAllocation(),
-      &other->event_type_, other->GetArenaForAllocation()
   );
 }
 

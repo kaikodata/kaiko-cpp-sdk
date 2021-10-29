@@ -33,6 +33,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/timestamp.pb.h>
 #include "sdk/core/data_interval.pb.h"
+#include "sdk/stream/index_v1/commodity.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_sdk_2fstream_2findex_5fv1_2fresponse_2eproto
@@ -868,10 +869,10 @@ class StreamIndexServiceResponseV1 final :
     kExchangesFieldNumber = 6,
     kPercentagesFieldNumber = 7,
     kIndexCodeFieldNumber = 1,
-    kEventTypeFieldNumber = 2,
     kQuoteFieldNumber = 4,
     kIntervalFieldNumber = 3,
     kTsEventFieldNumber = 8,
+    kCommodityFieldNumber = 2,
   };
   // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 5;
   int bases_size() const;
@@ -947,20 +948,6 @@ class StreamIndexServiceResponseV1 final :
   std::string* _internal_mutable_index_code();
   public:
 
-  // string event_type = 2;
-  void clear_event_type();
-  const std::string& event_type() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_event_type(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_event_type();
-  PROTOBUF_MUST_USE_RESULT std::string* release_event_type();
-  void set_allocated_event_type(std::string* event_type);
-  private:
-  const std::string& _internal_event_type() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_event_type(const std::string& value);
-  std::string* _internal_mutable_event_type();
-  public:
-
   // string quote = 4;
   void clear_quote();
   const std::string& quote() const;
@@ -1011,6 +998,15 @@ class StreamIndexServiceResponseV1 final :
       PROTOBUF_NAMESPACE_ID::Timestamp* ts_event);
   PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_ts_event();
 
+  // .kaikosdk.StreamIndexCommodity commodity = 2;
+  void clear_commodity();
+  ::kaikosdk::StreamIndexCommodity commodity() const;
+  void set_commodity(::kaikosdk::StreamIndexCommodity value);
+  private:
+  ::kaikosdk::StreamIndexCommodity _internal_commodity() const;
+  void _internal_set_commodity(::kaikosdk::StreamIndexCommodity value);
+  public:
+
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamIndexServiceResponseV1)
  private:
   class _Internal;
@@ -1022,10 +1018,10 @@ class StreamIndexServiceResponseV1 final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> exchanges_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::kaikosdk::StreamIndexServiceResponsePercentage > percentages_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr index_code_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr event_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quote_;
   ::kaikosdk::DataInterval* interval_;
   PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
+  int commodity_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto;
 };
@@ -1440,50 +1436,24 @@ inline void StreamIndexServiceResponseV1::set_allocated_index_code(std::string* 
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.index_code)
 }
 
-// string event_type = 2;
-inline void StreamIndexServiceResponseV1::clear_event_type() {
-  event_type_.ClearToEmpty();
+// .kaikosdk.StreamIndexCommodity commodity = 2;
+inline void StreamIndexServiceResponseV1::clear_commodity() {
+  commodity_ = 0;
 }
-inline const std::string& StreamIndexServiceResponseV1::event_type() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.event_type)
-  return _internal_event_type();
+inline ::kaikosdk::StreamIndexCommodity StreamIndexServiceResponseV1::_internal_commodity() const {
+  return static_cast< ::kaikosdk::StreamIndexCommodity >(commodity_);
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void StreamIndexServiceResponseV1::set_event_type(ArgT0&& arg0, ArgT... args) {
- 
- event_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseV1.event_type)
+inline ::kaikosdk::StreamIndexCommodity StreamIndexServiceResponseV1::commodity() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.commodity)
+  return _internal_commodity();
 }
-inline std::string* StreamIndexServiceResponseV1::mutable_event_type() {
-  std::string* _s = _internal_mutable_event_type();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.event_type)
-  return _s;
-}
-inline const std::string& StreamIndexServiceResponseV1::_internal_event_type() const {
-  return event_type_.Get();
-}
-inline void StreamIndexServiceResponseV1::_internal_set_event_type(const std::string& value) {
+inline void StreamIndexServiceResponseV1::_internal_set_commodity(::kaikosdk::StreamIndexCommodity value) {
   
-  event_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  commodity_ = value;
 }
-inline std::string* StreamIndexServiceResponseV1::_internal_mutable_event_type() {
-  
-  return event_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* StreamIndexServiceResponseV1::release_event_type() {
-  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.event_type)
-  return event_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void StreamIndexServiceResponseV1::set_allocated_event_type(std::string* event_type) {
-  if (event_type != nullptr) {
-    
-  } else {
-    
-  }
-  event_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), event_type,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.event_type)
+inline void StreamIndexServiceResponseV1::set_commodity(::kaikosdk::StreamIndexCommodity value) {
+  _internal_set_commodity(value);
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseV1.commodity)
 }
 
 // .kaikosdk.DataInterval interval = 3;
