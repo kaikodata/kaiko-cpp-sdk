@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "sdk/core/data_interval.pb.h"
 #include "sdk/core/instrument_criteria.pb.h"
@@ -66,6 +67,32 @@ template<> ::kaikosdk::StreamMarketUpdateRequestV1* Arena::CreateMaybeMessage<::
 PROTOBUF_NAMESPACE_CLOSE
 namespace kaikosdk {
 
+enum StreamMarketUpdateRequestV1_OrderbookSnapshotType : int {
+  StreamMarketUpdateRequestV1_OrderbookSnapshotType_UNKNOWN = 0,
+  StreamMarketUpdateRequestV1_OrderbookSnapshotType_TEN_PERCENT = 1,
+  StreamMarketUpdateRequestV1_OrderbookSnapshotType_FULL = 2,
+  StreamMarketUpdateRequestV1_OrderbookSnapshotType_StreamMarketUpdateRequestV1_OrderbookSnapshotType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  StreamMarketUpdateRequestV1_OrderbookSnapshotType_StreamMarketUpdateRequestV1_OrderbookSnapshotType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool StreamMarketUpdateRequestV1_OrderbookSnapshotType_IsValid(int value);
+constexpr StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1_OrderbookSnapshotType_OrderbookSnapshotType_MIN = StreamMarketUpdateRequestV1_OrderbookSnapshotType_UNKNOWN;
+constexpr StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1_OrderbookSnapshotType_OrderbookSnapshotType_MAX = StreamMarketUpdateRequestV1_OrderbookSnapshotType_FULL;
+constexpr int StreamMarketUpdateRequestV1_OrderbookSnapshotType_OrderbookSnapshotType_ARRAYSIZE = StreamMarketUpdateRequestV1_OrderbookSnapshotType_OrderbookSnapshotType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StreamMarketUpdateRequestV1_OrderbookSnapshotType_descriptor();
+template<typename T>
+inline const std::string& StreamMarketUpdateRequestV1_OrderbookSnapshotType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, StreamMarketUpdateRequestV1_OrderbookSnapshotType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function StreamMarketUpdateRequestV1_OrderbookSnapshotType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    StreamMarketUpdateRequestV1_OrderbookSnapshotType_descriptor(), enum_t_value);
+}
+inline bool StreamMarketUpdateRequestV1_OrderbookSnapshotType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, StreamMarketUpdateRequestV1_OrderbookSnapshotType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<StreamMarketUpdateRequestV1_OrderbookSnapshotType>(
+    StreamMarketUpdateRequestV1_OrderbookSnapshotType_descriptor(), name, value);
+}
 // ===================================================================
 
 class StreamMarketUpdateRequestV1 final :
@@ -180,12 +207,45 @@ class StreamMarketUpdateRequestV1 final :
 
   // nested types ----------------------------------------------------
 
+  typedef StreamMarketUpdateRequestV1_OrderbookSnapshotType OrderbookSnapshotType;
+  static constexpr OrderbookSnapshotType UNKNOWN =
+    StreamMarketUpdateRequestV1_OrderbookSnapshotType_UNKNOWN;
+  static constexpr OrderbookSnapshotType TEN_PERCENT =
+    StreamMarketUpdateRequestV1_OrderbookSnapshotType_TEN_PERCENT;
+  static constexpr OrderbookSnapshotType FULL =
+    StreamMarketUpdateRequestV1_OrderbookSnapshotType_FULL;
+  static inline bool OrderbookSnapshotType_IsValid(int value) {
+    return StreamMarketUpdateRequestV1_OrderbookSnapshotType_IsValid(value);
+  }
+  static constexpr OrderbookSnapshotType OrderbookSnapshotType_MIN =
+    StreamMarketUpdateRequestV1_OrderbookSnapshotType_OrderbookSnapshotType_MIN;
+  static constexpr OrderbookSnapshotType OrderbookSnapshotType_MAX =
+    StreamMarketUpdateRequestV1_OrderbookSnapshotType_OrderbookSnapshotType_MAX;
+  static constexpr int OrderbookSnapshotType_ARRAYSIZE =
+    StreamMarketUpdateRequestV1_OrderbookSnapshotType_OrderbookSnapshotType_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  OrderbookSnapshotType_descriptor() {
+    return StreamMarketUpdateRequestV1_OrderbookSnapshotType_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& OrderbookSnapshotType_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, OrderbookSnapshotType>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function OrderbookSnapshotType_Name.");
+    return StreamMarketUpdateRequestV1_OrderbookSnapshotType_Name(enum_t_value);
+  }
+  static inline bool OrderbookSnapshotType_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      OrderbookSnapshotType* value) {
+    return StreamMarketUpdateRequestV1_OrderbookSnapshotType_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
     kCommoditiesFieldNumber = 2,
     kInstrumentCriteriaFieldNumber = 1,
     kIntervalFieldNumber = 3,
+    kSnapshotTypeFieldNumber = 4,
   };
   // repeated .kaikosdk.StreamMarketUpdateCommodity commodities = 2;
   int commodities_size() const;
@@ -240,6 +300,15 @@ class StreamMarketUpdateRequestV1 final :
       ::kaikosdk::DataInterval* interval);
   ::kaikosdk::DataInterval* unsafe_arena_release_interval();
 
+  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+  void clear_snapshot_type();
+  ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType snapshot_type() const;
+  void set_snapshot_type(::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType value);
+  private:
+  ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType _internal_snapshot_type() const;
+  void _internal_set_snapshot_type(::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType value);
+  public:
+
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamMarketUpdateRequestV1)
  private:
   class _Internal;
@@ -251,6 +320,7 @@ class StreamMarketUpdateRequestV1 final :
   mutable std::atomic<int> _commodities_cached_byte_size_;
   ::kaikosdk::InstrumentCriteria* instrument_criteria_;
   ::kaikosdk::DataInterval* interval_;
+  int snapshot_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto;
 };
@@ -480,6 +550,26 @@ inline void StreamMarketUpdateRequestV1::set_allocated_interval(::kaikosdk::Data
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamMarketUpdateRequestV1.interval)
 }
 
+// .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+inline void StreamMarketUpdateRequestV1::clear_snapshot_type() {
+  snapshot_type_ = 0;
+}
+inline ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1::_internal_snapshot_type() const {
+  return static_cast< ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType >(snapshot_type_);
+}
+inline ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1::snapshot_type() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamMarketUpdateRequestV1.snapshot_type)
+  return _internal_snapshot_type();
+}
+inline void StreamMarketUpdateRequestV1::_internal_set_snapshot_type(::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType value) {
+  
+  snapshot_type_ = value;
+}
+inline void StreamMarketUpdateRequestV1::set_snapshot_type(::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType value) {
+  _internal_set_snapshot_type(value);
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamMarketUpdateRequestV1.snapshot_type)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
@@ -487,6 +577,16 @@ inline void StreamMarketUpdateRequestV1::set_allocated_interval(::kaikosdk::Data
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace kaikosdk
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType>() {
+  return ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

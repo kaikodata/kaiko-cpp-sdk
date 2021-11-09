@@ -22,7 +22,9 @@ constexpr StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(
   : commodities_()
   , _commodities_cached_byte_size_(0)
   , instrument_criteria_(nullptr)
-  , interval_(nullptr){}
+  , interval_(nullptr)
+  , snapshot_type_(0)
+{}
 struct StreamMarketUpdateRequestV1DefaultTypeInternal {
   constexpr StreamMarketUpdateRequestV1DefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -34,7 +36,7 @@ struct StreamMarketUpdateRequestV1DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StreamMarketUpdateRequestV1DefaultTypeInternal _StreamMarketUpdateRequestV1_default_instance_;
 }  // namespace kaikosdk
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -46,6 +48,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2fmarket_5fupdate
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateRequestV1, instrument_criteria_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateRequestV1, commodities_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateRequestV1, interval_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateRequestV1, snapshot_type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::kaikosdk::StreamMarketUpdateRequestV1)},
@@ -60,16 +63,19 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2freque
   "oto\022\010kaikosdk\032\034sdk/core/data_interval.pr"
   "oto\032\"sdk/core/instrument_criteria.proto\032"
   "+sdk/stream/market_update_v1/commodity.p"
-  "roto\"\276\001\n\033StreamMarketUpdateRequestV1\0229\n\023"
+  "roto\"\323\002\n\033StreamMarketUpdateRequestV1\0229\n\023"
   "instrument_criteria\030\001 \001(\0132\034.kaikosdk.Ins"
   "trumentCriteria\022:\n\013commodities\030\002 \003(\0162%.k"
   "aikosdk.StreamMarketUpdateCommodity\022(\n\010i"
-  "nterval\030\003 \001(\0132\026.kaikosdk.DataIntervalB\233\001"
-  "\n%com.kaiko.sdk.stream.market_update_v1P"
-  "\001ZOgithub.com/challengerdeep/kaiko-go-sd"
-  "k/stream/market_update_v1;market_update_"
-  "v1\252\002\036KaikoSdk.Stream.MarketUpdateV1b\006pro"
-  "to3"
+  "nterval\030\003 \001(\0132\026.kaikosdk.DataInterval\022R\n"
+  "\rsnapshot_type\030\004 \001(\0162;.kaikosdk.StreamMa"
+  "rketUpdateRequestV1.OrderbookSnapshotTyp"
+  "e\"\?\n\025OrderbookSnapshotType\022\013\n\007UNKNOWN\020\000\022"
+  "\017\n\013TEN_PERCENT\020\001\022\010\n\004FULL\020\002B\233\001\n%com.kaiko"
+  ".sdk.stream.market_update_v1P\001ZOgithub.c"
+  "om/challengerdeep/kaiko-go-sdk/stream/ma"
+  "rket_update_v1;market_update_v1\252\002\036KaikoS"
+  "dk.Stream.MarketUpdateV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps[3] = {
   &::descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto,
@@ -78,7 +84,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto = {
-  false, false, 523, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, "sdk/stream/market_update_v1/request.proto", 
+  false, false, 672, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, "sdk/stream/market_update_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps, 3, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto,
@@ -90,6 +96,29 @@ PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto(&descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto);
 namespace kaikosdk {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StreamMarketUpdateRequestV1_OrderbookSnapshotType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto);
+  return file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto[0];
+}
+bool StreamMarketUpdateRequestV1_OrderbookSnapshotType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1::UNKNOWN;
+constexpr StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1::TEN_PERCENT;
+constexpr StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1::FULL;
+constexpr StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1::OrderbookSnapshotType_MIN;
+constexpr StreamMarketUpdateRequestV1_OrderbookSnapshotType StreamMarketUpdateRequestV1::OrderbookSnapshotType_MAX;
+constexpr int StreamMarketUpdateRequestV1::OrderbookSnapshotType_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
@@ -143,14 +172,15 @@ StreamMarketUpdateRequestV1::StreamMarketUpdateRequestV1(const StreamMarketUpdat
   } else {
     interval_ = nullptr;
   }
+  snapshot_type_ = from.snapshot_type_;
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamMarketUpdateRequestV1)
 }
 
 inline void StreamMarketUpdateRequestV1::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&instrument_criteria_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&interval_) -
-    reinterpret_cast<char*>(&instrument_criteria_)) + sizeof(interval_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&snapshot_type_) -
+    reinterpret_cast<char*>(&instrument_criteria_)) + sizeof(snapshot_type_));
 }
 
 StreamMarketUpdateRequestV1::~StreamMarketUpdateRequestV1() {
@@ -191,6 +221,7 @@ void StreamMarketUpdateRequestV1::Clear() {
     delete interval_;
   }
   interval_ = nullptr;
+  snapshot_type_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -223,6 +254,14 @@ const char* StreamMarketUpdateRequestV1::_InternalParse(const char* ptr, ::PROTO
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_interval(), ptr);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_snapshot_type(static_cast<::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -279,6 +318,13 @@ failure:
         3, _Internal::interval(this), target, stream);
   }
 
+  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+  if (this->_internal_snapshot_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      4, this->_internal_snapshot_type(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -327,6 +373,12 @@ size_t StreamMarketUpdateRequestV1::ByteSizeLong() const {
         *interval_);
   }
 
+  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+  if (this->_internal_snapshot_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_snapshot_type());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -362,6 +414,9 @@ void StreamMarketUpdateRequestV1::MergeFrom(const StreamMarketUpdateRequestV1& f
   if (from._internal_has_interval()) {
     _internal_mutable_interval()->::kaikosdk::DataInterval::MergeFrom(from._internal_interval());
   }
+  if (from._internal_snapshot_type() != 0) {
+    _internal_set_snapshot_type(from._internal_snapshot_type());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -381,8 +436,8 @@ void StreamMarketUpdateRequestV1::InternalSwap(StreamMarketUpdateRequestV1* othe
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   commodities_.InternalSwap(&other->commodities_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(StreamMarketUpdateRequestV1, interval_)
-      + sizeof(StreamMarketUpdateRequestV1::interval_)
+      PROTOBUF_FIELD_OFFSET(StreamMarketUpdateRequestV1, snapshot_type_)
+      + sizeof(StreamMarketUpdateRequestV1::snapshot_type_)
       - PROTOBUF_FIELD_OFFSET(StreamMarketUpdateRequestV1, instrument_criteria_)>(
           reinterpret_cast<char*>(&instrument_criteria_),
           reinterpret_cast<char*>(&other->instrument_criteria_));
