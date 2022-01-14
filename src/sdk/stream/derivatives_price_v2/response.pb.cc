@@ -51,12 +51,13 @@ static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fstream_2fderi
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamDerivativesPriceResponseV2_ValuesEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamDerivativesPriceResponseV2_ValuesEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamDerivativesPriceResponseV2_ValuesEntry_DoNotUse, key_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamDerivativesPriceResponseV2_ValuesEntry_DoNotUse, value_),
   0,
@@ -66,6 +67,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2fderivatives_5fp
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamDerivativesPriceResponseV2, class__),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamDerivativesPriceResponseV2, code_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamDerivativesPriceResponseV2, exchange_),
@@ -75,8 +77,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2fderivatives_5fp
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamDerivativesPriceResponseV2, ts_event_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 7, sizeof(::kaikosdk::StreamDerivativesPriceResponseV2_ValuesEntry_DoNotUse)},
-  { 9, -1, sizeof(::kaikosdk::StreamDerivativesPriceResponseV2)},
+  { 0, 8, -1, sizeof(::kaikosdk::StreamDerivativesPriceResponseV2_ValuesEntry_DoNotUse)},
+  { 10, -1, -1, sizeof(::kaikosdk::StreamDerivativesPriceResponseV2)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -142,7 +144,7 @@ class StreamDerivativesPriceResponseV2::_Internal {
  public:
   static const ::kaikosdk::TimestampValue& ts_exchange(const StreamDerivativesPriceResponseV2* msg);
   static const ::kaikosdk::TimestampValue& ts_collection(const StreamDerivativesPriceResponseV2* msg);
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& ts_event(const StreamDerivativesPriceResponseV2* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& ts_event(const StreamDerivativesPriceResponseV2* msg);
 };
 
 const ::kaikosdk::TimestampValue&
@@ -153,7 +155,7 @@ const ::kaikosdk::TimestampValue&
 StreamDerivativesPriceResponseV2::_Internal::ts_collection(const StreamDerivativesPriceResponseV2* msg) {
   return *msg->ts_collection_;
 }
-const PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 StreamDerivativesPriceResponseV2::_Internal::ts_event(const StreamDerivativesPriceResponseV2* msg) {
   return *msg->ts_event_;
 }
@@ -190,16 +192,25 @@ StreamDerivativesPriceResponseV2::StreamDerivativesPriceResponseV2(const StreamD
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   values_.MergeFrom(from.values_);
   class__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    class__.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_class_().empty()) {
     class__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_class_(), 
       GetArenaForAllocation());
   }
   code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_code().empty()) {
     code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_code(), 
       GetArenaForAllocation());
   }
   exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    exchange_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_exchange().empty()) {
     exchange_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_exchange(), 
       GetArenaForAllocation());
@@ -215,7 +226,7 @@ StreamDerivativesPriceResponseV2::StreamDerivativesPriceResponseV2(const StreamD
     ts_collection_ = nullptr;
   }
   if (from._internal_has_ts_event()) {
-    ts_event_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.ts_event_);
+    ts_event_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.ts_event_);
   } else {
     ts_event_ = nullptr;
   }
@@ -224,8 +235,17 @@ StreamDerivativesPriceResponseV2::StreamDerivativesPriceResponseV2(const StreamD
 
 inline void StreamDerivativesPriceResponseV2::SharedCtor() {
 class__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  class__.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  exchange_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&ts_exchange_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&ts_event_) -
@@ -265,7 +285,7 @@ void StreamDerivativesPriceResponseV2::SetCachedSize(int size) const {
 
 void StreamDerivativesPriceResponseV2::Clear() {
 // @@protoc_insertion_point(message_clear_start:kaikosdk.StreamDerivativesPriceResponseV2)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -291,39 +311,42 @@ void StreamDerivativesPriceResponseV2::Clear() {
 const char* StreamDerivativesPriceResponseV2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string class = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_class_();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamDerivativesPriceResponseV2.class"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string code = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamDerivativesPriceResponseV2.code"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string exchange = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_exchange();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamDerivativesPriceResponseV2.exchange"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // map<string, string> values = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -331,56 +354,60 @@ const char* StreamDerivativesPriceResponseV2::_InternalParse(const char* ptr, ::
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .kaikosdk.TimestampValue ts_exchange = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_ts_exchange(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .kaikosdk.TimestampValue ts_collection = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_ts_collection(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp ts_event = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_ts_event(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* StreamDerivativesPriceResponseV2::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* StreamDerivativesPriceResponseV2::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kaikosdk.StreamDerivativesPriceResponseV2)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string class = 1;
@@ -495,7 +522,7 @@ size_t StreamDerivativesPriceResponseV2::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kaikosdk.StreamDerivativesPriceResponseV2)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -550,13 +577,7 @@ size_t StreamDerivativesPriceResponseV2::ByteSizeLong() const {
         *ts_event_);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamDerivativesPriceResponseV2::_class_data_ = {
@@ -565,8 +586,8 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamDerivativesPriceResponse
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamDerivativesPriceResponseV2::GetClassData() const { return &_class_data_; }
 
-void StreamDerivativesPriceResponseV2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+void StreamDerivativesPriceResponseV2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
   static_cast<StreamDerivativesPriceResponseV2 *>(to)->MergeFrom(
       static_cast<const StreamDerivativesPriceResponseV2 &>(from));
 }
@@ -575,7 +596,7 @@ void StreamDerivativesPriceResponseV2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Messag
 void StreamDerivativesPriceResponseV2::MergeFrom(const StreamDerivativesPriceResponseV2& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamDerivativesPriceResponseV2)
   GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   values_.MergeFrom(from.values_);
@@ -595,7 +616,7 @@ void StreamDerivativesPriceResponseV2::MergeFrom(const StreamDerivativesPriceRes
     _internal_mutable_ts_collection()->::kaikosdk::TimestampValue::MergeFrom(from._internal_ts_collection());
   }
   if (from._internal_has_ts_event()) {
-    _internal_mutable_ts_event()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_ts_event());
+    _internal_mutable_ts_event()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_ts_event());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -613,22 +634,24 @@ bool StreamDerivativesPriceResponseV2::IsInitialized() const {
 
 void StreamDerivativesPriceResponseV2::InternalSwap(StreamDerivativesPriceResponseV2* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   values_.InternalSwap(&other->values_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &class__, GetArenaForAllocation(),
-      &other->class__, other->GetArenaForAllocation()
+      &class__, lhs_arena,
+      &other->class__, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &code_, GetArenaForAllocation(),
-      &other->code_, other->GetArenaForAllocation()
+      &code_, lhs_arena,
+      &other->code_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &exchange_, GetArenaForAllocation(),
-      &other->exchange_, other->GetArenaForAllocation()
+      &exchange_, lhs_arena,
+      &other->exchange_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(StreamDerivativesPriceResponseV2, ts_event_)

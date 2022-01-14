@@ -13,9 +13,9 @@ class Pkg(ConanFile):
     settings = "os", "compiler", "arch", "build_type"
 
     # run "conan info . --graph deps.html" to see dependency graph
-    requires = [("grpc/1.41.1")]
-    # grpc package depends internally on protobuf/3.17.3
-    build_requires = ("cmake/3.21.3")
+    requires = [("grpc/1.43.0"), ("protobuf/3.19.2")]
+    # grpc package depends internally on at least protobuf/3.17.3
+    build_requires = ("cmake/3.22.0")
 
     # default grpc package options
     # default_options = {

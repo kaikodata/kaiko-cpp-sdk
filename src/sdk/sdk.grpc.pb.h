@@ -55,7 +55,7 @@ class StreamAggregatesOHLCVServiceV1 final {
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
-  private:
+   private:
     virtual ::grpc::ClientReaderInterface< ::kaikosdk::StreamAggregatesOHLCVResponseV1>* SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesOHLCVRequestV1& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamAggregatesOHLCVResponseV1>* AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesOHLCVRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamAggregatesOHLCVResponseV1>* PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesOHLCVRequestV1& request, ::grpc::CompletionQueue* cq) = 0;
@@ -265,7 +265,7 @@ class StreamAggregatesSpotExchangeRateServiceV1 final {
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
-  private:
+   private:
     virtual ::grpc::ClientReaderInterface< ::kaikosdk::StreamAggregatesSpotExchangeRateResponseV1>* SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesSpotExchangeRateRequestV1& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamAggregatesSpotExchangeRateResponseV1>* AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesSpotExchangeRateRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamAggregatesSpotExchangeRateResponseV1>* PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesSpotExchangeRateRequestV1& request, ::grpc::CompletionQueue* cq) = 0;
@@ -475,7 +475,7 @@ class StreamAggregatesDirectExchangeRateServiceV1 final {
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
-  private:
+   private:
     virtual ::grpc::ClientReaderInterface< ::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1>* SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesDirectExchangeRateRequestV1& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1>* AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesDirectExchangeRateRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1>* PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesDirectExchangeRateRequestV1& request, ::grpc::CompletionQueue* cq) = 0;
@@ -685,7 +685,7 @@ class StreamTradesServiceV1 final {
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
-  private:
+   private:
     virtual ::grpc::ClientReaderInterface< ::kaikosdk::StreamTradesResponseV1>* SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamTradesRequestV1& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamTradesResponseV1>* AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamTradesRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamTradesResponseV1>* PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamTradesRequestV1& request, ::grpc::CompletionQueue* cq) = 0;
@@ -895,7 +895,7 @@ class StreamAggregatesVWAPServiceV1 final {
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
-  private:
+   private:
     virtual ::grpc::ClientReaderInterface< ::kaikosdk::StreamAggregatesVWAPResponseV1>* SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesVWAPRequestV1& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamAggregatesVWAPResponseV1>* AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesVWAPRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamAggregatesVWAPResponseV1>* PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatesVWAPRequestV1& request, ::grpc::CompletionQueue* cq) = 0;
@@ -1105,7 +1105,7 @@ class StreamDerivativesPriceServiceV2 final {
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
-  private:
+   private:
     virtual ::grpc::ClientReaderInterface< ::kaikosdk::StreamDerivativesPriceResponseV2>* SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamDerivativesPriceRequestV2& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamDerivativesPriceResponseV2>* AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamDerivativesPriceRequestV2& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamDerivativesPriceResponseV2>* PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamDerivativesPriceRequestV2& request, ::grpc::CompletionQueue* cq) = 0;
@@ -1315,7 +1315,7 @@ class StreamIndexServiceV1 final {
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
-  private:
+   private:
     virtual ::grpc::ClientReaderInterface< ::kaikosdk::StreamIndexServiceResponseV1>* SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexServiceRequestV1& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamIndexServiceResponseV1>* AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexServiceRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamIndexServiceResponseV1>* PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexServiceRequestV1& request, ::grpc::CompletionQueue* cq) = 0;
@@ -1525,7 +1525,7 @@ class StreamMarketUpdateServiceV1 final {
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
-  private:
+   private:
     virtual ::grpc::ClientReaderInterface< ::kaikosdk::StreamMarketUpdateResponseV1>* SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamMarketUpdateRequestV1& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamMarketUpdateResponseV1>* AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamMarketUpdateRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::kaikosdk::StreamMarketUpdateResponseV1>* PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamMarketUpdateRequestV1& request, ::grpc::CompletionQueue* cq) = 0;

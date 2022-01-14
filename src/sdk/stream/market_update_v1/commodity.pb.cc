@@ -20,7 +20,7 @@ namespace kaikosdk {
 }  // namespace kaikosdk
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto = nullptr;
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto::offsets[1] = {};
+const uint32_t TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto::offsets[1] = {};
 static constexpr ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema* schemas = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances = nullptr;
 

@@ -35,17 +35,18 @@ static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fcore_2fdata_5
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fcore_2fdata_5finterval_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fcore_2fdata_5finterval_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_sdk_2fcore_2fdata_5finterval_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_sdk_2fcore_2fdata_5finterval_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::DataInterval, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::DataInterval, start_time_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::DataInterval, end_time_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::kaikosdk::DataInterval)},
+  { 0, -1, -1, sizeof(::kaikosdk::DataInterval)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -84,15 +85,15 @@ namespace kaikosdk {
 
 class DataInterval::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& start_time(const DataInterval* msg);
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& end_time(const DataInterval* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& start_time(const DataInterval* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& end_time(const DataInterval* msg);
 };
 
-const PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 DataInterval::_Internal::start_time(const DataInterval* msg) {
   return *msg->start_time_;
 }
-const PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 DataInterval::_Internal::end_time(const DataInterval* msg) {
   return *msg->end_time_;
 }
@@ -121,12 +122,12 @@ DataInterval::DataInterval(const DataInterval& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_start_time()) {
-    start_time_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.start_time_);
+    start_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.start_time_);
   } else {
     start_time_ = nullptr;
   }
   if (from._internal_has_end_time()) {
-    end_time_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.end_time_);
+    end_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.end_time_);
   } else {
     end_time_ = nullptr;
   }
@@ -165,7 +166,7 @@ void DataInterval::SetCachedSize(int size) const {
 
 void DataInterval::Clear() {
 // @@protoc_insertion_point(message_clear_start:kaikosdk.DataInterval)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -183,50 +184,52 @@ void DataInterval::Clear() {
 const char* DataInterval::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .google.protobuf.Timestamp start_time = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_start_time(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp end_time = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_end_time(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DataInterval::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DataInterval::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kaikosdk.DataInterval)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .google.protobuf.Timestamp start_time = 1;
@@ -257,7 +260,7 @@ size_t DataInterval::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kaikosdk.DataInterval)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -275,13 +278,7 @@ size_t DataInterval::ByteSizeLong() const {
         *end_time_);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DataInterval::_class_data_ = {
@@ -290,8 +287,8 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DataInterval::_class_data_ = {
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DataInterval::GetClassData() const { return &_class_data_; }
 
-void DataInterval::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+void DataInterval::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
   static_cast<DataInterval *>(to)->MergeFrom(
       static_cast<const DataInterval &>(from));
 }
@@ -300,14 +297,14 @@ void DataInterval::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
 void DataInterval::MergeFrom(const DataInterval& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.DataInterval)
   GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_start_time()) {
-    _internal_mutable_start_time()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_start_time());
+    _internal_mutable_start_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_start_time());
   }
   if (from._internal_has_end_time()) {
-    _internal_mutable_end_time()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_end_time());
+    _internal_mutable_end_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_end_time());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
