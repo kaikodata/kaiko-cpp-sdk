@@ -29,6 +29,8 @@
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include "sdk/stream/aggregated_price_v1/request.pb.h"
+#include "sdk/stream/aggregated_price_v1/response.pb.h"
 #include "sdk/stream/aggregates_ohlcv_v1/request.pb.h"
 #include "sdk/stream/aggregates_ohlcv_v1/response.pb.h"
 #include "sdk/stream/aggregates_vwap_v1/request.pb.h"
