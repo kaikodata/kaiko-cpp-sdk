@@ -48,7 +48,7 @@ struct TableStruct_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,9 +59,13 @@ namespace kaikosdk {
 class StreamAggregatedPriceResponseV1;
 struct StreamAggregatedPriceResponseV1DefaultTypeInternal;
 extern StreamAggregatedPriceResponseV1DefaultTypeInternal _StreamAggregatedPriceResponseV1_default_instance_;
+class StreamAggregatedPriceValue;
+struct StreamAggregatedPriceValueDefaultTypeInternal;
+extern StreamAggregatedPriceValueDefaultTypeInternal _StreamAggregatedPriceValue_default_instance_;
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
 template<> ::kaikosdk::StreamAggregatedPriceResponseV1* Arena::CreateMaybeMessage<::kaikosdk::StreamAggregatedPriceResponseV1>(Arena*);
+template<> ::kaikosdk::StreamAggregatedPriceValue* Arena::CreateMaybeMessage<::kaikosdk::StreamAggregatedPriceValue>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace kaikosdk {
 
@@ -92,6 +96,173 @@ inline bool StreamAggregatedPriceResponseV1_EventType_Parse(
     StreamAggregatedPriceResponseV1_EventType_descriptor(), name, value);
 }
 // ===================================================================
+
+class StreamAggregatedPriceValue final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.StreamAggregatedPriceValue) */ {
+ public:
+  inline StreamAggregatedPriceValue() : StreamAggregatedPriceValue(nullptr) {}
+  ~StreamAggregatedPriceValue() override;
+  explicit constexpr StreamAggregatedPriceValue(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StreamAggregatedPriceValue(const StreamAggregatedPriceValue& from);
+  StreamAggregatedPriceValue(StreamAggregatedPriceValue&& from) noexcept
+    : StreamAggregatedPriceValue() {
+    *this = ::std::move(from);
+  }
+
+  inline StreamAggregatedPriceValue& operator=(const StreamAggregatedPriceValue& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StreamAggregatedPriceValue& operator=(StreamAggregatedPriceValue&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StreamAggregatedPriceValue& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StreamAggregatedPriceValue* internal_default_instance() {
+    return reinterpret_cast<const StreamAggregatedPriceValue*>(
+               &_StreamAggregatedPriceValue_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(StreamAggregatedPriceValue& a, StreamAggregatedPriceValue& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StreamAggregatedPriceValue* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StreamAggregatedPriceValue* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StreamAggregatedPriceValue* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StreamAggregatedPriceValue>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StreamAggregatedPriceValue& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const StreamAggregatedPriceValue& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StreamAggregatedPriceValue* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "kaikosdk.StreamAggregatedPriceValue";
+  }
+  protected:
+  explicit StreamAggregatedPriceValue(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPriceFieldNumber = 1,
+    kVolumeFieldNumber = 2,
+  };
+  // string price = 1;
+  void clear_price();
+  const std::string& price() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_price(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price();
+  PROTOBUF_NODISCARD std::string* release_price();
+  void set_allocated_price(std::string* price);
+  private:
+  const std::string& _internal_price() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price(const std::string& value);
+  std::string* _internal_mutable_price();
+  public:
+
+  // string volume = 2;
+  void clear_volume();
+  const std::string& volume() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_volume(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_volume();
+  PROTOBUF_NODISCARD std::string* release_volume();
+  void set_allocated_volume(std::string* volume);
+  private:
+  const std::string& _internal_volume() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_volume(const std::string& value);
+  std::string* _internal_mutable_volume();
+  public:
+
+  // @@protoc_insertion_point(class_scope:kaikosdk.StreamAggregatedPriceValue)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr volume_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto;
+};
+// -------------------------------------------------------------------
 
 class StreamAggregatedPriceResponseV1 final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.StreamAggregatedPriceResponseV1) */ {
@@ -141,7 +312,7 @@ class StreamAggregatedPriceResponseV1 final :
                &_StreamAggregatedPriceResponseV1_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(StreamAggregatedPriceResponseV1& a, StreamAggregatedPriceResponseV1& b) {
     a.Swap(&b);
@@ -250,12 +421,9 @@ class StreamAggregatedPriceResponseV1 final :
     kAggregateFieldNumber = 1,
     kInstrumentClassFieldNumber = 2,
     kCodeFieldNumber = 3,
-    kPriceFieldNumber = 4,
-    kVolumeFieldNumber = 5,
-    kSequenceIdFieldNumber = 7,
-    kUidFieldNumber = 9,
-    kTsEventFieldNumber = 8,
-    kEventTypeFieldNumber = 6,
+    kValueFieldNumber = 4,
+    kTsEventFieldNumber = 6,
+    kEventTypeFieldNumber = 5,
   };
   // string aggregate = 1;
   void clear_aggregate();
@@ -299,63 +467,25 @@ class StreamAggregatedPriceResponseV1 final :
   std::string* _internal_mutable_code();
   public:
 
-  // string price = 4;
-  void clear_price();
-  const std::string& price() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_price(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_price();
-  PROTOBUF_NODISCARD std::string* release_price();
-  void set_allocated_price(std::string* price);
+  // .kaikosdk.StreamAggregatedPriceValue value = 4;
+  bool has_value() const;
   private:
-  const std::string& _internal_price() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price(const std::string& value);
-  std::string* _internal_mutable_price();
+  bool _internal_has_value() const;
   public:
-
-  // string volume = 5;
-  void clear_volume();
-  const std::string& volume() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_volume(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_volume();
-  PROTOBUF_NODISCARD std::string* release_volume();
-  void set_allocated_volume(std::string* volume);
+  void clear_value();
+  const ::kaikosdk::StreamAggregatedPriceValue& value() const;
+  PROTOBUF_NODISCARD ::kaikosdk::StreamAggregatedPriceValue* release_value();
+  ::kaikosdk::StreamAggregatedPriceValue* mutable_value();
+  void set_allocated_value(::kaikosdk::StreamAggregatedPriceValue* value);
   private:
-  const std::string& _internal_volume() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_volume(const std::string& value);
-  std::string* _internal_mutable_volume();
+  const ::kaikosdk::StreamAggregatedPriceValue& _internal_value() const;
+  ::kaikosdk::StreamAggregatedPriceValue* _internal_mutable_value();
   public:
+  void unsafe_arena_set_allocated_value(
+      ::kaikosdk::StreamAggregatedPriceValue* value);
+  ::kaikosdk::StreamAggregatedPriceValue* unsafe_arena_release_value();
 
-  // string sequence_id = 7;
-  void clear_sequence_id();
-  const std::string& sequence_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_sequence_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_sequence_id();
-  PROTOBUF_NODISCARD std::string* release_sequence_id();
-  void set_allocated_sequence_id(std::string* sequence_id);
-  private:
-  const std::string& _internal_sequence_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sequence_id(const std::string& value);
-  std::string* _internal_mutable_sequence_id();
-  public:
-
-  // string uid = 9;
-  void clear_uid();
-  const std::string& uid() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uid();
-  PROTOBUF_NODISCARD std::string* release_uid();
-  void set_allocated_uid(std::string* uid);
-  private:
-  const std::string& _internal_uid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uid(const std::string& value);
-  std::string* _internal_mutable_uid();
-  public:
-
-  // .google.protobuf.Timestamp ts_event = 8;
+  // .google.protobuf.Timestamp ts_event = 6;
   bool has_ts_event() const;
   private:
   bool _internal_has_ts_event() const;
@@ -373,7 +503,7 @@ class StreamAggregatedPriceResponseV1 final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_ts_event();
 
-  // .kaikosdk.StreamAggregatedPriceResponseV1.EventType event_type = 6;
+  // .kaikosdk.StreamAggregatedPriceResponseV1.EventType event_type = 5;
   void clear_event_type();
   ::kaikosdk::StreamAggregatedPriceResponseV1_EventType event_type() const;
   void set_event_type(::kaikosdk::StreamAggregatedPriceResponseV1_EventType value);
@@ -392,10 +522,7 @@ class StreamAggregatedPriceResponseV1 final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr aggregate_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instrument_class_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr code_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr volume_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sequence_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uid_;
+  ::kaikosdk::StreamAggregatedPriceValue* value_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
   int event_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -410,6 +537,112 @@ class StreamAggregatedPriceResponseV1 final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// StreamAggregatedPriceValue
+
+// string price = 1;
+inline void StreamAggregatedPriceValue::clear_price() {
+  price_.ClearToEmpty();
+}
+inline const std::string& StreamAggregatedPriceValue::price() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedPriceValue.price)
+  return _internal_price();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamAggregatedPriceValue::set_price(ArgT0&& arg0, ArgT... args) {
+ 
+ price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedPriceValue.price)
+}
+inline std::string* StreamAggregatedPriceValue::mutable_price() {
+  std::string* _s = _internal_mutable_price();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedPriceValue.price)
+  return _s;
+}
+inline const std::string& StreamAggregatedPriceValue::_internal_price() const {
+  return price_.Get();
+}
+inline void StreamAggregatedPriceValue::_internal_set_price(const std::string& value) {
+  
+  price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* StreamAggregatedPriceValue::_internal_mutable_price() {
+  
+  return price_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* StreamAggregatedPriceValue::release_price() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedPriceValue.price)
+  return price_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void StreamAggregatedPriceValue::set_allocated_price(std::string* price) {
+  if (price != nullptr) {
+    
+  } else {
+    
+  }
+  price_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (price_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    price_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceValue.price)
+}
+
+// string volume = 2;
+inline void StreamAggregatedPriceValue::clear_volume() {
+  volume_.ClearToEmpty();
+}
+inline const std::string& StreamAggregatedPriceValue::volume() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedPriceValue.volume)
+  return _internal_volume();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamAggregatedPriceValue::set_volume(ArgT0&& arg0, ArgT... args) {
+ 
+ volume_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedPriceValue.volume)
+}
+inline std::string* StreamAggregatedPriceValue::mutable_volume() {
+  std::string* _s = _internal_mutable_volume();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedPriceValue.volume)
+  return _s;
+}
+inline const std::string& StreamAggregatedPriceValue::_internal_volume() const {
+  return volume_.Get();
+}
+inline void StreamAggregatedPriceValue::_internal_set_volume(const std::string& value) {
+  
+  volume_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* StreamAggregatedPriceValue::_internal_mutable_volume() {
+  
+  return volume_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* StreamAggregatedPriceValue::release_volume() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedPriceValue.volume)
+  return volume_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void StreamAggregatedPriceValue::set_allocated_volume(std::string* volume) {
+  if (volume != nullptr) {
+    
+  } else {
+    
+  }
+  volume_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), volume,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (volume_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    volume_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceValue.volume)
+}
+
+// -------------------------------------------------------------------
+
 // StreamAggregatedPriceResponseV1
 
 // string aggregate = 1;
@@ -565,109 +798,97 @@ inline void StreamAggregatedPriceResponseV1::set_allocated_code(std::string* cod
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceResponseV1.code)
 }
 
-// string price = 4;
-inline void StreamAggregatedPriceResponseV1::clear_price() {
-  price_.ClearToEmpty();
+// .kaikosdk.StreamAggregatedPriceValue value = 4;
+inline bool StreamAggregatedPriceResponseV1::_internal_has_value() const {
+  return this != internal_default_instance() && value_ != nullptr;
 }
-inline const std::string& StreamAggregatedPriceResponseV1::price() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedPriceResponseV1.price)
-  return _internal_price();
+inline bool StreamAggregatedPriceResponseV1::has_value() const {
+  return _internal_has_value();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void StreamAggregatedPriceResponseV1::set_price(ArgT0&& arg0, ArgT... args) {
- 
- price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedPriceResponseV1.price)
+inline void StreamAggregatedPriceResponseV1::clear_value() {
+  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
+    delete value_;
+  }
+  value_ = nullptr;
 }
-inline std::string* StreamAggregatedPriceResponseV1::mutable_price() {
-  std::string* _s = _internal_mutable_price();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedPriceResponseV1.price)
-  return _s;
+inline const ::kaikosdk::StreamAggregatedPriceValue& StreamAggregatedPriceResponseV1::_internal_value() const {
+  const ::kaikosdk::StreamAggregatedPriceValue* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::StreamAggregatedPriceValue&>(
+      ::kaikosdk::_StreamAggregatedPriceValue_default_instance_);
 }
-inline const std::string& StreamAggregatedPriceResponseV1::_internal_price() const {
-  return price_.Get();
+inline const ::kaikosdk::StreamAggregatedPriceValue& StreamAggregatedPriceResponseV1::value() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedPriceResponseV1.value)
+  return _internal_value();
 }
-inline void StreamAggregatedPriceResponseV1::_internal_set_price(const std::string& value) {
-  
-  price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* StreamAggregatedPriceResponseV1::_internal_mutable_price() {
-  
-  return price_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* StreamAggregatedPriceResponseV1::release_price() {
-  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedPriceResponseV1.price)
-  return price_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void StreamAggregatedPriceResponseV1::set_allocated_price(std::string* price) {
-  if (price != nullptr) {
+inline void StreamAggregatedPriceResponseV1::unsafe_arena_set_allocated_value(
+    ::kaikosdk::StreamAggregatedPriceValue* value) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
+  }
+  value_ = value;
+  if (value) {
     
   } else {
     
   }
-  price_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (price_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    price_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamAggregatedPriceResponseV1.value)
+}
+inline ::kaikosdk::StreamAggregatedPriceValue* StreamAggregatedPriceResponseV1::release_value() {
+  
+  ::kaikosdk::StreamAggregatedPriceValue* temp = value_;
+  value_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceResponseV1.price)
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-
-// string volume = 5;
-inline void StreamAggregatedPriceResponseV1::clear_volume() {
-  volume_.ClearToEmpty();
-}
-inline const std::string& StreamAggregatedPriceResponseV1::volume() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedPriceResponseV1.volume)
-  return _internal_volume();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void StreamAggregatedPriceResponseV1::set_volume(ArgT0&& arg0, ArgT... args) {
- 
- volume_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedPriceResponseV1.volume)
-}
-inline std::string* StreamAggregatedPriceResponseV1::mutable_volume() {
-  std::string* _s = _internal_mutable_volume();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedPriceResponseV1.volume)
-  return _s;
-}
-inline const std::string& StreamAggregatedPriceResponseV1::_internal_volume() const {
-  return volume_.Get();
-}
-inline void StreamAggregatedPriceResponseV1::_internal_set_volume(const std::string& value) {
+inline ::kaikosdk::StreamAggregatedPriceValue* StreamAggregatedPriceResponseV1::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedPriceResponseV1.value)
   
-  volume_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  ::kaikosdk::StreamAggregatedPriceValue* temp = value_;
+  value_ = nullptr;
+  return temp;
 }
-inline std::string* StreamAggregatedPriceResponseV1::_internal_mutable_volume() {
+inline ::kaikosdk::StreamAggregatedPriceValue* StreamAggregatedPriceResponseV1::_internal_mutable_value() {
   
-  return volume_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  if (value_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::StreamAggregatedPriceValue>(GetArenaForAllocation());
+    value_ = p;
+  }
+  return value_;
 }
-inline std::string* StreamAggregatedPriceResponseV1::release_volume() {
-  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedPriceResponseV1.volume)
-  return volume_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline ::kaikosdk::StreamAggregatedPriceValue* StreamAggregatedPriceResponseV1::mutable_value() {
+  ::kaikosdk::StreamAggregatedPriceValue* _msg = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedPriceResponseV1.value)
+  return _msg;
 }
-inline void StreamAggregatedPriceResponseV1::set_allocated_volume(std::string* volume) {
-  if (volume != nullptr) {
+inline void StreamAggregatedPriceResponseV1::set_allocated_value(::kaikosdk::StreamAggregatedPriceValue* value) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete value_;
+  }
+  if (value) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::kaikosdk::StreamAggregatedPriceValue>::GetOwningArena(value);
+    if (message_arena != submessage_arena) {
+      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, value, submessage_arena);
+    }
     
   } else {
     
   }
-  volume_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), volume,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (volume_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    volume_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceResponseV1.volume)
+  value_ = value;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceResponseV1.value)
 }
 
-// .kaikosdk.StreamAggregatedPriceResponseV1.EventType event_type = 6;
+// .kaikosdk.StreamAggregatedPriceResponseV1.EventType event_type = 5;
 inline void StreamAggregatedPriceResponseV1::clear_event_type() {
   event_type_ = 0;
 }
@@ -687,58 +908,7 @@ inline void StreamAggregatedPriceResponseV1::set_event_type(::kaikosdk::StreamAg
   // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedPriceResponseV1.event_type)
 }
 
-// string sequence_id = 7;
-inline void StreamAggregatedPriceResponseV1::clear_sequence_id() {
-  sequence_id_.ClearToEmpty();
-}
-inline const std::string& StreamAggregatedPriceResponseV1::sequence_id() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedPriceResponseV1.sequence_id)
-  return _internal_sequence_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void StreamAggregatedPriceResponseV1::set_sequence_id(ArgT0&& arg0, ArgT... args) {
- 
- sequence_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedPriceResponseV1.sequence_id)
-}
-inline std::string* StreamAggregatedPriceResponseV1::mutable_sequence_id() {
-  std::string* _s = _internal_mutable_sequence_id();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedPriceResponseV1.sequence_id)
-  return _s;
-}
-inline const std::string& StreamAggregatedPriceResponseV1::_internal_sequence_id() const {
-  return sequence_id_.Get();
-}
-inline void StreamAggregatedPriceResponseV1::_internal_set_sequence_id(const std::string& value) {
-  
-  sequence_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* StreamAggregatedPriceResponseV1::_internal_mutable_sequence_id() {
-  
-  return sequence_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* StreamAggregatedPriceResponseV1::release_sequence_id() {
-  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedPriceResponseV1.sequence_id)
-  return sequence_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void StreamAggregatedPriceResponseV1::set_allocated_sequence_id(std::string* sequence_id) {
-  if (sequence_id != nullptr) {
-    
-  } else {
-    
-  }
-  sequence_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sequence_id,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (sequence_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    sequence_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceResponseV1.sequence_id)
-}
-
-// .google.protobuf.Timestamp ts_event = 8;
+// .google.protobuf.Timestamp ts_event = 6;
 inline bool StreamAggregatedPriceResponseV1::_internal_has_ts_event() const {
   return this != internal_default_instance() && ts_event_ != nullptr;
 }
@@ -824,60 +994,11 @@ inline void StreamAggregatedPriceResponseV1::set_allocated_ts_event(::PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceResponseV1.ts_event)
 }
 
-// string uid = 9;
-inline void StreamAggregatedPriceResponseV1::clear_uid() {
-  uid_.ClearToEmpty();
-}
-inline const std::string& StreamAggregatedPriceResponseV1::uid() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedPriceResponseV1.uid)
-  return _internal_uid();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void StreamAggregatedPriceResponseV1::set_uid(ArgT0&& arg0, ArgT... args) {
- 
- uid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedPriceResponseV1.uid)
-}
-inline std::string* StreamAggregatedPriceResponseV1::mutable_uid() {
-  std::string* _s = _internal_mutable_uid();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedPriceResponseV1.uid)
-  return _s;
-}
-inline const std::string& StreamAggregatedPriceResponseV1::_internal_uid() const {
-  return uid_.Get();
-}
-inline void StreamAggregatedPriceResponseV1::_internal_set_uid(const std::string& value) {
-  
-  uid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* StreamAggregatedPriceResponseV1::_internal_mutable_uid() {
-  
-  return uid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* StreamAggregatedPriceResponseV1::release_uid() {
-  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedPriceResponseV1.uid)
-  return uid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void StreamAggregatedPriceResponseV1::set_allocated_uid(std::string* uid) {
-  if (uid != nullptr) {
-    
-  } else {
-    
-  }
-  uid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uid,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (uid_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    uid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceResponseV1.uid)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
