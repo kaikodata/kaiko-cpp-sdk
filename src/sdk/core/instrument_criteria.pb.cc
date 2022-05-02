@@ -59,13 +59,13 @@ const char descriptor_table_protodef_sdk_2fcore_2finstrument_5fcriteria_2eproto[
   "\n\"sdk/core/instrument_criteria.proto\022\010ka"
   "ikosdk\"N\n\022InstrumentCriteria\022\020\n\010exchange"
   "\030\001 \001(\t\022\030\n\020instrument_class\030\002 \001(\t\022\014\n\004code"
-  "\030\003 \001(\tBX\n\022com.kaiko.sdk.coreP\001Z0github.c"
-  "om/challengerdeep/kaiko-go-sdk/core;core"
-  "\252\002\rKaikoSdk.Coreb\006proto3"
+  "\030\003 \001(\tBS\n\022com.kaiko.sdk.coreP\001Z+github.c"
+  "om/kaikodata/kaiko-go-sdk/core;core\252\002\rKa"
+  "ikoSdk.Coreb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto = {
-  false, false, 224, descriptor_table_protodef_sdk_2fcore_2finstrument_5fcriteria_2eproto, "sdk/core/instrument_criteria.proto", 
+  false, false, 219, descriptor_table_protodef_sdk_2fcore_2finstrument_5fcriteria_2eproto, "sdk/core/instrument_criteria.proto", 
   &descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_sdk_2fcore_2finstrument_5fcriteria_2eproto::offsets,
   file_level_metadata_sdk_2fcore_2finstrument_5fcriteria_2eproto, file_level_enum_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto, file_level_service_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto,

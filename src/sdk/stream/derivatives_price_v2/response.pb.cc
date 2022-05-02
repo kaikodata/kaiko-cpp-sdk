@@ -98,12 +98,11 @@ const char descriptor_table_protodef_sdk_2fstream_2fderivatives_5fprice_5fv2_2fr
   "/\n\rts_collection\030\006 \001(\0132\030.kaikosdk.Timest"
   "ampValue\022,\n\010ts_event\030\007 \001(\0132\032.google.prot"
   "obuf.Timestamp\032-\n\013ValuesEntry\022\013\n\003key\030\001 \001"
-  "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\253\001\n)com.kaiko.sdk."
-  "stream.derivatives_price_v2P\001ZWgithub.co"
-  "m/challengerdeep/kaiko-go-sdk/stream/der"
-  "ivatives_price_v2;derivatives_price_v2\252\002"
-  "\"KaikoSdk.Stream.DerivativesPriceV2b\006pro"
-  "to3"
+  "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\246\001\n)com.kaiko.sdk."
+  "stream.derivatives_price_v2P\001ZRgithub.co"
+  "m/kaikodata/kaiko-go-sdk/stream/derivati"
+  "ves_price_v2;derivatives_price_v2\252\002\"Kaik"
+  "oSdk.Stream.DerivativesPriceV2b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -111,7 +110,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto = {
-  false, false, 643, descriptor_table_protodef_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto, "sdk/stream/derivatives_price_v2/response.proto", 
+  false, false, 638, descriptor_table_protodef_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto, "sdk/stream/derivatives_price_v2/response.proto", 
   &descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2fderivatives_5fprice_5fv2_2fresponse_2eproto,

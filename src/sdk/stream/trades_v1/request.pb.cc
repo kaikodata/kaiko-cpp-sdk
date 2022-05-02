@@ -56,17 +56,17 @@ const char descriptor_table_protodef_sdk_2fstream_2ftrades_5fv1_2frequest_2eprot
   "ikosdk\032\"sdk/core/instrument_criteria.pro"
   "to\"R\n\025StreamTradesRequestV1\0229\n\023instrumen"
   "t_criteria\030\001 \001(\0132\034.kaikosdk.InstrumentCr"
-  "iteriaB\200\001\n\036com.kaiko.sdk.stream.trades_v"
-  "1P\001ZAgithub.com/challengerdeep/kaiko-go-"
-  "sdk/stream/trades_v1;trades_v1\252\002\030KaikoSd"
-  "k.Stream.TradesV1b\006proto3"
+  "iteriaB{\n\036com.kaiko.sdk.stream.trades_v1"
+  "P\001Z<github.com/kaikodata/kaiko-go-sdk/st"
+  "ream/trades_v1;trades_v1\252\002\030KaikoSdk.Stre"
+  "am.TradesV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto = {
-  false, false, 305, descriptor_table_protodef_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto, "sdk/stream/trades_v1/request.proto", 
+  false, false, 299, descriptor_table_protodef_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto, "sdk/stream/trades_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto,

@@ -58,17 +58,16 @@ const char descriptor_table_protodef_sdk_2fcore_2fdata_5finterval_2eproto[] PROT
   "\032\037google/protobuf/timestamp.proto\"l\n\014Dat"
   "aInterval\022.\n\nstart_time\030\001 \001(\0132\032.google.p"
   "rotobuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032.go"
-  "ogle.protobuf.TimestampBX\n\022com.kaiko.sdk"
-  ".coreP\001Z0github.com/challengerdeep/kaiko"
-  "-go-sdk/core;core\252\002\rKaikoSdk.Coreb\006proto"
-  "3"
+  "ogle.protobuf.TimestampBS\n\022com.kaiko.sdk"
+  ".coreP\001Z+github.com/kaikodata/kaiko-go-s"
+  "dk/core;core\252\002\rKaikoSdk.Coreb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto = {
-  false, false, 281, descriptor_table_protodef_sdk_2fcore_2fdata_5finterval_2eproto, "sdk/core/data_interval.proto", 
+  false, false, 276, descriptor_table_protodef_sdk_2fcore_2fdata_5finterval_2eproto, "sdk/core/data_interval.proto", 
   &descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_once, descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fcore_2fdata_5finterval_2eproto::offsets,
   file_level_metadata_sdk_2fcore_2fdata_5finterval_2eproto, file_level_enum_descriptors_sdk_2fcore_2fdata_5finterval_2eproto, file_level_service_descriptors_sdk_2fcore_2fdata_5finterval_2eproto,

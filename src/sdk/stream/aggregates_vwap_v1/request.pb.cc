@@ -59,18 +59,18 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fvwap_5fv1_2freq
   "teria.proto\"m\n\035StreamAggregatesVWAPReque"
   "stV1\0229\n\023instrument_criteria\030\001 \001(\0132\034.kaik"
   "osdk.InstrumentCriteria\022\021\n\taggregate\030\002 \001"
-  "(\tB\243\001\n\'com.kaiko.sdk.stream.aggregates_v"
-  "wap_v1P\001ZSgithub.com/challengerdeep/kaik"
-  "o-go-sdk/stream/aggregates_vwap_v1;aggre"
-  "gates_vwap_v1\252\002 KaikoSdk.Stream.Aggregat"
-  "esVWAPV1b\006proto3"
+  "(\tB\236\001\n\'com.kaiko.sdk.stream.aggregates_v"
+  "wap_v1P\001ZNgithub.com/kaikodata/kaiko-go-"
+  "sdk/stream/aggregates_vwap_v1;aggregates"
+  "_vwap_v1\252\002 KaikoSdk.Stream.AggregatesVWA"
+  "PV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto = {
-  false, false, 376, descriptor_table_protodef_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto, "sdk/stream/aggregates_vwap_v1/request.proto", 
+  false, false, 371, descriptor_table_protodef_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto, "sdk/stream/aggregates_vwap_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fvwap_5fv1_2frequest_2eproto,

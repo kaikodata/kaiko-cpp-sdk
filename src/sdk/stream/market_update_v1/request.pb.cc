@@ -72,11 +72,11 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2freque
   "\rsnapshot_type\030\004 \001(\0162;.kaikosdk.StreamMa"
   "rketUpdateRequestV1.OrderbookSnapshotTyp"
   "e\"\?\n\025OrderbookSnapshotType\022\013\n\007UNKNOWN\020\000\022"
-  "\017\n\013TEN_PERCENT\020\001\022\010\n\004FULL\020\002B\233\001\n%com.kaiko"
-  ".sdk.stream.market_update_v1P\001ZOgithub.c"
-  "om/challengerdeep/kaiko-go-sdk/stream/ma"
-  "rket_update_v1;market_update_v1\252\002\036KaikoS"
-  "dk.Stream.MarketUpdateV1b\006proto3"
+  "\017\n\013TEN_PERCENT\020\001\022\010\n\004FULL\020\002B\226\001\n%com.kaiko"
+  ".sdk.stream.market_update_v1P\001ZJgithub.c"
+  "om/kaikodata/kaiko-go-sdk/stream/market_"
+  "update_v1;market_update_v1\252\002\036KaikoSdk.St"
+  "ream.MarketUpdateV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps[3] = {
   &::descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto,
@@ -85,7 +85,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto = {
-  false, false, 672, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, "sdk/stream/market_update_v1/request.proto", 
+  false, false, 667, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, "sdk/stream/market_update_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps, 3, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto,

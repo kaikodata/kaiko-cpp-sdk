@@ -54,17 +54,17 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_sdk_2fcore_2fresponse_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027sdk/core/response.proto\022\010kaikosdk\032\027sdk"
   "/core/envelope.proto\"0\n\010Response\022$\n\010enve"
-  "lope\030\001 \001(\0132\022.kaikosdk.EnvelopeBX\n\022com.ka"
-  "iko.sdk.coreP\001Z0github.com/challengerdee"
-  "p/kaiko-go-sdk/core;core\252\002\rKaikoSdk.Core"
-  "b\006proto3"
+  "lope\030\001 \001(\0132\022.kaikosdk.EnvelopeBS\n\022com.ka"
+  "iko.sdk.coreP\001Z+github.com/kaikodata/kai"
+  "ko-go-sdk/core;core\252\002\rKaikoSdk.Coreb\006pro"
+  "to3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fcore_2fresponse_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2fenvelope_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2fresponse_2eproto = {
-  false, false, 208, descriptor_table_protodef_sdk_2fcore_2fresponse_2eproto, "sdk/core/response.proto", 
+  false, false, 203, descriptor_table_protodef_sdk_2fcore_2fresponse_2eproto, "sdk/core/response.proto", 
   &descriptor_table_sdk_2fcore_2fresponse_2eproto_once, descriptor_table_sdk_2fcore_2fresponse_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fcore_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fcore_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fcore_2fresponse_2eproto, file_level_service_descriptors_sdk_2fcore_2fresponse_2eproto,

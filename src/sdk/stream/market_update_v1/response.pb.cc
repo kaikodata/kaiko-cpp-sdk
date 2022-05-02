@@ -148,11 +148,11 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frespo
   "\001(\001\"\220\001\n\026StreamMarketUpdateType\022\013\n\007UNKNOW"
   "N\020\000\022\r\n\tTRADE_BUY\020\001\022\016\n\nTRADE_SELL\020\002\022\014\n\010BE"
   "ST_ASK\020\003\022\014\n\010BEST_BID\020\004\022\017\n\013UPDATED_ASK\020\005\022"
-  "\017\n\013UPDATED_BID\020\006\022\014\n\010SNAPSHOT\020\007B\233\001\n%com.k"
-  "aiko.sdk.stream.market_update_v1P\001ZOgith"
-  "ub.com/challengerdeep/kaiko-go-sdk/strea"
-  "m/market_update_v1;market_update_v1\252\002\036Ka"
-  "ikoSdk.Stream.MarketUpdateV1b\006proto3"
+  "\017\n\013UPDATED_BID\020\006\022\014\n\010SNAPSHOT\020\007B\226\001\n%com.k"
+  "aiko.sdk.stream.market_update_v1P\001ZJgith"
+  "ub.com/kaikodata/kaiko-go-sdk/stream/mar"
+  "ket_update_v1;market_update_v1\252\002\036KaikoSd"
+  "k.Stream.MarketUpdateV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -161,7 +161,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto = {
-  false, false, 1156, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, "sdk/stream/market_update_v1/response.proto", 
+  false, false, 1151, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, "sdk/stream/market_update_v1/response.proto", 
   &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps, 3, 3,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto,

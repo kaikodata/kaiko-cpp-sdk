@@ -60,16 +60,16 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fspot_5fexchange
   "te_v1/request.proto\022\010kaikosdk\"]\n)StreamA"
   "ggregatesSpotExchangeRateRequestV1\022\014\n\004co"
   "de\030\001 \001(\t\022\021\n\taggregate\030\002 \001(\t\022\017\n\007sources\030\003"
-  " \001(\010B\331\001\n5com.kaiko.sdk.stream.aggregates"
-  "_spot_exchange_rate_v1P\001Zogithub.com/cha"
-  "llengerdeep/kaiko-go-sdk/stream/aggregat"
-  "es_spot_exchange_rate_v1;aggregates_spot"
-  "_exchange_rate_v1\252\002,KaikoSdk.Stream.Aggr"
-  "egatesSpotExchangeRateV1b\006proto3"
+  " \001(\010B\324\001\n5com.kaiko.sdk.stream.aggregates"
+  "_spot_exchange_rate_v1P\001Zjgithub.com/kai"
+  "kodata/kaiko-go-sdk/stream/aggregates_sp"
+  "ot_exchange_rate_v1;aggregates_spot_exch"
+  "ange_rate_v1\252\002,KaikoSdk.Stream.Aggregate"
+  "sSpotExchangeRateV1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto = {
-  false, false, 392, descriptor_table_protodef_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto, "sdk/stream/aggregates_spot_exchange_rate_v1/request.proto", 
+  false, false, 387, descriptor_table_protodef_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto, "sdk/stream/aggregates_spot_exchange_rate_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fspot_5fexchange_5frate_5fv1_2frequest_2eproto,

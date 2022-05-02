@@ -27,13 +27,13 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 const char descriptor_table_protodef_sdk_2fcore_2fsort_5fcriteria_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034sdk/core/sort_criteria.proto\022\010kaikosdk"
   "*3\n\014SortCriteria\022\020\n\014SORT_UNKNOWN\020\000\022\007\n\003AS"
-  "C\020\001\022\010\n\004DESC\020\002BX\n\022com.kaiko.sdk.coreP\001Z0g"
-  "ithub.com/challengerdeep/kaiko-go-sdk/co"
-  "re;core\252\002\rKaikoSdk.Coreb\006proto3"
+  "C\020\001\022\010\n\004DESC\020\002BS\n\022com.kaiko.sdk.coreP\001Z+g"
+  "ithub.com/kaikodata/kaiko-go-sdk/core;co"
+  "re\252\002\rKaikoSdk.Coreb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2fsort_5fcriteria_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2fsort_5fcriteria_2eproto = {
-  false, false, 191, descriptor_table_protodef_sdk_2fcore_2fsort_5fcriteria_2eproto, "sdk/core/sort_criteria.proto", 
+  false, false, 186, descriptor_table_protodef_sdk_2fcore_2fsort_5fcriteria_2eproto, "sdk/core/sort_criteria.proto", 
   &descriptor_table_sdk_2fcore_2fsort_5fcriteria_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_sdk_2fcore_2fsort_5fcriteria_2eproto::offsets,
   nullptr, file_level_enum_descriptors_sdk_2fcore_2fsort_5fcriteria_2eproto, file_level_service_descriptors_sdk_2fcore_2fsort_5fcriteria_2eproto,

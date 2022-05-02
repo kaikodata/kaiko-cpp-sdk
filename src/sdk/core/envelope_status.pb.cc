@@ -27,13 +27,13 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 const char descriptor_table_protodef_sdk_2fcore_2fenvelope_5fstatus_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036sdk/core/envelope_status.proto\022\010kaikos"
   "dk*5\n\016EnvelopeStatus\022\013\n\007UNKNOWN\020\000\022\t\n\005ERR"
-  "OR\020\001\022\013\n\007SUCCESS\020\002BX\n\022com.kaiko.sdk.coreP"
-  "\001Z0github.com/challengerdeep/kaiko-go-sd"
-  "k/core;core\252\002\rKaikoSdk.Coreb\006proto3"
+  "OR\020\001\022\013\n\007SUCCESS\020\002BS\n\022com.kaiko.sdk.coreP"
+  "\001Z+github.com/kaikodata/kaiko-go-sdk/cor"
+  "e;core\252\002\rKaikoSdk.Coreb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2fenvelope_5fstatus_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2fenvelope_5fstatus_2eproto = {
-  false, false, 195, descriptor_table_protodef_sdk_2fcore_2fenvelope_5fstatus_2eproto, "sdk/core/envelope_status.proto", 
+  false, false, 190, descriptor_table_protodef_sdk_2fcore_2fenvelope_5fstatus_2eproto, "sdk/core/envelope_status.proto", 
   &descriptor_table_sdk_2fcore_2fenvelope_5fstatus_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_sdk_2fcore_2fenvelope_5fstatus_2eproto::offsets,
   nullptr, file_level_enum_descriptors_sdk_2fcore_2fenvelope_5fstatus_2eproto, file_level_service_descriptors_sdk_2fcore_2fenvelope_5fstatus_2eproto,

@@ -57,15 +57,15 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2fre
   "\n,sdk/stream/aggregated_price_v1/request"
   ".proto\022\010kaikosdk\"H\n\036StreamAggregatedPric"
   "eRequestV1\022\030\n\020instrument_class\030\001 \001(\t\022\014\n\004"
-  "code\030\002 \001(\tB\247\001\n(com.kaiko.sdk.stream.aggr"
-  "egated_price_v1P\001ZUgithub.com/challenger"
-  "deep/kaiko-go-sdk/stream/aggregated_pric"
-  "e_v1;aggregated_price_v1\252\002!KaikoSdk.Stre"
-  "am.AggregatedPriceV1b\006proto3"
+  "code\030\002 \001(\tB\242\001\n(com.kaiko.sdk.stream.aggr"
+  "egated_price_v1P\001ZPgithub.com/kaikodata/"
+  "kaiko-go-sdk/stream/aggregated_price_v1;"
+  "aggregated_price_v1\252\002!KaikoSdk.Stream.Ag"
+  "gregatedPriceV1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto = {
-  false, false, 308, descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto, "sdk/stream/aggregated_price_v1/request.proto", 
+  false, false, 303, descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto, "sdk/stream/aggregated_price_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto,

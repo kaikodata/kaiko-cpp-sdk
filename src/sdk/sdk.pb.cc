@@ -78,9 +78,9 @@ const char descriptor_table_protodef_sdk_2fsdk_2eproto[] PROTOBUF_SECTION_VARIAB
   "eamMarketUpdateServiceV1\022^\n\tSubscribe\022%."
   "kaikosdk.StreamMarketUpdateRequestV1\032&.k"
   "aikosdk.StreamMarketUpdateResponseV1\"\0000\001"
-  "BW\n\rcom.kaiko.sdkB\010SdkProtoP\001Z/github.co"
-  "m/challengerdeep/kaiko-go-sdk;kaikosdk\252\002"
-  "\010KaikoSdkb\006proto3"
+  "BR\n\rcom.kaiko.sdkB\010SdkProtoP\001Z*github.co"
+  "m/kaikodata/kaiko-go-sdk;kaikosdk\252\002\010Kaik"
+  "oSdkb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fsdk_2eproto_deps[18] = {
   &::descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto,
@@ -104,7 +104,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fsdk_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fsdk_2eproto = {
-  false, false, 2217, descriptor_table_protodef_sdk_2fsdk_2eproto, "sdk/sdk.proto", 
+  false, false, 2212, descriptor_table_protodef_sdk_2fsdk_2eproto, "sdk/sdk.proto", 
   &descriptor_table_sdk_2fsdk_2eproto_once, descriptor_table_sdk_2fsdk_2eproto_deps, 18, 0,
   schemas, file_default_instances, TableStruct_sdk_2fsdk_2eproto::offsets,
   nullptr, file_level_enum_descriptors_sdk_2fsdk_2eproto, file_level_service_descriptors_sdk_2fsdk_2eproto,

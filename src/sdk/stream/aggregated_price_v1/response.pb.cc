@@ -97,19 +97,19 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2fre
   "3.kaikosdk.StreamAggregatedPriceResponse"
   "V1.EventType\022,\n\010ts_event\030\006 \001(\0132\032.google."
   "protobuf.Timestamp\"4\n\tEventType\022\013\n\007UNKNO"
-  "WN\020\000\022\014\n\010BEST_ASK\020\001\022\014\n\010BEST_BID\020\002B\247\001\n(com"
+  "WN\020\000\022\014\n\010BEST_ASK\020\001\022\014\n\010BEST_BID\020\002B\242\001\n(com"
   ".kaiko.sdk.stream.aggregated_price_v1P\001Z"
-  "Ugithub.com/challengerdeep/kaiko-go-sdk/"
-  "stream/aggregated_price_v1;aggregated_pr"
-  "ice_v1\252\002!KaikoSdk.Stream.AggregatedPrice"
-  "V1b\006proto3"
+  "Pgithub.com/kaikodata/kaiko-go-sdk/strea"
+  "m/aggregated_price_v1;aggregated_price_v"
+  "1\252\002!KaikoSdk.Stream.AggregatedPriceV1b\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto = {
-  false, false, 650, descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto, "sdk/stream/aggregated_price_v1/response.proto", 
+  false, false, 645, descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto, "sdk/stream/aggregated_price_v1/response.proto", 
   &descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto,

@@ -29,15 +29,15 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommo
   "proto\022\010kaikosdk*o\n\033StreamMarketUpdateCom"
   "modity\022\020\n\014SMUC_UNKNOWN\020\000\022\016\n\nSMUC_TRADE\020\001"
   "\022\024\n\020SMUC_TOP_OF_BOOK\020\002\022\030\n\024SMUC_FULL_ORDE"
-  "R_BOOK\020\003B\233\001\n%com.kaiko.sdk.stream.market"
-  "_update_v1P\001ZOgithub.com/challengerdeep/"
-  "kaiko-go-sdk/stream/market_update_v1;mar"
-  "ket_update_v1\252\002\036KaikoSdk.Stream.MarketUp"
-  "dateV1b\006proto3"
+  "R_BOOK\020\003B\226\001\n%com.kaiko.sdk.stream.market"
+  "_update_v1P\001ZJgithub.com/kaikodata/kaiko"
+  "-go-sdk/stream/market_update_v1;market_u"
+  "pdate_v1\252\002\036KaikoSdk.Stream.MarketUpdateV"
+  "1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto = {
-  false, false, 334, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto, "sdk/stream/market_update_v1/commodity.proto", 
+  false, false, 329, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto, "sdk/stream/market_update_v1/commodity.proto", 
   &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto::offsets,
   nullptr, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto, file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto,

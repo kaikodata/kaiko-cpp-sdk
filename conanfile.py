@@ -6,7 +6,7 @@ class Pkg(ConanFile):
     version = "0.0.1"
     license = "MIT Licence"
     author = "hello@kaiko.com"
-    url = "github.com/challengerdeep/kaiko-cpp-sdk"
+    url = "github.com/kaikodata/kaiko-cpp-sdk"
     description = "Kaiko C++ SDK"
     topics = ("Kaiko", "SDK", "GRPC")
 

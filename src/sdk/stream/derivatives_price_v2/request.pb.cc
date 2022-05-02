@@ -56,19 +56,19 @@ const char descriptor_table_protodef_sdk_2fstream_2fderivatives_5fprice_5fv2_2fr
   "t.proto\022\010kaikosdk\032\"sdk/core/instrument_c"
   "riteria.proto\"\\\n\037StreamDerivativesPriceR"
   "equestV2\0229\n\023instrument_criteria\030\001 \001(\0132\034."
-  "kaikosdk.InstrumentCriteriaB\253\001\n)com.kaik"
-  "o.sdk.stream.derivatives_price_v2P\001ZWgit"
-  "hub.com/challengerdeep/kaiko-go-sdk/stre"
-  "am/derivatives_price_v2;derivatives_pric"
-  "e_v2\252\002\"KaikoSdk.Stream.DerivativesPriceV"
-  "2b\006proto3"
+  "kaikosdk.InstrumentCriteriaB\246\001\n)com.kaik"
+  "o.sdk.stream.derivatives_price_v2P\001ZRgit"
+  "hub.com/kaikodata/kaiko-go-sdk/stream/de"
+  "rivatives_price_v2;derivatives_price_v2\252"
+  "\002\"KaikoSdk.Stream.DerivativesPriceV2b\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto = {
-  false, false, 369, descriptor_table_protodef_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto, "sdk/stream/derivatives_price_v2/request.proto", 
+  false, false, 364, descriptor_table_protodef_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto, "sdk/stream/derivatives_price_v2/request.proto", 
   &descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2fderivatives_5fprice_5fv2_2frequest_2eproto,

@@ -73,18 +73,18 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fvwap_5fv1_2fres
   "\n\004code\030\003 \001(\t\022\020\n\010exchange\030\004 \001(\t\022\023\n\013sequen"
   "ce_id\030\005 \001(\t\022\r\n\005price\030\006 \001(\001\022,\n\010ts_event\030\007"
   " \001(\0132\032.google.protobuf.Timestamp\022\013\n\003uid\030"
-  "\010 \001(\tB\243\001\n\'com.kaiko.sdk.stream.aggregate"
-  "s_vwap_v1P\001ZSgithub.com/challengerdeep/k"
-  "aiko-go-sdk/stream/aggregates_vwap_v1;ag"
-  "gregates_vwap_v1\252\002 KaikoSdk.Stream.Aggre"
-  "gatesVWAPV1b\006proto3"
+  "\010 \001(\tB\236\001\n\'com.kaiko.sdk.stream.aggregate"
+  "s_vwap_v1P\001ZNgithub.com/kaikodata/kaiko-"
+  "go-sdk/stream/aggregates_vwap_v1;aggrega"
+  "tes_vwap_v1\252\002 KaikoSdk.Stream.Aggregates"
+  "VWAPV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto = {
-  false, false, 459, descriptor_table_protodef_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto, "sdk/stream/aggregates_vwap_v1/response.proto", 
+  false, false, 454, descriptor_table_protodef_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto, "sdk/stream/aggregates_vwap_v1/response.proto", 
   &descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fvwap_5fv1_2fresponse_2eproto,

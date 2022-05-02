@@ -188,10 +188,10 @@ const char descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eprot
   "\021\n\texchanges\030\006 \003(\t\022C\n\013percentages\030\007 \003(\0132"
   "..kaikosdk.StreamIndexServiceResponsePer"
   "centage\022,\n\010ts_event\030\010 \001(\0132\032.google.proto"
-  "buf.TimestampB|\n\035com.kaiko.sdk.stream.in"
-  "dex_v1P\001Z\?github.com/challengerdeep/kaik"
-  "o-go-sdk/stream/index_v1;index_v1\252\002\027Kaik"
-  "oSdk.Stream.IndexV1b\006proto3"
+  "buf.TimestampBw\n\035com.kaiko.sdk.stream.in"
+  "dex_v1P\001Z:github.com/kaikodata/kaiko-go-"
+  "sdk/stream/index_v1;index_v1\252\002\027KaikoSdk."
+  "Stream.IndexV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -200,7 +200,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto = {
-  false, false, 1067, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, "sdk/stream/index_v1/response.proto", 
+  false, false, 1062, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, "sdk/stream/index_v1/response.proto", 
   &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps, 3, 5,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,

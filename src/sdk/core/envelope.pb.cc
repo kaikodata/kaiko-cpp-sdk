@@ -71,10 +71,9 @@ const char descriptor_table_protodef_sdk_2fcore_2fenvelope_2eproto[] PROTOBUF_SE
   "\t\022&\n\005query\030\003 \001(\0132\027.google.protobuf.Struc"
   "t\022(\n\006status\030\004 \001(\0162\030.kaikosdk.EnvelopeSta"
   "tus\022(\n\004time\030\005 \001(\0132\032.google.protobuf.Time"
-  "stamp\022\021\n\ttimestamp\030\006 \001(\tBX\n\022com.kaiko.sd"
-  "k.coreP\001Z0github.com/challengerdeep/kaik"
-  "o-go-sdk/core;core\252\002\rKaikoSdk.Coreb\006prot"
-  "o3"
+  "stamp\022\021\n\ttimestamp\030\006 \001(\tBS\n\022com.kaiko.sd"
+  "k.coreP\001Z+github.com/kaikodata/kaiko-go-"
+  "sdk/core;core\252\002\rKaikoSdk.Coreb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fcore_2fenvelope_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2fstruct_2eproto,
@@ -83,7 +82,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2fenvelope_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2fenvelope_2eproto = {
-  false, false, 442, descriptor_table_protodef_sdk_2fcore_2fenvelope_2eproto, "sdk/core/envelope.proto", 
+  false, false, 437, descriptor_table_protodef_sdk_2fcore_2fenvelope_2eproto, "sdk/core/envelope.proto", 
   &descriptor_table_sdk_2fcore_2fenvelope_2eproto_once, descriptor_table_sdk_2fcore_2fenvelope_2eproto_deps, 3, 1,
   schemas, file_default_instances, TableStruct_sdk_2fcore_2fenvelope_2eproto::offsets,
   file_level_metadata_sdk_2fcore_2fenvelope_2eproto, file_level_enum_descriptors_sdk_2fcore_2fenvelope_2eproto, file_level_service_descriptors_sdk_2fcore_2fenvelope_2eproto,

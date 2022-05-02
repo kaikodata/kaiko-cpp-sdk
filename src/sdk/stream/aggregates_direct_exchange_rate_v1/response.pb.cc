@@ -72,13 +72,13 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchan
   "\t\022\014\n\004code\030\002 \001(\t\022\r\n\005price\030\003 \001(\t\022\023\n\013sequen"
   "ce_id\030\004 \001(\t\022%\n\007sources\030\005 \003(\0132\024.kaikosdk."
   "SourceData\022-\n\ttimestamp\030\006 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022\013\n\003uid\030\007 \001(\tB\341\001\n7com.k"
+  "rotobuf.Timestamp\022\013\n\003uid\030\007 \001(\tB\334\001\n7com.k"
   "aiko.sdk.stream.aggregates_direct_exchan"
-  "ge_rate_v1P\001Zsgithub.com/challengerdeep/"
-  "kaiko-go-sdk/stream/aggregates_direct_ex"
-  "change_rate_v1;aggregates_direct_exchang"
-  "e_rate_v1\252\002.KaikoSdk.Stream.AggregatesDi"
-  "rectExchangeRateV1b\006proto3"
+  "ge_rate_v1P\001Zngithub.com/kaikodata/kaiko"
+  "-go-sdk/stream/aggregates_direct_exchang"
+  "e_rate_v1;aggregates_direct_exchange_rat"
+  "e_v1\252\002.KaikoSdk.Stream.AggregatesDirectE"
+  "xchangeRateV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -86,7 +86,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto = {
-  false, false, 586, descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto, "sdk/stream/aggregates_direct_exchange_rate_v1/response.proto", 
+  false, false, 581, descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto, "sdk/stream/aggregates_direct_exchange_rate_v1/response.proto", 
   &descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto,

@@ -82,19 +82,18 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fre
   "h\030\005 \001(\t\022\013\n\003low\030\006 \001(\t\022\014\n\004open\030\007 \001(\t\022\023\n\013se"
   "quence_id\030\010 \001(\t\022\014\n\004code\030\t \001(\t\022-\n\ttimesta"
   "mp\030\n \001(\0132\032.google.protobuf.Timestamp\022\013\n\003"
-  "uid\030\013 \001(\t\022\016\n\006volume\030\014 \001(\tB\247\001\n(com.kaiko."
-  "sdk.stream.aggregates_ohlcv_v1P\001ZUgithub"
-  ".com/challengerdeep/kaiko-go-sdk/stream/"
-  "aggregates_ohlcv_v1;aggregates_ohlcv_v1\252"
-  "\002!KaikoSdk.Stream.AggregatesOHLCVV1b\006pro"
-  "to3"
+  "uid\030\013 \001(\t\022\016\n\006volume\030\014 \001(\tB\242\001\n(com.kaiko."
+  "sdk.stream.aggregates_ohlcv_v1P\001ZPgithub"
+  ".com/kaikodata/kaiko-go-sdk/stream/aggre"
+  "gates_ohlcv_v1;aggregates_ohlcv_v1\252\002!Kai"
+  "koSdk.Stream.AggregatesOHLCVV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto = {
-  false, false, 523, descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto, "sdk/stream/aggregates_ohlcv_v1/response.proto", 
+  false, false, 518, descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto, "sdk/stream/aggregates_ohlcv_v1/response.proto", 
   &descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fresponse_2eproto,

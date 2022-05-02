@@ -59,18 +59,18 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fre
   "iteria.proto\"n\n\036StreamAggregatesOHLCVReq"
   "uestV1\0229\n\023instrument_criteria\030\001 \001(\0132\034.ka"
   "ikosdk.InstrumentCriteria\022\021\n\taggregate\030\002"
-  " \001(\tB\247\001\n(com.kaiko.sdk.stream.aggregates"
-  "_ohlcv_v1P\001ZUgithub.com/challengerdeep/k"
-  "aiko-go-sdk/stream/aggregates_ohlcv_v1;a"
-  "ggregates_ohlcv_v1\252\002!KaikoSdk.Stream.Agg"
-  "regatesOHLCVV1b\006proto3"
+  " \001(\tB\242\001\n(com.kaiko.sdk.stream.aggregates"
+  "_ohlcv_v1P\001ZPgithub.com/kaikodata/kaiko-"
+  "go-sdk/stream/aggregates_ohlcv_v1;aggreg"
+  "ates_ohlcv_v1\252\002!KaikoSdk.Stream.Aggregat"
+  "esOHLCVV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto = {
-  false, false, 382, descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto, "sdk/stream/aggregates_ohlcv_v1/request.proto", 
+  false, false, 377, descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto, "sdk/stream/aggregates_ohlcv_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto,

@@ -60,17 +60,16 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchan
   "rate_v1/request.proto\022\010kaikosdk\"_\n+Strea"
   "mAggregatesDirectExchangeRateRequestV1\022\014"
   "\n\004code\030\001 \001(\t\022\021\n\taggregate\030\002 \001(\t\022\017\n\007sourc"
-  "es\030\003 \001(\010B\341\001\n7com.kaiko.sdk.stream.aggreg"
-  "ates_direct_exchange_rate_v1P\001Zsgithub.c"
-  "om/challengerdeep/kaiko-go-sdk/stream/ag"
-  "gregates_direct_exchange_rate_v1;aggrega"
-  "tes_direct_exchange_rate_v1\252\002.KaikoSdk.S"
-  "tream.AggregatesDirectExchangeRateV1b\006pr"
-  "oto3"
+  "es\030\003 \001(\010B\334\001\n7com.kaiko.sdk.stream.aggreg"
+  "ates_direct_exchange_rate_v1P\001Zngithub.c"
+  "om/kaikodata/kaiko-go-sdk/stream/aggrega"
+  "tes_direct_exchange_rate_v1;aggregates_d"
+  "irect_exchange_rate_v1\252\002.KaikoSdk.Stream"
+  ".AggregatesDirectExchangeRateV1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto = {
-  false, false, 404, descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto, "sdk/stream/aggregates_direct_exchange_rate_v1/request.proto", 
+  false, false, 399, descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto, "sdk/stream/aggregates_direct_exchange_rate_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto,

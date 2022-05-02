@@ -114,10 +114,10 @@ const char descriptor_table_protodef_sdk_2fstream_2ftrades_5fv1_2fresponse_2epro
   "obuf.Timestamp\032;\n\031AdditionalPropertiesEn"
   "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"+\n\tT"
   "radeSide\022\013\n\007UNKNOWN\020\000\022\007\n\003BUY\020\001\022\010\n\004SELL\020\002"
-  "B\200\001\n\036com.kaiko.sdk.stream.trades_v1P\001ZAg"
-  "ithub.com/challengerdeep/kaiko-go-sdk/st"
-  "ream/trades_v1;trades_v1\252\002\030KaikoSdk.Stre"
-  "am.TradesV1b\006proto3"
+  "B{\n\036com.kaiko.sdk.stream.trades_v1P\001Z<gi"
+  "thub.com/kaikodata/kaiko-go-sdk/stream/t"
+  "rades_v1;trades_v1\252\002\030KaikoSdk.Stream.Tra"
+  "desV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -125,7 +125,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto = {
-  false, false, 779, descriptor_table_protodef_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto, "sdk/stream/trades_v1/response.proto", 
+  false, false, 773, descriptor_table_protodef_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto, "sdk/stream/trades_v1/response.proto", 
   &descriptor_table_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto,

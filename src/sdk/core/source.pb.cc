@@ -57,16 +57,16 @@ const char descriptor_table_protodef_sdk_2fcore_2fsource_2eproto[] PROTOBUF_SECT
   "\n\025sdk/core/source.proto\022\010kaikosdk\032\032sdk/c"
   "ore/source_data.proto\";\n\006Source\022\"\n\004data\030"
   "\001 \003(\0132\024.kaikosdk.SourceData\022\r\n\005price\030\002 \001"
-  "(\tBX\n\022com.kaiko.sdk.coreP\001Z0github.com/c"
-  "hallengerdeep/kaiko-go-sdk/core;core\252\002\rK"
-  "aikoSdk.Coreb\006proto3"
+  "(\tBS\n\022com.kaiko.sdk.coreP\001Z+github.com/k"
+  "aikodata/kaiko-go-sdk/core;core\252\002\rKaikoS"
+  "dk.Coreb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fcore_2fsource_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2fsource_5fdata_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2fsource_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2fsource_2eproto = {
-  false, false, 220, descriptor_table_protodef_sdk_2fcore_2fsource_2eproto, "sdk/core/source.proto", 
+  false, false, 215, descriptor_table_protodef_sdk_2fcore_2fsource_2eproto, "sdk/core/source.proto", 
   &descriptor_table_sdk_2fcore_2fsource_2eproto_once, descriptor_table_sdk_2fcore_2fsource_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fcore_2fsource_2eproto::offsets,
   file_level_metadata_sdk_2fcore_2fsource_2eproto, file_level_enum_descriptors_sdk_2fcore_2fsource_2eproto, file_level_service_descriptors_sdk_2fcore_2fsource_2eproto,
