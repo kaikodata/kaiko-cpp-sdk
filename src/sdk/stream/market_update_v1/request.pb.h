@@ -307,10 +307,10 @@ class StreamMarketUpdateRequestV1 final :
       ::kaikosdk::DataInterval* interval);
   ::kaikosdk::DataInterval* unsafe_arena_release_interval();
 
-  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
-  void clear_snapshot_type();
-  ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType snapshot_type() const;
-  void set_snapshot_type(::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType value);
+  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4 [deprecated = true];
+  PROTOBUF_DEPRECATED void clear_snapshot_type();
+  PROTOBUF_DEPRECATED ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType snapshot_type() const;
+  PROTOBUF_DEPRECATED void set_snapshot_type(::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType value);
   private:
   ::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType _internal_snapshot_type() const;
   void _internal_set_snapshot_type(::kaikosdk::StreamMarketUpdateRequestV1_OrderbookSnapshotType value);
@@ -557,7 +557,7 @@ inline void StreamMarketUpdateRequestV1::set_allocated_interval(::kaikosdk::Data
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamMarketUpdateRequestV1.interval)
 }
 
-// .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+// .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4 [deprecated = true];
 inline void StreamMarketUpdateRequestV1::clear_snapshot_type() {
   snapshot_type_ = 0;
 }

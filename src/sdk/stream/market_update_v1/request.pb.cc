@@ -64,19 +64,19 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2freque
   "oto\022\010kaikosdk\032\034sdk/core/data_interval.pr"
   "oto\032\"sdk/core/instrument_criteria.proto\032"
   "+sdk/stream/market_update_v1/commodity.p"
-  "roto\"\323\002\n\033StreamMarketUpdateRequestV1\0229\n\023"
+  "roto\"\327\002\n\033StreamMarketUpdateRequestV1\0229\n\023"
   "instrument_criteria\030\001 \001(\0132\034.kaikosdk.Ins"
   "trumentCriteria\022:\n\013commodities\030\002 \003(\0162%.k"
   "aikosdk.StreamMarketUpdateCommodity\022(\n\010i"
-  "nterval\030\003 \001(\0132\026.kaikosdk.DataInterval\022R\n"
+  "nterval\030\003 \001(\0132\026.kaikosdk.DataInterval\022V\n"
   "\rsnapshot_type\030\004 \001(\0162;.kaikosdk.StreamMa"
   "rketUpdateRequestV1.OrderbookSnapshotTyp"
-  "e\"\?\n\025OrderbookSnapshotType\022\013\n\007UNKNOWN\020\000\022"
-  "\017\n\013TEN_PERCENT\020\001\022\010\n\004FULL\020\002B\226\001\n%com.kaiko"
-  ".sdk.stream.market_update_v1P\001ZJgithub.c"
-  "om/kaikodata/kaiko-go-sdk/stream/market_"
-  "update_v1;market_update_v1\252\002\036KaikoSdk.St"
-  "ream.MarketUpdateV1b\006proto3"
+  "eB\002\030\001\"\?\n\025OrderbookSnapshotType\022\013\n\007UNKNOW"
+  "N\020\000\022\017\n\013TEN_PERCENT\020\001\022\010\n\004FULL\020\002B\226\001\n%com.k"
+  "aiko.sdk.stream.market_update_v1P\001ZJgith"
+  "ub.com/kaikodata/kaiko-go-sdk/stream/mar"
+  "ket_update_v1;market_update_v1\252\002\036KaikoSd"
+  "k.Stream.MarketUpdateV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps[3] = {
   &::descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto,
@@ -85,7 +85,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto = {
-  false, false, 667, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, "sdk/stream/market_update_v1/request.proto", 
+  false, false, 671, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, "sdk/stream/market_update_v1/request.proto", 
   &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto_deps, 3, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2frequest_2eproto,
@@ -260,7 +260,7 @@ const char* StreamMarketUpdateRequestV1::_InternalParse(const char* ptr, ::PROTO
         } else
           goto handle_unusual;
         continue;
-      // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+      // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4 [deprecated = true];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -323,7 +323,7 @@ uint8_t* StreamMarketUpdateRequestV1::_InternalSerialize(
         3, _Internal::interval(this), target, stream);
   }
 
-  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4 [deprecated = true];
   if (this->_internal_snapshot_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -378,7 +378,7 @@ size_t StreamMarketUpdateRequestV1::ByteSizeLong() const {
         *interval_);
   }
 
-  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4;
+  // .kaikosdk.StreamMarketUpdateRequestV1.OrderbookSnapshotType snapshot_type = 4 [deprecated = true];
   if (this->_internal_snapshot_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_snapshot_type());

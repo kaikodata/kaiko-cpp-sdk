@@ -127,7 +127,7 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frespo
   "\n*sdk/stream/market_update_v1/response.p"
   "roto\022\010kaikosdk\032\037google/protobuf/timestam"
   "p.proto\032\027sdk/core/wrappers.proto\032+sdk/st"
-  "ream/market_update_v1/commodity.proto\"\276\006"
+  "ream/market_update_v1/commodity.proto\"\322\006"
   "\n\034StreamMarketUpdateResponseV1\0228\n\tcommod"
   "ity\030\001 \001(\0162%.kaikosdk.StreamMarketUpdateC"
   "ommodity\022\016\n\006amount\030\002 \001(\001\022\r\n\005class\030\003 \001(\t\022"
@@ -145,14 +145,15 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frespo
   "Snapshot.Order\022C\n\004bids\030\002 \003(\01325.kaikosdk."
   "StreamMarketUpdateResponseV1.Snapshot.Or"
   "der\032&\n\005Order\022\016\n\006amount\030\001 \001(\001\022\r\n\005price\030\002 "
-  "\001(\001\"\220\001\n\026StreamMarketUpdateType\022\013\n\007UNKNOW"
+  "\001(\001\"\244\001\n\026StreamMarketUpdateType\022\013\n\007UNKNOW"
   "N\020\000\022\r\n\tTRADE_BUY\020\001\022\016\n\nTRADE_SELL\020\002\022\014\n\010BE"
   "ST_ASK\020\003\022\014\n\010BEST_BID\020\004\022\017\n\013UPDATED_ASK\020\005\022"
-  "\017\n\013UPDATED_BID\020\006\022\014\n\010SNAPSHOT\020\007B\226\001\n%com.k"
-  "aiko.sdk.stream.market_update_v1P\001ZJgith"
-  "ub.com/kaikodata/kaiko-go-sdk/stream/mar"
-  "ket_update_v1;market_update_v1\252\002\036KaikoSd"
-  "k.Stream.MarketUpdateV1b\006proto3"
+  "\017\n\013UPDATED_BID\020\006\022\014\n\010SNAPSHOT\020\007\022\022\n\016FORCE_"
+  "SNAPSHOT\020\010B\226\001\n%com.kaiko.sdk.stream.mark"
+  "et_update_v1P\001ZJgithub.com/kaikodata/kai"
+  "ko-go-sdk/stream/market_update_v1;market"
+  "_update_v1\252\002\036KaikoSdk.Stream.MarketUpdat"
+  "eV1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -161,7 +162,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto = {
-  false, false, 1151, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, "sdk/stream/market_update_v1/response.proto", 
+  false, false, 1171, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, "sdk/stream/market_update_v1/response.proto", 
   &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps, 3, 3,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto,
@@ -187,6 +188,7 @@ bool StreamMarketUpdateResponseV1_StreamMarketUpdateType_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+    case 8:
       return true;
     default:
       return false;
@@ -202,6 +204,7 @@ constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdate
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::UPDATED_ASK;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::UPDATED_BID;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::SNAPSHOT;
+constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::FORCE_SNAPSHOT;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::StreamMarketUpdateType_MIN;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::StreamMarketUpdateType_MAX;
 constexpr int StreamMarketUpdateResponseV1::StreamMarketUpdateType_ARRAYSIZE;
