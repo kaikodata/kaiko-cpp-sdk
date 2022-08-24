@@ -20,7 +20,8 @@ namespace kaikosdk {
 constexpr StreamAggregatedPriceRequestV1::StreamAggregatedPriceRequestV1(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : instrument_class_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , interval_(nullptr){}
 struct StreamAggregatedPriceRequestV1DefaultTypeInternal {
   constexpr StreamAggregatedPriceRequestV1DefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -44,6 +45,7 @@ const uint32_t TableStruct_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2epr
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatedPriceRequestV1, instrument_class_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatedPriceRequestV1, code_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatedPriceRequestV1, interval_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamAggregatedPriceRequestV1)},
@@ -55,18 +57,23 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n,sdk/stream/aggregated_price_v1/request"
-  ".proto\022\010kaikosdk\"H\n\036StreamAggregatedPric"
-  "eRequestV1\022\030\n\020instrument_class\030\001 \001(\t\022\014\n\004"
-  "code\030\002 \001(\tB\242\001\n(com.kaiko.sdk.stream.aggr"
-  "egated_price_v1P\001ZPgithub.com/kaikodata/"
-  "kaiko-go-sdk/stream/aggregated_price_v1;"
-  "aggregated_price_v1\252\002!KaikoSdk.Stream.Ag"
-  "gregatedPriceV1b\006proto3"
+  ".proto\022\010kaikosdk\032\034sdk/core/data_interval"
+  ".proto\"r\n\036StreamAggregatedPriceRequestV1"
+  "\022\030\n\020instrument_class\030\001 \001(\t\022\014\n\004code\030\002 \001(\t"
+  "\022(\n\010interval\030\003 \001(\0132\026.kaikosdk.DataInterv"
+  "alB\242\001\n(com.kaiko.sdk.stream.aggregated_p"
+  "rice_v1P\001ZPgithub.com/kaikodata/kaiko-go"
+  "-sdk/stream/aggregated_price_v1;aggregat"
+  "ed_price_v1\252\002!KaikoSdk.Stream.Aggregated"
+  "PriceV1b\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto_deps[1] = {
+  &::descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto = {
-  false, false, 303, descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto, "sdk/stream/aggregated_price_v1/request.proto", 
-  &descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto_once, nullptr, 0, 1,
+  false, false, 375, descriptor_table_protodef_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto, "sdk/stream/aggregated_price_v1/request.proto", 
+  &descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto::offsets,
   file_level_metadata_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto,
 };
@@ -82,8 +89,19 @@ namespace kaikosdk {
 
 class StreamAggregatedPriceRequestV1::_Internal {
  public:
+  static const ::kaikosdk::DataInterval& interval(const StreamAggregatedPriceRequestV1* msg);
 };
 
+const ::kaikosdk::DataInterval&
+StreamAggregatedPriceRequestV1::_Internal::interval(const StreamAggregatedPriceRequestV1* msg) {
+  return *msg->interval_;
+}
+void StreamAggregatedPriceRequestV1::clear_interval() {
+  if (GetArenaForAllocation() == nullptr && interval_ != nullptr) {
+    delete interval_;
+  }
+  interval_ = nullptr;
+}
 StreamAggregatedPriceRequestV1::StreamAggregatedPriceRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -112,6 +130,11 @@ StreamAggregatedPriceRequestV1::StreamAggregatedPriceRequestV1(const StreamAggre
     code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_code(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_interval()) {
+    interval_ = new ::kaikosdk::DataInterval(*from.interval_);
+  } else {
+    interval_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamAggregatedPriceRequestV1)
 }
 
@@ -124,6 +147,7 @@ code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+interval_ = nullptr;
 }
 
 StreamAggregatedPriceRequestV1::~StreamAggregatedPriceRequestV1() {
@@ -137,6 +161,7 @@ inline void StreamAggregatedPriceRequestV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   instrument_class_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete interval_;
 }
 
 void StreamAggregatedPriceRequestV1::ArenaDtor(void* object) {
@@ -157,6 +182,10 @@ void StreamAggregatedPriceRequestV1::Clear() {
 
   instrument_class_.ClearToEmpty();
   code_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && interval_ != nullptr) {
+    delete interval_;
+  }
+  interval_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -182,6 +211,14 @@ const char* StreamAggregatedPriceRequestV1::_InternalParse(const char* ptr, ::PR
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamAggregatedPriceRequestV1.code"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .kaikosdk.DataInterval interval = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_interval(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -235,6 +272,14 @@ uint8_t* StreamAggregatedPriceRequestV1::_InternalSerialize(
         2, this->_internal_code(), target);
   }
 
+  // .kaikosdk.DataInterval interval = 3;
+  if (this->_internal_has_interval()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::interval(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -265,6 +310,13 @@ size_t StreamAggregatedPriceRequestV1::ByteSizeLong() const {
         this->_internal_code());
   }
 
+  // .kaikosdk.DataInterval interval = 3;
+  if (this->_internal_has_interval()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *interval_);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -292,6 +344,9 @@ void StreamAggregatedPriceRequestV1::MergeFrom(const StreamAggregatedPriceReques
   }
   if (!from._internal_code().empty()) {
     _internal_set_code(from._internal_code());
+  }
+  if (from._internal_has_interval()) {
+    _internal_mutable_interval()->::kaikosdk::DataInterval::MergeFrom(from._internal_interval());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -322,6 +377,7 @@ void StreamAggregatedPriceRequestV1::InternalSwap(StreamAggregatedPriceRequestV1
       &code_, lhs_arena,
       &other->code_, rhs_arena
   );
+  swap(interval_, other->interval_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamAggregatedPriceRequestV1::GetMetadata() const {

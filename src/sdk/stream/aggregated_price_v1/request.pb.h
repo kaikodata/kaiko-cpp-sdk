@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "sdk/core/data_interval.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto
@@ -189,6 +190,7 @@ class StreamAggregatedPriceRequestV1 final :
   enum : int {
     kInstrumentClassFieldNumber = 1,
     kCodeFieldNumber = 2,
+    kIntervalFieldNumber = 3,
   };
   // string instrument_class = 1;
   void clear_instrument_class();
@@ -218,6 +220,24 @@ class StreamAggregatedPriceRequestV1 final :
   std::string* _internal_mutable_code();
   public:
 
+  // .kaikosdk.DataInterval interval = 3;
+  bool has_interval() const;
+  private:
+  bool _internal_has_interval() const;
+  public:
+  void clear_interval();
+  const ::kaikosdk::DataInterval& interval() const;
+  PROTOBUF_NODISCARD ::kaikosdk::DataInterval* release_interval();
+  ::kaikosdk::DataInterval* mutable_interval();
+  void set_allocated_interval(::kaikosdk::DataInterval* interval);
+  private:
+  const ::kaikosdk::DataInterval& _internal_interval() const;
+  ::kaikosdk::DataInterval* _internal_mutable_interval();
+  public:
+  void unsafe_arena_set_allocated_interval(
+      ::kaikosdk::DataInterval* interval);
+  ::kaikosdk::DataInterval* unsafe_arena_release_interval();
+
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamAggregatedPriceRequestV1)
  private:
   class _Internal;
@@ -227,6 +247,7 @@ class StreamAggregatedPriceRequestV1 final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instrument_class_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr code_;
+  ::kaikosdk::DataInterval* interval_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto;
 };
@@ -341,6 +362,92 @@ inline void StreamAggregatedPriceRequestV1::set_allocated_code(std::string* code
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceRequestV1.code)
+}
+
+// .kaikosdk.DataInterval interval = 3;
+inline bool StreamAggregatedPriceRequestV1::_internal_has_interval() const {
+  return this != internal_default_instance() && interval_ != nullptr;
+}
+inline bool StreamAggregatedPriceRequestV1::has_interval() const {
+  return _internal_has_interval();
+}
+inline const ::kaikosdk::DataInterval& StreamAggregatedPriceRequestV1::_internal_interval() const {
+  const ::kaikosdk::DataInterval* p = interval_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::DataInterval&>(
+      ::kaikosdk::_DataInterval_default_instance_);
+}
+inline const ::kaikosdk::DataInterval& StreamAggregatedPriceRequestV1::interval() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedPriceRequestV1.interval)
+  return _internal_interval();
+}
+inline void StreamAggregatedPriceRequestV1::unsafe_arena_set_allocated_interval(
+    ::kaikosdk::DataInterval* interval) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval_);
+  }
+  interval_ = interval;
+  if (interval) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamAggregatedPriceRequestV1.interval)
+}
+inline ::kaikosdk::DataInterval* StreamAggregatedPriceRequestV1::release_interval() {
+  
+  ::kaikosdk::DataInterval* temp = interval_;
+  interval_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::DataInterval* StreamAggregatedPriceRequestV1::unsafe_arena_release_interval() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedPriceRequestV1.interval)
+  
+  ::kaikosdk::DataInterval* temp = interval_;
+  interval_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::DataInterval* StreamAggregatedPriceRequestV1::_internal_mutable_interval() {
+  
+  if (interval_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::DataInterval>(GetArenaForAllocation());
+    interval_ = p;
+  }
+  return interval_;
+}
+inline ::kaikosdk::DataInterval* StreamAggregatedPriceRequestV1::mutable_interval() {
+  ::kaikosdk::DataInterval* _msg = _internal_mutable_interval();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedPriceRequestV1.interval)
+  return _msg;
+}
+inline void StreamAggregatedPriceRequestV1::set_allocated_interval(::kaikosdk::DataInterval* interval) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval_);
+  }
+  if (interval) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval));
+    if (message_arena != submessage_arena) {
+      interval = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, interval, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  interval_ = interval;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedPriceRequestV1.interval)
 }
 
 #ifdef __GNUC__
