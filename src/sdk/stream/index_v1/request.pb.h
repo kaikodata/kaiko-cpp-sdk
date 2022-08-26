@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "sdk/core/data_interval.pb.h"
 #include "sdk/stream/index_v1/commodity.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -190,6 +191,7 @@ class StreamIndexServiceRequestV1 final :
   enum : int {
     kCommoditiesFieldNumber = 2,
     kIndexCodeFieldNumber = 1,
+    kIntervalFieldNumber = 3,
   };
   // repeated .kaikosdk.StreamIndexCommodity commodities = 2;
   int commodities_size() const;
@@ -222,6 +224,24 @@ class StreamIndexServiceRequestV1 final :
   std::string* _internal_mutable_index_code();
   public:
 
+  // .kaikosdk.DataInterval interval = 3;
+  bool has_interval() const;
+  private:
+  bool _internal_has_interval() const;
+  public:
+  void clear_interval();
+  const ::kaikosdk::DataInterval& interval() const;
+  PROTOBUF_NODISCARD ::kaikosdk::DataInterval* release_interval();
+  ::kaikosdk::DataInterval* mutable_interval();
+  void set_allocated_interval(::kaikosdk::DataInterval* interval);
+  private:
+  const ::kaikosdk::DataInterval& _internal_interval() const;
+  ::kaikosdk::DataInterval* _internal_mutable_interval();
+  public:
+  void unsafe_arena_set_allocated_interval(
+      ::kaikosdk::DataInterval* interval);
+  ::kaikosdk::DataInterval* unsafe_arena_release_interval();
+
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamIndexServiceRequestV1)
  private:
   class _Internal;
@@ -232,6 +252,7 @@ class StreamIndexServiceRequestV1 final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int> commodities_;
   mutable std::atomic<int> _commodities_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr index_code_;
+  ::kaikosdk::DataInterval* interval_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_sdk_2fstream_2findex_5fv1_2frequest_2eproto;
 };
@@ -338,6 +359,92 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
 StreamIndexServiceRequestV1::mutable_commodities() {
   // @@protoc_insertion_point(field_mutable_list:kaikosdk.StreamIndexServiceRequestV1.commodities)
   return _internal_mutable_commodities();
+}
+
+// .kaikosdk.DataInterval interval = 3;
+inline bool StreamIndexServiceRequestV1::_internal_has_interval() const {
+  return this != internal_default_instance() && interval_ != nullptr;
+}
+inline bool StreamIndexServiceRequestV1::has_interval() const {
+  return _internal_has_interval();
+}
+inline const ::kaikosdk::DataInterval& StreamIndexServiceRequestV1::_internal_interval() const {
+  const ::kaikosdk::DataInterval* p = interval_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::DataInterval&>(
+      ::kaikosdk::_DataInterval_default_instance_);
+}
+inline const ::kaikosdk::DataInterval& StreamIndexServiceRequestV1::interval() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceRequestV1.interval)
+  return _internal_interval();
+}
+inline void StreamIndexServiceRequestV1::unsafe_arena_set_allocated_interval(
+    ::kaikosdk::DataInterval* interval) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval_);
+  }
+  interval_ = interval;
+  if (interval) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexServiceRequestV1.interval)
+}
+inline ::kaikosdk::DataInterval* StreamIndexServiceRequestV1::release_interval() {
+  
+  ::kaikosdk::DataInterval* temp = interval_;
+  interval_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::DataInterval* StreamIndexServiceRequestV1::unsafe_arena_release_interval() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceRequestV1.interval)
+  
+  ::kaikosdk::DataInterval* temp = interval_;
+  interval_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::DataInterval* StreamIndexServiceRequestV1::_internal_mutable_interval() {
+  
+  if (interval_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::DataInterval>(GetArenaForAllocation());
+    interval_ = p;
+  }
+  return interval_;
+}
+inline ::kaikosdk::DataInterval* StreamIndexServiceRequestV1::mutable_interval() {
+  ::kaikosdk::DataInterval* _msg = _internal_mutable_interval();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceRequestV1.interval)
+  return _msg;
+}
+inline void StreamIndexServiceRequestV1::set_allocated_interval(::kaikosdk::DataInterval* interval) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval_);
+  }
+  if (interval) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(interval));
+    if (message_arena != submessage_arena) {
+      interval = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, interval, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  interval_ = interval;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceRequestV1.interval)
 }
 
 #ifdef __GNUC__
