@@ -16,25 +16,30 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace kaikosdk {
-constexpr InstrumentCriteria::InstrumentCriteria(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : exchange_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , instrument_class_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_CONSTEXPR InstrumentCriteria::InstrumentCriteria(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.exchange_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.instrument_class_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.code_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct InstrumentCriteriaDefaultTypeInternal {
-  constexpr InstrumentCriteriaDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR InstrumentCriteriaDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~InstrumentCriteriaDefaultTypeInternal() {}
   union {
     InstrumentCriteria _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT InstrumentCriteriaDefaultTypeInternal _InstrumentCriteria_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InstrumentCriteriaDefaultTypeInternal _InstrumentCriteria_default_instance_;
 }  // namespace kaikosdk
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fcore_2finstrument_5fcriteria_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_sdk_2fcore_2finstrument_5fcriteria_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto = nullptr;
 
 const uint32_t TableStruct_sdk_2fcore_2finstrument_5fcriteria_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -43,16 +48,16 @@ const uint32_t TableStruct_sdk_2fcore_2finstrument_5fcriteria_2eproto::offsets[]
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::InstrumentCriteria, exchange_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::InstrumentCriteria, instrument_class_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::InstrumentCriteria, code_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::InstrumentCriteria, _impl_.exchange_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::InstrumentCriteria, _impl_.instrument_class_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::InstrumentCriteria, _impl_.code_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::InstrumentCriteria)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_InstrumentCriteria_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::kaikosdk::_InstrumentCriteria_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_sdk_2fcore_2finstrument_5fcriteria_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -63,19 +68,21 @@ const char descriptor_table_protodef_sdk_2fcore_2finstrument_5fcriteria_2eproto[
   "om/kaikodata/kaiko-go-sdk/core;core\252\002\rKa"
   "ikoSdk.Coreb\006proto3"
   ;
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto = {
-  false, false, 219, descriptor_table_protodef_sdk_2fcore_2finstrument_5fcriteria_2eproto, "sdk/core/instrument_criteria.proto", 
-  &descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_once, nullptr, 0, 1,
-  schemas, file_default_instances, TableStruct_sdk_2fcore_2finstrument_5fcriteria_2eproto::offsets,
-  file_level_metadata_sdk_2fcore_2finstrument_5fcriteria_2eproto, file_level_enum_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto, file_level_service_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto,
+static ::_pbi::once_flag descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto = {
+    false, false, 219, descriptor_table_protodef_sdk_2fcore_2finstrument_5fcriteria_2eproto,
+    "sdk/core/instrument_criteria.proto",
+    &descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_once, nullptr, 0, 1,
+    schemas, file_default_instances, TableStruct_sdk_2fcore_2finstrument_5fcriteria_2eproto::offsets,
+    file_level_metadata_sdk_2fcore_2finstrument_5fcriteria_2eproto, file_level_enum_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto,
+    file_level_service_descriptors_sdk_2fcore_2finstrument_5fcriteria_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_getter() {
   return &descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_sdk_2fcore_2finstrument_5fcriteria_2eproto(&descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_sdk_2fcore_2finstrument_5fcriteria_2eproto(&descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto);
 namespace kaikosdk {
 
 // ===================================================================
@@ -87,79 +94,88 @@ class InstrumentCriteria::_Internal {
 InstrumentCriteria::InstrumentCriteria(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:kaikosdk.InstrumentCriteria)
 }
 InstrumentCriteria::InstrumentCriteria(const InstrumentCriteria& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  InstrumentCriteria* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.exchange_){}
+    , decltype(_impl_.instrument_class_){}
+    , decltype(_impl_.code_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.exchange_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    exchange_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.exchange_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_exchange().empty()) {
-    exchange_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_exchange(), 
-      GetArenaForAllocation());
+    _this->_impl_.exchange_.Set(from._internal_exchange(), 
+      _this->GetArenaForAllocation());
   }
-  instrument_class_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.instrument_class_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    instrument_class_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.instrument_class_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_instrument_class().empty()) {
-    instrument_class_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_instrument_class(), 
-      GetArenaForAllocation());
+    _this->_impl_.instrument_class_.Set(from._internal_instrument_class(), 
+      _this->GetArenaForAllocation());
   }
-  code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.code_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.code_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_code().empty()) {
-    code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_code(), 
-      GetArenaForAllocation());
+    _this->_impl_.code_.Set(from._internal_code(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.InstrumentCriteria)
 }
 
-inline void InstrumentCriteria::SharedCtor() {
-exchange_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  exchange_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-instrument_class_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  instrument_class_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void InstrumentCriteria::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.exchange_){}
+    , decltype(_impl_.instrument_class_){}
+    , decltype(_impl_.code_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.exchange_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.exchange_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.instrument_class_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.instrument_class_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.code_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.code_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 InstrumentCriteria::~InstrumentCriteria() {
   // @@protoc_insertion_point(destructor:kaikosdk.InstrumentCriteria)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void InstrumentCriteria::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  exchange_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  instrument_class_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.exchange_.Destroy();
+  _impl_.instrument_class_.Destroy();
+  _impl_.code_.Destroy();
 }
 
-void InstrumentCriteria::ArenaDtor(void* object) {
-  InstrumentCriteria* _this = reinterpret_cast< InstrumentCriteria* >(object);
-  (void)_this;
-}
-void InstrumentCriteria::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void InstrumentCriteria::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void InstrumentCriteria::Clear() {
@@ -168,25 +184,25 @@ void InstrumentCriteria::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  exchange_.ClearToEmpty();
-  instrument_class_.ClearToEmpty();
-  code_.ClearToEmpty();
+  _impl_.exchange_.ClearToEmpty();
+  _impl_.instrument_class_.ClearToEmpty();
+  _impl_.code_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* InstrumentCriteria::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* InstrumentCriteria::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string exchange = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_exchange();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.InstrumentCriteria.exchange"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.InstrumentCriteria.exchange"));
         } else
           goto handle_unusual;
         continue;
@@ -194,9 +210,9 @@ const char* InstrumentCriteria::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_instrument_class();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.InstrumentCriteria.instrument_class"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.InstrumentCriteria.instrument_class"));
         } else
           goto handle_unusual;
         continue;
@@ -204,9 +220,9 @@ const char* InstrumentCriteria::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_code();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.InstrumentCriteria.code"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.InstrumentCriteria.code"));
         } else
           goto handle_unusual;
         continue;
@@ -270,7 +286,7 @@ uint8_t* InstrumentCriteria::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.InstrumentCriteria)
@@ -306,38 +322,34 @@ size_t InstrumentCriteria::ByteSizeLong() const {
         this->_internal_code());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InstrumentCriteria::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     InstrumentCriteria::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InstrumentCriteria::GetClassData() const { return &_class_data_; }
 
-void InstrumentCriteria::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<InstrumentCriteria *>(to)->MergeFrom(
-      static_cast<const InstrumentCriteria &>(from));
-}
 
-
-void InstrumentCriteria::MergeFrom(const InstrumentCriteria& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.InstrumentCriteria)
-  GOOGLE_DCHECK_NE(&from, this);
+void InstrumentCriteria::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<InstrumentCriteria*>(&to_msg);
+  auto& from = static_cast<const InstrumentCriteria&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.InstrumentCriteria)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_exchange().empty()) {
-    _internal_set_exchange(from._internal_exchange());
+    _this->_internal_set_exchange(from._internal_exchange());
   }
   if (!from._internal_instrument_class().empty()) {
-    _internal_set_instrument_class(from._internal_instrument_class());
+    _this->_internal_set_instrument_class(from._internal_instrument_class());
   }
   if (!from._internal_code().empty()) {
-    _internal_set_code(from._internal_code());
+    _this->_internal_set_code(from._internal_code());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void InstrumentCriteria::CopyFrom(const InstrumentCriteria& from) {
@@ -357,24 +369,21 @@ void InstrumentCriteria::InternalSwap(InstrumentCriteria* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &exchange_, lhs_arena,
-      &other->exchange_, rhs_arena
+      &_impl_.exchange_, lhs_arena,
+      &other->_impl_.exchange_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &instrument_class_, lhs_arena,
-      &other->instrument_class_, rhs_arena
+      &_impl_.instrument_class_, lhs_arena,
+      &other->_impl_.instrument_class_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &code_, lhs_arena,
-      &other->code_, rhs_arena
+      &_impl_.code_, lhs_arena,
+      &other->_impl_.code_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InstrumentCriteria::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_getter, &descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto_once,
       file_level_metadata_sdk_2fcore_2finstrument_5fcriteria_2eproto[0]);
 }
@@ -382,7 +391,8 @@ void InstrumentCriteria::InternalSwap(InstrumentCriteria* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::kaikosdk::InstrumentCriteria* Arena::CreateMaybeMessage< ::kaikosdk::InstrumentCriteria >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::kaikosdk::InstrumentCriteria*
+Arena::CreateMaybeMessage< ::kaikosdk::InstrumentCriteria >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::InstrumentCriteria >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

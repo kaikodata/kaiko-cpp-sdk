@@ -16,24 +16,29 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace kaikosdk {
-constexpr Source::Source(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : data_()
-  , price_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_CONSTEXPR Source::Source(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.data_)*/{}
+  , /*decltype(_impl_.price_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SourceDefaultTypeInternal {
-  constexpr SourceDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SourceDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SourceDefaultTypeInternal() {}
   union {
     Source _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SourceDefaultTypeInternal _Source_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SourceDefaultTypeInternal _Source_default_instance_;
 }  // namespace kaikosdk
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fcore_2fsource_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fcore_2fsource_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fcore_2fsource_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_sdk_2fcore_2fsource_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_sdk_2fcore_2fsource_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fcore_2fsource_2eproto = nullptr;
 
 const uint32_t TableStruct_sdk_2fcore_2fsource_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -42,15 +47,15 @@ const uint32_t TableStruct_sdk_2fcore_2fsource_2eproto::offsets[] PROTOBUF_SECTI
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::Source, data_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::Source, price_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::Source, _impl_.data_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::Source, _impl_.price_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::Source)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_Source_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::kaikosdk::_Source_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_sdk_2fcore_2fsource_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -61,22 +66,24 @@ const char descriptor_table_protodef_sdk_2fcore_2fsource_2eproto[] PROTOBUF_SECT
   "aikodata/kaiko-go-sdk/core;core\252\002\rKaikoS"
   "dk.Coreb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fcore_2fsource_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fcore_2fsource_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2fsource_5fdata_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2fsource_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2fsource_2eproto = {
-  false, false, 215, descriptor_table_protodef_sdk_2fcore_2fsource_2eproto, "sdk/core/source.proto", 
-  &descriptor_table_sdk_2fcore_2fsource_2eproto_once, descriptor_table_sdk_2fcore_2fsource_2eproto_deps, 1, 1,
-  schemas, file_default_instances, TableStruct_sdk_2fcore_2fsource_2eproto::offsets,
-  file_level_metadata_sdk_2fcore_2fsource_2eproto, file_level_enum_descriptors_sdk_2fcore_2fsource_2eproto, file_level_service_descriptors_sdk_2fcore_2fsource_2eproto,
+static ::_pbi::once_flag descriptor_table_sdk_2fcore_2fsource_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_sdk_2fcore_2fsource_2eproto = {
+    false, false, 215, descriptor_table_protodef_sdk_2fcore_2fsource_2eproto,
+    "sdk/core/source.proto",
+    &descriptor_table_sdk_2fcore_2fsource_2eproto_once, descriptor_table_sdk_2fcore_2fsource_2eproto_deps, 1, 1,
+    schemas, file_default_instances, TableStruct_sdk_2fcore_2fsource_2eproto::offsets,
+    file_level_metadata_sdk_2fcore_2fsource_2eproto, file_level_enum_descriptors_sdk_2fcore_2fsource_2eproto,
+    file_level_service_descriptors_sdk_2fcore_2fsource_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_sdk_2fcore_2fsource_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_sdk_2fcore_2fsource_2eproto_getter() {
   return &descriptor_table_sdk_2fcore_2fsource_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_sdk_2fcore_2fsource_2eproto(&descriptor_table_sdk_2fcore_2fsource_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_sdk_2fcore_2fsource_2eproto(&descriptor_table_sdk_2fcore_2fsource_2eproto);
 namespace kaikosdk {
 
 // ===================================================================
@@ -86,60 +93,66 @@ class Source::_Internal {
 };
 
 void Source::clear_data() {
-  data_.Clear();
+  _impl_.data_.Clear();
 }
 Source::Source(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:kaikosdk.Source)
 }
 Source::Source(const Source& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      data_(from.data_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Source* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.data_){from._impl_.data_}
+    , decltype(_impl_.price_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  price_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.price_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    price_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.price_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_price().empty()) {
-    price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_price(), 
-      GetArenaForAllocation());
+    _this->_impl_.price_.Set(from._internal_price(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.Source)
 }
 
-inline void Source::SharedCtor() {
-price_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  price_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void Source::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.data_){arena}
+    , decltype(_impl_.price_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.price_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.price_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Source::~Source() {
   // @@protoc_insertion_point(destructor:kaikosdk.Source)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Source::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  price_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.data_.~RepeatedPtrField();
+  _impl_.price_.Destroy();
 }
 
-void Source::ArenaDtor(void* object) {
-  Source* _this = reinterpret_cast< Source* >(object);
-  (void)_this;
-}
-void Source::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Source::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Source::Clear() {
@@ -148,16 +161,16 @@ void Source::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  data_.Clear();
-  price_.ClearToEmpty();
+  _impl_.data_.Clear();
+  _impl_.price_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Source::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Source::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .kaikosdk.SourceData data = 1;
       case 1:
@@ -176,9 +189,9 @@ const char* Source::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_price();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.Source.price"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.Source.price"));
         } else
           goto handle_unusual;
         continue;
@@ -212,11 +225,11 @@ uint8_t* Source::_InternalSerialize(
   (void) cached_has_bits;
 
   // repeated .kaikosdk.SourceData data = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_data_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_data_size()); i < n; i++) {
+    const auto& repfield = this->_internal_data(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_data(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // string price = 2;
@@ -230,7 +243,7 @@ uint8_t* Source::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.Source)
@@ -247,7 +260,7 @@ size_t Source::ByteSizeLong() const {
 
   // repeated .kaikosdk.SourceData data = 1;
   total_size += 1UL * this->_internal_data_size();
-  for (const auto& msg : this->data_) {
+  for (const auto& msg : this->_impl_.data_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -259,33 +272,29 @@ size_t Source::ByteSizeLong() const {
         this->_internal_price());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Source::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Source::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Source::GetClassData() const { return &_class_data_; }
 
-void Source::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Source *>(to)->MergeFrom(
-      static_cast<const Source &>(from));
-}
 
-
-void Source::MergeFrom(const Source& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.Source)
-  GOOGLE_DCHECK_NE(&from, this);
+void Source::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Source*>(&to_msg);
+  auto& from = static_cast<const Source&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.Source)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  data_.MergeFrom(from.data_);
+  _this->_impl_.data_.MergeFrom(from._impl_.data_);
   if (!from._internal_price().empty()) {
-    _internal_set_price(from._internal_price());
+    _this->_internal_set_price(from._internal_price());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Source::CopyFrom(const Source& from) {
@@ -304,16 +313,15 @@ void Source::InternalSwap(Source* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  data_.InternalSwap(&other->data_);
+  _impl_.data_.InternalSwap(&other->_impl_.data_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &price_, lhs_arena,
-      &other->price_, rhs_arena
+      &_impl_.price_, lhs_arena,
+      &other->_impl_.price_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Source::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fcore_2fsource_2eproto_getter, &descriptor_table_sdk_2fcore_2fsource_2eproto_once,
       file_level_metadata_sdk_2fcore_2fsource_2eproto[0]);
 }
@@ -321,7 +329,8 @@ void Source::InternalSwap(Source* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::kaikosdk::Source* Arena::CreateMaybeMessage< ::kaikosdk::Source >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::kaikosdk::Source*
+Arena::CreateMaybeMessage< ::kaikosdk::Source >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::Source >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

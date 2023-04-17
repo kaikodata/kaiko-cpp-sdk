@@ -6,8 +6,8 @@
 #include "sdk/sdk.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -20,6 +20,60 @@
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace kaikosdk {
+
+static const char* StreamAggregatedQuoteServiceV2_method_names[] = {
+  "/kaikosdk.StreamAggregatedQuoteServiceV2/Subscribe",
+};
+
+std::unique_ptr< StreamAggregatedQuoteServiceV2::Stub> StreamAggregatedQuoteServiceV2::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< StreamAggregatedQuoteServiceV2::Stub> stub(new StreamAggregatedQuoteServiceV2::Stub(channel, options));
+  return stub;
+}
+
+StreamAggregatedQuoteServiceV2::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Subscribe_(StreamAggregatedQuoteServiceV2_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  {}
+
+::grpc::ClientReader< ::kaikosdk::StreamAggregatedQuoteResponseV2>* StreamAggregatedQuoteServiceV2::Stub::SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatedQuoteRequestV2& request) {
+  return ::grpc::internal::ClientReaderFactory< ::kaikosdk::StreamAggregatedQuoteResponseV2>::Create(channel_.get(), rpcmethod_Subscribe_, context, request);
+}
+
+void StreamAggregatedQuoteServiceV2::Stub::async::Subscribe(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatedQuoteRequestV2* request, ::grpc::ClientReadReactor< ::kaikosdk::StreamAggregatedQuoteResponseV2>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::kaikosdk::StreamAggregatedQuoteResponseV2>::Create(stub_->channel_.get(), stub_->rpcmethod_Subscribe_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamAggregatedQuoteResponseV2>* StreamAggregatedQuoteServiceV2::Stub::AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatedQuoteRequestV2& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamAggregatedQuoteResponseV2>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamAggregatedQuoteResponseV2>* StreamAggregatedQuoteServiceV2::Stub::PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamAggregatedQuoteRequestV2& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamAggregatedQuoteResponseV2>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, false, nullptr);
+}
+
+StreamAggregatedQuoteServiceV2::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      StreamAggregatedQuoteServiceV2_method_names[0],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< StreamAggregatedQuoteServiceV2::Service, ::kaikosdk::StreamAggregatedQuoteRequestV2, ::kaikosdk::StreamAggregatedQuoteResponseV2>(
+          [](StreamAggregatedQuoteServiceV2::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::kaikosdk::StreamAggregatedQuoteRequestV2* req,
+             ::grpc::ServerWriter<::kaikosdk::StreamAggregatedQuoteResponseV2>* writer) {
+               return service->Subscribe(ctx, req, writer);
+             }, this)));
+}
+
+StreamAggregatedQuoteServiceV2::Service::~Service() {
+}
+
+::grpc::Status StreamAggregatedQuoteServiceV2::Service::Subscribe(::grpc::ServerContext* context, const ::kaikosdk::StreamAggregatedQuoteRequestV2* request, ::grpc::ServerWriter< ::kaikosdk::StreamAggregatedQuoteResponseV2>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 
 static const char* StreamAggregatedPriceServiceV1_method_names[] = {
   "/kaikosdk.StreamAggregatedPriceServiceV1/Subscribe",

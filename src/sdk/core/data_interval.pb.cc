@@ -16,24 +16,29 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace kaikosdk {
-constexpr DataInterval::DataInterval(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : start_time_(nullptr)
-  , end_time_(nullptr){}
+PROTOBUF_CONSTEXPR DataInterval::DataInterval(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.start_time_)*/nullptr
+  , /*decltype(_impl_.end_time_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DataIntervalDefaultTypeInternal {
-  constexpr DataIntervalDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR DataIntervalDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~DataIntervalDefaultTypeInternal() {}
   union {
     DataInterval _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DataIntervalDefaultTypeInternal _DataInterval_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DataIntervalDefaultTypeInternal _DataInterval_default_instance_;
 }  // namespace kaikosdk
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fcore_2fdata_5finterval_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fcore_2fdata_5finterval_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fcore_2fdata_5finterval_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_sdk_2fcore_2fdata_5finterval_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_sdk_2fcore_2fdata_5finterval_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fcore_2fdata_5finterval_2eproto = nullptr;
 
 const uint32_t TableStruct_sdk_2fcore_2fdata_5finterval_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -42,15 +47,15 @@ const uint32_t TableStruct_sdk_2fcore_2fdata_5finterval_2eproto::offsets[] PROTO
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::DataInterval, start_time_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::DataInterval, end_time_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::DataInterval, _impl_.start_time_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::DataInterval, _impl_.end_time_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::DataInterval)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_DataInterval_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::kaikosdk::_DataInterval_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_sdk_2fcore_2fdata_5finterval_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -62,22 +67,24 @@ const char descriptor_table_protodef_sdk_2fcore_2fdata_5finterval_2eproto[] PROT
   ".coreP\001Z+github.com/kaikodata/kaiko-go-s"
   "dk/core;core\252\002\rKaikoSdk.Coreb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto = {
-  false, false, 276, descriptor_table_protodef_sdk_2fcore_2fdata_5finterval_2eproto, "sdk/core/data_interval.proto", 
-  &descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_once, descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_deps, 1, 1,
-  schemas, file_default_instances, TableStruct_sdk_2fcore_2fdata_5finterval_2eproto::offsets,
-  file_level_metadata_sdk_2fcore_2fdata_5finterval_2eproto, file_level_enum_descriptors_sdk_2fcore_2fdata_5finterval_2eproto, file_level_service_descriptors_sdk_2fcore_2fdata_5finterval_2eproto,
+static ::_pbi::once_flag descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto = {
+    false, false, 276, descriptor_table_protodef_sdk_2fcore_2fdata_5finterval_2eproto,
+    "sdk/core/data_interval.proto",
+    &descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_once, descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_deps, 1, 1,
+    schemas, file_default_instances, TableStruct_sdk_2fcore_2fdata_5finterval_2eproto::offsets,
+    file_level_metadata_sdk_2fcore_2fdata_5finterval_2eproto, file_level_enum_descriptors_sdk_2fcore_2fdata_5finterval_2eproto,
+    file_level_service_descriptors_sdk_2fcore_2fdata_5finterval_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_getter() {
   return &descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_sdk_2fcore_2fdata_5finterval_2eproto(&descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_sdk_2fcore_2fdata_5finterval_2eproto(&descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto);
 namespace kaikosdk {
 
 // ===================================================================
@@ -90,77 +97,76 @@ class DataInterval::_Internal {
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 DataInterval::_Internal::start_time(const DataInterval* msg) {
-  return *msg->start_time_;
+  return *msg->_impl_.start_time_;
 }
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 DataInterval::_Internal::end_time(const DataInterval* msg) {
-  return *msg->end_time_;
+  return *msg->_impl_.end_time_;
 }
 void DataInterval::clear_start_time() {
-  if (GetArenaForAllocation() == nullptr && start_time_ != nullptr) {
-    delete start_time_;
+  if (GetArenaForAllocation() == nullptr && _impl_.start_time_ != nullptr) {
+    delete _impl_.start_time_;
   }
-  start_time_ = nullptr;
+  _impl_.start_time_ = nullptr;
 }
 void DataInterval::clear_end_time() {
-  if (GetArenaForAllocation() == nullptr && end_time_ != nullptr) {
-    delete end_time_;
+  if (GetArenaForAllocation() == nullptr && _impl_.end_time_ != nullptr) {
+    delete _impl_.end_time_;
   }
-  end_time_ = nullptr;
+  _impl_.end_time_ = nullptr;
 }
 DataInterval::DataInterval(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:kaikosdk.DataInterval)
 }
 DataInterval::DataInterval(const DataInterval& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DataInterval* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.start_time_){nullptr}
+    , decltype(_impl_.end_time_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_start_time()) {
-    start_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.start_time_);
-  } else {
-    start_time_ = nullptr;
+    _this->_impl_.start_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.start_time_);
   }
   if (from._internal_has_end_time()) {
-    end_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.end_time_);
-  } else {
-    end_time_ = nullptr;
+    _this->_impl_.end_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.end_time_);
   }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.DataInterval)
 }
 
-inline void DataInterval::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&start_time_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&end_time_) -
-    reinterpret_cast<char*>(&start_time_)) + sizeof(end_time_));
+inline void DataInterval::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.start_time_){nullptr}
+    , decltype(_impl_.end_time_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 DataInterval::~DataInterval() {
   // @@protoc_insertion_point(destructor:kaikosdk.DataInterval)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void DataInterval::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete start_time_;
-  if (this != internal_default_instance()) delete end_time_;
+  if (this != internal_default_instance()) delete _impl_.start_time_;
+  if (this != internal_default_instance()) delete _impl_.end_time_;
 }
 
-void DataInterval::ArenaDtor(void* object) {
-  DataInterval* _this = reinterpret_cast< DataInterval* >(object);
-  (void)_this;
-}
-void DataInterval::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DataInterval::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void DataInterval::Clear() {
@@ -169,22 +175,22 @@ void DataInterval::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && start_time_ != nullptr) {
-    delete start_time_;
+  if (GetArenaForAllocation() == nullptr && _impl_.start_time_ != nullptr) {
+    delete _impl_.start_time_;
   }
-  start_time_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && end_time_ != nullptr) {
-    delete end_time_;
+  _impl_.start_time_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.end_time_ != nullptr) {
+    delete _impl_.end_time_;
   }
-  end_time_ = nullptr;
+  _impl_.end_time_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DataInterval::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DataInterval::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .google.protobuf.Timestamp start_time = 1;
       case 1:
@@ -233,22 +239,20 @@ uint8_t* DataInterval::_InternalSerialize(
 
   // .google.protobuf.Timestamp start_time = 1;
   if (this->_internal_has_start_time()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::start_time(this), target, stream);
+      InternalWriteMessage(1, _Internal::start_time(this),
+        _Internal::start_time(this).GetCachedSize(), target, stream);
   }
 
   // .google.protobuf.Timestamp end_time = 2;
   if (this->_internal_has_end_time()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::end_time(this), target, stream);
+      InternalWriteMessage(2, _Internal::end_time(this),
+        _Internal::end_time(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.DataInterval)
@@ -267,45 +271,43 @@ size_t DataInterval::ByteSizeLong() const {
   if (this->_internal_has_start_time()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *start_time_);
+        *_impl_.start_time_);
   }
 
   // .google.protobuf.Timestamp end_time = 2;
   if (this->_internal_has_end_time()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *end_time_);
+        *_impl_.end_time_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DataInterval::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     DataInterval::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DataInterval::GetClassData() const { return &_class_data_; }
 
-void DataInterval::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<DataInterval *>(to)->MergeFrom(
-      static_cast<const DataInterval &>(from));
-}
 
-
-void DataInterval::MergeFrom(const DataInterval& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.DataInterval)
-  GOOGLE_DCHECK_NE(&from, this);
+void DataInterval::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DataInterval*>(&to_msg);
+  auto& from = static_cast<const DataInterval&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.DataInterval)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_start_time()) {
-    _internal_mutable_start_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_start_time());
+    _this->_internal_mutable_start_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_start_time());
   }
   if (from._internal_has_end_time()) {
-    _internal_mutable_end_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_end_time());
+    _this->_internal_mutable_end_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_end_time());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void DataInterval::CopyFrom(const DataInterval& from) {
@@ -323,15 +325,15 @@ void DataInterval::InternalSwap(DataInterval* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DataInterval, end_time_)
-      + sizeof(DataInterval::end_time_)
-      - PROTOBUF_FIELD_OFFSET(DataInterval, start_time_)>(
-          reinterpret_cast<char*>(&start_time_),
-          reinterpret_cast<char*>(&other->start_time_));
+      PROTOBUF_FIELD_OFFSET(DataInterval, _impl_.end_time_)
+      + sizeof(DataInterval::_impl_.end_time_)
+      - PROTOBUF_FIELD_OFFSET(DataInterval, _impl_.start_time_)>(
+          reinterpret_cast<char*>(&_impl_.start_time_),
+          reinterpret_cast<char*>(&other->_impl_.start_time_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DataInterval::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_getter, &descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto_once,
       file_level_metadata_sdk_2fcore_2fdata_5finterval_2eproto[0]);
 }
@@ -339,7 +341,8 @@ void DataInterval::InternalSwap(DataInterval* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::kaikosdk::DataInterval* Arena::CreateMaybeMessage< ::kaikosdk::DataInterval >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::kaikosdk::DataInterval*
+Arena::CreateMaybeMessage< ::kaikosdk::DataInterval >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::DataInterval >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

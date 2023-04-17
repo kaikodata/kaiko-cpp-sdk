@@ -16,24 +16,29 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace kaikosdk {
-constexpr StreamAggregatesOHLCVRequestV1::StreamAggregatesOHLCVRequestV1(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : aggregate_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , instrument_criteria_(nullptr){}
+PROTOBUF_CONSTEXPR StreamAggregatesOHLCVRequestV1::StreamAggregatesOHLCVRequestV1(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.aggregate_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.instrument_criteria_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StreamAggregatesOHLCVRequestV1DefaultTypeInternal {
-  constexpr StreamAggregatesOHLCVRequestV1DefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StreamAggregatesOHLCVRequestV1DefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StreamAggregatesOHLCVRequestV1DefaultTypeInternal() {}
   union {
     StreamAggregatesOHLCVRequestV1 _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StreamAggregatesOHLCVRequestV1DefaultTypeInternal _StreamAggregatesOHLCVRequestV1_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamAggregatesOHLCVRequestV1DefaultTypeInternal _StreamAggregatesOHLCVRequestV1_default_instance_;
 }  // namespace kaikosdk
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto = nullptr;
 
 const uint32_t TableStruct_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -42,15 +47,15 @@ const uint32_t TableStruct_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2epr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesOHLCVRequestV1, instrument_criteria_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesOHLCVRequestV1, aggregate_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesOHLCVRequestV1, _impl_.instrument_criteria_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesOHLCVRequestV1, _impl_.aggregate_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamAggregatesOHLCVRequestV1)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_StreamAggregatesOHLCVRequestV1_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::kaikosdk::_StreamAggregatesOHLCVRequestV1_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -65,22 +70,24 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2fre
   "ates_ohlcv_v1\252\002!KaikoSdk.Stream.Aggregat"
   "esOHLCVV1b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2finstrument_5fcriteria_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto = {
-  false, false, 377, descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto, "sdk/stream/aggregates_ohlcv_v1/request.proto", 
-  &descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_deps, 1, 1,
-  schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto::offsets,
-  file_level_metadata_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto,
+static ::_pbi::once_flag descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto = {
+    false, false, 377, descriptor_table_protodef_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto,
+    "sdk/stream/aggregates_ohlcv_v1/request.proto",
+    &descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_deps, 1, 1,
+    schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto::offsets,
+    file_level_metadata_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto,
+    file_level_service_descriptors_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_getter() {
   return &descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto(&descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto(&descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto);
 namespace kaikosdk {
 
 // ===================================================================
@@ -92,71 +99,75 @@ class StreamAggregatesOHLCVRequestV1::_Internal {
 
 const ::kaikosdk::InstrumentCriteria&
 StreamAggregatesOHLCVRequestV1::_Internal::instrument_criteria(const StreamAggregatesOHLCVRequestV1* msg) {
-  return *msg->instrument_criteria_;
+  return *msg->_impl_.instrument_criteria_;
 }
 void StreamAggregatesOHLCVRequestV1::clear_instrument_criteria() {
-  if (GetArenaForAllocation() == nullptr && instrument_criteria_ != nullptr) {
-    delete instrument_criteria_;
+  if (GetArenaForAllocation() == nullptr && _impl_.instrument_criteria_ != nullptr) {
+    delete _impl_.instrument_criteria_;
   }
-  instrument_criteria_ = nullptr;
+  _impl_.instrument_criteria_ = nullptr;
 }
 StreamAggregatesOHLCVRequestV1::StreamAggregatesOHLCVRequestV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamAggregatesOHLCVRequestV1)
 }
 StreamAggregatesOHLCVRequestV1::StreamAggregatesOHLCVRequestV1(const StreamAggregatesOHLCVRequestV1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StreamAggregatesOHLCVRequestV1* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.aggregate_){}
+    , decltype(_impl_.instrument_criteria_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  aggregate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.aggregate_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    aggregate_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.aggregate_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_aggregate().empty()) {
-    aggregate_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_aggregate(), 
-      GetArenaForAllocation());
+    _this->_impl_.aggregate_.Set(from._internal_aggregate(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_instrument_criteria()) {
-    instrument_criteria_ = new ::kaikosdk::InstrumentCriteria(*from.instrument_criteria_);
-  } else {
-    instrument_criteria_ = nullptr;
+    _this->_impl_.instrument_criteria_ = new ::kaikosdk::InstrumentCriteria(*from._impl_.instrument_criteria_);
   }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamAggregatesOHLCVRequestV1)
 }
 
-inline void StreamAggregatesOHLCVRequestV1::SharedCtor() {
-aggregate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  aggregate_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-instrument_criteria_ = nullptr;
+inline void StreamAggregatesOHLCVRequestV1::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.aggregate_){}
+    , decltype(_impl_.instrument_criteria_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.aggregate_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.aggregate_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 StreamAggregatesOHLCVRequestV1::~StreamAggregatesOHLCVRequestV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamAggregatesOHLCVRequestV1)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void StreamAggregatesOHLCVRequestV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  aggregate_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete instrument_criteria_;
+  _impl_.aggregate_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.instrument_criteria_;
 }
 
-void StreamAggregatesOHLCVRequestV1::ArenaDtor(void* object) {
-  StreamAggregatesOHLCVRequestV1* _this = reinterpret_cast< StreamAggregatesOHLCVRequestV1* >(object);
-  (void)_this;
-}
-void StreamAggregatesOHLCVRequestV1::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void StreamAggregatesOHLCVRequestV1::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void StreamAggregatesOHLCVRequestV1::Clear() {
@@ -165,19 +176,19 @@ void StreamAggregatesOHLCVRequestV1::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  aggregate_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && instrument_criteria_ != nullptr) {
-    delete instrument_criteria_;
+  _impl_.aggregate_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.instrument_criteria_ != nullptr) {
+    delete _impl_.instrument_criteria_;
   }
-  instrument_criteria_ = nullptr;
+  _impl_.instrument_criteria_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* StreamAggregatesOHLCVRequestV1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* StreamAggregatesOHLCVRequestV1::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
       case 1:
@@ -191,9 +202,9 @@ const char* StreamAggregatesOHLCVRequestV1::_InternalParse(const char* ptr, ::PR
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_aggregate();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamAggregatesOHLCVRequestV1.aggregate"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatesOHLCVRequestV1.aggregate"));
         } else
           goto handle_unusual;
         continue;
@@ -228,10 +239,9 @@ uint8_t* StreamAggregatesOHLCVRequestV1::_InternalSerialize(
 
   // .kaikosdk.InstrumentCriteria instrument_criteria = 1;
   if (this->_internal_has_instrument_criteria()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::instrument_criteria(this), target, stream);
+      InternalWriteMessage(1, _Internal::instrument_criteria(this),
+        _Internal::instrument_criteria(this).GetCachedSize(), target, stream);
   }
 
   // string aggregate = 2;
@@ -245,7 +255,7 @@ uint8_t* StreamAggregatesOHLCVRequestV1::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.StreamAggregatesOHLCVRequestV1)
@@ -271,38 +281,35 @@ size_t StreamAggregatesOHLCVRequestV1::ByteSizeLong() const {
   if (this->_internal_has_instrument_criteria()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *instrument_criteria_);
+        *_impl_.instrument_criteria_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamAggregatesOHLCVRequestV1::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     StreamAggregatesOHLCVRequestV1::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamAggregatesOHLCVRequestV1::GetClassData() const { return &_class_data_; }
 
-void StreamAggregatesOHLCVRequestV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<StreamAggregatesOHLCVRequestV1 *>(to)->MergeFrom(
-      static_cast<const StreamAggregatesOHLCVRequestV1 &>(from));
-}
 
-
-void StreamAggregatesOHLCVRequestV1::MergeFrom(const StreamAggregatesOHLCVRequestV1& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamAggregatesOHLCVRequestV1)
-  GOOGLE_DCHECK_NE(&from, this);
+void StreamAggregatesOHLCVRequestV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StreamAggregatesOHLCVRequestV1*>(&to_msg);
+  auto& from = static_cast<const StreamAggregatesOHLCVRequestV1&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamAggregatesOHLCVRequestV1)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_aggregate().empty()) {
-    _internal_set_aggregate(from._internal_aggregate());
+    _this->_internal_set_aggregate(from._internal_aggregate());
   }
   if (from._internal_has_instrument_criteria()) {
-    _internal_mutable_instrument_criteria()->::kaikosdk::InstrumentCriteria::MergeFrom(from._internal_instrument_criteria());
+    _this->_internal_mutable_instrument_criteria()->::kaikosdk::InstrumentCriteria::MergeFrom(
+        from._internal_instrument_criteria());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamAggregatesOHLCVRequestV1::CopyFrom(const StreamAggregatesOHLCVRequestV1& from) {
@@ -322,15 +329,14 @@ void StreamAggregatesOHLCVRequestV1::InternalSwap(StreamAggregatesOHLCVRequestV1
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &aggregate_, lhs_arena,
-      &other->aggregate_, rhs_arena
+      &_impl_.aggregate_, lhs_arena,
+      &other->_impl_.aggregate_, rhs_arena
   );
-  swap(instrument_criteria_, other->instrument_criteria_);
+  swap(_impl_.instrument_criteria_, other->_impl_.instrument_criteria_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamAggregatesOHLCVRequestV1::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_getter, &descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto_once,
       file_level_metadata_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto[0]);
 }
@@ -338,7 +344,8 @@ void StreamAggregatesOHLCVRequestV1::InternalSwap(StreamAggregatesOHLCVRequestV1
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::kaikosdk::StreamAggregatesOHLCVRequestV1* Arena::CreateMaybeMessage< ::kaikosdk::StreamAggregatesOHLCVRequestV1 >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::kaikosdk::StreamAggregatesOHLCVRequestV1*
+Arena::CreateMaybeMessage< ::kaikosdk::StreamAggregatesOHLCVRequestV1 >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::StreamAggregatesOHLCVRequestV1 >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

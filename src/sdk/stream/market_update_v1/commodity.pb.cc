@@ -16,13 +16,17 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace kaikosdk {
 }  // namespace kaikosdk
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto = nullptr;
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto[1];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto = nullptr;
 const uint32_t TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto::offsets[1] = {};
-static constexpr ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema* schemas = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances = nullptr;
+static constexpr ::_pbi::MigrationSchema* schemas = nullptr;
+static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n+sdk/stream/market_update_v1/commodity."
@@ -35,19 +39,21 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommo
   "pdate_v1\252\002\036KaikoSdk.Stream.MarketUpdateV"
   "1b\006proto3"
   ;
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto = {
-  false, false, 329, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto, "sdk/stream/market_update_v1/commodity.proto", 
-  &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto_once, nullptr, 0, 0,
-  schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto::offsets,
-  nullptr, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto, file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto,
+static ::_pbi::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto = {
+    false, false, 329, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto,
+    "sdk/stream/market_update_v1/commodity.proto",
+    &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto_once, nullptr, 0, 0,
+    schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto::offsets,
+    nullptr, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto,
+    file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto_getter() {
   return &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto(&descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto(&descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto);
 namespace kaikosdk {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StreamMarketUpdateCommodity_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fcommodity_2eproto);

@@ -16,29 +16,34 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace kaikosdk {
-constexpr StreamAggregatesDirectExchangeRateResponseV1::StreamAggregatesDirectExchangeRateResponseV1(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : sources_()
-  , aggregate_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , price_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , sequence_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , uid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , timestamp_(nullptr){}
+PROTOBUF_CONSTEXPR StreamAggregatesDirectExchangeRateResponseV1::StreamAggregatesDirectExchangeRateResponseV1(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.sources_)*/{}
+  , /*decltype(_impl_.aggregate_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.code_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.price_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.sequence_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.uid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.timestamp_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StreamAggregatesDirectExchangeRateResponseV1DefaultTypeInternal {
-  constexpr StreamAggregatesDirectExchangeRateResponseV1DefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StreamAggregatesDirectExchangeRateResponseV1DefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StreamAggregatesDirectExchangeRateResponseV1DefaultTypeInternal() {}
   union {
     StreamAggregatesDirectExchangeRateResponseV1 _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StreamAggregatesDirectExchangeRateResponseV1DefaultTypeInternal _StreamAggregatesDirectExchangeRateResponseV1_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamAggregatesDirectExchangeRateResponseV1DefaultTypeInternal _StreamAggregatesDirectExchangeRateResponseV1_default_instance_;
 }  // namespace kaikosdk
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto = nullptr;
 
 const uint32_t TableStruct_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -47,20 +52,20 @@ const uint32_t TableStruct_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, aggregate_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, code_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, price_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, sequence_id_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, sources_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, timestamp_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, uid_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, _impl_.aggregate_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, _impl_.code_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, _impl_.price_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, _impl_.sequence_id_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, _impl_.sources_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, _impl_.timestamp_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1, _impl_.uid_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::kaikosdk::_StreamAggregatesDirectExchangeRateResponseV1_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::kaikosdk::_StreamAggregatesDirectExchangeRateResponseV1_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -80,23 +85,25 @@ const char descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchan
   "e_v1\252\002.KaikoSdk.Stream.AggregatesDirectE"
   "xchangeRateV1b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_deps[2] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
   &::descriptor_table_sdk_2fcore_2fsource_5fdata_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto = {
-  false, false, 581, descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto, "sdk/stream/aggregates_direct_exchange_rate_v1/response.proto", 
-  &descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_deps, 2, 1,
-  schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto::offsets,
-  file_level_metadata_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto, file_level_service_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto,
+static ::_pbi::once_flag descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto = {
+    false, false, 581, descriptor_table_protodef_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto,
+    "sdk/stream/aggregates_direct_exchange_rate_v1/response.proto",
+    &descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_deps, 2, 1,
+    schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto::offsets,
+    file_level_metadata_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto,
+    file_level_service_descriptors_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_getter() {
   return &descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto(&descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto(&descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto);
 namespace kaikosdk {
 
 // ===================================================================
@@ -108,128 +115,141 @@ class StreamAggregatesDirectExchangeRateResponseV1::_Internal {
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 StreamAggregatesDirectExchangeRateResponseV1::_Internal::timestamp(const StreamAggregatesDirectExchangeRateResponseV1* msg) {
-  return *msg->timestamp_;
+  return *msg->_impl_.timestamp_;
 }
 void StreamAggregatesDirectExchangeRateResponseV1::clear_sources() {
-  sources_.Clear();
+  _impl_.sources_.Clear();
 }
 void StreamAggregatesDirectExchangeRateResponseV1::clear_timestamp() {
-  if (GetArenaForAllocation() == nullptr && timestamp_ != nullptr) {
-    delete timestamp_;
+  if (GetArenaForAllocation() == nullptr && _impl_.timestamp_ != nullptr) {
+    delete _impl_.timestamp_;
   }
-  timestamp_ = nullptr;
+  _impl_.timestamp_ = nullptr;
 }
 StreamAggregatesDirectExchangeRateResponseV1::StreamAggregatesDirectExchangeRateResponseV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  sources_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamAggregatesDirectExchangeRateResponseV1)
 }
 StreamAggregatesDirectExchangeRateResponseV1::StreamAggregatesDirectExchangeRateResponseV1(const StreamAggregatesDirectExchangeRateResponseV1& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      sources_(from.sources_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StreamAggregatesDirectExchangeRateResponseV1* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.sources_){from._impl_.sources_}
+    , decltype(_impl_.aggregate_){}
+    , decltype(_impl_.code_){}
+    , decltype(_impl_.price_){}
+    , decltype(_impl_.sequence_id_){}
+    , decltype(_impl_.uid_){}
+    , decltype(_impl_.timestamp_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  aggregate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.aggregate_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    aggregate_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.aggregate_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_aggregate().empty()) {
-    aggregate_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_aggregate(), 
-      GetArenaForAllocation());
+    _this->_impl_.aggregate_.Set(from._internal_aggregate(), 
+      _this->GetArenaForAllocation());
   }
-  code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.code_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.code_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_code().empty()) {
-    code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_code(), 
-      GetArenaForAllocation());
+    _this->_impl_.code_.Set(from._internal_code(), 
+      _this->GetArenaForAllocation());
   }
-  price_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.price_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    price_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.price_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_price().empty()) {
-    price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_price(), 
-      GetArenaForAllocation());
+    _this->_impl_.price_.Set(from._internal_price(), 
+      _this->GetArenaForAllocation());
   }
-  sequence_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.sequence_id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    sequence_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.sequence_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sequence_id().empty()) {
-    sequence_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sequence_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.sequence_id_.Set(from._internal_sequence_id(), 
+      _this->GetArenaForAllocation());
   }
-  uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.uid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    uid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    _impl_.uid_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_uid().empty()) {
-    uid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uid(), 
-      GetArenaForAllocation());
+    _this->_impl_.uid_.Set(from._internal_uid(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_timestamp()) {
-    timestamp_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.timestamp_);
-  } else {
-    timestamp_ = nullptr;
+    _this->_impl_.timestamp_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.timestamp_);
   }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamAggregatesDirectExchangeRateResponseV1)
 }
 
-inline void StreamAggregatesDirectExchangeRateResponseV1::SharedCtor() {
-aggregate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  aggregate_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-price_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  price_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-sequence_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  sequence_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  uid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-timestamp_ = nullptr;
+inline void StreamAggregatesDirectExchangeRateResponseV1::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.sources_){arena}
+    , decltype(_impl_.aggregate_){}
+    , decltype(_impl_.code_){}
+    , decltype(_impl_.price_){}
+    , decltype(_impl_.sequence_id_){}
+    , decltype(_impl_.uid_){}
+    , decltype(_impl_.timestamp_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.aggregate_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.aggregate_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.code_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.code_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.price_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.price_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.sequence_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sequence_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.uid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.uid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 StreamAggregatesDirectExchangeRateResponseV1::~StreamAggregatesDirectExchangeRateResponseV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamAggregatesDirectExchangeRateResponseV1)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void StreamAggregatesDirectExchangeRateResponseV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  aggregate_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  price_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sequence_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  uid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete timestamp_;
+  _impl_.sources_.~RepeatedPtrField();
+  _impl_.aggregate_.Destroy();
+  _impl_.code_.Destroy();
+  _impl_.price_.Destroy();
+  _impl_.sequence_id_.Destroy();
+  _impl_.uid_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.timestamp_;
 }
 
-void StreamAggregatesDirectExchangeRateResponseV1::ArenaDtor(void* object) {
-  StreamAggregatesDirectExchangeRateResponseV1* _this = reinterpret_cast< StreamAggregatesDirectExchangeRateResponseV1* >(object);
-  (void)_this;
-}
-void StreamAggregatesDirectExchangeRateResponseV1::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void StreamAggregatesDirectExchangeRateResponseV1::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void StreamAggregatesDirectExchangeRateResponseV1::Clear() {
@@ -238,32 +258,32 @@ void StreamAggregatesDirectExchangeRateResponseV1::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  sources_.Clear();
-  aggregate_.ClearToEmpty();
-  code_.ClearToEmpty();
-  price_.ClearToEmpty();
-  sequence_id_.ClearToEmpty();
-  uid_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && timestamp_ != nullptr) {
-    delete timestamp_;
+  _impl_.sources_.Clear();
+  _impl_.aggregate_.ClearToEmpty();
+  _impl_.code_.ClearToEmpty();
+  _impl_.price_.ClearToEmpty();
+  _impl_.sequence_id_.ClearToEmpty();
+  _impl_.uid_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.timestamp_ != nullptr) {
+    delete _impl_.timestamp_;
   }
-  timestamp_ = nullptr;
+  _impl_.timestamp_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* StreamAggregatesDirectExchangeRateResponseV1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* StreamAggregatesDirectExchangeRateResponseV1::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string aggregate = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_aggregate();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.aggregate"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.aggregate"));
         } else
           goto handle_unusual;
         continue;
@@ -271,9 +291,9 @@ const char* StreamAggregatesDirectExchangeRateResponseV1::_InternalParse(const c
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_code();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.code"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.code"));
         } else
           goto handle_unusual;
         continue;
@@ -281,9 +301,9 @@ const char* StreamAggregatesDirectExchangeRateResponseV1::_InternalParse(const c
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_price();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.price"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.price"));
         } else
           goto handle_unusual;
         continue;
@@ -291,9 +311,9 @@ const char* StreamAggregatesDirectExchangeRateResponseV1::_InternalParse(const c
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_sequence_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.sequence_id"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.sequence_id"));
         } else
           goto handle_unusual;
         continue;
@@ -322,9 +342,9 @@ const char* StreamAggregatesDirectExchangeRateResponseV1::_InternalParse(const c
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_uid();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.uid"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatesDirectExchangeRateResponseV1.uid"));
         } else
           goto handle_unusual;
         continue;
@@ -398,19 +418,18 @@ uint8_t* StreamAggregatesDirectExchangeRateResponseV1::_InternalSerialize(
   }
 
   // repeated .kaikosdk.SourceData sources = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_sources_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_sources_size()); i < n; i++) {
+    const auto& repfield = this->_internal_sources(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, this->_internal_sources(i), target, stream);
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // .google.protobuf.Timestamp timestamp = 6;
   if (this->_internal_has_timestamp()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::timestamp(this), target, stream);
+      InternalWriteMessage(6, _Internal::timestamp(this),
+        _Internal::timestamp(this).GetCachedSize(), target, stream);
   }
 
   // string uid = 7;
@@ -424,7 +443,7 @@ uint8_t* StreamAggregatesDirectExchangeRateResponseV1::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.StreamAggregatesDirectExchangeRateResponseV1)
@@ -441,7 +460,7 @@ size_t StreamAggregatesDirectExchangeRateResponseV1::ByteSizeLong() const {
 
   // repeated .kaikosdk.SourceData sources = 5;
   total_size += 1UL * this->_internal_sources_size();
-  for (const auto& msg : this->sources_) {
+  for (const auto& msg : this->_impl_.sources_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -485,51 +504,48 @@ size_t StreamAggregatesDirectExchangeRateResponseV1::ByteSizeLong() const {
   if (this->_internal_has_timestamp()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *timestamp_);
+        *_impl_.timestamp_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreamAggregatesDirectExchangeRateResponseV1::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     StreamAggregatesDirectExchangeRateResponseV1::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreamAggregatesDirectExchangeRateResponseV1::GetClassData() const { return &_class_data_; }
 
-void StreamAggregatesDirectExchangeRateResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<StreamAggregatesDirectExchangeRateResponseV1 *>(to)->MergeFrom(
-      static_cast<const StreamAggregatesDirectExchangeRateResponseV1 &>(from));
-}
 
-
-void StreamAggregatesDirectExchangeRateResponseV1::MergeFrom(const StreamAggregatesDirectExchangeRateResponseV1& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamAggregatesDirectExchangeRateResponseV1)
-  GOOGLE_DCHECK_NE(&from, this);
+void StreamAggregatesDirectExchangeRateResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StreamAggregatesDirectExchangeRateResponseV1*>(&to_msg);
+  auto& from = static_cast<const StreamAggregatesDirectExchangeRateResponseV1&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.StreamAggregatesDirectExchangeRateResponseV1)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  sources_.MergeFrom(from.sources_);
+  _this->_impl_.sources_.MergeFrom(from._impl_.sources_);
   if (!from._internal_aggregate().empty()) {
-    _internal_set_aggregate(from._internal_aggregate());
+    _this->_internal_set_aggregate(from._internal_aggregate());
   }
   if (!from._internal_code().empty()) {
-    _internal_set_code(from._internal_code());
+    _this->_internal_set_code(from._internal_code());
   }
   if (!from._internal_price().empty()) {
-    _internal_set_price(from._internal_price());
+    _this->_internal_set_price(from._internal_price());
   }
   if (!from._internal_sequence_id().empty()) {
-    _internal_set_sequence_id(from._internal_sequence_id());
+    _this->_internal_set_sequence_id(from._internal_sequence_id());
   }
   if (!from._internal_uid().empty()) {
-    _internal_set_uid(from._internal_uid());
+    _this->_internal_set_uid(from._internal_uid());
   }
   if (from._internal_has_timestamp()) {
-    _internal_mutable_timestamp()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_timestamp());
+    _this->_internal_mutable_timestamp()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_timestamp());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreamAggregatesDirectExchangeRateResponseV1::CopyFrom(const StreamAggregatesDirectExchangeRateResponseV1& from) {
@@ -548,37 +564,32 @@ void StreamAggregatesDirectExchangeRateResponseV1::InternalSwap(StreamAggregates
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  sources_.InternalSwap(&other->sources_);
+  _impl_.sources_.InternalSwap(&other->_impl_.sources_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &aggregate_, lhs_arena,
-      &other->aggregate_, rhs_arena
+      &_impl_.aggregate_, lhs_arena,
+      &other->_impl_.aggregate_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &code_, lhs_arena,
-      &other->code_, rhs_arena
+      &_impl_.code_, lhs_arena,
+      &other->_impl_.code_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &price_, lhs_arena,
-      &other->price_, rhs_arena
+      &_impl_.price_, lhs_arena,
+      &other->_impl_.price_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &sequence_id_, lhs_arena,
-      &other->sequence_id_, rhs_arena
+      &_impl_.sequence_id_, lhs_arena,
+      &other->_impl_.sequence_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &uid_, lhs_arena,
-      &other->uid_, rhs_arena
+      &_impl_.uid_, lhs_arena,
+      &other->_impl_.uid_, rhs_arena
   );
-  swap(timestamp_, other->timestamp_);
+  swap(_impl_.timestamp_, other->_impl_.timestamp_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamAggregatesDirectExchangeRateResponseV1::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto_once,
       file_level_metadata_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto[0]);
 }
@@ -586,7 +597,8 @@ void StreamAggregatesDirectExchangeRateResponseV1::InternalSwap(StreamAggregates
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1* Arena::CreateMaybeMessage< ::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1 >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1*
+Arena::CreateMaybeMessage< ::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1 >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::StreamAggregatesDirectExchangeRateResponseV1 >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

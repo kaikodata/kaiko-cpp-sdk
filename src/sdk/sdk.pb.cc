@@ -16,69 +16,81 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace kaikosdk {
 }  // namespace kaikosdk
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_sdk_2fsdk_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_sdk_2fsdk_2eproto = nullptr;
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_sdk_2fsdk_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fsdk_2eproto = nullptr;
 const uint32_t TableStruct_sdk_2fsdk_2eproto::offsets[1] = {};
-static constexpr ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema* schemas = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances = nullptr;
+static constexpr ::_pbi::MigrationSchema* schemas = nullptr;
+static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_sdk_2fsdk_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\rsdk/sdk.proto\022\010kaikosdk\032,sdk/stream/ag"
   "gregated_price_v1/request.proto\032-sdk/str"
   "eam/aggregated_price_v1/response.proto\032,"
-  "sdk/stream/aggregates_ohlcv_v1/request.p"
-  "roto\032-sdk/stream/aggregates_ohlcv_v1/res"
-  "ponse.proto\032+sdk/stream/aggregates_vwap_"
-  "v1/request.proto\032,sdk/stream/aggregates_"
-  "vwap_v1/response.proto\032;sdk/stream/aggre"
-  "gates_direct_exchange_rate_v1/request.pr"
-  "oto\032<sdk/stream/aggregates_direct_exchan"
-  "ge_rate_v1/response.proto\0329sdk/stream/ag"
-  "gregates_spot_exchange_rate_v1/request.p"
-  "roto\032:sdk/stream/aggregates_spot_exchang"
-  "e_rate_v1/response.proto\032!sdk/stream/ind"
-  "ex_v1/request.proto\032\"sdk/stream/index_v1"
-  "/response.proto\032)sdk/stream/market_updat"
-  "e_v1/request.proto\032*sdk/stream/market_up"
-  "date_v1/response.proto\032\"sdk/stream/trade"
-  "s_v1/request.proto\032#sdk/stream/trades_v1"
-  "/response.proto2\206\001\n\036StreamAggregatedPric"
-  "eServiceV1\022d\n\tSubscribe\022(.kaikosdk.Strea"
-  "mAggregatedPriceRequestV1\032).kaikosdk.Str"
-  "eamAggregatedPriceResponseV1\"\0000\0012\206\001\n\036Str"
-  "eamAggregatesOHLCVServiceV1\022d\n\tSubscribe"
-  "\022(.kaikosdk.StreamAggregatesOHLCVRequest"
-  "V1\032).kaikosdk.StreamAggregatesOHLCVRespo"
-  "nseV1\"\0000\0012\247\001\n)StreamAggregatesSpotExchan"
-  "geRateServiceV1\022z\n\tSubscribe\0223.kaikosdk."
-  "StreamAggregatesSpotExchangeRateRequestV"
-  "1\0324.kaikosdk.StreamAggregatesSpotExchang"
-  "eRateResponseV1\"\0000\0012\255\001\n+StreamAggregates"
-  "DirectExchangeRateServiceV1\022~\n\tSubscribe"
-  "\0225.kaikosdk.StreamAggregatesDirectExchan"
-  "geRateRequestV1\0326.kaikosdk.StreamAggrega"
-  "tesDirectExchangeRateResponseV1\"\0000\0012k\n\025S"
-  "treamTradesServiceV1\022R\n\tSubscribe\022\037.kaik"
-  "osdk.StreamTradesRequestV1\032 .kaikosdk.St"
-  "reamTradesResponseV1\"\0000\0012\203\001\n\035StreamAggre"
-  "gatesVWAPServiceV1\022b\n\tSubscribe\022\'.kaikos"
-  "dk.StreamAggregatesVWAPRequestV1\032(.kaiko"
-  "sdk.StreamAggregatesVWAPResponseV1\"\0000\0012v"
-  "\n\024StreamIndexServiceV1\022^\n\tSubscribe\022%.ka"
-  "ikosdk.StreamIndexServiceRequestV1\032&.kai"
-  "kosdk.StreamIndexServiceResponseV1\"\0000\0012}"
-  "\n\033StreamMarketUpdateServiceV1\022^\n\tSubscri"
-  "be\022%.kaikosdk.StreamMarketUpdateRequestV"
-  "1\032&.kaikosdk.StreamMarketUpdateResponseV"
-  "1\"\0000\001BR\n\rcom.kaiko.sdkB\010SdkProtoP\001Z*gith"
-  "ub.com/kaikodata/kaiko-go-sdk;kaikosdk\252\002"
-  "\010KaikoSdkb\006proto3"
+  "sdk/stream/aggregated_quote_v2/request.p"
+  "roto\032-sdk/stream/aggregated_quote_v2/res"
+  "ponse.proto\032,sdk/stream/aggregates_ohlcv"
+  "_v1/request.proto\032-sdk/stream/aggregates"
+  "_ohlcv_v1/response.proto\032+sdk/stream/agg"
+  "regates_vwap_v1/request.proto\032,sdk/strea"
+  "m/aggregates_vwap_v1/response.proto\032;sdk"
+  "/stream/aggregates_direct_exchange_rate_"
+  "v1/request.proto\032<sdk/stream/aggregates_"
+  "direct_exchange_rate_v1/response.proto\0329"
+  "sdk/stream/aggregates_spot_exchange_rate"
+  "_v1/request.proto\032:sdk/stream/aggregates"
+  "_spot_exchange_rate_v1/response.proto\032!s"
+  "dk/stream/index_v1/request.proto\032\"sdk/st"
+  "ream/index_v1/response.proto\032)sdk/stream"
+  "/market_update_v1/request.proto\032*sdk/str"
+  "eam/market_update_v1/response.proto\032\"sdk"
+  "/stream/trades_v1/request.proto\032#sdk/str"
+  "eam/trades_v1/response.proto2\206\001\n\036StreamA"
+  "ggregatedQuoteServiceV2\022d\n\tSubscribe\022(.k"
+  "aikosdk.StreamAggregatedQuoteRequestV2\032)"
+  ".kaikosdk.StreamAggregatedQuoteResponseV"
+  "2\"\0000\0012\211\001\n\036StreamAggregatedPriceServiceV1"
+  "\022g\n\tSubscribe\022(.kaikosdk.StreamAggregate"
+  "dPriceRequestV1\032).kaikosdk.StreamAggrega"
+  "tedPriceResponseV1\"\003\210\002\0010\0012\206\001\n\036StreamAggr"
+  "egatesOHLCVServiceV1\022d\n\tSubscribe\022(.kaik"
+  "osdk.StreamAggregatesOHLCVRequestV1\032).ka"
+  "ikosdk.StreamAggregatesOHLCVResponseV1\"\000"
+  "0\0012\247\001\n)StreamAggregatesSpotExchangeRateS"
+  "erviceV1\022z\n\tSubscribe\0223.kaikosdk.StreamA"
+  "ggregatesSpotExchangeRateRequestV1\0324.kai"
+  "kosdk.StreamAggregatesSpotExchangeRateRe"
+  "sponseV1\"\0000\0012\255\001\n+StreamAggregatesDirectE"
+  "xchangeRateServiceV1\022~\n\tSubscribe\0225.kaik"
+  "osdk.StreamAggregatesDirectExchangeRateR"
+  "equestV1\0326.kaikosdk.StreamAggregatesDire"
+  "ctExchangeRateResponseV1\"\0000\0012k\n\025StreamTr"
+  "adesServiceV1\022R\n\tSubscribe\022\037.kaikosdk.St"
+  "reamTradesRequestV1\032 .kaikosdk.StreamTra"
+  "desResponseV1\"\0000\0012\203\001\n\035StreamAggregatesVW"
+  "APServiceV1\022b\n\tSubscribe\022\'.kaikosdk.Stre"
+  "amAggregatesVWAPRequestV1\032(.kaikosdk.Str"
+  "eamAggregatesVWAPResponseV1\"\0000\0012v\n\024Strea"
+  "mIndexServiceV1\022^\n\tSubscribe\022%.kaikosdk."
+  "StreamIndexServiceRequestV1\032&.kaikosdk.S"
+  "treamIndexServiceResponseV1\"\0000\0012}\n\033Strea"
+  "mMarketUpdateServiceV1\022^\n\tSubscribe\022%.ka"
+  "ikosdk.StreamMarketUpdateRequestV1\032&.kai"
+  "kosdk.StreamMarketUpdateResponseV1\"\0000\001BR"
+  "\n\rcom.kaiko.sdkB\010SdkProtoP\001Z*github.com/"
+  "kaikodata/kaiko-go-sdk;kaikosdk\252\002\010KaikoS"
+  "dkb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_sdk_2fsdk_2eproto_deps[16] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fsdk_2eproto_deps[18] = {
   &::descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2frequest_2eproto,
   &::descriptor_table_sdk_2fstream_2faggregated_5fprice_5fv1_2fresponse_2eproto,
+  &::descriptor_table_sdk_2fstream_2faggregated_5fquote_5fv2_2frequest_2eproto,
+  &::descriptor_table_sdk_2fstream_2faggregated_5fquote_5fv2_2fresponse_2eproto,
   &::descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2frequest_2eproto,
   &::descriptor_table_sdk_2fstream_2faggregates_5fdirect_5fexchange_5frate_5fv1_2fresponse_2eproto,
   &::descriptor_table_sdk_2fstream_2faggregates_5fohlcv_5fv1_2frequest_2eproto,
@@ -94,19 +106,21 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_sdk_2fstream_2ftrades_5fv1_2frequest_2eproto,
   &::descriptor_table_sdk_2fstream_2ftrades_5fv1_2fresponse_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_sdk_2fsdk_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fsdk_2eproto = {
-  false, false, 1977, descriptor_table_protodef_sdk_2fsdk_2eproto, "sdk/sdk.proto", 
-  &descriptor_table_sdk_2fsdk_2eproto_once, descriptor_table_sdk_2fsdk_2eproto_deps, 16, 0,
-  schemas, file_default_instances, TableStruct_sdk_2fsdk_2eproto::offsets,
-  nullptr, file_level_enum_descriptors_sdk_2fsdk_2eproto, file_level_service_descriptors_sdk_2fsdk_2eproto,
+static ::_pbi::once_flag descriptor_table_sdk_2fsdk_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_sdk_2fsdk_2eproto = {
+    false, false, 2210, descriptor_table_protodef_sdk_2fsdk_2eproto,
+    "sdk/sdk.proto",
+    &descriptor_table_sdk_2fsdk_2eproto_once, descriptor_table_sdk_2fsdk_2eproto_deps, 18, 0,
+    schemas, file_default_instances, TableStruct_sdk_2fsdk_2eproto::offsets,
+    nullptr, file_level_enum_descriptors_sdk_2fsdk_2eproto,
+    file_level_service_descriptors_sdk_2fsdk_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_sdk_2fsdk_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_sdk_2fsdk_2eproto_getter() {
   return &descriptor_table_sdk_2fsdk_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_sdk_2fsdk_2eproto(&descriptor_table_sdk_2fsdk_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_sdk_2fsdk_2eproto(&descriptor_table_sdk_2fsdk_2eproto);
 namespace kaikosdk {
 
 // @@protoc_insertion_point(namespace_scope)
