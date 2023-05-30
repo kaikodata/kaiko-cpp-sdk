@@ -70,6 +70,7 @@ enum StreamMarketUpdateResponseV1_StreamMarketUpdateType : int {
   StreamMarketUpdateResponseV1_StreamMarketUpdateType_UNKNOWN = 0,
   StreamMarketUpdateResponseV1_StreamMarketUpdateType_TRADE_BUY = 1,
   StreamMarketUpdateResponseV1_StreamMarketUpdateType_TRADE_SELL = 2,
+  StreamMarketUpdateResponseV1_StreamMarketUpdateType_TRADE_UNKNOWN = 9,
   StreamMarketUpdateResponseV1_StreamMarketUpdateType_BEST_ASK = 3,
   StreamMarketUpdateResponseV1_StreamMarketUpdateType_BEST_BID = 4,
   StreamMarketUpdateResponseV1_StreamMarketUpdateType_UPDATED_ASK = 5,
@@ -81,7 +82,7 @@ enum StreamMarketUpdateResponseV1_StreamMarketUpdateType : int {
 };
 bool StreamMarketUpdateResponseV1_StreamMarketUpdateType_IsValid(int value);
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1_StreamMarketUpdateType_StreamMarketUpdateType_MIN = StreamMarketUpdateResponseV1_StreamMarketUpdateType_UNKNOWN;
-constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1_StreamMarketUpdateType_StreamMarketUpdateType_MAX = StreamMarketUpdateResponseV1_StreamMarketUpdateType_FORCE_SNAPSHOT;
+constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1_StreamMarketUpdateType_StreamMarketUpdateType_MAX = StreamMarketUpdateResponseV1_StreamMarketUpdateType_TRADE_UNKNOWN;
 constexpr int StreamMarketUpdateResponseV1_StreamMarketUpdateType_StreamMarketUpdateType_ARRAYSIZE = StreamMarketUpdateResponseV1_StreamMarketUpdateType_StreamMarketUpdateType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StreamMarketUpdateResponseV1_StreamMarketUpdateType_descriptor();
@@ -565,6 +566,8 @@ class StreamMarketUpdateResponseV1 final :
     StreamMarketUpdateResponseV1_StreamMarketUpdateType_TRADE_BUY;
   static constexpr StreamMarketUpdateType TRADE_SELL =
     StreamMarketUpdateResponseV1_StreamMarketUpdateType_TRADE_SELL;
+  static constexpr StreamMarketUpdateType TRADE_UNKNOWN =
+    StreamMarketUpdateResponseV1_StreamMarketUpdateType_TRADE_UNKNOWN;
   static constexpr StreamMarketUpdateType BEST_ASK =
     StreamMarketUpdateResponseV1_StreamMarketUpdateType_BEST_ASK;
   static constexpr StreamMarketUpdateType BEST_BID =

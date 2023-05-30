@@ -562,6 +562,7 @@ class StreamIndexServiceResponseInstruments final :
     kExchangeFieldNumber = 1,
     kPriceFieldNumber = 2,
     kVolumeFieldNumber = 3,
+    kCountFieldNumber = 4,
   };
   // string exchange = 1;
   void clear_exchange();
@@ -595,6 +596,15 @@ class StreamIndexServiceResponseInstruments final :
   void _internal_set_volume(double value);
   public:
 
+  // uint64 count = 4;
+  void clear_count();
+  uint64_t count() const;
+  void set_count(uint64_t value);
+  private:
+  uint64_t _internal_count() const;
+  void _internal_set_count(uint64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamIndexServiceResponseInstruments)
  private:
   class _Internal;
@@ -606,6 +616,7 @@ class StreamIndexServiceResponseInstruments final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr exchange_;
     double price_;
     double volume_;
+    uint64_t count_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1358,6 +1369,26 @@ inline void StreamIndexServiceResponseInstruments::_internal_set_volume(double v
 inline void StreamIndexServiceResponseInstruments::set_volume(double value) {
   _internal_set_volume(value);
   // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseInstruments.volume)
+}
+
+// uint64 count = 4;
+inline void StreamIndexServiceResponseInstruments::clear_count() {
+  _impl_.count_ = uint64_t{0u};
+}
+inline uint64_t StreamIndexServiceResponseInstruments::_internal_count() const {
+  return _impl_.count_;
+}
+inline uint64_t StreamIndexServiceResponseInstruments::count() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseInstruments.count)
+  return _internal_count();
+}
+inline void StreamIndexServiceResponseInstruments::_internal_set_count(uint64_t value) {
+  
+  _impl_.count_ = value;
+}
+inline void StreamIndexServiceResponseInstruments::set_count(uint64_t value) {
+  _internal_set_count(value);
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseInstruments.count)
 }
 
 // -------------------------------------------------------------------

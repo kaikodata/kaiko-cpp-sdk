@@ -132,7 +132,7 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frespo
   "\n*sdk/stream/market_update_v1/response.p"
   "roto\022\010kaikosdk\032\037google/protobuf/timestam"
   "p.proto\032\027sdk/core/wrappers.proto\032+sdk/st"
-  "ream/market_update_v1/commodity.proto\"\322\006"
+  "ream/market_update_v1/commodity.proto\"\345\006"
   "\n\034StreamMarketUpdateResponseV1\0228\n\tcommod"
   "ity\030\001 \001(\0162%.kaikosdk.StreamMarketUpdateC"
   "ommodity\022\016\n\006amount\030\002 \001(\001\022\r\n\005class\030\003 \001(\t\022"
@@ -150,15 +150,15 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frespo
   "Snapshot.Order\022C\n\004bids\030\002 \003(\01325.kaikosdk."
   "StreamMarketUpdateResponseV1.Snapshot.Or"
   "der\032&\n\005Order\022\016\n\006amount\030\001 \001(\001\022\r\n\005price\030\002 "
-  "\001(\001\"\244\001\n\026StreamMarketUpdateType\022\013\n\007UNKNOW"
-  "N\020\000\022\r\n\tTRADE_BUY\020\001\022\016\n\nTRADE_SELL\020\002\022\014\n\010BE"
-  "ST_ASK\020\003\022\014\n\010BEST_BID\020\004\022\017\n\013UPDATED_ASK\020\005\022"
-  "\017\n\013UPDATED_BID\020\006\022\014\n\010SNAPSHOT\020\007\022\022\n\016FORCE_"
-  "SNAPSHOT\020\010B\226\001\n%com.kaiko.sdk.stream.mark"
-  "et_update_v1P\001ZJgithub.com/kaikodata/kai"
-  "ko-go-sdk/stream/market_update_v1;market"
-  "_update_v1\252\002\036KaikoSdk.Stream.MarketUpdat"
-  "eV1b\006proto3"
+  "\001(\001\"\267\001\n\026StreamMarketUpdateType\022\013\n\007UNKNOW"
+  "N\020\000\022\r\n\tTRADE_BUY\020\001\022\016\n\nTRADE_SELL\020\002\022\021\n\rTR"
+  "ADE_UNKNOWN\020\t\022\014\n\010BEST_ASK\020\003\022\014\n\010BEST_BID\020"
+  "\004\022\017\n\013UPDATED_ASK\020\005\022\017\n\013UPDATED_BID\020\006\022\014\n\010S"
+  "NAPSHOT\020\007\022\022\n\016FORCE_SNAPSHOT\020\010B\226\001\n%com.ka"
+  "iko.sdk.stream.market_update_v1P\001ZJgithu"
+  "b.com/kaikodata/kaiko-go-sdk/stream/mark"
+  "et_update_v1;market_update_v1\252\002\036KaikoSdk"
+  ".Stream.MarketUpdateV1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -167,7 +167,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2fmark
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto = {
-    false, false, 1171, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto,
+    false, false, 1190, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto,
     "sdk/stream/market_update_v1/response.proto",
     &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps, 3, 3,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto::offsets,
@@ -196,6 +196,7 @@ bool StreamMarketUpdateResponseV1_StreamMarketUpdateType_IsValid(int value) {
     case 6:
     case 7:
     case 8:
+    case 9:
       return true;
     default:
       return false;
@@ -206,6 +207,7 @@ bool StreamMarketUpdateResponseV1_StreamMarketUpdateType_IsValid(int value) {
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::UNKNOWN;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::TRADE_BUY;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::TRADE_SELL;
+constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::TRADE_UNKNOWN;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::BEST_ASK;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::BEST_BID;
 constexpr StreamMarketUpdateResponseV1_StreamMarketUpdateType StreamMarketUpdateResponseV1::UPDATED_ASK;
