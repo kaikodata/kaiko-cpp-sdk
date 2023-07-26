@@ -53,7 +53,7 @@ struct StreamIndexServiceResponsePairsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamIndexServiceResponsePairsDefaultTypeInternal _StreamIndexServiceResponsePairs_default_instance_;
 PROTOBUF_CONSTEXPR StreamIndexServiceResponseInstruments::StreamIndexServiceResponseInstruments(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.exchange_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.partition_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.price_)*/0
   , /*decltype(_impl_.volume_)*/0
   , /*decltype(_impl_.count_)*/uint64_t{0u}
@@ -131,7 +131,7 @@ const uint32_t TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto::offsets
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseInstruments, _impl_.exchange_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseInstruments, _impl_.partition_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseInstruments, _impl_.price_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseInstruments, _impl_.volume_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseInstruments, _impl_.count_),
@@ -185,23 +185,23 @@ const char descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eprot
   "\"\205\001\n\037StreamIndexServiceResponsePairs\022\014\n\004"
   "pair\030\001 \001(\t\022\016\n\006weight\030\002 \001(\001\022D\n\013instrument"
   "s\030\003 \003(\0132/.kaikosdk.StreamIndexServiceRes"
-  "ponseInstruments\"g\n%StreamIndexServiceRe"
-  "sponseInstruments\022\020\n\010exchange\030\001 \001(\t\022\r\n\005p"
-  "rice\030\002 \001(\001\022\016\n\006volume\030\003 \001(\001\022\r\n\005count\030\004 \001("
-  "\004\"D\n#StreamIndexServiceResponseBaseAsset"
-  "\022\r\n\005asset\030\001 \001(\t\022\016\n\006weight\030\002 \001(\001\"\342\002\n\034Stre"
-  "amIndexServiceResponseV1\022\022\n\nindex_code\030\001"
-  " \001(\t\0221\n\tcommodity\030\002 \001(\0162\036.kaikosdk.Strea"
-  "mIndexCommodity\022(\n\010interval\030\003 \001(\0132\026.kaik"
-  "osdk.DataInterval\022\r\n\005quote\030\004 \001(\t\022<\n\005base"
-  "s\030\005 \003(\0132-.kaikosdk.StreamIndexServiceRes"
-  "ponseBaseAsset\022\021\n\texchanges\030\006 \003(\t\022C\n\013per"
-  "centages\030\007 \003(\0132..kaikosdk.StreamIndexSer"
-  "viceResponsePercentage\022,\n\010ts_event\030\010 \001(\013"
-  "2\032.google.protobuf.TimestampBw\n\035com.kaik"
-  "o.sdk.stream.index_v1P\001Z:github.com/kaik"
-  "odata/kaiko-go-sdk/stream/index_v1;index"
-  "_v1\252\002\027KaikoSdk.Stream.IndexV1b\006proto3"
+  "ponseInstruments\"h\n%StreamIndexServiceRe"
+  "sponseInstruments\022\021\n\tpartition\030\001 \001(\t\022\r\n\005"
+  "price\030\002 \001(\001\022\016\n\006volume\030\003 \001(\001\022\r\n\005count\030\004 \001"
+  "(\004\"D\n#StreamIndexServiceResponseBaseAsse"
+  "t\022\r\n\005asset\030\001 \001(\t\022\016\n\006weight\030\002 \001(\001\"\342\002\n\034Str"
+  "eamIndexServiceResponseV1\022\022\n\nindex_code\030"
+  "\001 \001(\t\0221\n\tcommodity\030\002 \001(\0162\036.kaikosdk.Stre"
+  "amIndexCommodity\022(\n\010interval\030\003 \001(\0132\026.kai"
+  "kosdk.DataInterval\022\r\n\005quote\030\004 \001(\t\022<\n\005bas"
+  "es\030\005 \003(\0132-.kaikosdk.StreamIndexServiceRe"
+  "sponseBaseAsset\022\021\n\texchanges\030\006 \003(\t\022C\n\013pe"
+  "rcentages\030\007 \003(\0132..kaikosdk.StreamIndexSe"
+  "rviceResponsePercentage\022,\n\010ts_event\030\010 \001("
+  "\0132\032.google.protobuf.TimestampBw\n\035com.kai"
+  "ko.sdk.stream.index_v1P\001Z:github.com/kai"
+  "kodata/kaiko-go-sdk/stream/index_v1;inde"
+  "x_v1\252\002\027KaikoSdk.Stream.IndexV1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -210,7 +210,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2finde
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto = {
-    false, false, 1077, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
+    false, false, 1078, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
     "sdk/stream/index_v1/response.proto",
     &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps, 3, 5,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto::offsets,
@@ -786,19 +786,19 @@ StreamIndexServiceResponseInstruments::StreamIndexServiceResponseInstruments(con
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   StreamIndexServiceResponseInstruments* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.exchange_){}
+      decltype(_impl_.partition_){}
     , decltype(_impl_.price_){}
     , decltype(_impl_.volume_){}
     , decltype(_impl_.count_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.exchange_.InitDefault();
+  _impl_.partition_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.exchange_.Set("", GetArenaForAllocation());
+    _impl_.partition_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_exchange().empty()) {
-    _this->_impl_.exchange_.Set(from._internal_exchange(), 
+  if (!from._internal_partition().empty()) {
+    _this->_impl_.partition_.Set(from._internal_partition(), 
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.price_, &from._impl_.price_,
@@ -812,15 +812,15 @@ inline void StreamIndexServiceResponseInstruments::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.exchange_){}
+      decltype(_impl_.partition_){}
     , decltype(_impl_.price_){0}
     , decltype(_impl_.volume_){0}
     , decltype(_impl_.count_){uint64_t{0u}}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.exchange_.InitDefault();
+  _impl_.partition_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.exchange_.Set("", GetArenaForAllocation());
+    _impl_.partition_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -835,7 +835,7 @@ StreamIndexServiceResponseInstruments::~StreamIndexServiceResponseInstruments() 
 
 inline void StreamIndexServiceResponseInstruments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.exchange_.Destroy();
+  _impl_.partition_.Destroy();
 }
 
 void StreamIndexServiceResponseInstruments::SetCachedSize(int size) const {
@@ -848,7 +848,7 @@ void StreamIndexServiceResponseInstruments::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.exchange_.ClearToEmpty();
+  _impl_.partition_.ClearToEmpty();
   ::memset(&_impl_.price_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.count_) -
       reinterpret_cast<char*>(&_impl_.price_)) + sizeof(_impl_.count_));
@@ -861,13 +861,13 @@ const char* StreamIndexServiceResponseInstruments::_InternalParse(const char* pt
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string exchange = 1;
+      // string partition = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_exchange();
+          auto str = _internal_mutable_partition();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamIndexServiceResponseInstruments.exchange"));
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamIndexServiceResponseInstruments.partition"));
         } else
           goto handle_unusual;
         continue;
@@ -924,14 +924,14 @@ uint8_t* StreamIndexServiceResponseInstruments::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string exchange = 1;
-  if (!this->_internal_exchange().empty()) {
+  // string partition = 1;
+  if (!this->_internal_partition().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_exchange().data(), static_cast<int>(this->_internal_exchange().length()),
+      this->_internal_partition().data(), static_cast<int>(this->_internal_partition().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "kaikosdk.StreamIndexServiceResponseInstruments.exchange");
+      "kaikosdk.StreamIndexServiceResponseInstruments.partition");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_exchange(), target);
+        1, this->_internal_partition(), target);
   }
 
   // double price = 2;
@@ -976,11 +976,11 @@ size_t StreamIndexServiceResponseInstruments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string exchange = 1;
-  if (!this->_internal_exchange().empty()) {
+  // string partition = 1;
+  if (!this->_internal_partition().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_exchange());
+        this->_internal_partition());
   }
 
   // double price = 2;
@@ -1024,8 +1024,8 @@ void StreamIndexServiceResponseInstruments::MergeImpl(::PROTOBUF_NAMESPACE_ID::M
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_exchange().empty()) {
-    _this->_internal_set_exchange(from._internal_exchange());
+  if (!from._internal_partition().empty()) {
+    _this->_internal_set_partition(from._internal_partition());
   }
   static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_price = from._internal_price();
@@ -1064,8 +1064,8 @@ void StreamIndexServiceResponseInstruments::InternalSwap(StreamIndexServiceRespo
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.exchange_, lhs_arena,
-      &other->_impl_.exchange_, rhs_arena
+      &_impl_.partition_, lhs_arena,
+      &other->_impl_.partition_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(StreamIndexServiceResponseInstruments, _impl_.count_)

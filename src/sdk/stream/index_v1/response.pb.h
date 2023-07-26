@@ -559,23 +559,23 @@ class StreamIndexServiceResponseInstruments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kExchangeFieldNumber = 1,
+    kPartitionFieldNumber = 1,
     kPriceFieldNumber = 2,
     kVolumeFieldNumber = 3,
     kCountFieldNumber = 4,
   };
-  // string exchange = 1;
-  void clear_exchange();
-  const std::string& exchange() const;
+  // string partition = 1;
+  void clear_partition();
+  const std::string& partition() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_exchange(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_exchange();
-  PROTOBUF_NODISCARD std::string* release_exchange();
-  void set_allocated_exchange(std::string* exchange);
+  void set_partition(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_partition();
+  PROTOBUF_NODISCARD std::string* release_partition();
+  void set_allocated_partition(std::string* partition);
   private:
-  const std::string& _internal_exchange() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_exchange(const std::string& value);
-  std::string* _internal_mutable_exchange();
+  const std::string& _internal_partition() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_partition(const std::string& value);
+  std::string* _internal_mutable_partition();
   public:
 
   // double price = 2;
@@ -613,7 +613,7 @@ class StreamIndexServiceResponseInstruments final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr exchange_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partition_;
     double price_;
     double volume_;
     uint64_t count_;
@@ -1281,54 +1281,54 @@ StreamIndexServiceResponsePairs::instruments() const {
 
 // StreamIndexServiceResponseInstruments
 
-// string exchange = 1;
-inline void StreamIndexServiceResponseInstruments::clear_exchange() {
-  _impl_.exchange_.ClearToEmpty();
+// string partition = 1;
+inline void StreamIndexServiceResponseInstruments::clear_partition() {
+  _impl_.partition_.ClearToEmpty();
 }
-inline const std::string& StreamIndexServiceResponseInstruments::exchange() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseInstruments.exchange)
-  return _internal_exchange();
+inline const std::string& StreamIndexServiceResponseInstruments::partition() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseInstruments.partition)
+  return _internal_partition();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void StreamIndexServiceResponseInstruments::set_exchange(ArgT0&& arg0, ArgT... args) {
+void StreamIndexServiceResponseInstruments::set_partition(ArgT0&& arg0, ArgT... args) {
  
- _impl_.exchange_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseInstruments.exchange)
+ _impl_.partition_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseInstruments.partition)
 }
-inline std::string* StreamIndexServiceResponseInstruments::mutable_exchange() {
-  std::string* _s = _internal_mutable_exchange();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseInstruments.exchange)
+inline std::string* StreamIndexServiceResponseInstruments::mutable_partition() {
+  std::string* _s = _internal_mutable_partition();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseInstruments.partition)
   return _s;
 }
-inline const std::string& StreamIndexServiceResponseInstruments::_internal_exchange() const {
-  return _impl_.exchange_.Get();
+inline const std::string& StreamIndexServiceResponseInstruments::_internal_partition() const {
+  return _impl_.partition_.Get();
 }
-inline void StreamIndexServiceResponseInstruments::_internal_set_exchange(const std::string& value) {
+inline void StreamIndexServiceResponseInstruments::_internal_set_partition(const std::string& value) {
   
-  _impl_.exchange_.Set(value, GetArenaForAllocation());
+  _impl_.partition_.Set(value, GetArenaForAllocation());
 }
-inline std::string* StreamIndexServiceResponseInstruments::_internal_mutable_exchange() {
+inline std::string* StreamIndexServiceResponseInstruments::_internal_mutable_partition() {
   
-  return _impl_.exchange_.Mutable(GetArenaForAllocation());
+  return _impl_.partition_.Mutable(GetArenaForAllocation());
 }
-inline std::string* StreamIndexServiceResponseInstruments::release_exchange() {
-  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseInstruments.exchange)
-  return _impl_.exchange_.Release();
+inline std::string* StreamIndexServiceResponseInstruments::release_partition() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseInstruments.partition)
+  return _impl_.partition_.Release();
 }
-inline void StreamIndexServiceResponseInstruments::set_allocated_exchange(std::string* exchange) {
-  if (exchange != nullptr) {
+inline void StreamIndexServiceResponseInstruments::set_allocated_partition(std::string* partition) {
+  if (partition != nullptr) {
     
   } else {
     
   }
-  _impl_.exchange_.SetAllocated(exchange, GetArenaForAllocation());
+  _impl_.partition_.SetAllocated(partition, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.exchange_.IsDefault()) {
-    _impl_.exchange_.Set("", GetArenaForAllocation());
+  if (_impl_.partition_.IsDefault()) {
+    _impl_.partition_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseInstruments.exchange)
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseInstruments.partition)
 }
 
 // double price = 2;
