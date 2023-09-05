@@ -199,6 +199,7 @@ class StreamIndexMultiAssetsServiceResponseComposition final :
     kQuoteFieldNumber = 3,
     kCurrencyConversionFieldNumber = 6,
     kInstrumentIntervalFieldNumber = 5,
+    kTsEventFieldNumber = 7,
   };
   // repeated string exchanges = 4;
   int exchanges_size() const;
@@ -298,6 +299,24 @@ class StreamIndexMultiAssetsServiceResponseComposition final :
       ::kaikosdk::DataInterval* instrument_interval);
   ::kaikosdk::DataInterval* unsafe_arena_release_instrument_interval();
 
+  // .google.protobuf.Timestamp ts_event = 7;
+  bool has_ts_event() const;
+  private:
+  bool _internal_has_ts_event() const;
+  public:
+  void clear_ts_event();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& ts_event() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_ts_event();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_ts_event();
+  void set_allocated_ts_event(::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_ts_event() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_ts_event();
+  public:
+  void unsafe_arena_set_allocated_ts_event(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_ts_event();
+
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamIndexMultiAssetsServiceResponseComposition)
  private:
   class _Internal;
@@ -312,6 +331,7 @@ class StreamIndexMultiAssetsServiceResponseComposition final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quote_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr currency_conversion_;
     ::kaikosdk::DataInterval* instrument_interval_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1331,6 +1351,91 @@ inline void StreamIndexMultiAssetsServiceResponseComposition::set_allocated_curr
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseComposition.currency_conversion)
+}
+
+// .google.protobuf.Timestamp ts_event = 7;
+inline bool StreamIndexMultiAssetsServiceResponseComposition::_internal_has_ts_event() const {
+  return this != internal_default_instance() && _impl_.ts_event_ != nullptr;
+}
+inline bool StreamIndexMultiAssetsServiceResponseComposition::has_ts_event() const {
+  return _internal_has_ts_event();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexMultiAssetsServiceResponseComposition::_internal_ts_event() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.ts_event_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexMultiAssetsServiceResponseComposition::ts_event() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexMultiAssetsServiceResponseComposition.ts_event)
+  return _internal_ts_event();
+}
+inline void StreamIndexMultiAssetsServiceResponseComposition::unsafe_arena_set_allocated_ts_event(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.ts_event_);
+  }
+  _impl_.ts_event_ = ts_event;
+  if (ts_event) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseComposition.ts_event)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseComposition::release_ts_event() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.ts_event_;
+  _impl_.ts_event_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseComposition::unsafe_arena_release_ts_event() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexMultiAssetsServiceResponseComposition.ts_event)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.ts_event_;
+  _impl_.ts_event_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseComposition::_internal_mutable_ts_event() {
+  
+  if (_impl_.ts_event_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.ts_event_ = p;
+  }
+  return _impl_.ts_event_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseComposition::mutable_ts_event() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_ts_event();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexMultiAssetsServiceResponseComposition.ts_event)
+  return _msg;
+}
+inline void StreamIndexMultiAssetsServiceResponseComposition::set_allocated_ts_event(::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.ts_event_);
+  }
+  if (ts_event) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(ts_event));
+    if (message_arena != submessage_arena) {
+      ts_event = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, ts_event, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.ts_event_ = ts_event;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseComposition.ts_event)
 }
 
 // -------------------------------------------------------------------
