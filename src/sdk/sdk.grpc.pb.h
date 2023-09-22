@@ -659,6 +659,7 @@ class StreamAggregatesOHLCVServiceV1 final {
 };
 
 // Service for streaming Spot exchange rate V1
+// Service is deprecated, use REST API instead, or upcoming `StreamAggregatesSpotExchangeRateServiceV2` instead.
 class StreamAggregatesSpotExchangeRateServiceV1 final {
  public:
   static constexpr char const* service_full_name() {
@@ -868,7 +869,8 @@ class StreamAggregatesSpotExchangeRateServiceV1 final {
   typedef WithSplitStreamingMethod_Subscribe<Service > StreamedService;
 };
 
-// Service for streaming market update V1
+// Service for streaming Direct exchange rate V1
+// Service is deprecated, use REST API instead, or upcoming `StreamAggregatesDirectExchangeRateServiceV2` instead.
 class StreamAggregatesDirectExchangeRateServiceV1 final {
  public:
   static constexpr char const* service_full_name() {
