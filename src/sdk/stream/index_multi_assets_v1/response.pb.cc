@@ -80,6 +80,7 @@ PROTOBUF_CONSTEXPR StreamIndexMultiAssetsServiceResponseV1::StreamIndexMultiAsse
   , /*decltype(_impl_.interval_)*/nullptr
   , /*decltype(_impl_.price_)*/nullptr
   , /*decltype(_impl_.ts_event_)*/nullptr
+  , /*decltype(_impl_.ts_compute_)*/nullptr
   , /*decltype(_impl_.commodity_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StreamIndexMultiAssetsServiceResponseV1DefaultTypeInternal {
@@ -143,6 +144,7 @@ const uint32_t TableStruct_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexMultiAssetsServiceResponseV1, _impl_.compositions_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexMultiAssetsServiceResponseV1, _impl_.price_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexMultiAssetsServiceResponseV1, _impl_.ts_event_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexMultiAssetsServiceResponseV1, _impl_.ts_compute_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamIndexMultiAssetsServiceResponseComposition)},
@@ -179,7 +181,7 @@ const char descriptor_table_protodef_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_
   "mIndexMultiAssetsServiceResponsePrices\022\023"
   "\n\013index_value\030\001 \001(\001\022\017\n\007divisor\030\002 \001(\001\022B\n\005"
   "pairs\030\003 \003(\01323.kaikosdk.StreamIndexMultiA"
-  "ssetsServiceResponsePair\"\364\002\n\'StreamIndex"
+  "ssetsServiceResponsePair\"\244\003\n\'StreamIndex"
   "MultiAssetsServiceResponseV1\0221\n\tcommodit"
   "y\030\001 \001(\0162\036.kaikosdk.StreamIndexCommodity\022"
   "\022\n\nindex_code\030\002 \001(\t\022(\n\010interval\030\003 \001(\0132\026."
@@ -188,12 +190,13 @@ const char descriptor_table_protodef_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_
   "mIndexMultiAssetsServiceResponseComposit"
   "ion\022D\n\005price\030\006 \001(\01325.kaikosdk.StreamInde"
   "xMultiAssetsServiceResponsePrices\022,\n\010ts_"
-  "event\030\007 \001(\0132\032.google.protobuf.TimestampB"
-  "\251\001\n*com.kaiko.sdk.stream.index_multi_ass"
-  "ets_v1P\001ZTgithub.com/kaikodata/kaiko-go-"
-  "sdk/stream/index_multi_assets_v1;index_m"
-  "ulti_assets_v1\252\002\"KaikoSdk.Stream.IndexMu"
-  "ltiAssetsV1b\006proto3"
+  "event\030\007 \001(\0132\032.google.protobuf.Timestamp\022"
+  ".\n\nts_compute\030\010 \001(\0132\032.google.protobuf.Ti"
+  "mestampB\251\001\n*com.kaiko.sdk.stream.index_m"
+  "ulti_assets_v1P\001ZTgithub.com/kaikodata/k"
+  "aiko-go-sdk/stream/index_multi_assets_v1"
+  ";index_multi_assets_v1\252\002\"KaikoSdk.Stream"
+  ".IndexMultiAssetsV1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto_deps[4] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -203,7 +206,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2finde
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto = {
-    false, false, 1379, descriptor_table_protodef_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto,
+    false, false, 1427, descriptor_table_protodef_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto,
     "sdk/stream/index_multi_assets_v1/response.proto",
     &descriptor_table_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto_deps, 4, 4,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto::offsets,
@@ -1356,6 +1359,7 @@ class StreamIndexMultiAssetsServiceResponseV1::_Internal {
   static const ::kaikosdk::DataInterval& interval(const StreamIndexMultiAssetsServiceResponseV1* msg);
   static const ::kaikosdk::StreamIndexMultiAssetsServiceResponsePrices& price(const StreamIndexMultiAssetsServiceResponseV1* msg);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& ts_event(const StreamIndexMultiAssetsServiceResponseV1* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& ts_compute(const StreamIndexMultiAssetsServiceResponseV1* msg);
 };
 
 const ::kaikosdk::DataInterval&
@@ -1370,6 +1374,10 @@ const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 StreamIndexMultiAssetsServiceResponseV1::_Internal::ts_event(const StreamIndexMultiAssetsServiceResponseV1* msg) {
   return *msg->_impl_.ts_event_;
 }
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+StreamIndexMultiAssetsServiceResponseV1::_Internal::ts_compute(const StreamIndexMultiAssetsServiceResponseV1* msg) {
+  return *msg->_impl_.ts_compute_;
+}
 void StreamIndexMultiAssetsServiceResponseV1::clear_interval() {
   if (GetArenaForAllocation() == nullptr && _impl_.interval_ != nullptr) {
     delete _impl_.interval_;
@@ -1381,6 +1389,12 @@ void StreamIndexMultiAssetsServiceResponseV1::clear_ts_event() {
     delete _impl_.ts_event_;
   }
   _impl_.ts_event_ = nullptr;
+}
+void StreamIndexMultiAssetsServiceResponseV1::clear_ts_compute() {
+  if (GetArenaForAllocation() == nullptr && _impl_.ts_compute_ != nullptr) {
+    delete _impl_.ts_compute_;
+  }
+  _impl_.ts_compute_ = nullptr;
 }
 StreamIndexMultiAssetsServiceResponseV1::StreamIndexMultiAssetsServiceResponseV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1398,6 +1412,7 @@ StreamIndexMultiAssetsServiceResponseV1::StreamIndexMultiAssetsServiceResponseV1
     , decltype(_impl_.interval_){nullptr}
     , decltype(_impl_.price_){nullptr}
     , decltype(_impl_.ts_event_){nullptr}
+    , decltype(_impl_.ts_compute_){nullptr}
     , decltype(_impl_.commodity_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -1427,6 +1442,9 @@ StreamIndexMultiAssetsServiceResponseV1::StreamIndexMultiAssetsServiceResponseV1
   if (from._internal_has_ts_event()) {
     _this->_impl_.ts_event_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.ts_event_);
   }
+  if (from._internal_has_ts_compute()) {
+    _this->_impl_.ts_compute_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.ts_compute_);
+  }
   _this->_impl_.commodity_ = from._impl_.commodity_;
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexMultiAssetsServiceResponseV1)
 }
@@ -1442,6 +1460,7 @@ inline void StreamIndexMultiAssetsServiceResponseV1::SharedCtor(
     , decltype(_impl_.interval_){nullptr}
     , decltype(_impl_.price_){nullptr}
     , decltype(_impl_.ts_event_){nullptr}
+    , decltype(_impl_.ts_compute_){nullptr}
     , decltype(_impl_.commodity_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -1472,6 +1491,7 @@ inline void StreamIndexMultiAssetsServiceResponseV1::SharedDtor() {
   if (this != internal_default_instance()) delete _impl_.interval_;
   if (this != internal_default_instance()) delete _impl_.price_;
   if (this != internal_default_instance()) delete _impl_.ts_event_;
+  if (this != internal_default_instance()) delete _impl_.ts_compute_;
 }
 
 void StreamIndexMultiAssetsServiceResponseV1::SetCachedSize(int size) const {
@@ -1499,6 +1519,10 @@ void StreamIndexMultiAssetsServiceResponseV1::Clear() {
     delete _impl_.ts_event_;
   }
   _impl_.ts_event_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.ts_compute_ != nullptr) {
+    delete _impl_.ts_compute_;
+  }
+  _impl_.ts_compute_ = nullptr;
   _impl_.commodity_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1571,6 +1595,14 @@ const char* StreamIndexMultiAssetsServiceResponseV1::_InternalParse(const char* 
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_ts_event(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp ts_compute = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_ts_compute(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1660,6 +1692,13 @@ uint8_t* StreamIndexMultiAssetsServiceResponseV1::_InternalSerialize(
         _Internal::ts_event(this).GetCachedSize(), target, stream);
   }
 
+  // .google.protobuf.Timestamp ts_compute = 8;
+  if (this->_internal_has_ts_compute()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(8, _Internal::ts_compute(this),
+        _Internal::ts_compute(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1718,6 +1757,13 @@ size_t StreamIndexMultiAssetsServiceResponseV1::ByteSizeLong() const {
         *_impl_.ts_event_);
   }
 
+  // .google.protobuf.Timestamp ts_compute = 8;
+  if (this->_internal_has_ts_compute()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.ts_compute_);
+  }
+
   // .kaikosdk.StreamIndexCommodity commodity = 1;
   if (this->_internal_commodity() != 0) {
     total_size += 1 +
@@ -1760,6 +1806,10 @@ void StreamIndexMultiAssetsServiceResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID:
   if (from._internal_has_ts_event()) {
     _this->_internal_mutable_ts_event()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
         from._internal_ts_event());
+  }
+  if (from._internal_has_ts_compute()) {
+    _this->_internal_mutable_ts_compute()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_ts_compute());
   }
   if (from._internal_commodity() != 0) {
     _this->_internal_set_commodity(from._internal_commodity());

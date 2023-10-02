@@ -851,6 +851,7 @@ class StreamIndexMultiAssetsServiceResponseV1 final :
     kIntervalFieldNumber = 3,
     kPriceFieldNumber = 6,
     kTsEventFieldNumber = 7,
+    kTsComputeFieldNumber = 8,
     kCommodityFieldNumber = 1,
   };
   // repeated .kaikosdk.StreamIndexMultiAssetsServiceResponseComposition compositions = 5;
@@ -953,6 +954,24 @@ class StreamIndexMultiAssetsServiceResponseV1 final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_ts_event();
 
+  // .google.protobuf.Timestamp ts_compute = 8;
+  bool has_ts_compute() const;
+  private:
+  bool _internal_has_ts_compute() const;
+  public:
+  void clear_ts_compute();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& ts_compute() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_ts_compute();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_ts_compute();
+  void set_allocated_ts_compute(::PROTOBUF_NAMESPACE_ID::Timestamp* ts_compute);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_ts_compute() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_ts_compute();
+  public:
+  void unsafe_arena_set_allocated_ts_compute(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_compute);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_ts_compute();
+
   // .kaikosdk.StreamIndexCommodity commodity = 1;
   void clear_commodity();
   ::kaikosdk::StreamIndexCommodity commodity() const;
@@ -976,6 +995,7 @@ class StreamIndexMultiAssetsServiceResponseV1 final :
     ::kaikosdk::DataInterval* interval_;
     ::kaikosdk::StreamIndexMultiAssetsServiceResponsePrices* price_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_compute_;
     int commodity_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2143,6 +2163,91 @@ inline void StreamIndexMultiAssetsServiceResponseV1::set_allocated_ts_event(::PR
   }
   _impl_.ts_event_ = ts_event;
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.ts_event)
+}
+
+// .google.protobuf.Timestamp ts_compute = 8;
+inline bool StreamIndexMultiAssetsServiceResponseV1::_internal_has_ts_compute() const {
+  return this != internal_default_instance() && _impl_.ts_compute_ != nullptr;
+}
+inline bool StreamIndexMultiAssetsServiceResponseV1::has_ts_compute() const {
+  return _internal_has_ts_compute();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexMultiAssetsServiceResponseV1::_internal_ts_compute() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.ts_compute_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexMultiAssetsServiceResponseV1::ts_compute() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.ts_compute)
+  return _internal_ts_compute();
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::unsafe_arena_set_allocated_ts_compute(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_compute) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.ts_compute_);
+  }
+  _impl_.ts_compute_ = ts_compute;
+  if (ts_compute) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.ts_compute)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseV1::release_ts_compute() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.ts_compute_;
+  _impl_.ts_compute_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseV1::unsafe_arena_release_ts_compute() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.ts_compute)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.ts_compute_;
+  _impl_.ts_compute_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseV1::_internal_mutable_ts_compute() {
+  
+  if (_impl_.ts_compute_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.ts_compute_ = p;
+  }
+  return _impl_.ts_compute_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseV1::mutable_ts_compute() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_ts_compute();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.ts_compute)
+  return _msg;
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::set_allocated_ts_compute(::PROTOBUF_NAMESPACE_ID::Timestamp* ts_compute) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.ts_compute_);
+  }
+  if (ts_compute) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(ts_compute));
+    if (message_arena != submessage_arena) {
+      ts_compute = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, ts_compute, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.ts_compute_ = ts_compute;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.ts_compute)
 }
 
 #ifdef __GNUC__
