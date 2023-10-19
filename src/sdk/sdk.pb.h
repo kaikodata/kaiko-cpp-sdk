@@ -46,6 +46,8 @@
 #include "sdk/stream/index_multi_assets_v1/response.pb.h"
 #include "sdk/stream/market_update_v1/request.pb.h"
 #include "sdk/stream/market_update_v1/response.pb.h"
+#include "sdk/stream/index_forex_rate_v1/request.pb.h"
+#include "sdk/stream/index_forex_rate_v1/response.pb.h"
 #include "sdk/stream/trades_v1/request.pb.h"
 #include "sdk/stream/trades_v1/response.pb.h"
 // @@protoc_insertion_point(includes)

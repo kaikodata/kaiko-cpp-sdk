@@ -561,5 +561,59 @@ StreamMarketUpdateServiceV1::Service::~Service() {
 }
 
 
+static const char* StreamIndexForexRateServiceV1_method_names[] = {
+  "/kaikosdk.StreamIndexForexRateServiceV1/Subscribe",
+};
+
+std::unique_ptr< StreamIndexForexRateServiceV1::Stub> StreamIndexForexRateServiceV1::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< StreamIndexForexRateServiceV1::Stub> stub(new StreamIndexForexRateServiceV1::Stub(channel, options));
+  return stub;
+}
+
+StreamIndexForexRateServiceV1::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Subscribe_(StreamIndexForexRateServiceV1_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  {}
+
+::grpc::ClientReader< ::kaikosdk::StreamIndexForexRateServiceResponseV1>* StreamIndexForexRateServiceV1::Stub::SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexForexRateServiceRequestV1& request) {
+  return ::grpc::internal::ClientReaderFactory< ::kaikosdk::StreamIndexForexRateServiceResponseV1>::Create(channel_.get(), rpcmethod_Subscribe_, context, request);
+}
+
+void StreamIndexForexRateServiceV1::Stub::async::Subscribe(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexForexRateServiceRequestV1* request, ::grpc::ClientReadReactor< ::kaikosdk::StreamIndexForexRateServiceResponseV1>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::kaikosdk::StreamIndexForexRateServiceResponseV1>::Create(stub_->channel_.get(), stub_->rpcmethod_Subscribe_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamIndexForexRateServiceResponseV1>* StreamIndexForexRateServiceV1::Stub::AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexForexRateServiceRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamIndexForexRateServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamIndexForexRateServiceResponseV1>* StreamIndexForexRateServiceV1::Stub::PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamIndexForexRateServiceRequestV1& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamIndexForexRateServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, false, nullptr);
+}
+
+StreamIndexForexRateServiceV1::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      StreamIndexForexRateServiceV1_method_names[0],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< StreamIndexForexRateServiceV1::Service, ::kaikosdk::StreamIndexForexRateServiceRequestV1, ::kaikosdk::StreamIndexForexRateServiceResponseV1>(
+          [](StreamIndexForexRateServiceV1::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::kaikosdk::StreamIndexForexRateServiceRequestV1* req,
+             ::grpc::ServerWriter<::kaikosdk::StreamIndexForexRateServiceResponseV1>* writer) {
+               return service->Subscribe(ctx, req, writer);
+             }, this)));
+}
+
+StreamIndexForexRateServiceV1::Service::~Service() {
+}
+
+::grpc::Status StreamIndexForexRateServiceV1::Service::Subscribe(::grpc::ServerContext* context, const ::kaikosdk::StreamIndexForexRateServiceRequestV1* request, ::grpc::ServerWriter< ::kaikosdk::StreamIndexForexRateServiceResponseV1>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
 }  // namespace kaikosdk
 
