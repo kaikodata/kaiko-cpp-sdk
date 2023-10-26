@@ -25,7 +25,7 @@ if(EXISTS "${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake")
   # Basically, nothing = transitive, PUBLIC/PRIVATE means you have to add it final executable "target_link_libraries"
 endif()
 
-set_target_properties(kaikosdk PROPERTIES CXX_STANDARD 11) # protobuf requirement
+set_target_properties(kaikosdk PROPERTIES CXX_STANDARD 14) # protobuf requirement
 set_target_properties(kaikosdk PROPERTIES LINKER_LANGUAGE CXX)
 
 # IDEs should put the headers in a nice place
