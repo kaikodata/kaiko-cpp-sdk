@@ -191,11 +191,11 @@ const char descriptor_table_protodef_sdk_2fstream_2findex_5fforex_5frate_5fv1_2f
   "ServiceResponsePublic\022\r\n\005price\030\005 \001(\001\022,\n\010"
   "ts_event\030\006 \001(\0132\032.google.protobuf.Timesta"
   "mp\022\?\n\006detail\030\007 \001(\0132/.kaikosdk.StreamFore"
-  "xIndexServiceResponseDetailB\230\001\n(com.kaik"
+  "xIndexServiceResponseDetailB\241\001\n(com.kaik"
   "o.sdk.stream.index_forex_rate_v1P\001ZPgith"
   "ub.com/kaikodata/kaiko-go-sdk/stream/ind"
-  "ex_forex_rate_v1;index_forex_rate_v1\252\002\027K"
-  "aikoSdk.Stream.ForexV1b\006proto3"
+  "ex_forex_rate_v1;index_forex_rate_v1\252\002 K"
+  "aikoSdk.Stream.IndexForexRateV1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2fresponse_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -204,7 +204,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2finde
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2fresponse_2eproto = {
-    false, false, 1150, descriptor_table_protodef_sdk_2fstream_2findex_5fforex_5frate_5fv1_2fresponse_2eproto,
+    false, false, 1159, descriptor_table_protodef_sdk_2fstream_2findex_5fforex_5frate_5fv1_2fresponse_2eproto,
     "sdk/stream/index_forex_rate_v1/response.proto",
     &descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2fresponse_2eproto_deps, 3, 5,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fforex_5frate_5fv1_2fresponse_2eproto::offsets,

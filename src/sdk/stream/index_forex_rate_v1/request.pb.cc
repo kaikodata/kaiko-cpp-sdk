@@ -63,18 +63,18 @@ const char descriptor_table_protodef_sdk_2fstream_2findex_5fforex_5frate_5fv1_2f
   ".proto\022\010kaikosdk\032\034sdk/core/data_interval"
   ".proto\"d\n$StreamIndexForexRateServiceReq"
   "uestV1\022\022\n\nindex_code\030\001 \001(\t\022(\n\010interval\030\002"
-  " \001(\0132\026.kaikosdk.DataIntervalB\230\001\n(com.kai"
+  " \001(\0132\026.kaikosdk.DataIntervalB\241\001\n(com.kai"
   "ko.sdk.stream.index_forex_rate_v1P\001ZPgit"
   "hub.com/kaikodata/kaiko-go-sdk/stream/in"
-  "dex_forex_rate_v1;index_forex_rate_v1\252\002\027"
-  "KaikoSdk.Stream.ForexV1b\006proto3"
+  "dex_forex_rate_v1;index_forex_rate_v1\252\002 "
+  "KaikoSdk.Stream.IndexForexRateV1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2frequest_2eproto_deps[1] = {
   &::descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2frequest_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2frequest_2eproto = {
-    false, false, 351, descriptor_table_protodef_sdk_2fstream_2findex_5fforex_5frate_5fv1_2frequest_2eproto,
+    false, false, 360, descriptor_table_protodef_sdk_2fstream_2findex_5fforex_5frate_5fv1_2frequest_2eproto,
     "sdk/stream/index_forex_rate_v1/request.proto",
     &descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2frequest_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fforex_5frate_5fv1_2frequest_2eproto_deps, 1, 1,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fforex_5frate_5fv1_2frequest_2eproto::offsets,
