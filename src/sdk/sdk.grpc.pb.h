@@ -1708,7 +1708,7 @@ class StreamMarketUpdateServiceV1 final {
   typedef WithSplitStreamingMethod_Subscribe<Service > StreamedService;
 };
 
-// Service for streaming Spot exchange rate V2
+// Service for streaming Spot exchange rate V1 service V2
 class StreamAggregatesSpotExchangeRateV1ServiceV2 final {
  public:
   static constexpr char const* service_full_name() {
@@ -1918,7 +1918,7 @@ class StreamAggregatesSpotExchangeRateV1ServiceV2 final {
   typedef WithSplitStreamingMethod_Subscribe<Service > StreamedService;
 };
 
-// Service for streaming Direct exchange rate V2
+// Service for streaming Direct exchange rate V1 service V2
 class StreamAggregatesSpotDirectExchangeRateV1ServiceV2 final {
  public:
   static constexpr char const* service_full_name() {

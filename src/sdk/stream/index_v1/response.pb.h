@@ -914,6 +914,7 @@ class StreamIndexServiceResponseV1 final :
     kPercentagesFieldNumber = 7,
     kIndexCodeFieldNumber = 1,
     kQuoteFieldNumber = 4,
+    kSequenceIdFieldNumber = 9,
     kIntervalFieldNumber = 3,
     kTsEventFieldNumber = 8,
     kCommodityFieldNumber = 2,
@@ -1006,6 +1007,20 @@ class StreamIndexServiceResponseV1 final :
   std::string* _internal_mutable_quote();
   public:
 
+  // string sequence_id = 9;
+  void clear_sequence_id();
+  const std::string& sequence_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_sequence_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_sequence_id();
+  PROTOBUF_NODISCARD std::string* release_sequence_id();
+  void set_allocated_sequence_id(std::string* sequence_id);
+  private:
+  const std::string& _internal_sequence_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sequence_id(const std::string& value);
+  std::string* _internal_mutable_sequence_id();
+  public:
+
   // .kaikosdk.DataInterval interval = 3;
   bool has_interval() const;
   private:
@@ -1064,6 +1079,7 @@ class StreamIndexServiceResponseV1 final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::kaikosdk::StreamIndexServiceResponsePercentage > percentages_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr index_code_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quote_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sequence_id_;
     ::kaikosdk::DataInterval* interval_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
     int commodity_;
@@ -1912,6 +1928,56 @@ inline void StreamIndexServiceResponseV1::set_allocated_ts_event(::PROTOBUF_NAME
   }
   _impl_.ts_event_ = ts_event;
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.ts_event)
+}
+
+// string sequence_id = 9;
+inline void StreamIndexServiceResponseV1::clear_sequence_id() {
+  _impl_.sequence_id_.ClearToEmpty();
+}
+inline const std::string& StreamIndexServiceResponseV1::sequence_id() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.sequence_id)
+  return _internal_sequence_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamIndexServiceResponseV1::set_sequence_id(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.sequence_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseV1.sequence_id)
+}
+inline std::string* StreamIndexServiceResponseV1::mutable_sequence_id() {
+  std::string* _s = _internal_mutable_sequence_id();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.sequence_id)
+  return _s;
+}
+inline const std::string& StreamIndexServiceResponseV1::_internal_sequence_id() const {
+  return _impl_.sequence_id_.Get();
+}
+inline void StreamIndexServiceResponseV1::_internal_set_sequence_id(const std::string& value) {
+  
+  _impl_.sequence_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StreamIndexServiceResponseV1::_internal_mutable_sequence_id() {
+  
+  return _impl_.sequence_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StreamIndexServiceResponseV1::release_sequence_id() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.sequence_id)
+  return _impl_.sequence_id_.Release();
+}
+inline void StreamIndexServiceResponseV1::set_allocated_sequence_id(std::string* sequence_id) {
+  if (sequence_id != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.sequence_id_.SetAllocated(sequence_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.sequence_id_.IsDefault()) {
+    _impl_.sequence_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.sequence_id)
 }
 
 #ifdef __GNUC__

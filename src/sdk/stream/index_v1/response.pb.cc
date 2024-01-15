@@ -88,6 +88,7 @@ PROTOBUF_CONSTEXPR StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(
   , /*decltype(_impl_.percentages_)*/{}
   , /*decltype(_impl_.index_code_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.quote_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.sequence_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.interval_)*/nullptr
   , /*decltype(_impl_.ts_event_)*/nullptr
   , /*decltype(_impl_.commodity_)*/0
@@ -157,6 +158,7 @@ const uint32_t TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, _impl_.exchanges_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, _impl_.percentages_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, _impl_.ts_event_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamIndexServiceResponseV1, _impl_.sequence_id_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamIndexServiceResponsePercentage)},
@@ -189,7 +191,7 @@ const char descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eprot
   "sponseInstruments\022\021\n\tpartition\030\001 \001(\t\022\r\n\005"
   "price\030\002 \001(\001\022\016\n\006volume\030\003 \001(\001\022\r\n\005count\030\004 \001"
   "(\004\"D\n#StreamIndexServiceResponseBaseAsse"
-  "t\022\r\n\005asset\030\001 \001(\t\022\016\n\006weight\030\002 \001(\001\"\342\002\n\034Str"
+  "t\022\r\n\005asset\030\001 \001(\t\022\016\n\006weight\030\002 \001(\001\"\367\002\n\034Str"
   "eamIndexServiceResponseV1\022\022\n\nindex_code\030"
   "\001 \001(\t\0221\n\tcommodity\030\002 \001(\0162\036.kaikosdk.Stre"
   "amIndexCommodity\022(\n\010interval\030\003 \001(\0132\026.kai"
@@ -198,10 +200,11 @@ const char descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eprot
   "sponseBaseAsset\022\021\n\texchanges\030\006 \003(\t\022C\n\013pe"
   "rcentages\030\007 \003(\0132..kaikosdk.StreamIndexSe"
   "rviceResponsePercentage\022,\n\010ts_event\030\010 \001("
-  "\0132\032.google.protobuf.TimestampBw\n\035com.kai"
-  "ko.sdk.stream.index_v1P\001Z:github.com/kai"
-  "kodata/kaiko-go-sdk/stream/index_v1;inde"
-  "x_v1\252\002\027KaikoSdk.Stream.IndexV1b\006proto3"
+  "\0132\032.google.protobuf.Timestamp\022\023\n\013sequenc"
+  "e_id\030\t \001(\tBw\n\035com.kaiko.sdk.stream.index"
+  "_v1P\001Z:github.com/kaikodata/kaiko-go-sdk"
+  "/stream/index_v1;index_v1\252\002\027KaikoSdk.Str"
+  "eam.IndexV1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -210,7 +213,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2finde
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto = {
-    false, false, 1078, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
+    false, false, 1099, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
     "sdk/stream/index_v1/response.proto",
     &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps, 3, 5,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto::offsets,
@@ -1366,6 +1369,7 @@ StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(const StreamIndexServ
     , decltype(_impl_.percentages_){from._impl_.percentages_}
     , decltype(_impl_.index_code_){}
     , decltype(_impl_.quote_){}
+    , decltype(_impl_.sequence_id_){}
     , decltype(_impl_.interval_){nullptr}
     , decltype(_impl_.ts_event_){nullptr}
     , decltype(_impl_.commodity_){}
@@ -1388,6 +1392,14 @@ StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(const StreamIndexServ
     _this->_impl_.quote_.Set(from._internal_quote(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.sequence_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sequence_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_sequence_id().empty()) {
+    _this->_impl_.sequence_id_.Set(from._internal_sequence_id(), 
+      _this->GetArenaForAllocation());
+  }
   if (from._internal_has_interval()) {
     _this->_impl_.interval_ = new ::kaikosdk::DataInterval(*from._impl_.interval_);
   }
@@ -1408,6 +1420,7 @@ inline void StreamIndexServiceResponseV1::SharedCtor(
     , decltype(_impl_.percentages_){arena}
     , decltype(_impl_.index_code_){}
     , decltype(_impl_.quote_){}
+    , decltype(_impl_.sequence_id_){}
     , decltype(_impl_.interval_){nullptr}
     , decltype(_impl_.ts_event_){nullptr}
     , decltype(_impl_.commodity_){0}
@@ -1420,6 +1433,10 @@ inline void StreamIndexServiceResponseV1::SharedCtor(
   _impl_.quote_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.quote_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.sequence_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sequence_id_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -1439,6 +1456,7 @@ inline void StreamIndexServiceResponseV1::SharedDtor() {
   _impl_.percentages_.~RepeatedPtrField();
   _impl_.index_code_.Destroy();
   _impl_.quote_.Destroy();
+  _impl_.sequence_id_.Destroy();
   if (this != internal_default_instance()) delete _impl_.interval_;
   if (this != internal_default_instance()) delete _impl_.ts_event_;
 }
@@ -1458,6 +1476,7 @@ void StreamIndexServiceResponseV1::Clear() {
   _impl_.percentages_.Clear();
   _impl_.index_code_.ClearToEmpty();
   _impl_.quote_.ClearToEmpty();
+  _impl_.sequence_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && _impl_.interval_ != nullptr) {
     delete _impl_.interval_;
   }
@@ -1562,6 +1581,16 @@ const char* StreamIndexServiceResponseV1::_InternalParse(const char* ptr, ::_pbi
         } else
           goto handle_unusual;
         continue;
+      // string sequence_id = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          auto str = _internal_mutable_sequence_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamIndexServiceResponseV1.sequence_id"));
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -1658,6 +1687,16 @@ uint8_t* StreamIndexServiceResponseV1::_InternalSerialize(
         _Internal::ts_event(this).GetCachedSize(), target, stream);
   }
 
+  // string sequence_id = 9;
+  if (!this->_internal_sequence_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_sequence_id().data(), static_cast<int>(this->_internal_sequence_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.StreamIndexServiceResponseV1.sequence_id");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_sequence_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1710,6 +1749,13 @@ size_t StreamIndexServiceResponseV1::ByteSizeLong() const {
         this->_internal_quote());
   }
 
+  // string sequence_id = 9;
+  if (!this->_internal_sequence_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sequence_id());
+  }
+
   // .kaikosdk.DataInterval interval = 3;
   if (this->_internal_has_interval()) {
     total_size += 1 +
@@ -1757,6 +1803,9 @@ void StreamIndexServiceResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& t
   if (!from._internal_quote().empty()) {
     _this->_internal_set_quote(from._internal_quote());
   }
+  if (!from._internal_sequence_id().empty()) {
+    _this->_internal_set_sequence_id(from._internal_sequence_id());
+  }
   if (from._internal_has_interval()) {
     _this->_internal_mutable_interval()->::kaikosdk::DataInterval::MergeFrom(
         from._internal_interval());
@@ -1797,6 +1846,10 @@ void StreamIndexServiceResponseV1::InternalSwap(StreamIndexServiceResponseV1* ot
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.quote_, lhs_arena,
       &other->_impl_.quote_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.sequence_id_, lhs_arena,
+      &other->_impl_.sequence_id_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(StreamIndexServiceResponseV1, _impl_.commodity_)
