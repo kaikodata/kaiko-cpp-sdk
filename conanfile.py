@@ -1,5 +1,7 @@
-from conans import ConanFile, CMake
-
+from conan import ConanFile
+from conan.tools.cmake import CMake, cmake_layout
+from conan.tools.files import copy
+from os.path import join
 
 class Pkg(ConanFile):
     name = "kaikosdk"
@@ -10,39 +12,30 @@ class Pkg(ConanFile):
     description = "Kaiko C++ SDK"
     topics = ("Kaiko", "SDK", "GRPC")
 
-    settings = "os", "compiler", "arch", "build_type"
+    # Binary configuration
+    settings = "os", "compiler", "build_type", "arch"
+    options = {"shared": [True, False], "fPIC": [True, False]}
+    default_options = {"shared": False, "fPIC": True}
 
-    # run "conan info . --graph deps.html" to see dependency graph
-    requires = [("grpc/1.54.3"), ("protobuf/3.21.12")]
-    # grpc package depends internally on at least protobuf/3.21.12
-    build_requires = ("cmake/3.27.7")
+    generators = "CMakeToolchain", "CMakeDeps"
+    requires = "grpc/1.54.3", "protobuf/3.21.12"
+    tool_requires = "cmake/3.28.1"
 
-    # default grpc package options
-    # default_options = {
-    #     "grpc:codegen": True,
-    #     "grpc:cpp_plugin": True,
-    #     "grpc:csharp_ext": False,
-    #     "grpc:csharp_plugin": True,
-    #     "grpc:fPIC": True,
-    #     "grpc:node_plugin": True,
-    #     "grpc:objective_c_plugin": True,
-    #     "grpc:php_plugin": True,
-    #     "grpc:python_plugin": True,
-    #     "grpc:ruby_plugin": True,
-    # }
+    # Sources are located in the same place as this recipe, copy them to the recipe
+    exports_sources = "CMakeLists.txt", "src/*"
 
-    generators = "cmake"
-    exports_sources = "src/*"
+    def layout(self):
+        cmake_layout(self)
+        self.cpp.source.includedirs = ["src"]
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(source_folder="src")
+        cmake.configure()
         cmake.build()
 
     def package(self):
-        self.copy("*.h", src="src", dst="include")
-        self.copy("*.lib", dst="lib", keep_path=False)
-        self.copy("*.a", dst="lib", keep_path=False)
+        local_include_folder = join(self.source_folder, self.cpp.source.includedirs[0])
+        copy(self, "*.h", local_include_folder, join(self.package_folder, "include"), keep_path=True)
 
     def package_info(self):
         self.cpp_info.libs = ["kaikosdk"]

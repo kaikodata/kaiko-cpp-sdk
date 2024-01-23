@@ -49,9 +49,21 @@ struct StreamMarketUpdateResponseV1_SnapshotDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamMarketUpdateResponseV1_SnapshotDefaultTypeInternal _StreamMarketUpdateResponseV1_Snapshot_default_instance_;
+PROTOBUF_CONSTEXPR StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUseDefaultTypeInternal _StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse_default_instance_;
 PROTOBUF_CONSTEXPR StreamMarketUpdateResponseV1::StreamMarketUpdateResponseV1(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.class__)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.additional_properties_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.class__)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.code_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.exchange_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.sequence_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -75,7 +87,7 @@ struct StreamMarketUpdateResponseV1DefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamMarketUpdateResponseV1DefaultTypeInternal _StreamMarketUpdateResponseV1_default_instance_;
 }  // namespace kaikosdk
-static ::_pb::Metadata file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto[3];
+static ::_pb::Metadata file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto[4];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto[1];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto = nullptr;
 
@@ -96,6 +108,16 @@ const uint32_t TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eprot
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1_Snapshot, _impl_.asks_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1_Snapshot, _impl_.bids_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -115,16 +137,19 @@ const uint32_t TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eprot
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1, _impl_.ts_event_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1, _impl_.update_type_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1, _impl_.snapshot_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamMarketUpdateResponseV1, _impl_.additional_properties_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamMarketUpdateResponseV1_Snapshot_Order)},
   { 8, -1, -1, sizeof(::kaikosdk::StreamMarketUpdateResponseV1_Snapshot)},
-  { 16, -1, -1, sizeof(::kaikosdk::StreamMarketUpdateResponseV1)},
+  { 16, 24, -1, sizeof(::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse)},
+  { 26, -1, -1, sizeof(::kaikosdk::StreamMarketUpdateResponseV1)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::kaikosdk::_StreamMarketUpdateResponseV1_Snapshot_Order_default_instance_._instance,
   &::kaikosdk::_StreamMarketUpdateResponseV1_Snapshot_default_instance_._instance,
+  &::kaikosdk::_StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse_default_instance_._instance,
   &::kaikosdk::_StreamMarketUpdateResponseV1_default_instance_._instance,
 };
 
@@ -132,7 +157,7 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frespo
   "\n*sdk/stream/market_update_v1/response.p"
   "roto\022\010kaikosdk\032\037google/protobuf/timestam"
   "p.proto\032\027sdk/core/wrappers.proto\032+sdk/st"
-  "ream/market_update_v1/commodity.proto\"\345\006"
+  "ream/market_update_v1/commodity.proto\"\203\010"
   "\n\034StreamMarketUpdateResponseV1\0228\n\tcommod"
   "ity\030\001 \001(\0162%.kaikosdk.StreamMarketUpdateC"
   "ommodity\022\016\n\006amount\030\002 \001(\001\022\r\n\005class\030\003 \001(\t\022"
@@ -145,20 +170,24 @@ const char descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2frespo
   "(\0162=.kaikosdk.StreamMarketUpdateResponse"
   "V1.StreamMarketUpdateType\022A\n\010snapshot\030\r "
   "\001(\0132/.kaikosdk.StreamMarketUpdateRespons"
-  "eV1.Snapshot\032\274\001\n\010Snapshot\022C\n\004asks\030\001 \003(\0132"
-  "5.kaikosdk.StreamMarketUpdateResponseV1."
-  "Snapshot.Order\022C\n\004bids\030\002 \003(\01325.kaikosdk."
-  "StreamMarketUpdateResponseV1.Snapshot.Or"
-  "der\032&\n\005Order\022\016\n\006amount\030\001 \001(\001\022\r\n\005price\030\002 "
-  "\001(\001\"\267\001\n\026StreamMarketUpdateType\022\013\n\007UNKNOW"
-  "N\020\000\022\r\n\tTRADE_BUY\020\001\022\016\n\nTRADE_SELL\020\002\022\021\n\rTR"
-  "ADE_UNKNOWN\020\t\022\014\n\010BEST_ASK\020\003\022\014\n\010BEST_BID\020"
-  "\004\022\017\n\013UPDATED_ASK\020\005\022\017\n\013UPDATED_BID\020\006\022\014\n\010S"
-  "NAPSHOT\020\007\022\022\n\016FORCE_SNAPSHOT\020\010B\226\001\n%com.ka"
-  "iko.sdk.stream.market_update_v1P\001ZJgithu"
-  "b.com/kaikodata/kaiko-go-sdk/stream/mark"
-  "et_update_v1;market_update_v1\252\002\036KaikoSdk"
-  ".Stream.MarketUpdateV1b\006proto3"
+  "eV1.Snapshot\022_\n\025additional_properties\030\016 "
+  "\003(\0132@.kaikosdk.StreamMarketUpdateRespons"
+  "eV1.AdditionalPropertiesEntry\032\274\001\n\010Snapsh"
+  "ot\022C\n\004asks\030\001 \003(\01325.kaikosdk.StreamMarket"
+  "UpdateResponseV1.Snapshot.Order\022C\n\004bids\030"
+  "\002 \003(\01325.kaikosdk.StreamMarketUpdateRespo"
+  "nseV1.Snapshot.Order\032&\n\005Order\022\016\n\006amount\030"
+  "\001 \001(\001\022\r\n\005price\030\002 \001(\001\032;\n\031AdditionalProper"
+  "tiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+  "\001\"\267\001\n\026StreamMarketUpdateType\022\013\n\007UNKNOWN\020"
+  "\000\022\r\n\tTRADE_BUY\020\001\022\016\n\nTRADE_SELL\020\002\022\021\n\rTRAD"
+  "E_UNKNOWN\020\t\022\014\n\010BEST_ASK\020\003\022\014\n\010BEST_BID\020\004\022"
+  "\017\n\013UPDATED_ASK\020\005\022\017\n\013UPDATED_BID\020\006\022\014\n\010SNA"
+  "PSHOT\020\007\022\022\n\016FORCE_SNAPSHOT\020\010B\226\001\n%com.kaik"
+  "o.sdk.stream.market_update_v1P\001ZJgithub."
+  "com/kaikodata/kaiko-go-sdk/stream/market"
+  "_update_v1;market_update_v1\252\002\036KaikoSdk.S"
+  "tream.MarketUpdateV1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -167,9 +196,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2fmark
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto = {
-    false, false, 1190, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto,
+    false, false, 1348, descriptor_table_protodef_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto,
     "sdk/stream/market_update_v1/response.proto",
-    &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps, 3, 3,
+    &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_deps, 3, 4,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto::offsets,
     file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto,
     file_level_service_descriptors_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto,
@@ -675,6 +704,20 @@ void StreamMarketUpdateResponseV1_Snapshot::InternalSwap(StreamMarketUpdateRespo
 
 // ===================================================================
 
+StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse() {}
+StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse::MergeFrom(const StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once,
+      file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto[2]);
+}
+
+// ===================================================================
+
 class StreamMarketUpdateResponseV1::_Internal {
  public:
   static const ::kaikosdk::TimestampValue& ts_exchange(const StreamMarketUpdateResponseV1* msg);
@@ -721,13 +764,17 @@ StreamMarketUpdateResponseV1::StreamMarketUpdateResponseV1(::PROTOBUF_NAMESPACE_
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
+  if (arena != nullptr && !is_message_owned) {
+    arena->OwnCustomDestructor(this, &StreamMarketUpdateResponseV1::ArenaDtor);
+  }
   // @@protoc_insertion_point(arena_constructor:kaikosdk.StreamMarketUpdateResponseV1)
 }
 StreamMarketUpdateResponseV1::StreamMarketUpdateResponseV1(const StreamMarketUpdateResponseV1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   StreamMarketUpdateResponseV1* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.class__){}
+      /*decltype(_impl_.additional_properties_)*/{}
+    , decltype(_impl_.class__){}
     , decltype(_impl_.code_){}
     , decltype(_impl_.exchange_){}
     , decltype(_impl_.sequence_id_){}
@@ -743,6 +790,7 @@ StreamMarketUpdateResponseV1::StreamMarketUpdateResponseV1(const StreamMarketUpd
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.additional_properties_.MergeFrom(from._impl_.additional_properties_);
   _impl_.class__.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.class__.Set("", GetArenaForAllocation());
@@ -806,7 +854,8 @@ inline void StreamMarketUpdateResponseV1::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.class__){}
+      /*decltype(_impl_.additional_properties_)*/{::_pbi::ArenaInitialized(), arena}
+    , decltype(_impl_.class__){}
     , decltype(_impl_.code_){}
     , decltype(_impl_.exchange_){}
     , decltype(_impl_.sequence_id_){}
@@ -847,6 +896,7 @@ StreamMarketUpdateResponseV1::~StreamMarketUpdateResponseV1() {
   // @@protoc_insertion_point(destructor:kaikosdk.StreamMarketUpdateResponseV1)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
+    ArenaDtor(this);
     return;
   }
   SharedDtor();
@@ -854,6 +904,8 @@ StreamMarketUpdateResponseV1::~StreamMarketUpdateResponseV1() {
 
 inline void StreamMarketUpdateResponseV1::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.additional_properties_.Destruct();
+  _impl_.additional_properties_.~MapField();
   _impl_.class__.Destroy();
   _impl_.code_.Destroy();
   _impl_.exchange_.Destroy();
@@ -865,6 +917,10 @@ inline void StreamMarketUpdateResponseV1::SharedDtor() {
   if (this != internal_default_instance()) delete _impl_.snapshot_;
 }
 
+void StreamMarketUpdateResponseV1::ArenaDtor(void* object) {
+  StreamMarketUpdateResponseV1* _this = reinterpret_cast< StreamMarketUpdateResponseV1* >(object);
+  _this->_impl_.additional_properties_.Destruct();
+}
 void StreamMarketUpdateResponseV1::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
@@ -875,6 +931,7 @@ void StreamMarketUpdateResponseV1::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.additional_properties_.Clear();
   _impl_.class__.ClearToEmpty();
   _impl_.code_.ClearToEmpty();
   _impl_.exchange_.ClearToEmpty();
@@ -1024,6 +1081,19 @@ const char* StreamMarketUpdateResponseV1::_InternalParse(const char* ptr, ::_pbi
         } else
           goto handle_unusual;
         continue;
+      // map<string, string> additional_properties = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.additional_properties_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -1165,6 +1235,36 @@ uint8_t* StreamMarketUpdateResponseV1::_InternalSerialize(
         _Internal::snapshot(this).GetCachedSize(), target, stream);
   }
 
+  // map<string, string> additional_properties = 14;
+  if (!this->_internal_additional_properties().empty()) {
+    using MapType = ::_pb::Map<std::string, std::string>;
+    using WireHelper = StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_additional_properties();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "kaikosdk.StreamMarketUpdateResponseV1.AdditionalPropertiesEntry.key");
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.second.data(), static_cast<int>(entry.second.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "kaikosdk.StreamMarketUpdateResponseV1.AdditionalPropertiesEntry.value");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(14, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(14, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1180,6 +1280,15 @@ size_t StreamMarketUpdateResponseV1::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // map<string, string> additional_properties = 14;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_additional_properties_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_additional_properties().begin();
+      it != this->_internal_additional_properties().end(); ++it) {
+    total_size += StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
 
   // string class = 3;
   if (!this->_internal_class_().empty()) {
@@ -1292,6 +1401,7 @@ void StreamMarketUpdateResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& t
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.additional_properties_.MergeFrom(from._impl_.additional_properties_);
   if (!from._internal_class_().empty()) {
     _this->_internal_set_class_(from._internal_class_());
   }
@@ -1362,6 +1472,7 @@ void StreamMarketUpdateResponseV1::InternalSwap(StreamMarketUpdateResponseV1* ot
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.additional_properties_.InternalSwap(&other->_impl_.additional_properties_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.class__, lhs_arena,
       &other->_impl_.class__, rhs_arena
@@ -1393,7 +1504,7 @@ void StreamMarketUpdateResponseV1::InternalSwap(StreamMarketUpdateResponseV1* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamMarketUpdateResponseV1::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto[2]);
+      file_level_metadata_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto[3]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -1406,6 +1517,10 @@ Arena::CreateMaybeMessage< ::kaikosdk::StreamMarketUpdateResponseV1_Snapshot_Ord
 template<> PROTOBUF_NOINLINE ::kaikosdk::StreamMarketUpdateResponseV1_Snapshot*
 Arena::CreateMaybeMessage< ::kaikosdk::StreamMarketUpdateResponseV1_Snapshot >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::StreamMarketUpdateResponseV1_Snapshot >(arena);
+}
+template<> PROTOBUF_NOINLINE ::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kaikosdk::StreamMarketUpdateResponseV1*
 Arena::CreateMaybeMessage< ::kaikosdk::StreamMarketUpdateResponseV1 >(Arena* arena) {

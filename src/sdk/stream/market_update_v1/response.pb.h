@@ -29,6 +29,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/timestamp.pb.h>
@@ -52,6 +55,9 @@ namespace kaikosdk {
 class StreamMarketUpdateResponseV1;
 struct StreamMarketUpdateResponseV1DefaultTypeInternal;
 extern StreamMarketUpdateResponseV1DefaultTypeInternal _StreamMarketUpdateResponseV1_default_instance_;
+class StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse;
+struct StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUseDefaultTypeInternal;
+extern StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUseDefaultTypeInternal _StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse_default_instance_;
 class StreamMarketUpdateResponseV1_Snapshot;
 struct StreamMarketUpdateResponseV1_SnapshotDefaultTypeInternal;
 extern StreamMarketUpdateResponseV1_SnapshotDefaultTypeInternal _StreamMarketUpdateResponseV1_Snapshot_default_instance_;
@@ -61,6 +67,7 @@ extern StreamMarketUpdateResponseV1_Snapshot_OrderDefaultTypeInternal _StreamMar
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
 template<> ::kaikosdk::StreamMarketUpdateResponseV1* Arena::CreateMaybeMessage<::kaikosdk::StreamMarketUpdateResponseV1>(Arena*);
+template<> ::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse* Arena::CreateMaybeMessage<::kaikosdk::StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse>(Arena*);
 template<> ::kaikosdk::StreamMarketUpdateResponseV1_Snapshot* Arena::CreateMaybeMessage<::kaikosdk::StreamMarketUpdateResponseV1_Snapshot>(Arena*);
 template<> ::kaikosdk::StreamMarketUpdateResponseV1_Snapshot_Order* Arena::CreateMaybeMessage<::kaikosdk::StreamMarketUpdateResponseV1_Snapshot_Order>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -439,6 +446,34 @@ class StreamMarketUpdateResponseV1_Snapshot final :
 };
 // -------------------------------------------------------------------
 
+class StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse& other);
+  static const StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse*>(&_StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "kaikosdk.StreamMarketUpdateResponseV1.AdditionalPropertiesEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "kaikosdk.StreamMarketUpdateResponseV1.AdditionalPropertiesEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_sdk_2fstream_2fmarket_5fupdate_5fv1_2fresponse_2eproto;
+};
+
+// -------------------------------------------------------------------
+
 class StreamMarketUpdateResponseV1 final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.StreamMarketUpdateResponseV1) */ {
  public:
@@ -487,7 +522,7 @@ class StreamMarketUpdateResponseV1 final :
                &_StreamMarketUpdateResponseV1_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(StreamMarketUpdateResponseV1& a, StreamMarketUpdateResponseV1& b) {
     a.Swap(&b);
@@ -548,6 +583,8 @@ class StreamMarketUpdateResponseV1 final :
   protected:
   explicit StreamMarketUpdateResponseV1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
   public:
 
   static const ClassData _class_data_;
@@ -608,6 +645,7 @@ class StreamMarketUpdateResponseV1 final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kAdditionalPropertiesFieldNumber = 14,
     kClassFieldNumber = 3,
     kCodeFieldNumber = 4,
     kExchangeFieldNumber = 5,
@@ -622,6 +660,23 @@ class StreamMarketUpdateResponseV1 final :
     kUpdateTypeFieldNumber = 12,
     kPriceFieldNumber = 8,
   };
+  // map<string, string> additional_properties = 14;
+  int additional_properties_size() const;
+  private:
+  int _internal_additional_properties_size() const;
+  public:
+  void clear_additional_properties();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_additional_properties() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_additional_properties();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      additional_properties() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_additional_properties();
+
   // string class = 3;
   void clear_class_();
   const std::string& class_() const;
@@ -808,6 +863,11 @@ class StreamMarketUpdateResponseV1 final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        StreamMarketUpdateResponseV1_AdditionalPropertiesEntry_DoNotUse,
+        std::string, std::string,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> additional_properties_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr class__;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr code_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr exchange_;
@@ -960,6 +1020,8 @@ StreamMarketUpdateResponseV1_Snapshot::bids() const {
   // @@protoc_insertion_point(field_list:kaikosdk.StreamMarketUpdateResponseV1.Snapshot.bids)
   return _impl_.bids_;
 }
+
+// -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
 
@@ -1640,9 +1702,40 @@ inline void StreamMarketUpdateResponseV1::set_allocated_snapshot(::kaikosdk::Str
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamMarketUpdateResponseV1.snapshot)
 }
 
+// map<string, string> additional_properties = 14;
+inline int StreamMarketUpdateResponseV1::_internal_additional_properties_size() const {
+  return _impl_.additional_properties_.size();
+}
+inline int StreamMarketUpdateResponseV1::additional_properties_size() const {
+  return _internal_additional_properties_size();
+}
+inline void StreamMarketUpdateResponseV1::clear_additional_properties() {
+  _impl_.additional_properties_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+StreamMarketUpdateResponseV1::_internal_additional_properties() const {
+  return _impl_.additional_properties_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+StreamMarketUpdateResponseV1::additional_properties() const {
+  // @@protoc_insertion_point(field_map:kaikosdk.StreamMarketUpdateResponseV1.additional_properties)
+  return _internal_additional_properties();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+StreamMarketUpdateResponseV1::_internal_mutable_additional_properties() {
+  return _impl_.additional_properties_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+StreamMarketUpdateResponseV1::mutable_additional_properties() {
+  // @@protoc_insertion_point(field_mutable_map:kaikosdk.StreamMarketUpdateResponseV1.additional_properties)
+  return _internal_mutable_additional_properties();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
