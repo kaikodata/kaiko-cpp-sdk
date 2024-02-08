@@ -1141,6 +1141,7 @@ class StreamIndexServiceResponseV1 final :
     kSequenceIdFieldNumber = 9,
     kIntervalFieldNumber = 3,
     kTsEventFieldNumber = 8,
+    kLastIngestTimeFieldNumber = 10,
     kCommodityFieldNumber = 2,
   };
   // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 5;
@@ -1281,6 +1282,24 @@ class StreamIndexServiceResponseV1 final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_ts_event();
 
+  // .google.protobuf.Timestamp last_ingest_time = 10;
+  bool has_last_ingest_time() const;
+  private:
+  bool _internal_has_last_ingest_time() const;
+  public:
+  void clear_last_ingest_time();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& last_ingest_time() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_last_ingest_time();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_last_ingest_time();
+  void set_allocated_last_ingest_time(::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_last_ingest_time() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_last_ingest_time();
+  public:
+  void unsafe_arena_set_allocated_last_ingest_time(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_last_ingest_time();
+
   // .kaikosdk.StreamIndexCommodity commodity = 2;
   void clear_commodity();
   ::kaikosdk::StreamIndexCommodity commodity() const;
@@ -1306,6 +1325,7 @@ class StreamIndexServiceResponseV1 final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sequence_id_;
     ::kaikosdk::DataInterval* interval_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time_;
     int commodity_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2501,6 +2521,91 @@ inline void StreamIndexServiceResponseV1::set_allocated_sequence_id(std::string*
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.sequence_id)
+}
+
+// .google.protobuf.Timestamp last_ingest_time = 10;
+inline bool StreamIndexServiceResponseV1::_internal_has_last_ingest_time() const {
+  return this != internal_default_instance() && _impl_.last_ingest_time_ != nullptr;
+}
+inline bool StreamIndexServiceResponseV1::has_last_ingest_time() const {
+  return _internal_has_last_ingest_time();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexServiceResponseV1::_internal_last_ingest_time() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.last_ingest_time_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexServiceResponseV1::last_ingest_time() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.last_ingest_time)
+  return _internal_last_ingest_time();
+}
+inline void StreamIndexServiceResponseV1::unsafe_arena_set_allocated_last_ingest_time(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.last_ingest_time_);
+  }
+  _impl_.last_ingest_time_ = last_ingest_time;
+  if (last_ingest_time) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexServiceResponseV1.last_ingest_time)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::release_last_ingest_time() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.last_ingest_time_;
+  _impl_.last_ingest_time_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::unsafe_arena_release_last_ingest_time() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.last_ingest_time)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.last_ingest_time_;
+  _impl_.last_ingest_time_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::_internal_mutable_last_ingest_time() {
+  
+  if (_impl_.last_ingest_time_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.last_ingest_time_ = p;
+  }
+  return _impl_.last_ingest_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::mutable_last_ingest_time() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_last_ingest_time();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.last_ingest_time)
+  return _msg;
+}
+inline void StreamIndexServiceResponseV1::set_allocated_last_ingest_time(::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.last_ingest_time_);
+  }
+  if (last_ingest_time) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(last_ingest_time));
+    if (message_arena != submessage_arena) {
+      last_ingest_time = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, last_ingest_time, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.last_ingest_time_ = last_ingest_time;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.last_ingest_time)
 }
 
 #ifdef __GNUC__
