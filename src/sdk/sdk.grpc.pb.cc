@@ -939,5 +939,59 @@ StreamOrderbookL2ReplayServiceV1::Service::~Service() {
 }
 
 
+static const char* StreamConstantDurationIndicesServiceV1_method_names[] = {
+  "/kaikosdk.StreamConstantDurationIndicesServiceV1/Subscribe",
+};
+
+std::unique_ptr< StreamConstantDurationIndicesServiceV1::Stub> StreamConstantDurationIndicesServiceV1::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< StreamConstantDurationIndicesServiceV1::Stub> stub(new StreamConstantDurationIndicesServiceV1::Stub(channel, options));
+  return stub;
+}
+
+StreamConstantDurationIndicesServiceV1::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Subscribe_(StreamConstantDurationIndicesServiceV1_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  {}
+
+::grpc::ClientReader< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>* StreamConstantDurationIndicesServiceV1::Stub::SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamConstantDurationIndicesServiceRequestV1& request) {
+  return ::grpc::internal::ClientReaderFactory< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>::Create(channel_.get(), rpcmethod_Subscribe_, context, request);
+}
+
+void StreamConstantDurationIndicesServiceV1::Stub::async::Subscribe(::grpc::ClientContext* context, const ::kaikosdk::StreamConstantDurationIndicesServiceRequestV1* request, ::grpc::ClientReadReactor< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>::Create(stub_->channel_.get(), stub_->rpcmethod_Subscribe_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>* StreamConstantDurationIndicesServiceV1::Stub::AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamConstantDurationIndicesServiceRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>* StreamConstantDurationIndicesServiceV1::Stub::PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamConstantDurationIndicesServiceRequestV1& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, false, nullptr);
+}
+
+StreamConstantDurationIndicesServiceV1::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      StreamConstantDurationIndicesServiceV1_method_names[0],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< StreamConstantDurationIndicesServiceV1::Service, ::kaikosdk::StreamConstantDurationIndicesServiceRequestV1, ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>(
+          [](StreamConstantDurationIndicesServiceV1::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::kaikosdk::StreamConstantDurationIndicesServiceRequestV1* req,
+             ::grpc::ServerWriter<::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>* writer) {
+               return service->Subscribe(ctx, req, writer);
+             }, this)));
+}
+
+StreamConstantDurationIndicesServiceV1::Service::~Service() {
+}
+
+::grpc::Status StreamConstantDurationIndicesServiceV1::Service::Subscribe(::grpc::ServerContext* context, const ::kaikosdk::StreamConstantDurationIndicesServiceRequestV1* request, ::grpc::ServerWriter< ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
 }  // namespace kaikosdk
 
