@@ -27,6 +27,8 @@ PROTOBUF_CONSTEXPR StreamAggregatedStatePriceResponseV1::StreamAggregatedStatePr
   , /*decltype(_impl_.aggregated_price_usd_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.aggregated_price_lst_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.lst_quote_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.aggregated_market_depth_m1_usd_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.aggregated_market_depth_p1_usd_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.datetime_)*/nullptr
   , /*decltype(_impl_.ts_event_)*/nullptr
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -57,6 +59,8 @@ const uint32_t TableStruct_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresp
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatedStatePriceResponseV1, _impl_.aggregated_price_lst_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatedStatePriceResponseV1, _impl_.ts_event_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatedStatePriceResponseV1, _impl_.lst_quote_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatedStatePriceResponseV1, _impl_.aggregated_market_depth_m1_usd_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamAggregatedStatePriceResponseV1, _impl_.aggregated_market_depth_p1_usd_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamAggregatedStatePriceResponseV1)},
@@ -69,12 +73,14 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresponse_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n3sdk/stream/aggregated_state_price_v1/r"
   "esponse.proto\022\010kaikosdk\032\037google/protobuf"
-  "/timestamp.proto\"\337\001\n$StreamAggregatedSta"
+  "/timestamp.proto\"\257\002\n$StreamAggregatedSta"
   "tePriceResponseV1\022,\n\010datetime\030\001 \001(\0132\032.go"
   "ogle.protobuf.Timestamp\022\014\n\004base\030\002 \001(\t\022\034\n"
   "\024aggregated_price_usd\030\003 \001(\t\022\034\n\024aggregate"
   "d_price_lst\030\004 \001(\t\022,\n\010ts_event\030\005 \001(\0132\032.go"
   "ogle.protobuf.Timestamp\022\021\n\tlst_quote\030\006 \001"
+  "(\t\022&\n\036aggregated_market_depth_m1_usd\030\007 \001"
+  "(\t\022&\n\036aggregated_market_depth_p1_usd\030\010 \001"
   "(\tB\271\001\n.com.kaiko.sdk.stream.aggregated_s"
   "tate_price_v1P\001Z\\github.com/kaikodata/ka"
   "iko-go-sdk/stream/aggregated_state_price"
@@ -86,7 +92,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2faggr
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresponse_2eproto = {
-    false, false, 518, descriptor_table_protodef_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresponse_2eproto,
+    false, false, 598, descriptor_table_protodef_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresponse_2eproto,
     "sdk/stream/aggregated_state_price_v1/response.proto",
     &descriptor_table_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresponse_2eproto_deps, 1, 1,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2faggregated_5fstate_5fprice_5fv1_2fresponse_2eproto::offsets,
@@ -143,6 +149,8 @@ StreamAggregatedStatePriceResponseV1::StreamAggregatedStatePriceResponseV1(const
     , decltype(_impl_.aggregated_price_usd_){}
     , decltype(_impl_.aggregated_price_lst_){}
     , decltype(_impl_.lst_quote_){}
+    , decltype(_impl_.aggregated_market_depth_m1_usd_){}
+    , decltype(_impl_.aggregated_market_depth_p1_usd_){}
     , decltype(_impl_.datetime_){nullptr}
     , decltype(_impl_.ts_event_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}};
@@ -180,6 +188,22 @@ StreamAggregatedStatePriceResponseV1::StreamAggregatedStatePriceResponseV1(const
     _this->_impl_.lst_quote_.Set(from._internal_lst_quote(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.aggregated_market_depth_m1_usd_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.aggregated_market_depth_m1_usd_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_aggregated_market_depth_m1_usd().empty()) {
+    _this->_impl_.aggregated_market_depth_m1_usd_.Set(from._internal_aggregated_market_depth_m1_usd(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.aggregated_market_depth_p1_usd_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.aggregated_market_depth_p1_usd_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_aggregated_market_depth_p1_usd().empty()) {
+    _this->_impl_.aggregated_market_depth_p1_usd_.Set(from._internal_aggregated_market_depth_p1_usd(), 
+      _this->GetArenaForAllocation());
+  }
   if (from._internal_has_datetime()) {
     _this->_impl_.datetime_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.datetime_);
   }
@@ -198,6 +222,8 @@ inline void StreamAggregatedStatePriceResponseV1::SharedCtor(
     , decltype(_impl_.aggregated_price_usd_){}
     , decltype(_impl_.aggregated_price_lst_){}
     , decltype(_impl_.lst_quote_){}
+    , decltype(_impl_.aggregated_market_depth_m1_usd_){}
+    , decltype(_impl_.aggregated_market_depth_p1_usd_){}
     , decltype(_impl_.datetime_){nullptr}
     , decltype(_impl_.ts_event_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -218,6 +244,14 @@ inline void StreamAggregatedStatePriceResponseV1::SharedCtor(
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.lst_quote_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.aggregated_market_depth_m1_usd_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.aggregated_market_depth_m1_usd_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.aggregated_market_depth_p1_usd_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.aggregated_market_depth_p1_usd_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 StreamAggregatedStatePriceResponseV1::~StreamAggregatedStatePriceResponseV1() {
@@ -235,6 +269,8 @@ inline void StreamAggregatedStatePriceResponseV1::SharedDtor() {
   _impl_.aggregated_price_usd_.Destroy();
   _impl_.aggregated_price_lst_.Destroy();
   _impl_.lst_quote_.Destroy();
+  _impl_.aggregated_market_depth_m1_usd_.Destroy();
+  _impl_.aggregated_market_depth_p1_usd_.Destroy();
   if (this != internal_default_instance()) delete _impl_.datetime_;
   if (this != internal_default_instance()) delete _impl_.ts_event_;
 }
@@ -253,6 +289,8 @@ void StreamAggregatedStatePriceResponseV1::Clear() {
   _impl_.aggregated_price_usd_.ClearToEmpty();
   _impl_.aggregated_price_lst_.ClearToEmpty();
   _impl_.lst_quote_.ClearToEmpty();
+  _impl_.aggregated_market_depth_m1_usd_.ClearToEmpty();
+  _impl_.aggregated_market_depth_p1_usd_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && _impl_.datetime_ != nullptr) {
     delete _impl_.datetime_;
   }
@@ -323,6 +361,26 @@ const char* StreamAggregatedStatePriceResponseV1::_InternalParse(const char* ptr
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatedStatePriceResponseV1.lst_quote"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string aggregated_market_depth_m1_usd = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_aggregated_market_depth_m1_usd();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_m1_usd"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string aggregated_market_depth_p1_usd = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          auto str = _internal_mutable_aggregated_market_depth_p1_usd();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_p1_usd"));
         } else
           goto handle_unusual;
         continue;
@@ -409,6 +467,26 @@ uint8_t* StreamAggregatedStatePriceResponseV1::_InternalSerialize(
         6, this->_internal_lst_quote(), target);
   }
 
+  // string aggregated_market_depth_m1_usd = 7;
+  if (!this->_internal_aggregated_market_depth_m1_usd().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_aggregated_market_depth_m1_usd().data(), static_cast<int>(this->_internal_aggregated_market_depth_m1_usd().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_m1_usd");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_aggregated_market_depth_m1_usd(), target);
+  }
+
+  // string aggregated_market_depth_p1_usd = 8;
+  if (!this->_internal_aggregated_market_depth_p1_usd().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_aggregated_market_depth_p1_usd().data(), static_cast<int>(this->_internal_aggregated_market_depth_p1_usd().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_p1_usd");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_aggregated_market_depth_p1_usd(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -451,6 +529,20 @@ size_t StreamAggregatedStatePriceResponseV1::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_lst_quote());
+  }
+
+  // string aggregated_market_depth_m1_usd = 7;
+  if (!this->_internal_aggregated_market_depth_m1_usd().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_aggregated_market_depth_m1_usd());
+  }
+
+  // string aggregated_market_depth_p1_usd = 8;
+  if (!this->_internal_aggregated_market_depth_p1_usd().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_aggregated_market_depth_p1_usd());
   }
 
   // .google.protobuf.Timestamp datetime = 1;
@@ -497,6 +589,12 @@ void StreamAggregatedStatePriceResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Me
   if (!from._internal_lst_quote().empty()) {
     _this->_internal_set_lst_quote(from._internal_lst_quote());
   }
+  if (!from._internal_aggregated_market_depth_m1_usd().empty()) {
+    _this->_internal_set_aggregated_market_depth_m1_usd(from._internal_aggregated_market_depth_m1_usd());
+  }
+  if (!from._internal_aggregated_market_depth_p1_usd().empty()) {
+    _this->_internal_set_aggregated_market_depth_p1_usd(from._internal_aggregated_market_depth_p1_usd());
+  }
   if (from._internal_has_datetime()) {
     _this->_internal_mutable_datetime()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
         from._internal_datetime());
@@ -539,6 +637,14 @@ void StreamAggregatedStatePriceResponseV1::InternalSwap(StreamAggregatedStatePri
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.lst_quote_, lhs_arena,
       &other->_impl_.lst_quote_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.aggregated_market_depth_m1_usd_, lhs_arena,
+      &other->_impl_.aggregated_market_depth_m1_usd_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.aggregated_market_depth_p1_usd_, lhs_arena,
+      &other->_impl_.aggregated_market_depth_p1_usd_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(StreamAggregatedStatePriceResponseV1, _impl_.ts_event_)

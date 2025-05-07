@@ -182,6 +182,8 @@ class StreamAggregatedStatePriceResponseV1 final :
     kAggregatedPriceUsdFieldNumber = 3,
     kAggregatedPriceLstFieldNumber = 4,
     kLstQuoteFieldNumber = 6,
+    kAggregatedMarketDepthM1UsdFieldNumber = 7,
+    kAggregatedMarketDepthP1UsdFieldNumber = 8,
     kDatetimeFieldNumber = 1,
     kTsEventFieldNumber = 5,
   };
@@ -241,6 +243,34 @@ class StreamAggregatedStatePriceResponseV1 final :
   std::string* _internal_mutable_lst_quote();
   public:
 
+  // string aggregated_market_depth_m1_usd = 7;
+  void clear_aggregated_market_depth_m1_usd();
+  const std::string& aggregated_market_depth_m1_usd() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_aggregated_market_depth_m1_usd(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_aggregated_market_depth_m1_usd();
+  PROTOBUF_NODISCARD std::string* release_aggregated_market_depth_m1_usd();
+  void set_allocated_aggregated_market_depth_m1_usd(std::string* aggregated_market_depth_m1_usd);
+  private:
+  const std::string& _internal_aggregated_market_depth_m1_usd() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_aggregated_market_depth_m1_usd(const std::string& value);
+  std::string* _internal_mutable_aggregated_market_depth_m1_usd();
+  public:
+
+  // string aggregated_market_depth_p1_usd = 8;
+  void clear_aggregated_market_depth_p1_usd();
+  const std::string& aggregated_market_depth_p1_usd() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_aggregated_market_depth_p1_usd(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_aggregated_market_depth_p1_usd();
+  PROTOBUF_NODISCARD std::string* release_aggregated_market_depth_p1_usd();
+  void set_allocated_aggregated_market_depth_p1_usd(std::string* aggregated_market_depth_p1_usd);
+  private:
+  const std::string& _internal_aggregated_market_depth_p1_usd() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_aggregated_market_depth_p1_usd(const std::string& value);
+  std::string* _internal_mutable_aggregated_market_depth_p1_usd();
+  public:
+
   // .google.protobuf.Timestamp datetime = 1;
   bool has_datetime() const;
   private:
@@ -289,6 +319,8 @@ class StreamAggregatedStatePriceResponseV1 final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr aggregated_price_usd_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr aggregated_price_lst_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr lst_quote_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr aggregated_market_depth_m1_usd_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr aggregated_market_depth_p1_usd_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* datetime_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -675,6 +707,106 @@ inline void StreamAggregatedStatePriceResponseV1::set_allocated_lst_quote(std::s
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedStatePriceResponseV1.lst_quote)
+}
+
+// string aggregated_market_depth_m1_usd = 7;
+inline void StreamAggregatedStatePriceResponseV1::clear_aggregated_market_depth_m1_usd() {
+  _impl_.aggregated_market_depth_m1_usd_.ClearToEmpty();
+}
+inline const std::string& StreamAggregatedStatePriceResponseV1::aggregated_market_depth_m1_usd() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_m1_usd)
+  return _internal_aggregated_market_depth_m1_usd();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamAggregatedStatePriceResponseV1::set_aggregated_market_depth_m1_usd(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.aggregated_market_depth_m1_usd_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_m1_usd)
+}
+inline std::string* StreamAggregatedStatePriceResponseV1::mutable_aggregated_market_depth_m1_usd() {
+  std::string* _s = _internal_mutable_aggregated_market_depth_m1_usd();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_m1_usd)
+  return _s;
+}
+inline const std::string& StreamAggregatedStatePriceResponseV1::_internal_aggregated_market_depth_m1_usd() const {
+  return _impl_.aggregated_market_depth_m1_usd_.Get();
+}
+inline void StreamAggregatedStatePriceResponseV1::_internal_set_aggregated_market_depth_m1_usd(const std::string& value) {
+  
+  _impl_.aggregated_market_depth_m1_usd_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StreamAggregatedStatePriceResponseV1::_internal_mutable_aggregated_market_depth_m1_usd() {
+  
+  return _impl_.aggregated_market_depth_m1_usd_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StreamAggregatedStatePriceResponseV1::release_aggregated_market_depth_m1_usd() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_m1_usd)
+  return _impl_.aggregated_market_depth_m1_usd_.Release();
+}
+inline void StreamAggregatedStatePriceResponseV1::set_allocated_aggregated_market_depth_m1_usd(std::string* aggregated_market_depth_m1_usd) {
+  if (aggregated_market_depth_m1_usd != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.aggregated_market_depth_m1_usd_.SetAllocated(aggregated_market_depth_m1_usd, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.aggregated_market_depth_m1_usd_.IsDefault()) {
+    _impl_.aggregated_market_depth_m1_usd_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_m1_usd)
+}
+
+// string aggregated_market_depth_p1_usd = 8;
+inline void StreamAggregatedStatePriceResponseV1::clear_aggregated_market_depth_p1_usd() {
+  _impl_.aggregated_market_depth_p1_usd_.ClearToEmpty();
+}
+inline const std::string& StreamAggregatedStatePriceResponseV1::aggregated_market_depth_p1_usd() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_p1_usd)
+  return _internal_aggregated_market_depth_p1_usd();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamAggregatedStatePriceResponseV1::set_aggregated_market_depth_p1_usd(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.aggregated_market_depth_p1_usd_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_p1_usd)
+}
+inline std::string* StreamAggregatedStatePriceResponseV1::mutable_aggregated_market_depth_p1_usd() {
+  std::string* _s = _internal_mutable_aggregated_market_depth_p1_usd();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_p1_usd)
+  return _s;
+}
+inline const std::string& StreamAggregatedStatePriceResponseV1::_internal_aggregated_market_depth_p1_usd() const {
+  return _impl_.aggregated_market_depth_p1_usd_.Get();
+}
+inline void StreamAggregatedStatePriceResponseV1::_internal_set_aggregated_market_depth_p1_usd(const std::string& value) {
+  
+  _impl_.aggregated_market_depth_p1_usd_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StreamAggregatedStatePriceResponseV1::_internal_mutable_aggregated_market_depth_p1_usd() {
+  
+  return _impl_.aggregated_market_depth_p1_usd_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StreamAggregatedStatePriceResponseV1::release_aggregated_market_depth_p1_usd() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_p1_usd)
+  return _impl_.aggregated_market_depth_p1_usd_.Release();
+}
+inline void StreamAggregatedStatePriceResponseV1::set_allocated_aggregated_market_depth_p1_usd(std::string* aggregated_market_depth_p1_usd) {
+  if (aggregated_market_depth_p1_usd != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.aggregated_market_depth_p1_usd_.SetAllocated(aggregated_market_depth_p1_usd, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.aggregated_market_depth_p1_usd_.IsDefault()) {
+    _impl_.aggregated_market_depth_p1_usd_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamAggregatedStatePriceResponseV1.aggregated_market_depth_p1_usd)
 }
 
 #ifdef __GNUC__
