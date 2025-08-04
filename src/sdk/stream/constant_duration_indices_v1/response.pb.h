@@ -54,6 +54,9 @@ extern ConstantDurationFutureDefaultTypeInternal _ConstantDurationFuture_default
 class ConstantDurationFutureDetail;
 struct ConstantDurationFutureDetailDefaultTypeInternal;
 extern ConstantDurationFutureDetailDefaultTypeInternal _ConstantDurationFutureDetail_default_instance_;
+class ConstantDurationFutureForecast;
+struct ConstantDurationFutureForecastDefaultTypeInternal;
+extern ConstantDurationFutureForecastDefaultTypeInternal _ConstantDurationFutureForecast_default_instance_;
 class RateQuoteConversion;
 struct RateQuoteConversionDefaultTypeInternal;
 extern RateQuoteConversionDefaultTypeInternal _RateQuoteConversion_default_instance_;
@@ -67,6 +70,7 @@ extern StreamConstantDurationIndicesServiceResponseV1DefaultTypeInternal _Stream
 PROTOBUF_NAMESPACE_OPEN
 template<> ::kaikosdk::ConstantDurationFuture* Arena::CreateMaybeMessage<::kaikosdk::ConstantDurationFuture>(Arena*);
 template<> ::kaikosdk::ConstantDurationFutureDetail* Arena::CreateMaybeMessage<::kaikosdk::ConstantDurationFutureDetail>(Arena*);
+template<> ::kaikosdk::ConstantDurationFutureForecast* Arena::CreateMaybeMessage<::kaikosdk::ConstantDurationFutureForecast>(Arena*);
 template<> ::kaikosdk::RateQuoteConversion* Arena::CreateMaybeMessage<::kaikosdk::RateQuoteConversion>(Arena*);
 template<> ::kaikosdk::StreamConstantDurationIndicesServiceResponseComposition* Arena::CreateMaybeMessage<::kaikosdk::StreamConstantDurationIndicesServiceResponseComposition>(Arena*);
 template<> ::kaikosdk::StreamConstantDurationIndicesServiceResponseV1* Arena::CreateMaybeMessage<::kaikosdk::StreamConstantDurationIndicesServiceResponseV1>(Arena*);
@@ -626,6 +630,7 @@ class ConstantDurationFuture final :
     kFrontFutureFieldNumber = 3,
     kBackFutureFieldNumber = 4,
     kRateQuoteConversionFieldNumber = 7,
+    kForecastFieldNumber = 8,
     kComputedCdfFieldNumber = 1,
     kConstantDurationFieldNumber = 5,
     kStatusFieldNumber = 6,
@@ -698,6 +703,24 @@ class ConstantDurationFuture final :
       ::kaikosdk::RateQuoteConversion* rate_quote_conversion);
   ::kaikosdk::RateQuoteConversion* unsafe_arena_release_rate_quote_conversion();
 
+  // .kaikosdk.ConstantDurationFutureForecast forecast = 8;
+  bool has_forecast() const;
+  private:
+  bool _internal_has_forecast() const;
+  public:
+  void clear_forecast();
+  const ::kaikosdk::ConstantDurationFutureForecast& forecast() const;
+  PROTOBUF_NODISCARD ::kaikosdk::ConstantDurationFutureForecast* release_forecast();
+  ::kaikosdk::ConstantDurationFutureForecast* mutable_forecast();
+  void set_allocated_forecast(::kaikosdk::ConstantDurationFutureForecast* forecast);
+  private:
+  const ::kaikosdk::ConstantDurationFutureForecast& _internal_forecast() const;
+  ::kaikosdk::ConstantDurationFutureForecast* _internal_mutable_forecast();
+  public:
+  void unsafe_arena_set_allocated_forecast(
+      ::kaikosdk::ConstantDurationFutureForecast* forecast);
+  ::kaikosdk::ConstantDurationFutureForecast* unsafe_arena_release_forecast();
+
   // double computed_cdf = 1;
   void clear_computed_cdf();
   double computed_cdf() const;
@@ -737,9 +760,223 @@ class ConstantDurationFuture final :
     ::kaikosdk::ConstantDurationFutureDetail* front_future_;
     ::kaikosdk::ConstantDurationFutureDetail* back_future_;
     ::kaikosdk::RateQuoteConversion* rate_quote_conversion_;
+    ::kaikosdk::ConstantDurationFutureForecast* forecast_;
     double computed_cdf_;
     double constant_duration_;
     int status_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConstantDurationFutureForecast final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.ConstantDurationFutureForecast) */ {
+ public:
+  inline ConstantDurationFutureForecast() : ConstantDurationFutureForecast(nullptr) {}
+  ~ConstantDurationFutureForecast() override;
+  explicit PROTOBUF_CONSTEXPR ConstantDurationFutureForecast(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConstantDurationFutureForecast(const ConstantDurationFutureForecast& from);
+  ConstantDurationFutureForecast(ConstantDurationFutureForecast&& from) noexcept
+    : ConstantDurationFutureForecast() {
+    *this = ::std::move(from);
+  }
+
+  inline ConstantDurationFutureForecast& operator=(const ConstantDurationFutureForecast& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConstantDurationFutureForecast& operator=(ConstantDurationFutureForecast&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConstantDurationFutureForecast& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ConstantDurationFutureForecast* internal_default_instance() {
+    return reinterpret_cast<const ConstantDurationFutureForecast*>(
+               &_ConstantDurationFutureForecast_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(ConstantDurationFutureForecast& a, ConstantDurationFutureForecast& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConstantDurationFutureForecast* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConstantDurationFutureForecast* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConstantDurationFutureForecast* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ConstantDurationFutureForecast>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ConstantDurationFutureForecast& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ConstantDurationFutureForecast& from) {
+    ConstantDurationFutureForecast::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConstantDurationFutureForecast* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "kaikosdk.ConstantDurationFutureForecast";
+  }
+  protected:
+  explicit ConstantDurationFutureForecast(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kExchangeFieldNumber = 1,
+    kFutureDateFieldNumber = 2,
+    kFrontFutureFieldNumber = 3,
+    kBackFutureFieldNumber = 4,
+  };
+  // string exchange = 1;
+  void clear_exchange();
+  const std::string& exchange() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_exchange(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_exchange();
+  PROTOBUF_NODISCARD std::string* release_exchange();
+  void set_allocated_exchange(std::string* exchange);
+  private:
+  const std::string& _internal_exchange() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_exchange(const std::string& value);
+  std::string* _internal_mutable_exchange();
+  public:
+
+  // .google.protobuf.Timestamp future_date = 2;
+  bool has_future_date() const;
+  private:
+  bool _internal_has_future_date() const;
+  public:
+  void clear_future_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& future_date() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_future_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_future_date();
+  void set_allocated_future_date(::PROTOBUF_NAMESPACE_ID::Timestamp* future_date);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_future_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_future_date();
+  public:
+  void unsafe_arena_set_allocated_future_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* future_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_future_date();
+
+  // .kaikosdk.ConstantDurationFutureDetail front_future = 3;
+  bool has_front_future() const;
+  private:
+  bool _internal_has_front_future() const;
+  public:
+  void clear_front_future();
+  const ::kaikosdk::ConstantDurationFutureDetail& front_future() const;
+  PROTOBUF_NODISCARD ::kaikosdk::ConstantDurationFutureDetail* release_front_future();
+  ::kaikosdk::ConstantDurationFutureDetail* mutable_front_future();
+  void set_allocated_front_future(::kaikosdk::ConstantDurationFutureDetail* front_future);
+  private:
+  const ::kaikosdk::ConstantDurationFutureDetail& _internal_front_future() const;
+  ::kaikosdk::ConstantDurationFutureDetail* _internal_mutable_front_future();
+  public:
+  void unsafe_arena_set_allocated_front_future(
+      ::kaikosdk::ConstantDurationFutureDetail* front_future);
+  ::kaikosdk::ConstantDurationFutureDetail* unsafe_arena_release_front_future();
+
+  // .kaikosdk.ConstantDurationFutureDetail back_future = 4;
+  bool has_back_future() const;
+  private:
+  bool _internal_has_back_future() const;
+  public:
+  void clear_back_future();
+  const ::kaikosdk::ConstantDurationFutureDetail& back_future() const;
+  PROTOBUF_NODISCARD ::kaikosdk::ConstantDurationFutureDetail* release_back_future();
+  ::kaikosdk::ConstantDurationFutureDetail* mutable_back_future();
+  void set_allocated_back_future(::kaikosdk::ConstantDurationFutureDetail* back_future);
+  private:
+  const ::kaikosdk::ConstantDurationFutureDetail& _internal_back_future() const;
+  ::kaikosdk::ConstantDurationFutureDetail* _internal_mutable_back_future();
+  public:
+  void unsafe_arena_set_allocated_back_future(
+      ::kaikosdk::ConstantDurationFutureDetail* back_future);
+  ::kaikosdk::ConstantDurationFutureDetail* unsafe_arena_release_back_future();
+
+  // @@protoc_insertion_point(class_scope:kaikosdk.ConstantDurationFutureForecast)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr exchange_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* future_date_;
+    ::kaikosdk::ConstantDurationFutureDetail* front_future_;
+    ::kaikosdk::ConstantDurationFutureDetail* back_future_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -795,7 +1032,7 @@ class StreamConstantDurationIndicesServiceResponseComposition final :
                &_StreamConstantDurationIndicesServiceResponseComposition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(StreamConstantDurationIndicesServiceResponseComposition& a, StreamConstantDurationIndicesServiceResponseComposition& b) {
     a.Swap(&b);
@@ -984,7 +1221,7 @@ class StreamConstantDurationIndicesServiceResponseV1 final :
                &_StreamConstantDurationIndicesServiceResponseV1_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(StreamConstantDurationIndicesServiceResponseV1& a, StreamConstantDurationIndicesServiceResponseV1& b) {
     a.Swap(&b);
@@ -1992,6 +2229,415 @@ inline void ConstantDurationFuture::set_allocated_rate_quote_conversion(::kaikos
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.ConstantDurationFuture.rate_quote_conversion)
 }
 
+// .kaikosdk.ConstantDurationFutureForecast forecast = 8;
+inline bool ConstantDurationFuture::_internal_has_forecast() const {
+  return this != internal_default_instance() && _impl_.forecast_ != nullptr;
+}
+inline bool ConstantDurationFuture::has_forecast() const {
+  return _internal_has_forecast();
+}
+inline void ConstantDurationFuture::clear_forecast() {
+  if (GetArenaForAllocation() == nullptr && _impl_.forecast_ != nullptr) {
+    delete _impl_.forecast_;
+  }
+  _impl_.forecast_ = nullptr;
+}
+inline const ::kaikosdk::ConstantDurationFutureForecast& ConstantDurationFuture::_internal_forecast() const {
+  const ::kaikosdk::ConstantDurationFutureForecast* p = _impl_.forecast_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::ConstantDurationFutureForecast&>(
+      ::kaikosdk::_ConstantDurationFutureForecast_default_instance_);
+}
+inline const ::kaikosdk::ConstantDurationFutureForecast& ConstantDurationFuture::forecast() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.ConstantDurationFuture.forecast)
+  return _internal_forecast();
+}
+inline void ConstantDurationFuture::unsafe_arena_set_allocated_forecast(
+    ::kaikosdk::ConstantDurationFutureForecast* forecast) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.forecast_);
+  }
+  _impl_.forecast_ = forecast;
+  if (forecast) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.ConstantDurationFuture.forecast)
+}
+inline ::kaikosdk::ConstantDurationFutureForecast* ConstantDurationFuture::release_forecast() {
+  
+  ::kaikosdk::ConstantDurationFutureForecast* temp = _impl_.forecast_;
+  _impl_.forecast_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::ConstantDurationFutureForecast* ConstantDurationFuture::unsafe_arena_release_forecast() {
+  // @@protoc_insertion_point(field_release:kaikosdk.ConstantDurationFuture.forecast)
+  
+  ::kaikosdk::ConstantDurationFutureForecast* temp = _impl_.forecast_;
+  _impl_.forecast_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::ConstantDurationFutureForecast* ConstantDurationFuture::_internal_mutable_forecast() {
+  
+  if (_impl_.forecast_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::ConstantDurationFutureForecast>(GetArenaForAllocation());
+    _impl_.forecast_ = p;
+  }
+  return _impl_.forecast_;
+}
+inline ::kaikosdk::ConstantDurationFutureForecast* ConstantDurationFuture::mutable_forecast() {
+  ::kaikosdk::ConstantDurationFutureForecast* _msg = _internal_mutable_forecast();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.ConstantDurationFuture.forecast)
+  return _msg;
+}
+inline void ConstantDurationFuture::set_allocated_forecast(::kaikosdk::ConstantDurationFutureForecast* forecast) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.forecast_;
+  }
+  if (forecast) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(forecast);
+    if (message_arena != submessage_arena) {
+      forecast = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, forecast, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.forecast_ = forecast;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.ConstantDurationFuture.forecast)
+}
+
+// -------------------------------------------------------------------
+
+// ConstantDurationFutureForecast
+
+// string exchange = 1;
+inline void ConstantDurationFutureForecast::clear_exchange() {
+  _impl_.exchange_.ClearToEmpty();
+}
+inline const std::string& ConstantDurationFutureForecast::exchange() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.ConstantDurationFutureForecast.exchange)
+  return _internal_exchange();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConstantDurationFutureForecast::set_exchange(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.exchange_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.ConstantDurationFutureForecast.exchange)
+}
+inline std::string* ConstantDurationFutureForecast::mutable_exchange() {
+  std::string* _s = _internal_mutable_exchange();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.ConstantDurationFutureForecast.exchange)
+  return _s;
+}
+inline const std::string& ConstantDurationFutureForecast::_internal_exchange() const {
+  return _impl_.exchange_.Get();
+}
+inline void ConstantDurationFutureForecast::_internal_set_exchange(const std::string& value) {
+  
+  _impl_.exchange_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ConstantDurationFutureForecast::_internal_mutable_exchange() {
+  
+  return _impl_.exchange_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ConstantDurationFutureForecast::release_exchange() {
+  // @@protoc_insertion_point(field_release:kaikosdk.ConstantDurationFutureForecast.exchange)
+  return _impl_.exchange_.Release();
+}
+inline void ConstantDurationFutureForecast::set_allocated_exchange(std::string* exchange) {
+  if (exchange != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.exchange_.SetAllocated(exchange, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.exchange_.IsDefault()) {
+    _impl_.exchange_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.ConstantDurationFutureForecast.exchange)
+}
+
+// .google.protobuf.Timestamp future_date = 2;
+inline bool ConstantDurationFutureForecast::_internal_has_future_date() const {
+  return this != internal_default_instance() && _impl_.future_date_ != nullptr;
+}
+inline bool ConstantDurationFutureForecast::has_future_date() const {
+  return _internal_has_future_date();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ConstantDurationFutureForecast::_internal_future_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.future_date_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ConstantDurationFutureForecast::future_date() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.ConstantDurationFutureForecast.future_date)
+  return _internal_future_date();
+}
+inline void ConstantDurationFutureForecast::unsafe_arena_set_allocated_future_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* future_date) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.future_date_);
+  }
+  _impl_.future_date_ = future_date;
+  if (future_date) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.ConstantDurationFutureForecast.future_date)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ConstantDurationFutureForecast::release_future_date() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.future_date_;
+  _impl_.future_date_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ConstantDurationFutureForecast::unsafe_arena_release_future_date() {
+  // @@protoc_insertion_point(field_release:kaikosdk.ConstantDurationFutureForecast.future_date)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.future_date_;
+  _impl_.future_date_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ConstantDurationFutureForecast::_internal_mutable_future_date() {
+  
+  if (_impl_.future_date_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.future_date_ = p;
+  }
+  return _impl_.future_date_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ConstantDurationFutureForecast::mutable_future_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_future_date();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.ConstantDurationFutureForecast.future_date)
+  return _msg;
+}
+inline void ConstantDurationFutureForecast::set_allocated_future_date(::PROTOBUF_NAMESPACE_ID::Timestamp* future_date) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.future_date_);
+  }
+  if (future_date) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(future_date));
+    if (message_arena != submessage_arena) {
+      future_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, future_date, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.future_date_ = future_date;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.ConstantDurationFutureForecast.future_date)
+}
+
+// .kaikosdk.ConstantDurationFutureDetail front_future = 3;
+inline bool ConstantDurationFutureForecast::_internal_has_front_future() const {
+  return this != internal_default_instance() && _impl_.front_future_ != nullptr;
+}
+inline bool ConstantDurationFutureForecast::has_front_future() const {
+  return _internal_has_front_future();
+}
+inline void ConstantDurationFutureForecast::clear_front_future() {
+  if (GetArenaForAllocation() == nullptr && _impl_.front_future_ != nullptr) {
+    delete _impl_.front_future_;
+  }
+  _impl_.front_future_ = nullptr;
+}
+inline const ::kaikosdk::ConstantDurationFutureDetail& ConstantDurationFutureForecast::_internal_front_future() const {
+  const ::kaikosdk::ConstantDurationFutureDetail* p = _impl_.front_future_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::ConstantDurationFutureDetail&>(
+      ::kaikosdk::_ConstantDurationFutureDetail_default_instance_);
+}
+inline const ::kaikosdk::ConstantDurationFutureDetail& ConstantDurationFutureForecast::front_future() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.ConstantDurationFutureForecast.front_future)
+  return _internal_front_future();
+}
+inline void ConstantDurationFutureForecast::unsafe_arena_set_allocated_front_future(
+    ::kaikosdk::ConstantDurationFutureDetail* front_future) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.front_future_);
+  }
+  _impl_.front_future_ = front_future;
+  if (front_future) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.ConstantDurationFutureForecast.front_future)
+}
+inline ::kaikosdk::ConstantDurationFutureDetail* ConstantDurationFutureForecast::release_front_future() {
+  
+  ::kaikosdk::ConstantDurationFutureDetail* temp = _impl_.front_future_;
+  _impl_.front_future_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::ConstantDurationFutureDetail* ConstantDurationFutureForecast::unsafe_arena_release_front_future() {
+  // @@protoc_insertion_point(field_release:kaikosdk.ConstantDurationFutureForecast.front_future)
+  
+  ::kaikosdk::ConstantDurationFutureDetail* temp = _impl_.front_future_;
+  _impl_.front_future_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::ConstantDurationFutureDetail* ConstantDurationFutureForecast::_internal_mutable_front_future() {
+  
+  if (_impl_.front_future_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::ConstantDurationFutureDetail>(GetArenaForAllocation());
+    _impl_.front_future_ = p;
+  }
+  return _impl_.front_future_;
+}
+inline ::kaikosdk::ConstantDurationFutureDetail* ConstantDurationFutureForecast::mutable_front_future() {
+  ::kaikosdk::ConstantDurationFutureDetail* _msg = _internal_mutable_front_future();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.ConstantDurationFutureForecast.front_future)
+  return _msg;
+}
+inline void ConstantDurationFutureForecast::set_allocated_front_future(::kaikosdk::ConstantDurationFutureDetail* front_future) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.front_future_;
+  }
+  if (front_future) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(front_future);
+    if (message_arena != submessage_arena) {
+      front_future = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, front_future, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.front_future_ = front_future;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.ConstantDurationFutureForecast.front_future)
+}
+
+// .kaikosdk.ConstantDurationFutureDetail back_future = 4;
+inline bool ConstantDurationFutureForecast::_internal_has_back_future() const {
+  return this != internal_default_instance() && _impl_.back_future_ != nullptr;
+}
+inline bool ConstantDurationFutureForecast::has_back_future() const {
+  return _internal_has_back_future();
+}
+inline void ConstantDurationFutureForecast::clear_back_future() {
+  if (GetArenaForAllocation() == nullptr && _impl_.back_future_ != nullptr) {
+    delete _impl_.back_future_;
+  }
+  _impl_.back_future_ = nullptr;
+}
+inline const ::kaikosdk::ConstantDurationFutureDetail& ConstantDurationFutureForecast::_internal_back_future() const {
+  const ::kaikosdk::ConstantDurationFutureDetail* p = _impl_.back_future_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::ConstantDurationFutureDetail&>(
+      ::kaikosdk::_ConstantDurationFutureDetail_default_instance_);
+}
+inline const ::kaikosdk::ConstantDurationFutureDetail& ConstantDurationFutureForecast::back_future() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.ConstantDurationFutureForecast.back_future)
+  return _internal_back_future();
+}
+inline void ConstantDurationFutureForecast::unsafe_arena_set_allocated_back_future(
+    ::kaikosdk::ConstantDurationFutureDetail* back_future) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.back_future_);
+  }
+  _impl_.back_future_ = back_future;
+  if (back_future) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.ConstantDurationFutureForecast.back_future)
+}
+inline ::kaikosdk::ConstantDurationFutureDetail* ConstantDurationFutureForecast::release_back_future() {
+  
+  ::kaikosdk::ConstantDurationFutureDetail* temp = _impl_.back_future_;
+  _impl_.back_future_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::ConstantDurationFutureDetail* ConstantDurationFutureForecast::unsafe_arena_release_back_future() {
+  // @@protoc_insertion_point(field_release:kaikosdk.ConstantDurationFutureForecast.back_future)
+  
+  ::kaikosdk::ConstantDurationFutureDetail* temp = _impl_.back_future_;
+  _impl_.back_future_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::ConstantDurationFutureDetail* ConstantDurationFutureForecast::_internal_mutable_back_future() {
+  
+  if (_impl_.back_future_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::ConstantDurationFutureDetail>(GetArenaForAllocation());
+    _impl_.back_future_ = p;
+  }
+  return _impl_.back_future_;
+}
+inline ::kaikosdk::ConstantDurationFutureDetail* ConstantDurationFutureForecast::mutable_back_future() {
+  ::kaikosdk::ConstantDurationFutureDetail* _msg = _internal_mutable_back_future();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.ConstantDurationFutureForecast.back_future)
+  return _msg;
+}
+inline void ConstantDurationFutureForecast::set_allocated_back_future(::kaikosdk::ConstantDurationFutureDetail* back_future) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.back_future_;
+  }
+  if (back_future) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(back_future);
+    if (message_arena != submessage_arena) {
+      back_future = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, back_future, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.back_future_ = back_future;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.ConstantDurationFutureForecast.back_future)
+}
+
 // -------------------------------------------------------------------
 
 // StreamConstantDurationIndicesServiceResponseComposition
@@ -2558,6 +3204,8 @@ inline void StreamConstantDurationIndicesServiceResponseV1::set_allocated_ts_eve
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

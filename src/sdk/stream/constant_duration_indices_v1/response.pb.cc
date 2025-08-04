@@ -59,6 +59,7 @@ PROTOBUF_CONSTEXPR ConstantDurationFuture::ConstantDurationFuture(
   , /*decltype(_impl_.front_future_)*/nullptr
   , /*decltype(_impl_.back_future_)*/nullptr
   , /*decltype(_impl_.rate_quote_conversion_)*/nullptr
+  , /*decltype(_impl_.forecast_)*/nullptr
   , /*decltype(_impl_.computed_cdf_)*/0
   , /*decltype(_impl_.constant_duration_)*/0
   , /*decltype(_impl_.status_)*/0
@@ -72,6 +73,22 @@ struct ConstantDurationFutureDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConstantDurationFutureDefaultTypeInternal _ConstantDurationFuture_default_instance_;
+PROTOBUF_CONSTEXPR ConstantDurationFutureForecast::ConstantDurationFutureForecast(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.exchange_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.future_date_)*/nullptr
+  , /*decltype(_impl_.front_future_)*/nullptr
+  , /*decltype(_impl_.back_future_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ConstantDurationFutureForecastDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ConstantDurationFutureForecastDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ConstantDurationFutureForecastDefaultTypeInternal() {}
+  union {
+    ConstantDurationFutureForecast _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConstantDurationFutureForecastDefaultTypeInternal _ConstantDurationFutureForecast_default_instance_;
 PROTOBUF_CONSTEXPR StreamConstantDurationIndicesServiceResponseComposition::StreamConstantDurationIndicesServiceResponseComposition(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.data_)*/{}
@@ -106,7 +123,7 @@ struct StreamConstantDurationIndicesServiceResponseV1DefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamConstantDurationIndicesServiceResponseV1DefaultTypeInternal _StreamConstantDurationIndicesServiceResponseV1_default_instance_;
 }  // namespace kaikosdk
-static ::_pb::Metadata file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[5];
+static ::_pb::Metadata file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[6];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[1];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto = nullptr;
 
@@ -144,6 +161,17 @@ const uint32_t TableStruct_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fr
   PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFuture, _impl_.constant_duration_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFuture, _impl_.status_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFuture, _impl_.rate_quote_conversion_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFuture, _impl_.forecast_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFutureForecast, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFutureForecast, _impl_.exchange_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFutureForecast, _impl_.future_date_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFutureForecast, _impl_.front_future_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::ConstantDurationFutureForecast, _impl_.back_future_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamConstantDurationIndicesServiceResponseComposition, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -170,14 +198,16 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 0, -1, -1, sizeof(::kaikosdk::ConstantDurationFutureDetail)},
   { 11, -1, -1, sizeof(::kaikosdk::RateQuoteConversion)},
   { 20, -1, -1, sizeof(::kaikosdk::ConstantDurationFuture)},
-  { 33, -1, -1, sizeof(::kaikosdk::StreamConstantDurationIndicesServiceResponseComposition)},
-  { 42, -1, -1, sizeof(::kaikosdk::StreamConstantDurationIndicesServiceResponseV1)},
+  { 34, -1, -1, sizeof(::kaikosdk::ConstantDurationFutureForecast)},
+  { 44, -1, -1, sizeof(::kaikosdk::StreamConstantDurationIndicesServiceResponseComposition)},
+  { 53, -1, -1, sizeof(::kaikosdk::StreamConstantDurationIndicesServiceResponseV1)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::kaikosdk::_ConstantDurationFutureDetail_default_instance_._instance,
   &::kaikosdk::_RateQuoteConversion_default_instance_._instance,
   &::kaikosdk::_ConstantDurationFuture_default_instance_._instance,
+  &::kaikosdk::_ConstantDurationFutureForecast_default_instance_._instance,
   &::kaikosdk::_StreamConstantDurationIndicesServiceResponseComposition_default_instance_._instance,
   &::kaikosdk::_StreamConstantDurationIndicesServiceResponseV1_default_instance_._instance,
 };
@@ -193,7 +223,7 @@ const char descriptor_table_protodef_sdk_2fstream_2fconstant_5fduration_5findice
   "f.Timestamp\022\016\n\006weight\030\005 \001(\001\"b\n\023RateQuote"
   "Conversion\022\r\n\005index\030\001 \001(\t\022\r\n\005value\030\002 \001(\001"
   "\022-\n\ttimestamp\030\003 \001(\0132\032.google.protobuf.Ti"
-  "mestamp\"\314\002\n\026ConstantDurationFuture\022\024\n\014co"
+  "mestamp\"\210\003\n\026ConstantDurationFuture\022\024\n\014co"
   "mputed_cdf\030\001 \001(\001\022\020\n\010exchange\030\002 \001(\t\022<\n\014fr"
   "ont_future\030\003 \001(\0132&.kaikosdk.ConstantDura"
   "tionFutureDetail\022;\n\013back_future\030\004 \001(\0132&."
@@ -201,27 +231,34 @@ const char descriptor_table_protodef_sdk_2fstream_2fconstant_5fduration_5findice
   "\021constant_duration\030\005 \001(\001\0226\n\006status\030\006 \001(\016"
   "2&.kaikosdk.ConstantDurationFutureStatus"
   "\022<\n\025rate_quote_conversion\030\007 \001(\0132\035.kaikos"
-  "dk.RateQuoteConversion\"\206\001\n7StreamConstan"
-  "tDurationIndicesServiceResponseCompositi"
-  "on\022\014\n\004base\030\001 \001(\t\022\r\n\005quote\030\002 \001(\t\022.\n\004data\030"
-  "\003 \003(\0132 .kaikosdk.ConstantDurationFuture\""
-  "\333\002\n.StreamConstantDurationIndicesService"
-  "ResponseV1\0221\n\tcommodity\030\001 \001(\0162\036.kaikosdk"
-  ".StreamIndexCommodity\022\022\n\nindex_code\030\002 \001("
-  "\t\022V\n\013composition\030\003 \001(\0132A.kaikosdk.Stream"
-  "ConstantDurationIndicesServiceResponseCo"
-  "mposition\022.\n\nstart_time\030\004 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032.go"
-  "ogle.protobuf.Timestamp\022,\n\010ts_event\030\006 \001("
-  "\0132\032.google.protobuf.Timestamp*b\n\034Constan"
-  "tDurationFutureStatus\022\017\n\013CDF_UNKNOWN\020\000\022\017"
-  "\n\013CDF_SUCCESS\020\001\022\r\n\tCDF_ERROR\020\002\022\021\n\rCDF_NO"
-  "_FUTURE\020\003B\305\001\n1com.kaiko.sdk.stream.const"
-  "ant_duration_indices_v1P\001Zbgithub.com/ka"
-  "ikodata/kaiko-go-sdk/stream/constant_dur"
-  "ation_indices_v1;constant_duration_indic"
-  "es_v1\252\002)KaikoSdk.Stream.ConstantDuration"
-  "IndicesV1b\006proto3"
+  "dk.RateQuoteConversion\022:\n\010forecast\030\010 \001(\013"
+  "2(.kaikosdk.ConstantDurationFutureForeca"
+  "st\"\336\001\n\036ConstantDurationFutureForecast\022\020\n"
+  "\010exchange\030\001 \001(\t\022/\n\013future_date\030\002 \001(\0132\032.g"
+  "oogle.protobuf.Timestamp\022<\n\014front_future"
+  "\030\003 \001(\0132&.kaikosdk.ConstantDurationFuture"
+  "Detail\022;\n\013back_future\030\004 \001(\0132&.kaikosdk.C"
+  "onstantDurationFutureDetail\"\206\001\n7StreamCo"
+  "nstantDurationIndicesServiceResponseComp"
+  "osition\022\014\n\004base\030\001 \001(\t\022\r\n\005quote\030\002 \001(\t\022.\n\004"
+  "data\030\003 \003(\0132 .kaikosdk.ConstantDurationFu"
+  "ture\"\333\002\n.StreamConstantDurationIndicesSe"
+  "rviceResponseV1\0221\n\tcommodity\030\001 \001(\0162\036.kai"
+  "kosdk.StreamIndexCommodity\022\022\n\nindex_code"
+  "\030\002 \001(\t\022V\n\013composition\030\003 \001(\0132A.kaikosdk.S"
+  "treamConstantDurationIndicesServiceRespo"
+  "nseComposition\022.\n\nstart_time\030\004 \001(\0132\032.goo"
+  "gle.protobuf.Timestamp\022,\n\010end_time\030\005 \001(\013"
+  "2\032.google.protobuf.Timestamp\022,\n\010ts_event"
+  "\030\006 \001(\0132\032.google.protobuf.Timestamp*b\n\034Co"
+  "nstantDurationFutureStatus\022\017\n\013CDF_UNKNOW"
+  "N\020\000\022\017\n\013CDF_SUCCESS\020\001\022\r\n\tCDF_ERROR\020\002\022\021\n\rC"
+  "DF_NO_FUTURE\020\003B\305\001\n1com.kaiko.sdk.stream."
+  "constant_duration_indices_v1P\001Zbgithub.c"
+  "om/kaikodata/kaiko-go-sdk/stream/constan"
+  "t_duration_indices_v1;constant_duration_"
+  "indices_v1\252\002)KaikoSdk.Stream.ConstantDur"
+  "ationIndicesV1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -229,9 +266,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2fcons
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto = {
-    false, false, 1537, descriptor_table_protodef_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto,
+    false, false, 1822, descriptor_table_protodef_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto,
     "sdk/stream/constant_duration_indices_v1/response.proto",
-    &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_deps, 2, 5,
+    &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_deps, 2, 6,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto::offsets,
     file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto,
     file_level_service_descriptors_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto,
@@ -942,6 +979,7 @@ class ConstantDurationFuture::_Internal {
   static const ::kaikosdk::ConstantDurationFutureDetail& front_future(const ConstantDurationFuture* msg);
   static const ::kaikosdk::ConstantDurationFutureDetail& back_future(const ConstantDurationFuture* msg);
   static const ::kaikosdk::RateQuoteConversion& rate_quote_conversion(const ConstantDurationFuture* msg);
+  static const ::kaikosdk::ConstantDurationFutureForecast& forecast(const ConstantDurationFuture* msg);
 };
 
 const ::kaikosdk::ConstantDurationFutureDetail&
@@ -955,6 +993,10 @@ ConstantDurationFuture::_Internal::back_future(const ConstantDurationFuture* msg
 const ::kaikosdk::RateQuoteConversion&
 ConstantDurationFuture::_Internal::rate_quote_conversion(const ConstantDurationFuture* msg) {
   return *msg->_impl_.rate_quote_conversion_;
+}
+const ::kaikosdk::ConstantDurationFutureForecast&
+ConstantDurationFuture::_Internal::forecast(const ConstantDurationFuture* msg) {
+  return *msg->_impl_.forecast_;
 }
 ConstantDurationFuture::ConstantDurationFuture(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -970,6 +1012,7 @@ ConstantDurationFuture::ConstantDurationFuture(const ConstantDurationFuture& fro
     , decltype(_impl_.front_future_){nullptr}
     , decltype(_impl_.back_future_){nullptr}
     , decltype(_impl_.rate_quote_conversion_){nullptr}
+    , decltype(_impl_.forecast_){nullptr}
     , decltype(_impl_.computed_cdf_){}
     , decltype(_impl_.constant_duration_){}
     , decltype(_impl_.status_){}
@@ -993,6 +1036,9 @@ ConstantDurationFuture::ConstantDurationFuture(const ConstantDurationFuture& fro
   if (from._internal_has_rate_quote_conversion()) {
     _this->_impl_.rate_quote_conversion_ = new ::kaikosdk::RateQuoteConversion(*from._impl_.rate_quote_conversion_);
   }
+  if (from._internal_has_forecast()) {
+    _this->_impl_.forecast_ = new ::kaikosdk::ConstantDurationFutureForecast(*from._impl_.forecast_);
+  }
   ::memcpy(&_impl_.computed_cdf_, &from._impl_.computed_cdf_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.status_) -
     reinterpret_cast<char*>(&_impl_.computed_cdf_)) + sizeof(_impl_.status_));
@@ -1008,6 +1054,7 @@ inline void ConstantDurationFuture::SharedCtor(
     , decltype(_impl_.front_future_){nullptr}
     , decltype(_impl_.back_future_){nullptr}
     , decltype(_impl_.rate_quote_conversion_){nullptr}
+    , decltype(_impl_.forecast_){nullptr}
     , decltype(_impl_.computed_cdf_){0}
     , decltype(_impl_.constant_duration_){0}
     , decltype(_impl_.status_){0}
@@ -1034,6 +1081,7 @@ inline void ConstantDurationFuture::SharedDtor() {
   if (this != internal_default_instance()) delete _impl_.front_future_;
   if (this != internal_default_instance()) delete _impl_.back_future_;
   if (this != internal_default_instance()) delete _impl_.rate_quote_conversion_;
+  if (this != internal_default_instance()) delete _impl_.forecast_;
 }
 
 void ConstantDurationFuture::SetCachedSize(int size) const {
@@ -1059,6 +1107,10 @@ void ConstantDurationFuture::Clear() {
     delete _impl_.rate_quote_conversion_;
   }
   _impl_.rate_quote_conversion_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.forecast_ != nullptr) {
+    delete _impl_.forecast_;
+  }
+  _impl_.forecast_ = nullptr;
   ::memset(&_impl_.computed_cdf_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.status_) -
       reinterpret_cast<char*>(&_impl_.computed_cdf_)) + sizeof(_impl_.status_));
@@ -1126,6 +1178,14 @@ const char* ConstantDurationFuture::_InternalParse(const char* ptr, ::_pbi::Pars
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_rate_quote_conversion(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .kaikosdk.ConstantDurationFutureForecast forecast = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_forecast(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1217,6 +1277,13 @@ uint8_t* ConstantDurationFuture::_InternalSerialize(
         _Internal::rate_quote_conversion(this).GetCachedSize(), target, stream);
   }
 
+  // .kaikosdk.ConstantDurationFutureForecast forecast = 8;
+  if (this->_internal_has_forecast()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(8, _Internal::forecast(this),
+        _Internal::forecast(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1259,6 +1326,13 @@ size_t ConstantDurationFuture::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.rate_quote_conversion_);
+  }
+
+  // .kaikosdk.ConstantDurationFutureForecast forecast = 8;
+  if (this->_internal_has_forecast()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.forecast_);
   }
 
   // double computed_cdf = 1;
@@ -1318,6 +1392,10 @@ void ConstantDurationFuture::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg,
     _this->_internal_mutable_rate_quote_conversion()->::kaikosdk::RateQuoteConversion::MergeFrom(
         from._internal_rate_quote_conversion());
   }
+  if (from._internal_has_forecast()) {
+    _this->_internal_mutable_forecast()->::kaikosdk::ConstantDurationFutureForecast::MergeFrom(
+        from._internal_forecast());
+  }
   static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_computed_cdf = from._internal_computed_cdf();
   uint64_t raw_computed_cdf;
@@ -1370,6 +1448,344 @@ void ConstantDurationFuture::InternalSwap(ConstantDurationFuture* other) {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_once,
       file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[2]);
+}
+
+// ===================================================================
+
+class ConstantDurationFutureForecast::_Internal {
+ public:
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& future_date(const ConstantDurationFutureForecast* msg);
+  static const ::kaikosdk::ConstantDurationFutureDetail& front_future(const ConstantDurationFutureForecast* msg);
+  static const ::kaikosdk::ConstantDurationFutureDetail& back_future(const ConstantDurationFutureForecast* msg);
+};
+
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+ConstantDurationFutureForecast::_Internal::future_date(const ConstantDurationFutureForecast* msg) {
+  return *msg->_impl_.future_date_;
+}
+const ::kaikosdk::ConstantDurationFutureDetail&
+ConstantDurationFutureForecast::_Internal::front_future(const ConstantDurationFutureForecast* msg) {
+  return *msg->_impl_.front_future_;
+}
+const ::kaikosdk::ConstantDurationFutureDetail&
+ConstantDurationFutureForecast::_Internal::back_future(const ConstantDurationFutureForecast* msg) {
+  return *msg->_impl_.back_future_;
+}
+void ConstantDurationFutureForecast::clear_future_date() {
+  if (GetArenaForAllocation() == nullptr && _impl_.future_date_ != nullptr) {
+    delete _impl_.future_date_;
+  }
+  _impl_.future_date_ = nullptr;
+}
+ConstantDurationFutureForecast::ConstantDurationFutureForecast(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:kaikosdk.ConstantDurationFutureForecast)
+}
+ConstantDurationFutureForecast::ConstantDurationFutureForecast(const ConstantDurationFutureForecast& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ConstantDurationFutureForecast* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.exchange_){}
+    , decltype(_impl_.future_date_){nullptr}
+    , decltype(_impl_.front_future_){nullptr}
+    , decltype(_impl_.back_future_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.exchange_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.exchange_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_exchange().empty()) {
+    _this->_impl_.exchange_.Set(from._internal_exchange(), 
+      _this->GetArenaForAllocation());
+  }
+  if (from._internal_has_future_date()) {
+    _this->_impl_.future_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.future_date_);
+  }
+  if (from._internal_has_front_future()) {
+    _this->_impl_.front_future_ = new ::kaikosdk::ConstantDurationFutureDetail(*from._impl_.front_future_);
+  }
+  if (from._internal_has_back_future()) {
+    _this->_impl_.back_future_ = new ::kaikosdk::ConstantDurationFutureDetail(*from._impl_.back_future_);
+  }
+  // @@protoc_insertion_point(copy_constructor:kaikosdk.ConstantDurationFutureForecast)
+}
+
+inline void ConstantDurationFutureForecast::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.exchange_){}
+    , decltype(_impl_.future_date_){nullptr}
+    , decltype(_impl_.front_future_){nullptr}
+    , decltype(_impl_.back_future_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.exchange_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.exchange_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ConstantDurationFutureForecast::~ConstantDurationFutureForecast() {
+  // @@protoc_insertion_point(destructor:kaikosdk.ConstantDurationFutureForecast)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ConstantDurationFutureForecast::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.exchange_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.future_date_;
+  if (this != internal_default_instance()) delete _impl_.front_future_;
+  if (this != internal_default_instance()) delete _impl_.back_future_;
+}
+
+void ConstantDurationFutureForecast::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ConstantDurationFutureForecast::Clear() {
+// @@protoc_insertion_point(message_clear_start:kaikosdk.ConstantDurationFutureForecast)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.exchange_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.future_date_ != nullptr) {
+    delete _impl_.future_date_;
+  }
+  _impl_.future_date_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.front_future_ != nullptr) {
+    delete _impl_.front_future_;
+  }
+  _impl_.front_future_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.back_future_ != nullptr) {
+    delete _impl_.back_future_;
+  }
+  _impl_.back_future_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ConstantDurationFutureForecast::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string exchange = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_exchange();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.ConstantDurationFutureForecast.exchange"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp future_date = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_future_date(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .kaikosdk.ConstantDurationFutureDetail front_future = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_front_future(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .kaikosdk.ConstantDurationFutureDetail back_future = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_back_future(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ConstantDurationFutureForecast::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:kaikosdk.ConstantDurationFutureForecast)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string exchange = 1;
+  if (!this->_internal_exchange().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_exchange().data(), static_cast<int>(this->_internal_exchange().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.ConstantDurationFutureForecast.exchange");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_exchange(), target);
+  }
+
+  // .google.protobuf.Timestamp future_date = 2;
+  if (this->_internal_has_future_date()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::future_date(this),
+        _Internal::future_date(this).GetCachedSize(), target, stream);
+  }
+
+  // .kaikosdk.ConstantDurationFutureDetail front_future = 3;
+  if (this->_internal_has_front_future()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::front_future(this),
+        _Internal::front_future(this).GetCachedSize(), target, stream);
+  }
+
+  // .kaikosdk.ConstantDurationFutureDetail back_future = 4;
+  if (this->_internal_has_back_future()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(4, _Internal::back_future(this),
+        _Internal::back_future(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.ConstantDurationFutureForecast)
+  return target;
+}
+
+size_t ConstantDurationFutureForecast::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:kaikosdk.ConstantDurationFutureForecast)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string exchange = 1;
+  if (!this->_internal_exchange().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_exchange());
+  }
+
+  // .google.protobuf.Timestamp future_date = 2;
+  if (this->_internal_has_future_date()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.future_date_);
+  }
+
+  // .kaikosdk.ConstantDurationFutureDetail front_future = 3;
+  if (this->_internal_has_front_future()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.front_future_);
+  }
+
+  // .kaikosdk.ConstantDurationFutureDetail back_future = 4;
+  if (this->_internal_has_back_future()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.back_future_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ConstantDurationFutureForecast::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ConstantDurationFutureForecast::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ConstantDurationFutureForecast::GetClassData() const { return &_class_data_; }
+
+
+void ConstantDurationFutureForecast::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ConstantDurationFutureForecast*>(&to_msg);
+  auto& from = static_cast<const ConstantDurationFutureForecast&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.ConstantDurationFutureForecast)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_exchange().empty()) {
+    _this->_internal_set_exchange(from._internal_exchange());
+  }
+  if (from._internal_has_future_date()) {
+    _this->_internal_mutable_future_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_future_date());
+  }
+  if (from._internal_has_front_future()) {
+    _this->_internal_mutable_front_future()->::kaikosdk::ConstantDurationFutureDetail::MergeFrom(
+        from._internal_front_future());
+  }
+  if (from._internal_has_back_future()) {
+    _this->_internal_mutable_back_future()->::kaikosdk::ConstantDurationFutureDetail::MergeFrom(
+        from._internal_back_future());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ConstantDurationFutureForecast::CopyFrom(const ConstantDurationFutureForecast& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:kaikosdk.ConstantDurationFutureForecast)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConstantDurationFutureForecast::IsInitialized() const {
+  return true;
+}
+
+void ConstantDurationFutureForecast::InternalSwap(ConstantDurationFutureForecast* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.exchange_, lhs_arena,
+      &other->_impl_.exchange_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ConstantDurationFutureForecast, _impl_.back_future_)
+      + sizeof(ConstantDurationFutureForecast::_impl_.back_future_)
+      - PROTOBUF_FIELD_OFFSET(ConstantDurationFutureForecast, _impl_.future_date_)>(
+          reinterpret_cast<char*>(&_impl_.future_date_),
+          reinterpret_cast<char*>(&other->_impl_.future_date_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConstantDurationFutureForecast::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_once,
+      file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[3]);
 }
 
 // ===================================================================
@@ -1656,7 +2072,7 @@ void StreamConstantDurationIndicesServiceResponseComposition::InternalSwap(Strea
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamConstantDurationIndicesServiceResponseComposition::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[3]);
+      file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[4]);
 }
 
 // ===================================================================
@@ -2076,7 +2492,7 @@ void StreamConstantDurationIndicesServiceResponseV1::InternalSwap(StreamConstant
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamConstantDurationIndicesServiceResponseV1::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[4]);
+      file_level_metadata_sdk_2fstream_2fconstant_5fduration_5findices_5fv1_2fresponse_2eproto[5]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2093,6 +2509,10 @@ Arena::CreateMaybeMessage< ::kaikosdk::RateQuoteConversion >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::kaikosdk::ConstantDurationFuture*
 Arena::CreateMaybeMessage< ::kaikosdk::ConstantDurationFuture >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::ConstantDurationFuture >(arena);
+}
+template<> PROTOBUF_NOINLINE ::kaikosdk::ConstantDurationFutureForecast*
+Arena::CreateMaybeMessage< ::kaikosdk::ConstantDurationFutureForecast >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::kaikosdk::ConstantDurationFutureForecast >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kaikosdk::StreamConstantDurationIndicesServiceResponseComposition*
 Arena::CreateMaybeMessage< ::kaikosdk::StreamConstantDurationIndicesServiceResponseComposition >(Arena* arena) {
