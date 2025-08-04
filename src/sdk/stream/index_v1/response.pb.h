@@ -32,6 +32,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/timestamp.pb.h>
 #include "sdk/core/data_interval.pb.h"
+#include "sdk/core/wrappers.pb.h"
 #include "sdk/stream/index_v1/commodity.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -1142,7 +1143,7 @@ class StreamIndexServiceResponseV1 final :
     kIntervalFieldNumber = 3,
     kTsEventFieldNumber = 8,
     kLastIngestTimeFieldNumber = 10,
-    kLastAnomalyIngestTimeFieldNumber = 11,
+    kLastAnomalyIngestTimeFieldNumber = 12,
     kCommodityFieldNumber = 2,
   };
   // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 5;
@@ -1301,23 +1302,23 @@ class StreamIndexServiceResponseV1 final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_last_ingest_time();
 
-  // .google.protobuf.Timestamp last_anomaly_ingest_time = 11;
+  // .kaikosdk.TimestampValue last_anomaly_ingest_time = 12;
   bool has_last_anomaly_ingest_time() const;
   private:
   bool _internal_has_last_anomaly_ingest_time() const;
   public:
   void clear_last_anomaly_ingest_time();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& last_anomaly_ingest_time() const;
-  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_last_anomaly_ingest_time();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_last_anomaly_ingest_time();
-  void set_allocated_last_anomaly_ingest_time(::PROTOBUF_NAMESPACE_ID::Timestamp* last_anomaly_ingest_time);
+  const ::kaikosdk::TimestampValue& last_anomaly_ingest_time() const;
+  PROTOBUF_NODISCARD ::kaikosdk::TimestampValue* release_last_anomaly_ingest_time();
+  ::kaikosdk::TimestampValue* mutable_last_anomaly_ingest_time();
+  void set_allocated_last_anomaly_ingest_time(::kaikosdk::TimestampValue* last_anomaly_ingest_time);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_last_anomaly_ingest_time() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_last_anomaly_ingest_time();
+  const ::kaikosdk::TimestampValue& _internal_last_anomaly_ingest_time() const;
+  ::kaikosdk::TimestampValue* _internal_mutable_last_anomaly_ingest_time();
   public:
   void unsafe_arena_set_allocated_last_anomaly_ingest_time(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* last_anomaly_ingest_time);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_last_anomaly_ingest_time();
+      ::kaikosdk::TimestampValue* last_anomaly_ingest_time);
+  ::kaikosdk::TimestampValue* unsafe_arena_release_last_anomaly_ingest_time();
 
   // .kaikosdk.StreamIndexCommodity commodity = 2;
   void clear_commodity();
@@ -1345,7 +1346,7 @@ class StreamIndexServiceResponseV1 final :
     ::kaikosdk::DataInterval* interval_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time_;
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* last_anomaly_ingest_time_;
+    ::kaikosdk::TimestampValue* last_anomaly_ingest_time_;
     int commodity_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2628,24 +2629,24 @@ inline void StreamIndexServiceResponseV1::set_allocated_last_ingest_time(::PROTO
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.last_ingest_time)
 }
 
-// .google.protobuf.Timestamp last_anomaly_ingest_time = 11;
+// .kaikosdk.TimestampValue last_anomaly_ingest_time = 12;
 inline bool StreamIndexServiceResponseV1::_internal_has_last_anomaly_ingest_time() const {
   return this != internal_default_instance() && _impl_.last_anomaly_ingest_time_ != nullptr;
 }
 inline bool StreamIndexServiceResponseV1::has_last_anomaly_ingest_time() const {
   return _internal_has_last_anomaly_ingest_time();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexServiceResponseV1::_internal_last_anomaly_ingest_time() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.last_anomaly_ingest_time_;
-  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
-      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+inline const ::kaikosdk::TimestampValue& StreamIndexServiceResponseV1::_internal_last_anomaly_ingest_time() const {
+  const ::kaikosdk::TimestampValue* p = _impl_.last_anomaly_ingest_time_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::TimestampValue&>(
+      ::kaikosdk::_TimestampValue_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexServiceResponseV1::last_anomaly_ingest_time() const {
+inline const ::kaikosdk::TimestampValue& StreamIndexServiceResponseV1::last_anomaly_ingest_time() const {
   // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.last_anomaly_ingest_time)
   return _internal_last_anomaly_ingest_time();
 }
 inline void StreamIndexServiceResponseV1::unsafe_arena_set_allocated_last_anomaly_ingest_time(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* last_anomaly_ingest_time) {
+    ::kaikosdk::TimestampValue* last_anomaly_ingest_time) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.last_anomaly_ingest_time_);
   }
@@ -2657,9 +2658,9 @@ inline void StreamIndexServiceResponseV1::unsafe_arena_set_allocated_last_anomal
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexServiceResponseV1.last_anomaly_ingest_time)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::release_last_anomaly_ingest_time() {
+inline ::kaikosdk::TimestampValue* StreamIndexServiceResponseV1::release_last_anomaly_ingest_time() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.last_anomaly_ingest_time_;
+  ::kaikosdk::TimestampValue* temp = _impl_.last_anomaly_ingest_time_;
   _impl_.last_anomaly_ingest_time_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -2672,27 +2673,27 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::release
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::unsafe_arena_release_last_anomaly_ingest_time() {
+inline ::kaikosdk::TimestampValue* StreamIndexServiceResponseV1::unsafe_arena_release_last_anomaly_ingest_time() {
   // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.last_anomaly_ingest_time)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.last_anomaly_ingest_time_;
+  ::kaikosdk::TimestampValue* temp = _impl_.last_anomaly_ingest_time_;
   _impl_.last_anomaly_ingest_time_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::_internal_mutable_last_anomaly_ingest_time() {
+inline ::kaikosdk::TimestampValue* StreamIndexServiceResponseV1::_internal_mutable_last_anomaly_ingest_time() {
   
   if (_impl_.last_anomaly_ingest_time_ == nullptr) {
-    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::kaikosdk::TimestampValue>(GetArenaForAllocation());
     _impl_.last_anomaly_ingest_time_ = p;
   }
   return _impl_.last_anomaly_ingest_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::mutable_last_anomaly_ingest_time() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_last_anomaly_ingest_time();
+inline ::kaikosdk::TimestampValue* StreamIndexServiceResponseV1::mutable_last_anomaly_ingest_time() {
+  ::kaikosdk::TimestampValue* _msg = _internal_mutable_last_anomaly_ingest_time();
   // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.last_anomaly_ingest_time)
   return _msg;
 }
-inline void StreamIndexServiceResponseV1::set_allocated_last_anomaly_ingest_time(::PROTOBUF_NAMESPACE_ID::Timestamp* last_anomaly_ingest_time) {
+inline void StreamIndexServiceResponseV1::set_allocated_last_anomaly_ingest_time(::kaikosdk::TimestampValue* last_anomaly_ingest_time) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.last_anomaly_ingest_time_);

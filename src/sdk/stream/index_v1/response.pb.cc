@@ -213,51 +213,53 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"sdk/stream/index_v1/response.proto\022\010ka"
   "ikosdk\032\037google/protobuf/timestamp.proto\032"
-  "\034sdk/core/data_interval.proto\032#sdk/strea"
-  "m/index_v1/commodity.proto\"\203\001\n$StreamInd"
-  "exServiceResponsePercentage\022\022\n\npercentag"
-  "e\030\001 \001(\001\022\r\n\005price\030\002 \001(\001\0228\n\005pairs\030\003 \003(\0132)."
-  "kaikosdk.StreamIndexServiceResponsePairs"
-  "\"\205\001\n\037StreamIndexServiceResponsePairs\022\014\n\004"
-  "pair\030\001 \001(\t\022\016\n\006weight\030\002 \001(\001\022D\n\013instrument"
-  "s\030\003 \003(\0132/.kaikosdk.StreamIndexServiceRes"
-  "ponseInstruments\"\177\n!StreamIndexServiceUn"
-  "derlyingTrade\022\016\n\006volume\030\001 \001(\001\022\020\n\010exchang"
-  "e\030\002 \001(\t\022\n\n\002id\030\003 \001(\t\022,\n\010datetime\030\004 \001(\0132\032."
-  "google.protobuf.Timestamp\"\257\001\n%StreamInde"
-  "xServiceResponseInstruments\022\021\n\tpartition"
-  "\030\001 \001(\t\022\r\n\005price\030\002 \001(\001\022\016\n\006volume\030\003 \001(\001\022\r\n"
-  "\005count\030\004 \001(\004\022E\n\020underlying_trade\030\005 \001(\0132+"
-  ".kaikosdk.StreamIndexServiceUnderlyingTr"
-  "ade\"D\n#StreamIndexServiceResponseBaseAss"
-  "et\022\r\n\005asset\030\001 \001(\t\022\016\n\006weight\030\002 \001(\001\"\353\003\n\034St"
-  "reamIndexServiceResponseV1\022\022\n\nindex_code"
-  "\030\001 \001(\t\0221\n\tcommodity\030\002 \001(\0162\036.kaikosdk.Str"
-  "eamIndexCommodity\022(\n\010interval\030\003 \001(\0132\026.ka"
-  "ikosdk.DataInterval\022\r\n\005quote\030\004 \001(\t\022<\n\005ba"
-  "ses\030\005 \003(\0132-.kaikosdk.StreamIndexServiceR"
-  "esponseBaseAsset\022\021\n\texchanges\030\006 \003(\t\022C\n\013p"
-  "ercentages\030\007 \003(\0132..kaikosdk.StreamIndexS"
-  "erviceResponsePercentage\022,\n\010ts_event\030\010 \001"
-  "(\0132\032.google.protobuf.Timestamp\022\023\n\013sequen"
-  "ce_id\030\t \001(\t\0224\n\020last_ingest_time\030\n \001(\0132\032."
-  "google.protobuf.Timestamp\022<\n\030last_anomal"
-  "y_ingest_time\030\013 \001(\0132\032.google.protobuf.Ti"
-  "mestampBw\n\035com.kaiko.sdk.stream.index_v1"
-  "P\001Z:github.com/kaikodata/kaiko-go-sdk/st"
-  "ream/index_v1;index_v1\252\002\027KaikoSdk.Stream"
-  ".IndexV1b\006proto3"
+  "\034sdk/core/data_interval.proto\032\027sdk/core/"
+  "wrappers.proto\032#sdk/stream/index_v1/comm"
+  "odity.proto\"\203\001\n$StreamIndexServiceRespon"
+  "sePercentage\022\022\n\npercentage\030\001 \001(\001\022\r\n\005pric"
+  "e\030\002 \001(\001\0228\n\005pairs\030\003 \003(\0132).kaikosdk.Stream"
+  "IndexServiceResponsePairs\"\205\001\n\037StreamInde"
+  "xServiceResponsePairs\022\014\n\004pair\030\001 \001(\t\022\016\n\006w"
+  "eight\030\002 \001(\001\022D\n\013instruments\030\003 \003(\0132/.kaiko"
+  "sdk.StreamIndexServiceResponseInstrument"
+  "s\"\177\n!StreamIndexServiceUnderlyingTrade\022\016"
+  "\n\006volume\030\001 \001(\001\022\020\n\010exchange\030\002 \001(\t\022\n\n\002id\030\003"
+  " \001(\t\022,\n\010datetime\030\004 \001(\0132\032.google.protobuf"
+  ".Timestamp\"\257\001\n%StreamIndexServiceRespons"
+  "eInstruments\022\021\n\tpartition\030\001 \001(\t\022\r\n\005price"
+  "\030\002 \001(\001\022\016\n\006volume\030\003 \001(\001\022\r\n\005count\030\004 \001(\004\022E\n"
+  "\020underlying_trade\030\005 \001(\0132+.kaikosdk.Strea"
+  "mIndexServiceUnderlyingTrade\"D\n#StreamIn"
+  "dexServiceResponseBaseAsset\022\r\n\005asset\030\001 \001"
+  "(\t\022\016\n\006weight\030\002 \001(\001\"\357\003\n\034StreamIndexServic"
+  "eResponseV1\022\022\n\nindex_code\030\001 \001(\t\0221\n\tcommo"
+  "dity\030\002 \001(\0162\036.kaikosdk.StreamIndexCommodi"
+  "ty\022(\n\010interval\030\003 \001(\0132\026.kaikosdk.DataInte"
+  "rval\022\r\n\005quote\030\004 \001(\t\022<\n\005bases\030\005 \003(\0132-.kai"
+  "kosdk.StreamIndexServiceResponseBaseAsse"
+  "t\022\021\n\texchanges\030\006 \003(\t\022C\n\013percentages\030\007 \003("
+  "\0132..kaikosdk.StreamIndexServiceResponseP"
+  "ercentage\022,\n\010ts_event\030\010 \001(\0132\032.google.pro"
+  "tobuf.Timestamp\022\023\n\013sequence_id\030\t \001(\t\0224\n\020"
+  "last_ingest_time\030\n \001(\0132\032.google.protobuf"
+  ".Timestamp\022:\n\030last_anomaly_ingest_time\030\014"
+  " \001(\0132\030.kaikosdk.TimestampValueJ\004\010\013\020\014Bw\n\035"
+  "com.kaiko.sdk.stream.index_v1P\001Z:github."
+  "com/kaikodata/kaiko-go-sdk/stream/index_"
+  "v1;index_v1\252\002\027KaikoSdk.Stream.IndexV1b\006p"
+  "roto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps[3] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps[4] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
   &::descriptor_table_sdk_2fcore_2fdata_5finterval_2eproto,
+  &::descriptor_table_sdk_2fcore_2fwrappers_2eproto,
   &::descriptor_table_sdk_2fstream_2findex_5fv1_2fcommodity_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto = {
-    false, false, 1416, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
+    false, false, 1445, descriptor_table_protodef_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
     "sdk/stream/index_v1/response.proto",
-    &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps, 3, 6,
+    &descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_once, descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto_deps, 4, 6,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto::offsets,
     file_level_metadata_sdk_2fstream_2findex_5fv1_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
     file_level_service_descriptors_sdk_2fstream_2findex_5fv1_2fresponse_2eproto,
@@ -1760,7 +1762,7 @@ class StreamIndexServiceResponseV1::_Internal {
   static const ::kaikosdk::DataInterval& interval(const StreamIndexServiceResponseV1* msg);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& ts_event(const StreamIndexServiceResponseV1* msg);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& last_ingest_time(const StreamIndexServiceResponseV1* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& last_anomaly_ingest_time(const StreamIndexServiceResponseV1* msg);
+  static const ::kaikosdk::TimestampValue& last_anomaly_ingest_time(const StreamIndexServiceResponseV1* msg);
 };
 
 const ::kaikosdk::DataInterval&
@@ -1775,7 +1777,7 @@ const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 StreamIndexServiceResponseV1::_Internal::last_ingest_time(const StreamIndexServiceResponseV1* msg) {
   return *msg->_impl_.last_ingest_time_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::kaikosdk::TimestampValue&
 StreamIndexServiceResponseV1::_Internal::last_anomaly_ingest_time(const StreamIndexServiceResponseV1* msg) {
   return *msg->_impl_.last_anomaly_ingest_time_;
 }
@@ -1861,7 +1863,7 @@ StreamIndexServiceResponseV1::StreamIndexServiceResponseV1(const StreamIndexServ
     _this->_impl_.last_ingest_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.last_ingest_time_);
   }
   if (from._internal_has_last_anomaly_ingest_time()) {
-    _this->_impl_.last_anomaly_ingest_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.last_anomaly_ingest_time_);
+    _this->_impl_.last_anomaly_ingest_time_ = new ::kaikosdk::TimestampValue(*from._impl_.last_anomaly_ingest_time_);
   }
   _this->_impl_.commodity_ = from._impl_.commodity_;
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamIndexServiceResponseV1)
@@ -2068,9 +2070,9 @@ const char* StreamIndexServiceResponseV1::_InternalParse(const char* ptr, ::_pbi
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp last_anomaly_ingest_time = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+      // .kaikosdk.TimestampValue last_anomaly_ingest_time = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           ptr = ctx->ParseMessage(_internal_mutable_last_anomaly_ingest_time(), ptr);
           CHK_(ptr);
         } else
@@ -2189,10 +2191,10 @@ uint8_t* StreamIndexServiceResponseV1::_InternalSerialize(
         _Internal::last_ingest_time(this).GetCachedSize(), target, stream);
   }
 
-  // .google.protobuf.Timestamp last_anomaly_ingest_time = 11;
+  // .kaikosdk.TimestampValue last_anomaly_ingest_time = 12;
   if (this->_internal_has_last_anomaly_ingest_time()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(11, _Internal::last_anomaly_ingest_time(this),
+      InternalWriteMessage(12, _Internal::last_anomaly_ingest_time(this),
         _Internal::last_anomaly_ingest_time(this).GetCachedSize(), target, stream);
   }
 
@@ -2276,7 +2278,7 @@ size_t StreamIndexServiceResponseV1::ByteSizeLong() const {
         *_impl_.last_ingest_time_);
   }
 
-  // .google.protobuf.Timestamp last_anomaly_ingest_time = 11;
+  // .kaikosdk.TimestampValue last_anomaly_ingest_time = 12;
   if (this->_internal_has_last_anomaly_ingest_time()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2332,7 +2334,7 @@ void StreamIndexServiceResponseV1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& t
         from._internal_last_ingest_time());
   }
   if (from._internal_has_last_anomaly_ingest_time()) {
-    _this->_internal_mutable_last_anomaly_ingest_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+    _this->_internal_mutable_last_anomaly_ingest_time()->::kaikosdk::TimestampValue::MergeFrom(
         from._internal_last_anomaly_ingest_time());
   }
   if (from._internal_commodity() != 0) {
