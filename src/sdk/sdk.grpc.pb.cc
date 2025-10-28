@@ -993,5 +993,59 @@ StreamConstantDurationIndicesServiceV1::Service::~Service() {
 }
 
 
+static const char* StreamCompositeIndicesServiceV1_method_names[] = {
+  "/kaikosdk.StreamCompositeIndicesServiceV1/Subscribe",
+};
+
+std::unique_ptr< StreamCompositeIndicesServiceV1::Stub> StreamCompositeIndicesServiceV1::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< StreamCompositeIndicesServiceV1::Stub> stub(new StreamCompositeIndicesServiceV1::Stub(channel, options));
+  return stub;
+}
+
+StreamCompositeIndicesServiceV1::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Subscribe_(StreamCompositeIndicesServiceV1_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  {}
+
+::grpc::ClientReader< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>* StreamCompositeIndicesServiceV1::Stub::SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCompositeIndicesServiceRequestV1& request) {
+  return ::grpc::internal::ClientReaderFactory< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>::Create(channel_.get(), rpcmethod_Subscribe_, context, request);
+}
+
+void StreamCompositeIndicesServiceV1::Stub::async::Subscribe(::grpc::ClientContext* context, const ::kaikosdk::StreamCompositeIndicesServiceRequestV1* request, ::grpc::ClientReadReactor< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>::Create(stub_->channel_.get(), stub_->rpcmethod_Subscribe_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>* StreamCompositeIndicesServiceV1::Stub::AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCompositeIndicesServiceRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>* StreamCompositeIndicesServiceV1::Stub::PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCompositeIndicesServiceRequestV1& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, false, nullptr);
+}
+
+StreamCompositeIndicesServiceV1::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      StreamCompositeIndicesServiceV1_method_names[0],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< StreamCompositeIndicesServiceV1::Service, ::kaikosdk::StreamCompositeIndicesServiceRequestV1, ::kaikosdk::StreamCompositeIndicesServiceResponseV1>(
+          [](StreamCompositeIndicesServiceV1::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::kaikosdk::StreamCompositeIndicesServiceRequestV1* req,
+             ::grpc::ServerWriter<::kaikosdk::StreamCompositeIndicesServiceResponseV1>* writer) {
+               return service->Subscribe(ctx, req, writer);
+             }, this)));
+}
+
+StreamCompositeIndicesServiceV1::Service::~Service() {
+}
+
+::grpc::Status StreamCompositeIndicesServiceV1::Service::Subscribe(::grpc::ServerContext* context, const ::kaikosdk::StreamCompositeIndicesServiceRequestV1* request, ::grpc::ServerWriter< ::kaikosdk::StreamCompositeIndicesServiceResponseV1>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
 }  // namespace kaikosdk
 
