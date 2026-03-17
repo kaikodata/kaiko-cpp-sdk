@@ -49,6 +49,9 @@ struct TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_sdk_2fstream_2findex_5fv1_2fresponse_2eproto;
 namespace kaikosdk {
+class FallbackInfo;
+struct FallbackInfoDefaultTypeInternal;
+extern FallbackInfoDefaultTypeInternal _FallbackInfo_default_instance_;
 class StreamIndexServiceResponseBaseAsset;
 struct StreamIndexServiceResponseBaseAssetDefaultTypeInternal;
 extern StreamIndexServiceResponseBaseAssetDefaultTypeInternal _StreamIndexServiceResponseBaseAsset_default_instance_;
@@ -69,6 +72,7 @@ struct StreamIndexServiceUnderlyingTradeDefaultTypeInternal;
 extern StreamIndexServiceUnderlyingTradeDefaultTypeInternal _StreamIndexServiceUnderlyingTrade_default_instance_;
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
+template<> ::kaikosdk::FallbackInfo* Arena::CreateMaybeMessage<::kaikosdk::FallbackInfo>(Arena*);
 template<> ::kaikosdk::StreamIndexServiceResponseBaseAsset* Arena::CreateMaybeMessage<::kaikosdk::StreamIndexServiceResponseBaseAsset>(Arena*);
 template<> ::kaikosdk::StreamIndexServiceResponseInstruments* Arena::CreateMaybeMessage<::kaikosdk::StreamIndexServiceResponseInstruments>(Arena*);
 template<> ::kaikosdk::StreamIndexServiceResponsePairs* Arena::CreateMaybeMessage<::kaikosdk::StreamIndexServiceResponsePairs>(Arena*);
@@ -1013,6 +1017,199 @@ class StreamIndexServiceResponseBaseAsset final :
 };
 // -------------------------------------------------------------------
 
+class FallbackInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.FallbackInfo) */ {
+ public:
+  inline FallbackInfo() : FallbackInfo(nullptr) {}
+  ~FallbackInfo() override;
+  explicit PROTOBUF_CONSTEXPR FallbackInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FallbackInfo(const FallbackInfo& from);
+  FallbackInfo(FallbackInfo&& from) noexcept
+    : FallbackInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline FallbackInfo& operator=(const FallbackInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FallbackInfo& operator=(FallbackInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FallbackInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FallbackInfo* internal_default_instance() {
+    return reinterpret_cast<const FallbackInfo*>(
+               &_FallbackInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(FallbackInfo& a, FallbackInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FallbackInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FallbackInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FallbackInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FallbackInfo>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FallbackInfo& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const FallbackInfo& from) {
+    FallbackInfo::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FallbackInfo* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "kaikosdk.FallbackInfo";
+  }
+  protected:
+  explicit FallbackInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFallbackSourceFieldNumber = 2,
+    kFallbackTimestampFieldNumber = 3,
+    kFallbackUsedFieldNumber = 1,
+  };
+  // optional string fallback_source = 2;
+  bool has_fallback_source() const;
+  private:
+  bool _internal_has_fallback_source() const;
+  public:
+  void clear_fallback_source();
+  const std::string& fallback_source() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_fallback_source(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_fallback_source();
+  PROTOBUF_NODISCARD std::string* release_fallback_source();
+  void set_allocated_fallback_source(std::string* fallback_source);
+  private:
+  const std::string& _internal_fallback_source() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_fallback_source(const std::string& value);
+  std::string* _internal_mutable_fallback_source();
+  public:
+
+  // optional .google.protobuf.Timestamp fallback_timestamp = 3;
+  bool has_fallback_timestamp() const;
+  private:
+  bool _internal_has_fallback_timestamp() const;
+  public:
+  void clear_fallback_timestamp();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& fallback_timestamp() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_fallback_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_fallback_timestamp();
+  void set_allocated_fallback_timestamp(::PROTOBUF_NAMESPACE_ID::Timestamp* fallback_timestamp);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_fallback_timestamp() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_fallback_timestamp();
+  public:
+  void unsafe_arena_set_allocated_fallback_timestamp(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* fallback_timestamp);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_fallback_timestamp();
+
+  // optional bool fallback_used = 1;
+  bool has_fallback_used() const;
+  private:
+  bool _internal_has_fallback_used() const;
+  public:
+  void clear_fallback_used();
+  bool fallback_used() const;
+  void set_fallback_used(bool value);
+  private:
+  bool _internal_fallback_used() const;
+  void _internal_set_fallback_used(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:kaikosdk.FallbackInfo)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fallback_source_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* fallback_timestamp_;
+    bool fallback_used_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto;
+};
+// -------------------------------------------------------------------
+
 class StreamIndexServiceResponseV1 final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.StreamIndexServiceResponseV1) */ {
  public:
@@ -1061,7 +1258,7 @@ class StreamIndexServiceResponseV1 final :
                &_StreamIndexServiceResponseV1_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(StreamIndexServiceResponseV1& a, StreamIndexServiceResponseV1& b) {
     a.Swap(&b);
@@ -1144,6 +1341,7 @@ class StreamIndexServiceResponseV1 final :
     kTsEventFieldNumber = 8,
     kLastIngestTimeFieldNumber = 10,
     kLastAnomalyIngestTimeFieldNumber = 12,
+    kFallbackInfoFieldNumber = 13,
     kCommodityFieldNumber = 2,
   };
   // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 5;
@@ -1320,6 +1518,24 @@ class StreamIndexServiceResponseV1 final :
       ::kaikosdk::TimestampValue* last_anomaly_ingest_time);
   ::kaikosdk::TimestampValue* unsafe_arena_release_last_anomaly_ingest_time();
 
+  // .kaikosdk.FallbackInfo fallback_info = 13;
+  bool has_fallback_info() const;
+  private:
+  bool _internal_has_fallback_info() const;
+  public:
+  void clear_fallback_info();
+  const ::kaikosdk::FallbackInfo& fallback_info() const;
+  PROTOBUF_NODISCARD ::kaikosdk::FallbackInfo* release_fallback_info();
+  ::kaikosdk::FallbackInfo* mutable_fallback_info();
+  void set_allocated_fallback_info(::kaikosdk::FallbackInfo* fallback_info);
+  private:
+  const ::kaikosdk::FallbackInfo& _internal_fallback_info() const;
+  ::kaikosdk::FallbackInfo* _internal_mutable_fallback_info();
+  public:
+  void unsafe_arena_set_allocated_fallback_info(
+      ::kaikosdk::FallbackInfo* fallback_info);
+  ::kaikosdk::FallbackInfo* unsafe_arena_release_fallback_info();
+
   // .kaikosdk.StreamIndexCommodity commodity = 2;
   void clear_commodity();
   ::kaikosdk::StreamIndexCommodity commodity() const;
@@ -1347,6 +1563,7 @@ class StreamIndexServiceResponseV1 final :
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time_;
     ::kaikosdk::TimestampValue* last_anomaly_ingest_time_;
+    ::kaikosdk::FallbackInfo* fallback_info_;
     int commodity_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2047,6 +2264,193 @@ inline void StreamIndexServiceResponseBaseAsset::set_weight(double value) {
 
 // -------------------------------------------------------------------
 
+// FallbackInfo
+
+// optional bool fallback_used = 1;
+inline bool FallbackInfo::_internal_has_fallback_used() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool FallbackInfo::has_fallback_used() const {
+  return _internal_has_fallback_used();
+}
+inline void FallbackInfo::clear_fallback_used() {
+  _impl_.fallback_used_ = false;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline bool FallbackInfo::_internal_fallback_used() const {
+  return _impl_.fallback_used_;
+}
+inline bool FallbackInfo::fallback_used() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.FallbackInfo.fallback_used)
+  return _internal_fallback_used();
+}
+inline void FallbackInfo::_internal_set_fallback_used(bool value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.fallback_used_ = value;
+}
+inline void FallbackInfo::set_fallback_used(bool value) {
+  _internal_set_fallback_used(value);
+  // @@protoc_insertion_point(field_set:kaikosdk.FallbackInfo.fallback_used)
+}
+
+// optional string fallback_source = 2;
+inline bool FallbackInfo::_internal_has_fallback_source() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool FallbackInfo::has_fallback_source() const {
+  return _internal_has_fallback_source();
+}
+inline void FallbackInfo::clear_fallback_source() {
+  _impl_.fallback_source_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& FallbackInfo::fallback_source() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.FallbackInfo.fallback_source)
+  return _internal_fallback_source();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FallbackInfo::set_fallback_source(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.fallback_source_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.FallbackInfo.fallback_source)
+}
+inline std::string* FallbackInfo::mutable_fallback_source() {
+  std::string* _s = _internal_mutable_fallback_source();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.FallbackInfo.fallback_source)
+  return _s;
+}
+inline const std::string& FallbackInfo::_internal_fallback_source() const {
+  return _impl_.fallback_source_.Get();
+}
+inline void FallbackInfo::_internal_set_fallback_source(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.fallback_source_.Set(value, GetArenaForAllocation());
+}
+inline std::string* FallbackInfo::_internal_mutable_fallback_source() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.fallback_source_.Mutable(GetArenaForAllocation());
+}
+inline std::string* FallbackInfo::release_fallback_source() {
+  // @@protoc_insertion_point(field_release:kaikosdk.FallbackInfo.fallback_source)
+  if (!_internal_has_fallback_source()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.fallback_source_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.fallback_source_.IsDefault()) {
+    _impl_.fallback_source_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void FallbackInfo::set_allocated_fallback_source(std::string* fallback_source) {
+  if (fallback_source != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.fallback_source_.SetAllocated(fallback_source, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.fallback_source_.IsDefault()) {
+    _impl_.fallback_source_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.FallbackInfo.fallback_source)
+}
+
+// optional .google.protobuf.Timestamp fallback_timestamp = 3;
+inline bool FallbackInfo::_internal_has_fallback_timestamp() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.fallback_timestamp_ != nullptr);
+  return value;
+}
+inline bool FallbackInfo::has_fallback_timestamp() const {
+  return _internal_has_fallback_timestamp();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& FallbackInfo::_internal_fallback_timestamp() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.fallback_timestamp_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& FallbackInfo::fallback_timestamp() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.FallbackInfo.fallback_timestamp)
+  return _internal_fallback_timestamp();
+}
+inline void FallbackInfo::unsafe_arena_set_allocated_fallback_timestamp(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* fallback_timestamp) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.fallback_timestamp_);
+  }
+  _impl_.fallback_timestamp_ = fallback_timestamp;
+  if (fallback_timestamp) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.FallbackInfo.fallback_timestamp)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* FallbackInfo::release_fallback_timestamp() {
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.fallback_timestamp_;
+  _impl_.fallback_timestamp_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* FallbackInfo::unsafe_arena_release_fallback_timestamp() {
+  // @@protoc_insertion_point(field_release:kaikosdk.FallbackInfo.fallback_timestamp)
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.fallback_timestamp_;
+  _impl_.fallback_timestamp_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* FallbackInfo::_internal_mutable_fallback_timestamp() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  if (_impl_.fallback_timestamp_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.fallback_timestamp_ = p;
+  }
+  return _impl_.fallback_timestamp_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* FallbackInfo::mutable_fallback_timestamp() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_fallback_timestamp();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.FallbackInfo.fallback_timestamp)
+  return _msg;
+}
+inline void FallbackInfo::set_allocated_fallback_timestamp(::PROTOBUF_NAMESPACE_ID::Timestamp* fallback_timestamp) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.fallback_timestamp_);
+  }
+  if (fallback_timestamp) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(fallback_timestamp));
+    if (message_arena != submessage_arena) {
+      fallback_timestamp = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fallback_timestamp, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.fallback_timestamp_ = fallback_timestamp;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.FallbackInfo.fallback_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // StreamIndexServiceResponseV1
 
 // string index_code = 1;
@@ -2714,9 +3118,101 @@ inline void StreamIndexServiceResponseV1::set_allocated_last_anomaly_ingest_time
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.last_anomaly_ingest_time)
 }
 
+// .kaikosdk.FallbackInfo fallback_info = 13;
+inline bool StreamIndexServiceResponseV1::_internal_has_fallback_info() const {
+  return this != internal_default_instance() && _impl_.fallback_info_ != nullptr;
+}
+inline bool StreamIndexServiceResponseV1::has_fallback_info() const {
+  return _internal_has_fallback_info();
+}
+inline void StreamIndexServiceResponseV1::clear_fallback_info() {
+  if (GetArenaForAllocation() == nullptr && _impl_.fallback_info_ != nullptr) {
+    delete _impl_.fallback_info_;
+  }
+  _impl_.fallback_info_ = nullptr;
+}
+inline const ::kaikosdk::FallbackInfo& StreamIndexServiceResponseV1::_internal_fallback_info() const {
+  const ::kaikosdk::FallbackInfo* p = _impl_.fallback_info_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::FallbackInfo&>(
+      ::kaikosdk::_FallbackInfo_default_instance_);
+}
+inline const ::kaikosdk::FallbackInfo& StreamIndexServiceResponseV1::fallback_info() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.fallback_info)
+  return _internal_fallback_info();
+}
+inline void StreamIndexServiceResponseV1::unsafe_arena_set_allocated_fallback_info(
+    ::kaikosdk::FallbackInfo* fallback_info) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.fallback_info_);
+  }
+  _impl_.fallback_info_ = fallback_info;
+  if (fallback_info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexServiceResponseV1.fallback_info)
+}
+inline ::kaikosdk::FallbackInfo* StreamIndexServiceResponseV1::release_fallback_info() {
+  
+  ::kaikosdk::FallbackInfo* temp = _impl_.fallback_info_;
+  _impl_.fallback_info_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::FallbackInfo* StreamIndexServiceResponseV1::unsafe_arena_release_fallback_info() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.fallback_info)
+  
+  ::kaikosdk::FallbackInfo* temp = _impl_.fallback_info_;
+  _impl_.fallback_info_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::FallbackInfo* StreamIndexServiceResponseV1::_internal_mutable_fallback_info() {
+  
+  if (_impl_.fallback_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::FallbackInfo>(GetArenaForAllocation());
+    _impl_.fallback_info_ = p;
+  }
+  return _impl_.fallback_info_;
+}
+inline ::kaikosdk::FallbackInfo* StreamIndexServiceResponseV1::mutable_fallback_info() {
+  ::kaikosdk::FallbackInfo* _msg = _internal_mutable_fallback_info();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.fallback_info)
+  return _msg;
+}
+inline void StreamIndexServiceResponseV1::set_allocated_fallback_info(::kaikosdk::FallbackInfo* fallback_info) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.fallback_info_;
+  }
+  if (fallback_info) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fallback_info);
+    if (message_arena != submessage_arena) {
+      fallback_info = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fallback_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.fallback_info_ = fallback_info;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.fallback_info)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
