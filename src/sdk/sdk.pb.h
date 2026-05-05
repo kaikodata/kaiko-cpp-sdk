@@ -64,6 +64,8 @@
 #include "sdk/stream/constant_duration_indices_v1/response.pb.h"
 #include "sdk/stream/composite_indices_v1/request.pb.h"
 #include "sdk/stream/composite_indices_v1/response.pb.h"
+#include "sdk/stream/staking_rates_v1/request.pb.h"
+#include "sdk/stream/staking_rates_v1/response.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_sdk_2fsdk_2eproto
