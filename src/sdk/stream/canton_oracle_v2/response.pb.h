@@ -60,6 +60,9 @@ extern SignedPayloadV2DefaultTypeInternal _SignedPayloadV2_default_instance_;
 class StreamCantonOracleServiceResponseV2;
 struct StreamCantonOracleServiceResponseV2DefaultTypeInternal;
 extern StreamCantonOracleServiceResponseV2DefaultTypeInternal _StreamCantonOracleServiceResponseV2_default_instance_;
+class VerifierContract;
+struct VerifierContractDefaultTypeInternal;
+extern VerifierContractDefaultTypeInternal _VerifierContract_default_instance_;
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
 template<> ::kaikosdk::CostV2* Arena::CreateMaybeMessage<::kaikosdk::CostV2>(Arena*);
@@ -67,6 +70,7 @@ template<> ::kaikosdk::InstrumentIdV2* Arena::CreateMaybeMessage<::kaikosdk::Ins
 template<> ::kaikosdk::QuoteV2* Arena::CreateMaybeMessage<::kaikosdk::QuoteV2>(Arena*);
 template<> ::kaikosdk::SignedPayloadV2* Arena::CreateMaybeMessage<::kaikosdk::SignedPayloadV2>(Arena*);
 template<> ::kaikosdk::StreamCantonOracleServiceResponseV2* Arena::CreateMaybeMessage<::kaikosdk::StreamCantonOracleServiceResponseV2>(Arena*);
+template<> ::kaikosdk::VerifierContract* Arena::CreateMaybeMessage<::kaikosdk::VerifierContract>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace kaikosdk {
 
@@ -198,8 +202,8 @@ class StreamCantonOracleServiceResponseV2 final :
     kFeedIdFieldNumber = 3,
     kSignatureFieldNumber = 5,
     kCanonicalHashFieldNumber = 6,
-    kVerifierDisclosureFieldNumber = 7,
     kPayloadFieldNumber = 4,
+    kVerifierContractFieldNumber = 7,
   };
   // string network = 1;
   void clear_network();
@@ -271,20 +275,6 @@ class StreamCantonOracleServiceResponseV2 final :
   std::string* _internal_mutable_canonical_hash();
   public:
 
-  // string verifier_disclosure = 7;
-  void clear_verifier_disclosure();
-  const std::string& verifier_disclosure() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_verifier_disclosure(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_verifier_disclosure();
-  PROTOBUF_NODISCARD std::string* release_verifier_disclosure();
-  void set_allocated_verifier_disclosure(std::string* verifier_disclosure);
-  private:
-  const std::string& _internal_verifier_disclosure() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_verifier_disclosure(const std::string& value);
-  std::string* _internal_mutable_verifier_disclosure();
-  public:
-
   // .kaikosdk.SignedPayloadV2 payload = 4;
   bool has_payload() const;
   private:
@@ -303,6 +293,24 @@ class StreamCantonOracleServiceResponseV2 final :
       ::kaikosdk::SignedPayloadV2* payload);
   ::kaikosdk::SignedPayloadV2* unsafe_arena_release_payload();
 
+  // .kaikosdk.VerifierContract verifier_contract = 7;
+  bool has_verifier_contract() const;
+  private:
+  bool _internal_has_verifier_contract() const;
+  public:
+  void clear_verifier_contract();
+  const ::kaikosdk::VerifierContract& verifier_contract() const;
+  PROTOBUF_NODISCARD ::kaikosdk::VerifierContract* release_verifier_contract();
+  ::kaikosdk::VerifierContract* mutable_verifier_contract();
+  void set_allocated_verifier_contract(::kaikosdk::VerifierContract* verifier_contract);
+  private:
+  const ::kaikosdk::VerifierContract& _internal_verifier_contract() const;
+  ::kaikosdk::VerifierContract* _internal_mutable_verifier_contract();
+  public:
+  void unsafe_arena_set_allocated_verifier_contract(
+      ::kaikosdk::VerifierContract* verifier_contract);
+  ::kaikosdk::VerifierContract* unsafe_arena_release_verifier_contract();
+
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamCantonOracleServiceResponseV2)
  private:
   class _Internal;
@@ -316,8 +324,193 @@ class StreamCantonOracleServiceResponseV2 final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr feed_id_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr canonical_hash_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr verifier_disclosure_;
     ::kaikosdk::SignedPayloadV2* payload_;
+    ::kaikosdk::VerifierContract* verifier_contract_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto;
+};
+// -------------------------------------------------------------------
+
+class VerifierContract final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.VerifierContract) */ {
+ public:
+  inline VerifierContract() : VerifierContract(nullptr) {}
+  ~VerifierContract() override;
+  explicit PROTOBUF_CONSTEXPR VerifierContract(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  VerifierContract(const VerifierContract& from);
+  VerifierContract(VerifierContract&& from) noexcept
+    : VerifierContract() {
+    *this = ::std::move(from);
+  }
+
+  inline VerifierContract& operator=(const VerifierContract& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VerifierContract& operator=(VerifierContract&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VerifierContract& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VerifierContract* internal_default_instance() {
+    return reinterpret_cast<const VerifierContract*>(
+               &_VerifierContract_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(VerifierContract& a, VerifierContract& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VerifierContract* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VerifierContract* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VerifierContract* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VerifierContract>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VerifierContract& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const VerifierContract& from) {
+    VerifierContract::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VerifierContract* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "kaikosdk.VerifierContract";
+  }
+  protected:
+  explicit VerifierContract(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTemplateIdFieldNumber = 1,
+    kContractIdFieldNumber = 2,
+    kCreatedEventBlobFieldNumber = 3,
+  };
+  // string templateId = 1;
+  void clear_templateid();
+  const std::string& templateid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_templateid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_templateid();
+  PROTOBUF_NODISCARD std::string* release_templateid();
+  void set_allocated_templateid(std::string* templateid);
+  private:
+  const std::string& _internal_templateid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_templateid(const std::string& value);
+  std::string* _internal_mutable_templateid();
+  public:
+
+  // string contractId = 2;
+  void clear_contractid();
+  const std::string& contractid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_contractid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_contractid();
+  PROTOBUF_NODISCARD std::string* release_contractid();
+  void set_allocated_contractid(std::string* contractid);
+  private:
+  const std::string& _internal_contractid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_contractid(const std::string& value);
+  std::string* _internal_mutable_contractid();
+  public:
+
+  // string createdEventBlob = 3;
+  void clear_createdeventblob();
+  const std::string& createdeventblob() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_createdeventblob(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_createdeventblob();
+  PROTOBUF_NODISCARD std::string* release_createdeventblob();
+  void set_allocated_createdeventblob(std::string* createdeventblob);
+  private:
+  const std::string& _internal_createdeventblob() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_createdeventblob(const std::string& value);
+  std::string* _internal_mutable_createdeventblob();
+  public:
+
+  // @@protoc_insertion_point(class_scope:kaikosdk.VerifierContract)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr templateid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contractid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr createdeventblob_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -373,7 +566,7 @@ class SignedPayloadV2 final :
                &_SignedPayloadV2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(SignedPayloadV2& a, SignedPayloadV2& b) {
     a.Swap(&b);
@@ -599,7 +792,7 @@ class CostV2 final :
                &_CostV2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(CostV2& a, CostV2& b) {
     a.Swap(&b);
@@ -772,7 +965,7 @@ class InstrumentIdV2 final :
                &_InstrumentIdV2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(InstrumentIdV2& a, InstrumentIdV2& b) {
     a.Swap(&b);
@@ -941,7 +1134,7 @@ class QuoteV2 final :
                &_QuoteV2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(QuoteV2& a, QuoteV2& b) {
     a.Swap(&b);
@@ -1427,54 +1620,248 @@ inline void StreamCantonOracleServiceResponseV2::set_allocated_canonical_hash(st
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamCantonOracleServiceResponseV2.canonical_hash)
 }
 
-// string verifier_disclosure = 7;
-inline void StreamCantonOracleServiceResponseV2::clear_verifier_disclosure() {
-  _impl_.verifier_disclosure_.ClearToEmpty();
+// .kaikosdk.VerifierContract verifier_contract = 7;
+inline bool StreamCantonOracleServiceResponseV2::_internal_has_verifier_contract() const {
+  return this != internal_default_instance() && _impl_.verifier_contract_ != nullptr;
 }
-inline const std::string& StreamCantonOracleServiceResponseV2::verifier_disclosure() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_disclosure)
-  return _internal_verifier_disclosure();
+inline bool StreamCantonOracleServiceResponseV2::has_verifier_contract() const {
+  return _internal_has_verifier_contract();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void StreamCantonOracleServiceResponseV2::set_verifier_disclosure(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.verifier_disclosure_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_disclosure)
+inline void StreamCantonOracleServiceResponseV2::clear_verifier_contract() {
+  if (GetArenaForAllocation() == nullptr && _impl_.verifier_contract_ != nullptr) {
+    delete _impl_.verifier_contract_;
+  }
+  _impl_.verifier_contract_ = nullptr;
 }
-inline std::string* StreamCantonOracleServiceResponseV2::mutable_verifier_disclosure() {
-  std::string* _s = _internal_mutable_verifier_disclosure();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_disclosure)
-  return _s;
+inline const ::kaikosdk::VerifierContract& StreamCantonOracleServiceResponseV2::_internal_verifier_contract() const {
+  const ::kaikosdk::VerifierContract* p = _impl_.verifier_contract_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::VerifierContract&>(
+      ::kaikosdk::_VerifierContract_default_instance_);
 }
-inline const std::string& StreamCantonOracleServiceResponseV2::_internal_verifier_disclosure() const {
-  return _impl_.verifier_disclosure_.Get();
+inline const ::kaikosdk::VerifierContract& StreamCantonOracleServiceResponseV2::verifier_contract() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_contract)
+  return _internal_verifier_contract();
 }
-inline void StreamCantonOracleServiceResponseV2::_internal_set_verifier_disclosure(const std::string& value) {
-  
-  _impl_.verifier_disclosure_.Set(value, GetArenaForAllocation());
-}
-inline std::string* StreamCantonOracleServiceResponseV2::_internal_mutable_verifier_disclosure() {
-  
-  return _impl_.verifier_disclosure_.Mutable(GetArenaForAllocation());
-}
-inline std::string* StreamCantonOracleServiceResponseV2::release_verifier_disclosure() {
-  // @@protoc_insertion_point(field_release:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_disclosure)
-  return _impl_.verifier_disclosure_.Release();
-}
-inline void StreamCantonOracleServiceResponseV2::set_allocated_verifier_disclosure(std::string* verifier_disclosure) {
-  if (verifier_disclosure != nullptr) {
+inline void StreamCantonOracleServiceResponseV2::unsafe_arena_set_allocated_verifier_contract(
+    ::kaikosdk::VerifierContract* verifier_contract) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.verifier_contract_);
+  }
+  _impl_.verifier_contract_ = verifier_contract;
+  if (verifier_contract) {
     
   } else {
     
   }
-  _impl_.verifier_disclosure_.SetAllocated(verifier_disclosure, GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_contract)
+}
+inline ::kaikosdk::VerifierContract* StreamCantonOracleServiceResponseV2::release_verifier_contract() {
+  
+  ::kaikosdk::VerifierContract* temp = _impl_.verifier_contract_;
+  _impl_.verifier_contract_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::VerifierContract* StreamCantonOracleServiceResponseV2::unsafe_arena_release_verifier_contract() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_contract)
+  
+  ::kaikosdk::VerifierContract* temp = _impl_.verifier_contract_;
+  _impl_.verifier_contract_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::VerifierContract* StreamCantonOracleServiceResponseV2::_internal_mutable_verifier_contract() {
+  
+  if (_impl_.verifier_contract_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::VerifierContract>(GetArenaForAllocation());
+    _impl_.verifier_contract_ = p;
+  }
+  return _impl_.verifier_contract_;
+}
+inline ::kaikosdk::VerifierContract* StreamCantonOracleServiceResponseV2::mutable_verifier_contract() {
+  ::kaikosdk::VerifierContract* _msg = _internal_mutable_verifier_contract();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_contract)
+  return _msg;
+}
+inline void StreamCantonOracleServiceResponseV2::set_allocated_verifier_contract(::kaikosdk::VerifierContract* verifier_contract) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.verifier_contract_;
+  }
+  if (verifier_contract) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(verifier_contract);
+    if (message_arena != submessage_arena) {
+      verifier_contract = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, verifier_contract, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.verifier_contract_ = verifier_contract;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_contract)
+}
+
+// -------------------------------------------------------------------
+
+// VerifierContract
+
+// string templateId = 1;
+inline void VerifierContract::clear_templateid() {
+  _impl_.templateid_.ClearToEmpty();
+}
+inline const std::string& VerifierContract::templateid() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.VerifierContract.templateId)
+  return _internal_templateid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VerifierContract::set_templateid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.templateid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.VerifierContract.templateId)
+}
+inline std::string* VerifierContract::mutable_templateid() {
+  std::string* _s = _internal_mutable_templateid();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.VerifierContract.templateId)
+  return _s;
+}
+inline const std::string& VerifierContract::_internal_templateid() const {
+  return _impl_.templateid_.Get();
+}
+inline void VerifierContract::_internal_set_templateid(const std::string& value) {
+  
+  _impl_.templateid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VerifierContract::_internal_mutable_templateid() {
+  
+  return _impl_.templateid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VerifierContract::release_templateid() {
+  // @@protoc_insertion_point(field_release:kaikosdk.VerifierContract.templateId)
+  return _impl_.templateid_.Release();
+}
+inline void VerifierContract::set_allocated_templateid(std::string* templateid) {
+  if (templateid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.templateid_.SetAllocated(templateid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.verifier_disclosure_.IsDefault()) {
-    _impl_.verifier_disclosure_.Set("", GetArenaForAllocation());
+  if (_impl_.templateid_.IsDefault()) {
+    _impl_.templateid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamCantonOracleServiceResponseV2.verifier_disclosure)
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.VerifierContract.templateId)
+}
+
+// string contractId = 2;
+inline void VerifierContract::clear_contractid() {
+  _impl_.contractid_.ClearToEmpty();
+}
+inline const std::string& VerifierContract::contractid() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.VerifierContract.contractId)
+  return _internal_contractid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VerifierContract::set_contractid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.contractid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.VerifierContract.contractId)
+}
+inline std::string* VerifierContract::mutable_contractid() {
+  std::string* _s = _internal_mutable_contractid();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.VerifierContract.contractId)
+  return _s;
+}
+inline const std::string& VerifierContract::_internal_contractid() const {
+  return _impl_.contractid_.Get();
+}
+inline void VerifierContract::_internal_set_contractid(const std::string& value) {
+  
+  _impl_.contractid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VerifierContract::_internal_mutable_contractid() {
+  
+  return _impl_.contractid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VerifierContract::release_contractid() {
+  // @@protoc_insertion_point(field_release:kaikosdk.VerifierContract.contractId)
+  return _impl_.contractid_.Release();
+}
+inline void VerifierContract::set_allocated_contractid(std::string* contractid) {
+  if (contractid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.contractid_.SetAllocated(contractid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.contractid_.IsDefault()) {
+    _impl_.contractid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.VerifierContract.contractId)
+}
+
+// string createdEventBlob = 3;
+inline void VerifierContract::clear_createdeventblob() {
+  _impl_.createdeventblob_.ClearToEmpty();
+}
+inline const std::string& VerifierContract::createdeventblob() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.VerifierContract.createdEventBlob)
+  return _internal_createdeventblob();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VerifierContract::set_createdeventblob(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.createdeventblob_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.VerifierContract.createdEventBlob)
+}
+inline std::string* VerifierContract::mutable_createdeventblob() {
+  std::string* _s = _internal_mutable_createdeventblob();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.VerifierContract.createdEventBlob)
+  return _s;
+}
+inline const std::string& VerifierContract::_internal_createdeventblob() const {
+  return _impl_.createdeventblob_.Get();
+}
+inline void VerifierContract::_internal_set_createdeventblob(const std::string& value) {
+  
+  _impl_.createdeventblob_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VerifierContract::_internal_mutable_createdeventblob() {
+  
+  return _impl_.createdeventblob_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VerifierContract::release_createdeventblob() {
+  // @@protoc_insertion_point(field_release:kaikosdk.VerifierContract.createdEventBlob)
+  return _impl_.createdeventblob_.Release();
+}
+inline void VerifierContract::set_allocated_createdeventblob(std::string* createdeventblob) {
+  if (createdeventblob != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.createdeventblob_.SetAllocated(createdeventblob, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.createdeventblob_.IsDefault()) {
+    _impl_.createdeventblob_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.VerifierContract.createdEventBlob)
 }
 
 // -------------------------------------------------------------------
@@ -2216,6 +2603,8 @@ inline void QuoteV2::set_allocated_pricetime(std::string* pricetime) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

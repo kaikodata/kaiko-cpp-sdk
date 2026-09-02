@@ -52,6 +52,9 @@ namespace kaikosdk {
 class FallbackInfo;
 struct FallbackInfoDefaultTypeInternal;
 extern FallbackInfoDefaultTypeInternal _FallbackInfo_default_instance_;
+class StreamIndexServiceLastMicroPrice;
+struct StreamIndexServiceLastMicroPriceDefaultTypeInternal;
+extern StreamIndexServiceLastMicroPriceDefaultTypeInternal _StreamIndexServiceLastMicroPrice_default_instance_;
 class StreamIndexServiceResponseBaseAsset;
 struct StreamIndexServiceResponseBaseAssetDefaultTypeInternal;
 extern StreamIndexServiceResponseBaseAssetDefaultTypeInternal _StreamIndexServiceResponseBaseAsset_default_instance_;
@@ -73,6 +76,7 @@ extern StreamIndexServiceUnderlyingTradeDefaultTypeInternal _StreamIndexServiceU
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
 template<> ::kaikosdk::FallbackInfo* Arena::CreateMaybeMessage<::kaikosdk::FallbackInfo>(Arena*);
+template<> ::kaikosdk::StreamIndexServiceLastMicroPrice* Arena::CreateMaybeMessage<::kaikosdk::StreamIndexServiceLastMicroPrice>(Arena*);
 template<> ::kaikosdk::StreamIndexServiceResponseBaseAsset* Arena::CreateMaybeMessage<::kaikosdk::StreamIndexServiceResponseBaseAsset>(Arena*);
 template<> ::kaikosdk::StreamIndexServiceResponseInstruments* Arena::CreateMaybeMessage<::kaikosdk::StreamIndexServiceResponseInstruments>(Arena*);
 template<> ::kaikosdk::StreamIndexServiceResponsePairs* Arena::CreateMaybeMessage<::kaikosdk::StreamIndexServiceResponsePairs>(Arena*);
@@ -853,6 +857,201 @@ class StreamIndexServiceResponseInstruments final :
 };
 // -------------------------------------------------------------------
 
+class StreamIndexServiceLastMicroPrice final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.StreamIndexServiceLastMicroPrice) */ {
+ public:
+  inline StreamIndexServiceLastMicroPrice() : StreamIndexServiceLastMicroPrice(nullptr) {}
+  ~StreamIndexServiceLastMicroPrice() override;
+  explicit PROTOBUF_CONSTEXPR StreamIndexServiceLastMicroPrice(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StreamIndexServiceLastMicroPrice(const StreamIndexServiceLastMicroPrice& from);
+  StreamIndexServiceLastMicroPrice(StreamIndexServiceLastMicroPrice&& from) noexcept
+    : StreamIndexServiceLastMicroPrice() {
+    *this = ::std::move(from);
+  }
+
+  inline StreamIndexServiceLastMicroPrice& operator=(const StreamIndexServiceLastMicroPrice& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StreamIndexServiceLastMicroPrice& operator=(StreamIndexServiceLastMicroPrice&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StreamIndexServiceLastMicroPrice& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StreamIndexServiceLastMicroPrice* internal_default_instance() {
+    return reinterpret_cast<const StreamIndexServiceLastMicroPrice*>(
+               &_StreamIndexServiceLastMicroPrice_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(StreamIndexServiceLastMicroPrice& a, StreamIndexServiceLastMicroPrice& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StreamIndexServiceLastMicroPrice* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StreamIndexServiceLastMicroPrice* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StreamIndexServiceLastMicroPrice* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StreamIndexServiceLastMicroPrice>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StreamIndexServiceLastMicroPrice& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const StreamIndexServiceLastMicroPrice& from) {
+    StreamIndexServiceLastMicroPrice::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StreamIndexServiceLastMicroPrice* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "kaikosdk.StreamIndexServiceLastMicroPrice";
+  }
+  protected:
+  explicit StreamIndexServiceLastMicroPrice(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kExchangeFieldNumber = 4,
+    kLastTradeTimeFieldNumber = 2,
+    kPriceFieldNumber = 1,
+    kVolumeFieldNumber = 3,
+  };
+  // string exchange = 4;
+  void clear_exchange();
+  const std::string& exchange() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_exchange(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_exchange();
+  PROTOBUF_NODISCARD std::string* release_exchange();
+  void set_allocated_exchange(std::string* exchange);
+  private:
+  const std::string& _internal_exchange() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_exchange(const std::string& value);
+  std::string* _internal_mutable_exchange();
+  public:
+
+  // .google.protobuf.Timestamp last_trade_time = 2;
+  bool has_last_trade_time() const;
+  private:
+  bool _internal_has_last_trade_time() const;
+  public:
+  void clear_last_trade_time();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& last_trade_time() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_last_trade_time();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_last_trade_time();
+  void set_allocated_last_trade_time(::PROTOBUF_NAMESPACE_ID::Timestamp* last_trade_time);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_last_trade_time() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_last_trade_time();
+  public:
+  void unsafe_arena_set_allocated_last_trade_time(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* last_trade_time);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_last_trade_time();
+
+  // double price = 1;
+  void clear_price();
+  double price() const;
+  void set_price(double value);
+  private:
+  double _internal_price() const;
+  void _internal_set_price(double value);
+  public:
+
+  // double volume = 3;
+  void clear_volume();
+  double volume() const;
+  void set_volume(double value);
+  private:
+  double _internal_volume() const;
+  void _internal_set_volume(double value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:kaikosdk.StreamIndexServiceLastMicroPrice)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr exchange_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* last_trade_time_;
+    double price_;
+    double volume_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto;
+};
+// -------------------------------------------------------------------
+
 class StreamIndexServiceResponseBaseAsset final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.StreamIndexServiceResponseBaseAsset) */ {
  public:
@@ -901,7 +1100,7 @@ class StreamIndexServiceResponseBaseAsset final :
                &_StreamIndexServiceResponseBaseAsset_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(StreamIndexServiceResponseBaseAsset& a, StreamIndexServiceResponseBaseAsset& b) {
     a.Swap(&b);
@@ -1065,7 +1264,7 @@ class FallbackInfo final :
                &_FallbackInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(FallbackInfo& a, FallbackInfo& b) {
     a.Swap(&b);
@@ -1140,6 +1339,7 @@ class FallbackInfo final :
   enum : int {
     kFallbackSourceFieldNumber = 2,
     kFallbackTimestampFieldNumber = 3,
+    kFallbackIntervalFieldNumber = 4,
     kFallbackUsedFieldNumber = 1,
   };
   // optional string fallback_source = 2;
@@ -1178,6 +1378,24 @@ class FallbackInfo final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* fallback_timestamp);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_fallback_timestamp();
 
+  // .kaikosdk.DataInterval fallback_interval = 4;
+  bool has_fallback_interval() const;
+  private:
+  bool _internal_has_fallback_interval() const;
+  public:
+  void clear_fallback_interval();
+  const ::kaikosdk::DataInterval& fallback_interval() const;
+  PROTOBUF_NODISCARD ::kaikosdk::DataInterval* release_fallback_interval();
+  ::kaikosdk::DataInterval* mutable_fallback_interval();
+  void set_allocated_fallback_interval(::kaikosdk::DataInterval* fallback_interval);
+  private:
+  const ::kaikosdk::DataInterval& _internal_fallback_interval() const;
+  ::kaikosdk::DataInterval* _internal_mutable_fallback_interval();
+  public:
+  void unsafe_arena_set_allocated_fallback_interval(
+      ::kaikosdk::DataInterval* fallback_interval);
+  ::kaikosdk::DataInterval* unsafe_arena_release_fallback_interval();
+
   // optional bool fallback_used = 1;
   bool has_fallback_used() const;
   private:
@@ -1203,6 +1421,7 @@ class FallbackInfo final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fallback_source_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* fallback_timestamp_;
+    ::kaikosdk::DataInterval* fallback_interval_;
     bool fallback_used_;
   };
   union { Impl_ _impl_; };
@@ -1258,7 +1477,7 @@ class StreamIndexServiceResponseV1 final :
                &_StreamIndexServiceResponseV1_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(StreamIndexServiceResponseV1& a, StreamIndexServiceResponseV1& b) {
     a.Swap(&b);
@@ -1337,12 +1556,17 @@ class StreamIndexServiceResponseV1 final :
     kIndexCodeFieldNumber = 1,
     kQuoteFieldNumber = 4,
     kSequenceIdFieldNumber = 9,
+    kCorrectionIdFieldNumber = 16,
+    kIncidentIdFieldNumber = 18,
     kIntervalFieldNumber = 3,
     kTsEventFieldNumber = 8,
     kLastIngestTimeFieldNumber = 10,
     kLastAnomalyIngestTimeFieldNumber = 12,
     kFallbackInfoFieldNumber = 13,
+    kLastMicroPriceFieldNumber = 14,
+    kInitialPublicationTsFieldNumber = 17,
     kCommodityFieldNumber = 2,
+    kRestatementStatusFieldNumber = 15,
   };
   // repeated .kaikosdk.StreamIndexServiceResponseBaseAsset bases = 5;
   int bases_size() const;
@@ -1446,6 +1670,42 @@ class StreamIndexServiceResponseV1 final :
   std::string* _internal_mutable_sequence_id();
   public:
 
+  // optional string correction_id = 16;
+  bool has_correction_id() const;
+  private:
+  bool _internal_has_correction_id() const;
+  public:
+  void clear_correction_id();
+  const std::string& correction_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_correction_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_correction_id();
+  PROTOBUF_NODISCARD std::string* release_correction_id();
+  void set_allocated_correction_id(std::string* correction_id);
+  private:
+  const std::string& _internal_correction_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_correction_id(const std::string& value);
+  std::string* _internal_mutable_correction_id();
+  public:
+
+  // optional string incident_id = 18;
+  bool has_incident_id() const;
+  private:
+  bool _internal_has_incident_id() const;
+  public:
+  void clear_incident_id();
+  const std::string& incident_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_incident_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_incident_id();
+  PROTOBUF_NODISCARD std::string* release_incident_id();
+  void set_allocated_incident_id(std::string* incident_id);
+  private:
+  const std::string& _internal_incident_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_incident_id(const std::string& value);
+  std::string* _internal_mutable_incident_id();
+  public:
+
   // .kaikosdk.DataInterval interval = 3;
   bool has_interval() const;
   private:
@@ -1536,6 +1796,42 @@ class StreamIndexServiceResponseV1 final :
       ::kaikosdk::FallbackInfo* fallback_info);
   ::kaikosdk::FallbackInfo* unsafe_arena_release_fallback_info();
 
+  // optional .kaikosdk.StreamIndexServiceLastMicroPrice last_micro_price = 14;
+  bool has_last_micro_price() const;
+  private:
+  bool _internal_has_last_micro_price() const;
+  public:
+  void clear_last_micro_price();
+  const ::kaikosdk::StreamIndexServiceLastMicroPrice& last_micro_price() const;
+  PROTOBUF_NODISCARD ::kaikosdk::StreamIndexServiceLastMicroPrice* release_last_micro_price();
+  ::kaikosdk::StreamIndexServiceLastMicroPrice* mutable_last_micro_price();
+  void set_allocated_last_micro_price(::kaikosdk::StreamIndexServiceLastMicroPrice* last_micro_price);
+  private:
+  const ::kaikosdk::StreamIndexServiceLastMicroPrice& _internal_last_micro_price() const;
+  ::kaikosdk::StreamIndexServiceLastMicroPrice* _internal_mutable_last_micro_price();
+  public:
+  void unsafe_arena_set_allocated_last_micro_price(
+      ::kaikosdk::StreamIndexServiceLastMicroPrice* last_micro_price);
+  ::kaikosdk::StreamIndexServiceLastMicroPrice* unsafe_arena_release_last_micro_price();
+
+  // optional .google.protobuf.Timestamp initial_publication_ts = 17;
+  bool has_initial_publication_ts() const;
+  private:
+  bool _internal_has_initial_publication_ts() const;
+  public:
+  void clear_initial_publication_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& initial_publication_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_initial_publication_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_initial_publication_ts();
+  void set_allocated_initial_publication_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_initial_publication_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_initial_publication_ts();
+  public:
+  void unsafe_arena_set_allocated_initial_publication_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_initial_publication_ts();
+
   // .kaikosdk.StreamIndexCommodity commodity = 2;
   void clear_commodity();
   ::kaikosdk::StreamIndexCommodity commodity() const;
@@ -1543,6 +1839,19 @@ class StreamIndexServiceResponseV1 final :
   private:
   ::kaikosdk::StreamIndexCommodity _internal_commodity() const;
   void _internal_set_commodity(::kaikosdk::StreamIndexCommodity value);
+  public:
+
+  // optional bool restatement_status = 15;
+  bool has_restatement_status() const;
+  private:
+  bool _internal_has_restatement_status() const;
+  public:
+  void clear_restatement_status();
+  bool restatement_status() const;
+  void set_restatement_status(bool value);
+  private:
+  bool _internal_restatement_status() const;
+  void _internal_set_restatement_status(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamIndexServiceResponseV1)
@@ -1553,19 +1862,25 @@ class StreamIndexServiceResponseV1 final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::kaikosdk::StreamIndexServiceResponseBaseAsset > bases_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> exchanges_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::kaikosdk::StreamIndexServiceResponsePercentage > percentages_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr index_code_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quote_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sequence_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr correction_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr incident_id_;
     ::kaikosdk::DataInterval* interval_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* last_ingest_time_;
     ::kaikosdk::TimestampValue* last_anomaly_ingest_time_;
     ::kaikosdk::FallbackInfo* fallback_info_;
+    ::kaikosdk::StreamIndexServiceLastMicroPrice* last_micro_price_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts_;
     int commodity_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    bool restatement_status_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_sdk_2fstream_2findex_5fv1_2fresponse_2eproto;
@@ -2190,6 +2505,185 @@ inline void StreamIndexServiceResponseInstruments::set_allocated_underlying_trad
 
 // -------------------------------------------------------------------
 
+// StreamIndexServiceLastMicroPrice
+
+// double price = 1;
+inline void StreamIndexServiceLastMicroPrice::clear_price() {
+  _impl_.price_ = 0;
+}
+inline double StreamIndexServiceLastMicroPrice::_internal_price() const {
+  return _impl_.price_;
+}
+inline double StreamIndexServiceLastMicroPrice::price() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceLastMicroPrice.price)
+  return _internal_price();
+}
+inline void StreamIndexServiceLastMicroPrice::_internal_set_price(double value) {
+  
+  _impl_.price_ = value;
+}
+inline void StreamIndexServiceLastMicroPrice::set_price(double value) {
+  _internal_set_price(value);
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceLastMicroPrice.price)
+}
+
+// .google.protobuf.Timestamp last_trade_time = 2;
+inline bool StreamIndexServiceLastMicroPrice::_internal_has_last_trade_time() const {
+  return this != internal_default_instance() && _impl_.last_trade_time_ != nullptr;
+}
+inline bool StreamIndexServiceLastMicroPrice::has_last_trade_time() const {
+  return _internal_has_last_trade_time();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexServiceLastMicroPrice::_internal_last_trade_time() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.last_trade_time_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexServiceLastMicroPrice::last_trade_time() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceLastMicroPrice.last_trade_time)
+  return _internal_last_trade_time();
+}
+inline void StreamIndexServiceLastMicroPrice::unsafe_arena_set_allocated_last_trade_time(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* last_trade_time) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.last_trade_time_);
+  }
+  _impl_.last_trade_time_ = last_trade_time;
+  if (last_trade_time) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexServiceLastMicroPrice.last_trade_time)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceLastMicroPrice::release_last_trade_time() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.last_trade_time_;
+  _impl_.last_trade_time_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceLastMicroPrice::unsafe_arena_release_last_trade_time() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceLastMicroPrice.last_trade_time)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.last_trade_time_;
+  _impl_.last_trade_time_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceLastMicroPrice::_internal_mutable_last_trade_time() {
+  
+  if (_impl_.last_trade_time_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.last_trade_time_ = p;
+  }
+  return _impl_.last_trade_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceLastMicroPrice::mutable_last_trade_time() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_last_trade_time();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceLastMicroPrice.last_trade_time)
+  return _msg;
+}
+inline void StreamIndexServiceLastMicroPrice::set_allocated_last_trade_time(::PROTOBUF_NAMESPACE_ID::Timestamp* last_trade_time) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.last_trade_time_);
+  }
+  if (last_trade_time) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(last_trade_time));
+    if (message_arena != submessage_arena) {
+      last_trade_time = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, last_trade_time, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.last_trade_time_ = last_trade_time;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceLastMicroPrice.last_trade_time)
+}
+
+// double volume = 3;
+inline void StreamIndexServiceLastMicroPrice::clear_volume() {
+  _impl_.volume_ = 0;
+}
+inline double StreamIndexServiceLastMicroPrice::_internal_volume() const {
+  return _impl_.volume_;
+}
+inline double StreamIndexServiceLastMicroPrice::volume() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceLastMicroPrice.volume)
+  return _internal_volume();
+}
+inline void StreamIndexServiceLastMicroPrice::_internal_set_volume(double value) {
+  
+  _impl_.volume_ = value;
+}
+inline void StreamIndexServiceLastMicroPrice::set_volume(double value) {
+  _internal_set_volume(value);
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceLastMicroPrice.volume)
+}
+
+// string exchange = 4;
+inline void StreamIndexServiceLastMicroPrice::clear_exchange() {
+  _impl_.exchange_.ClearToEmpty();
+}
+inline const std::string& StreamIndexServiceLastMicroPrice::exchange() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceLastMicroPrice.exchange)
+  return _internal_exchange();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamIndexServiceLastMicroPrice::set_exchange(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.exchange_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceLastMicroPrice.exchange)
+}
+inline std::string* StreamIndexServiceLastMicroPrice::mutable_exchange() {
+  std::string* _s = _internal_mutable_exchange();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceLastMicroPrice.exchange)
+  return _s;
+}
+inline const std::string& StreamIndexServiceLastMicroPrice::_internal_exchange() const {
+  return _impl_.exchange_.Get();
+}
+inline void StreamIndexServiceLastMicroPrice::_internal_set_exchange(const std::string& value) {
+  
+  _impl_.exchange_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StreamIndexServiceLastMicroPrice::_internal_mutable_exchange() {
+  
+  return _impl_.exchange_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StreamIndexServiceLastMicroPrice::release_exchange() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceLastMicroPrice.exchange)
+  return _impl_.exchange_.Release();
+}
+inline void StreamIndexServiceLastMicroPrice::set_allocated_exchange(std::string* exchange) {
+  if (exchange != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.exchange_.SetAllocated(exchange, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.exchange_.IsDefault()) {
+    _impl_.exchange_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceLastMicroPrice.exchange)
+}
+
+// -------------------------------------------------------------------
+
 // StreamIndexServiceResponseBaseAsset
 
 // string asset = 1;
@@ -2447,6 +2941,91 @@ inline void FallbackInfo::set_allocated_fallback_timestamp(::PROTOBUF_NAMESPACE_
   }
   _impl_.fallback_timestamp_ = fallback_timestamp;
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.FallbackInfo.fallback_timestamp)
+}
+
+// .kaikosdk.DataInterval fallback_interval = 4;
+inline bool FallbackInfo::_internal_has_fallback_interval() const {
+  return this != internal_default_instance() && _impl_.fallback_interval_ != nullptr;
+}
+inline bool FallbackInfo::has_fallback_interval() const {
+  return _internal_has_fallback_interval();
+}
+inline const ::kaikosdk::DataInterval& FallbackInfo::_internal_fallback_interval() const {
+  const ::kaikosdk::DataInterval* p = _impl_.fallback_interval_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::DataInterval&>(
+      ::kaikosdk::_DataInterval_default_instance_);
+}
+inline const ::kaikosdk::DataInterval& FallbackInfo::fallback_interval() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.FallbackInfo.fallback_interval)
+  return _internal_fallback_interval();
+}
+inline void FallbackInfo::unsafe_arena_set_allocated_fallback_interval(
+    ::kaikosdk::DataInterval* fallback_interval) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.fallback_interval_);
+  }
+  _impl_.fallback_interval_ = fallback_interval;
+  if (fallback_interval) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.FallbackInfo.fallback_interval)
+}
+inline ::kaikosdk::DataInterval* FallbackInfo::release_fallback_interval() {
+  
+  ::kaikosdk::DataInterval* temp = _impl_.fallback_interval_;
+  _impl_.fallback_interval_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::DataInterval* FallbackInfo::unsafe_arena_release_fallback_interval() {
+  // @@protoc_insertion_point(field_release:kaikosdk.FallbackInfo.fallback_interval)
+  
+  ::kaikosdk::DataInterval* temp = _impl_.fallback_interval_;
+  _impl_.fallback_interval_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::DataInterval* FallbackInfo::_internal_mutable_fallback_interval() {
+  
+  if (_impl_.fallback_interval_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::DataInterval>(GetArenaForAllocation());
+    _impl_.fallback_interval_ = p;
+  }
+  return _impl_.fallback_interval_;
+}
+inline ::kaikosdk::DataInterval* FallbackInfo::mutable_fallback_interval() {
+  ::kaikosdk::DataInterval* _msg = _internal_mutable_fallback_interval();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.FallbackInfo.fallback_interval)
+  return _msg;
+}
+inline void FallbackInfo::set_allocated_fallback_interval(::kaikosdk::DataInterval* fallback_interval) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.fallback_interval_);
+  }
+  if (fallback_interval) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(fallback_interval));
+    if (message_arena != submessage_arena) {
+      fallback_interval = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fallback_interval, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.fallback_interval_ = fallback_interval;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.FallbackInfo.fallback_interval)
 }
 
 // -------------------------------------------------------------------
@@ -3208,9 +3787,352 @@ inline void StreamIndexServiceResponseV1::set_allocated_fallback_info(::kaikosdk
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.fallback_info)
 }
 
+// optional .kaikosdk.StreamIndexServiceLastMicroPrice last_micro_price = 14;
+inline bool StreamIndexServiceResponseV1::_internal_has_last_micro_price() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.last_micro_price_ != nullptr);
+  return value;
+}
+inline bool StreamIndexServiceResponseV1::has_last_micro_price() const {
+  return _internal_has_last_micro_price();
+}
+inline void StreamIndexServiceResponseV1::clear_last_micro_price() {
+  if (_impl_.last_micro_price_ != nullptr) _impl_.last_micro_price_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const ::kaikosdk::StreamIndexServiceLastMicroPrice& StreamIndexServiceResponseV1::_internal_last_micro_price() const {
+  const ::kaikosdk::StreamIndexServiceLastMicroPrice* p = _impl_.last_micro_price_;
+  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::StreamIndexServiceLastMicroPrice&>(
+      ::kaikosdk::_StreamIndexServiceLastMicroPrice_default_instance_);
+}
+inline const ::kaikosdk::StreamIndexServiceLastMicroPrice& StreamIndexServiceResponseV1::last_micro_price() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.last_micro_price)
+  return _internal_last_micro_price();
+}
+inline void StreamIndexServiceResponseV1::unsafe_arena_set_allocated_last_micro_price(
+    ::kaikosdk::StreamIndexServiceLastMicroPrice* last_micro_price) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.last_micro_price_);
+  }
+  _impl_.last_micro_price_ = last_micro_price;
+  if (last_micro_price) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexServiceResponseV1.last_micro_price)
+}
+inline ::kaikosdk::StreamIndexServiceLastMicroPrice* StreamIndexServiceResponseV1::release_last_micro_price() {
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::kaikosdk::StreamIndexServiceLastMicroPrice* temp = _impl_.last_micro_price_;
+  _impl_.last_micro_price_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::kaikosdk::StreamIndexServiceLastMicroPrice* StreamIndexServiceResponseV1::unsafe_arena_release_last_micro_price() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.last_micro_price)
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::kaikosdk::StreamIndexServiceLastMicroPrice* temp = _impl_.last_micro_price_;
+  _impl_.last_micro_price_ = nullptr;
+  return temp;
+}
+inline ::kaikosdk::StreamIndexServiceLastMicroPrice* StreamIndexServiceResponseV1::_internal_mutable_last_micro_price() {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  if (_impl_.last_micro_price_ == nullptr) {
+    auto* p = CreateMaybeMessage<::kaikosdk::StreamIndexServiceLastMicroPrice>(GetArenaForAllocation());
+    _impl_.last_micro_price_ = p;
+  }
+  return _impl_.last_micro_price_;
+}
+inline ::kaikosdk::StreamIndexServiceLastMicroPrice* StreamIndexServiceResponseV1::mutable_last_micro_price() {
+  ::kaikosdk::StreamIndexServiceLastMicroPrice* _msg = _internal_mutable_last_micro_price();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.last_micro_price)
+  return _msg;
+}
+inline void StreamIndexServiceResponseV1::set_allocated_last_micro_price(::kaikosdk::StreamIndexServiceLastMicroPrice* last_micro_price) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.last_micro_price_;
+  }
+  if (last_micro_price) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(last_micro_price);
+    if (message_arena != submessage_arena) {
+      last_micro_price = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, last_micro_price, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.last_micro_price_ = last_micro_price;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.last_micro_price)
+}
+
+// optional bool restatement_status = 15;
+inline bool StreamIndexServiceResponseV1::_internal_has_restatement_status() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool StreamIndexServiceResponseV1::has_restatement_status() const {
+  return _internal_has_restatement_status();
+}
+inline void StreamIndexServiceResponseV1::clear_restatement_status() {
+  _impl_.restatement_status_ = false;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline bool StreamIndexServiceResponseV1::_internal_restatement_status() const {
+  return _impl_.restatement_status_;
+}
+inline bool StreamIndexServiceResponseV1::restatement_status() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.restatement_status)
+  return _internal_restatement_status();
+}
+inline void StreamIndexServiceResponseV1::_internal_set_restatement_status(bool value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.restatement_status_ = value;
+}
+inline void StreamIndexServiceResponseV1::set_restatement_status(bool value) {
+  _internal_set_restatement_status(value);
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseV1.restatement_status)
+}
+
+// optional string correction_id = 16;
+inline bool StreamIndexServiceResponseV1::_internal_has_correction_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool StreamIndexServiceResponseV1::has_correction_id() const {
+  return _internal_has_correction_id();
+}
+inline void StreamIndexServiceResponseV1::clear_correction_id() {
+  _impl_.correction_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& StreamIndexServiceResponseV1::correction_id() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.correction_id)
+  return _internal_correction_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamIndexServiceResponseV1::set_correction_id(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.correction_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseV1.correction_id)
+}
+inline std::string* StreamIndexServiceResponseV1::mutable_correction_id() {
+  std::string* _s = _internal_mutable_correction_id();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.correction_id)
+  return _s;
+}
+inline const std::string& StreamIndexServiceResponseV1::_internal_correction_id() const {
+  return _impl_.correction_id_.Get();
+}
+inline void StreamIndexServiceResponseV1::_internal_set_correction_id(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.correction_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StreamIndexServiceResponseV1::_internal_mutable_correction_id() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.correction_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StreamIndexServiceResponseV1::release_correction_id() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.correction_id)
+  if (!_internal_has_correction_id()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.correction_id_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correction_id_.IsDefault()) {
+    _impl_.correction_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void StreamIndexServiceResponseV1::set_allocated_correction_id(std::string* correction_id) {
+  if (correction_id != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.correction_id_.SetAllocated(correction_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correction_id_.IsDefault()) {
+    _impl_.correction_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.correction_id)
+}
+
+// optional .google.protobuf.Timestamp initial_publication_ts = 17;
+inline bool StreamIndexServiceResponseV1::_internal_has_initial_publication_ts() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.initial_publication_ts_ != nullptr);
+  return value;
+}
+inline bool StreamIndexServiceResponseV1::has_initial_publication_ts() const {
+  return _internal_has_initial_publication_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexServiceResponseV1::_internal_initial_publication_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.initial_publication_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexServiceResponseV1::initial_publication_ts() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.initial_publication_ts)
+  return _internal_initial_publication_ts();
+}
+inline void StreamIndexServiceResponseV1::unsafe_arena_set_allocated_initial_publication_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.initial_publication_ts_);
+  }
+  _impl_.initial_publication_ts_ = initial_publication_ts;
+  if (initial_publication_ts) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexServiceResponseV1.initial_publication_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::release_initial_publication_ts() {
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.initial_publication_ts_;
+  _impl_.initial_publication_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::unsafe_arena_release_initial_publication_ts() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.initial_publication_ts)
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.initial_publication_ts_;
+  _impl_.initial_publication_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::_internal_mutable_initial_publication_ts() {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  if (_impl_.initial_publication_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.initial_publication_ts_ = p;
+  }
+  return _impl_.initial_publication_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexServiceResponseV1::mutable_initial_publication_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_initial_publication_ts();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.initial_publication_ts)
+  return _msg;
+}
+inline void StreamIndexServiceResponseV1::set_allocated_initial_publication_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.initial_publication_ts_);
+  }
+  if (initial_publication_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(initial_publication_ts));
+    if (message_arena != submessage_arena) {
+      initial_publication_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, initial_publication_ts, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.initial_publication_ts_ = initial_publication_ts;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.initial_publication_ts)
+}
+
+// optional string incident_id = 18;
+inline bool StreamIndexServiceResponseV1::_internal_has_incident_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool StreamIndexServiceResponseV1::has_incident_id() const {
+  return _internal_has_incident_id();
+}
+inline void StreamIndexServiceResponseV1::clear_incident_id() {
+  _impl_.incident_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& StreamIndexServiceResponseV1::incident_id() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexServiceResponseV1.incident_id)
+  return _internal_incident_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamIndexServiceResponseV1::set_incident_id(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.incident_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexServiceResponseV1.incident_id)
+}
+inline std::string* StreamIndexServiceResponseV1::mutable_incident_id() {
+  std::string* _s = _internal_mutable_incident_id();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexServiceResponseV1.incident_id)
+  return _s;
+}
+inline const std::string& StreamIndexServiceResponseV1::_internal_incident_id() const {
+  return _impl_.incident_id_.Get();
+}
+inline void StreamIndexServiceResponseV1::_internal_set_incident_id(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.incident_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StreamIndexServiceResponseV1::_internal_mutable_incident_id() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.incident_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StreamIndexServiceResponseV1::release_incident_id() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexServiceResponseV1.incident_id)
+  if (!_internal_has_incident_id()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.incident_id_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.incident_id_.IsDefault()) {
+    _impl_.incident_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void StreamIndexServiceResponseV1::set_allocated_incident_id(std::string* incident_id) {
+  if (incident_id != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.incident_id_.SetAllocated(incident_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.incident_id_.IsDefault()) {
+    _impl_.incident_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexServiceResponseV1.incident_id)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -1101,5 +1101,167 @@ StreamStakingRatesServiceV1::Service::~Service() {
 }
 
 
+static const char* StreamCantonOracleServiceV1_method_names[] = {
+  "/kaikosdk.StreamCantonOracleServiceV1/Subscribe",
+};
+
+std::unique_ptr< StreamCantonOracleServiceV1::Stub> StreamCantonOracleServiceV1::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< StreamCantonOracleServiceV1::Stub> stub(new StreamCantonOracleServiceV1::Stub(channel, options));
+  return stub;
+}
+
+StreamCantonOracleServiceV1::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Subscribe_(StreamCantonOracleServiceV1_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  {}
+
+::grpc::ClientReader< ::kaikosdk::StreamCantonOracleServiceResponseV1>* StreamCantonOracleServiceV1::Stub::SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV1& request) {
+  return ::grpc::internal::ClientReaderFactory< ::kaikosdk::StreamCantonOracleServiceResponseV1>::Create(channel_.get(), rpcmethod_Subscribe_, context, request);
+}
+
+void StreamCantonOracleServiceV1::Stub::async::Subscribe(::grpc::ClientContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV1* request, ::grpc::ClientReadReactor< ::kaikosdk::StreamCantonOracleServiceResponseV1>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::kaikosdk::StreamCantonOracleServiceResponseV1>::Create(stub_->channel_.get(), stub_->rpcmethod_Subscribe_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamCantonOracleServiceResponseV1>* StreamCantonOracleServiceV1::Stub::AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamCantonOracleServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamCantonOracleServiceResponseV1>* StreamCantonOracleServiceV1::Stub::PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV1& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamCantonOracleServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, false, nullptr);
+}
+
+StreamCantonOracleServiceV1::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      StreamCantonOracleServiceV1_method_names[0],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< StreamCantonOracleServiceV1::Service, ::kaikosdk::StreamCantonOracleServiceRequestV1, ::kaikosdk::StreamCantonOracleServiceResponseV1>(
+          [](StreamCantonOracleServiceV1::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::kaikosdk::StreamCantonOracleServiceRequestV1* req,
+             ::grpc::ServerWriter<::kaikosdk::StreamCantonOracleServiceResponseV1>* writer) {
+               return service->Subscribe(ctx, req, writer);
+             }, this)));
+}
+
+StreamCantonOracleServiceV1::Service::~Service() {
+}
+
+::grpc::Status StreamCantonOracleServiceV1::Service::Subscribe(::grpc::ServerContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV1* request, ::grpc::ServerWriter< ::kaikosdk::StreamCantonOracleServiceResponseV1>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
+static const char* StreamCantonOracleServiceV2_method_names[] = {
+  "/kaikosdk.StreamCantonOracleServiceV2/Subscribe",
+};
+
+std::unique_ptr< StreamCantonOracleServiceV2::Stub> StreamCantonOracleServiceV2::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< StreamCantonOracleServiceV2::Stub> stub(new StreamCantonOracleServiceV2::Stub(channel, options));
+  return stub;
+}
+
+StreamCantonOracleServiceV2::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Subscribe_(StreamCantonOracleServiceV2_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  {}
+
+::grpc::ClientReader< ::kaikosdk::StreamCantonOracleServiceResponseV2>* StreamCantonOracleServiceV2::Stub::SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV2& request) {
+  return ::grpc::internal::ClientReaderFactory< ::kaikosdk::StreamCantonOracleServiceResponseV2>::Create(channel_.get(), rpcmethod_Subscribe_, context, request);
+}
+
+void StreamCantonOracleServiceV2::Stub::async::Subscribe(::grpc::ClientContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV2* request, ::grpc::ClientReadReactor< ::kaikosdk::StreamCantonOracleServiceResponseV2>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::kaikosdk::StreamCantonOracleServiceResponseV2>::Create(stub_->channel_.get(), stub_->rpcmethod_Subscribe_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamCantonOracleServiceResponseV2>* StreamCantonOracleServiceV2::Stub::AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV2& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamCantonOracleServiceResponseV2>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamCantonOracleServiceResponseV2>* StreamCantonOracleServiceV2::Stub::PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV2& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamCantonOracleServiceResponseV2>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, false, nullptr);
+}
+
+StreamCantonOracleServiceV2::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      StreamCantonOracleServiceV2_method_names[0],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< StreamCantonOracleServiceV2::Service, ::kaikosdk::StreamCantonOracleServiceRequestV2, ::kaikosdk::StreamCantonOracleServiceResponseV2>(
+          [](StreamCantonOracleServiceV2::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::kaikosdk::StreamCantonOracleServiceRequestV2* req,
+             ::grpc::ServerWriter<::kaikosdk::StreamCantonOracleServiceResponseV2>* writer) {
+               return service->Subscribe(ctx, req, writer);
+             }, this)));
+}
+
+StreamCantonOracleServiceV2::Service::~Service() {
+}
+
+::grpc::Status StreamCantonOracleServiceV2::Service::Subscribe(::grpc::ServerContext* context, const ::kaikosdk::StreamCantonOracleServiceRequestV2* request, ::grpc::ServerWriter< ::kaikosdk::StreamCantonOracleServiceResponseV2>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
+static const char* StreamEvmOracleServiceV1_method_names[] = {
+  "/kaikosdk.StreamEvmOracleServiceV1/Subscribe",
+};
+
+std::unique_ptr< StreamEvmOracleServiceV1::Stub> StreamEvmOracleServiceV1::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< StreamEvmOracleServiceV1::Stub> stub(new StreamEvmOracleServiceV1::Stub(channel, options));
+  return stub;
+}
+
+StreamEvmOracleServiceV1::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Subscribe_(StreamEvmOracleServiceV1_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  {}
+
+::grpc::ClientReader< ::kaikosdk::StreamEvmOracleServiceResponseV1>* StreamEvmOracleServiceV1::Stub::SubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamEvmOracleServiceRequestV1& request) {
+  return ::grpc::internal::ClientReaderFactory< ::kaikosdk::StreamEvmOracleServiceResponseV1>::Create(channel_.get(), rpcmethod_Subscribe_, context, request);
+}
+
+void StreamEvmOracleServiceV1::Stub::async::Subscribe(::grpc::ClientContext* context, const ::kaikosdk::StreamEvmOracleServiceRequestV1* request, ::grpc::ClientReadReactor< ::kaikosdk::StreamEvmOracleServiceResponseV1>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::kaikosdk::StreamEvmOracleServiceResponseV1>::Create(stub_->channel_.get(), stub_->rpcmethod_Subscribe_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamEvmOracleServiceResponseV1>* StreamEvmOracleServiceV1::Stub::AsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamEvmOracleServiceRequestV1& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamEvmOracleServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::kaikosdk::StreamEvmOracleServiceResponseV1>* StreamEvmOracleServiceV1::Stub::PrepareAsyncSubscribeRaw(::grpc::ClientContext* context, const ::kaikosdk::StreamEvmOracleServiceRequestV1& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::kaikosdk::StreamEvmOracleServiceResponseV1>::Create(channel_.get(), cq, rpcmethod_Subscribe_, context, request, false, nullptr);
+}
+
+StreamEvmOracleServiceV1::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      StreamEvmOracleServiceV1_method_names[0],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< StreamEvmOracleServiceV1::Service, ::kaikosdk::StreamEvmOracleServiceRequestV1, ::kaikosdk::StreamEvmOracleServiceResponseV1>(
+          [](StreamEvmOracleServiceV1::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::kaikosdk::StreamEvmOracleServiceRequestV1* req,
+             ::grpc::ServerWriter<::kaikosdk::StreamEvmOracleServiceResponseV1>* writer) {
+               return service->Subscribe(ctx, req, writer);
+             }, this)));
+}
+
+StreamEvmOracleServiceV1::Service::~Service() {
+}
+
+::grpc::Status StreamEvmOracleServiceV1::Service::Subscribe(::grpc::ServerContext* context, const ::kaikosdk::StreamEvmOracleServiceRequestV1* request, ::grpc::ServerWriter< ::kaikosdk::StreamEvmOracleServiceResponseV1>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
 }  // namespace kaikosdk
 

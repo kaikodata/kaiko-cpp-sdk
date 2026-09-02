@@ -28,8 +28,8 @@ PROTOBUF_CONSTEXPR StreamCantonOracleServiceResponseV2::StreamCantonOracleServic
   , /*decltype(_impl_.feed_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.signature_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.canonical_hash_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.verifier_disclosure_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.payload_)*/nullptr
+  , /*decltype(_impl_.verifier_contract_)*/nullptr
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StreamCantonOracleServiceResponseV2DefaultTypeInternal {
   PROTOBUF_CONSTEXPR StreamCantonOracleServiceResponseV2DefaultTypeInternal()
@@ -40,6 +40,21 @@ struct StreamCantonOracleServiceResponseV2DefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreamCantonOracleServiceResponseV2DefaultTypeInternal _StreamCantonOracleServiceResponseV2_default_instance_;
+PROTOBUF_CONSTEXPR VerifierContract::VerifierContract(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.templateid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.contractid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.createdeventblob_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct VerifierContractDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VerifierContractDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VerifierContractDefaultTypeInternal() {}
+  union {
+    VerifierContract _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VerifierContractDefaultTypeInternal _VerifierContract_default_instance_;
 PROTOBUF_CONSTEXPR SignedPayloadV2::SignedPayloadV2(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -102,7 +117,7 @@ struct QuoteV2DefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 QuoteV2DefaultTypeInternal _QuoteV2_default_instance_;
 }  // namespace kaikosdk
-static ::_pb::Metadata file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[5];
+static ::_pb::Metadata file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[6];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto = nullptr;
 
@@ -119,7 +134,16 @@ const uint32_t TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eprot
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamCantonOracleServiceResponseV2, _impl_.payload_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamCantonOracleServiceResponseV2, _impl_.signature_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamCantonOracleServiceResponseV2, _impl_.canonical_hash_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamCantonOracleServiceResponseV2, _impl_.verifier_disclosure_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::StreamCantonOracleServiceResponseV2, _impl_.verifier_contract_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::VerifierContract, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::VerifierContract, _impl_.templateid_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::VerifierContract, _impl_.contractid_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::VerifierContract, _impl_.createdeventblob_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -164,14 +188,16 @@ const uint32_t TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eprot
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamCantonOracleServiceResponseV2)},
-  { 13, 24, -1, sizeof(::kaikosdk::SignedPayloadV2)},
-  { 29, -1, -1, sizeof(::kaikosdk::CostV2)},
-  { 37, -1, -1, sizeof(::kaikosdk::InstrumentIdV2)},
-  { 45, -1, -1, sizeof(::kaikosdk::QuoteV2)},
+  { 13, -1, -1, sizeof(::kaikosdk::VerifierContract)},
+  { 22, 33, -1, sizeof(::kaikosdk::SignedPayloadV2)},
+  { 38, -1, -1, sizeof(::kaikosdk::CostV2)},
+  { 46, -1, -1, sizeof(::kaikosdk::InstrumentIdV2)},
+  { 54, -1, -1, sizeof(::kaikosdk::QuoteV2)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::kaikosdk::_StreamCantonOracleServiceResponseV2_default_instance_._instance,
+  &::kaikosdk::_VerifierContract_default_instance_._instance,
   &::kaikosdk::_SignedPayloadV2_default_instance_._instance,
   &::kaikosdk::_CostV2_default_instance_._instance,
   &::kaikosdk::_InstrumentIdV2_default_instance_._instance,
@@ -180,30 +206,33 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n*sdk/stream/canton_oracle_v2/response.p"
-  "roto\022\010kaikosdk\"\322\001\n#StreamCantonOracleSer"
+  "roto\022\010kaikosdk\"\354\001\n#StreamCantonOracleSer"
   "viceResponseV2\022\017\n\007network\030\001 \001(\t\022\025\n\rfeed_"
   "category\030\002 \001(\t\022\017\n\007feed_id\030\003 \001(\t\022*\n\007paylo"
   "ad\030\004 \001(\0132\031.kaikosdk.SignedPayloadV2\022\021\n\ts"
-  "ignature\030\005 \001(\t\022\026\n\016canonical_hash\030\006 \001(\t\022\033"
-  "\n\023verifier_disclosure\030\007 \001(\t\"\230\001\n\017SignedPa"
-  "yloadV2\022\023\n\013publishedAt\030\001 \001(\t\022\021\n\texpiresA"
-  "t\030\002 \001(\t\022#\n\004cost\030\003 \001(\0132\020.kaikosdk.CostV2H"
-  "\000\210\001\001\022 \n\005quote\030\004 \001(\0132\021.kaikosdk.QuoteV2\022\r"
-  "\n\005payee\030\005 \001(\tB\007\n\005_cost\"C\n\006CostV2\022\013\n\003fee\030"
-  "\001 \001(\t\022,\n\ninstrument\030\002 \001(\0132\030.kaikosdk.Ins"
-  "trumentIdV2\"+\n\016InstrumentIdV2\022\r\n\005admin\030\001"
-  " \001(\t\022\n\n\002id\030\002 \001(\t\";\n\007QuoteV2\022\016\n\006feedId\030\001 "
-  "\001(\t\022\r\n\005price\030\002 \001(\t\022\021\n\tpriceTime\030\003 \001(\tB\226\001"
-  "\n%com.kaiko.sdk.stream.canton_oracle_v2P"
-  "\001ZJgithub.com/kaikodata/kaiko-go-sdk/str"
-  "eam/canton_oracle_v2;canton_oracle_v2\252\002\036"
-  "KaikoSdk.Stream.CantonOracleV2b\006proto3"
+  "ignature\030\005 \001(\t\022\026\n\016canonical_hash\030\006 \001(\t\0225"
+  "\n\021verifier_contract\030\007 \001(\0132\032.kaikosdk.Ver"
+  "ifierContract\"T\n\020VerifierContract\022\022\n\ntem"
+  "plateId\030\001 \001(\t\022\022\n\ncontractId\030\002 \001(\t\022\030\n\020cre"
+  "atedEventBlob\030\003 \001(\t\"\230\001\n\017SignedPayloadV2\022"
+  "\023\n\013publishedAt\030\001 \001(\t\022\021\n\texpiresAt\030\002 \001(\t\022"
+  "#\n\004cost\030\003 \001(\0132\020.kaikosdk.CostV2H\000\210\001\001\022 \n\005"
+  "quote\030\004 \001(\0132\021.kaikosdk.QuoteV2\022\r\n\005payee\030"
+  "\005 \001(\tB\007\n\005_cost\"C\n\006CostV2\022\013\n\003fee\030\001 \001(\t\022,\n"
+  "\ninstrument\030\002 \001(\0132\030.kaikosdk.InstrumentI"
+  "dV2\"+\n\016InstrumentIdV2\022\r\n\005admin\030\001 \001(\t\022\n\n\002"
+  "id\030\002 \001(\t\";\n\007QuoteV2\022\016\n\006feedId\030\001 \001(\t\022\r\n\005p"
+  "rice\030\002 \001(\t\022\021\n\tpriceTime\030\003 \001(\tB\226\001\n%com.ka"
+  "iko.sdk.stream.canton_oracle_v2P\001ZJgithu"
+  "b.com/kaikodata/kaiko-go-sdk/stream/cant"
+  "on_oracle_v2;canton_oracle_v2\252\002\036KaikoSdk"
+  ".Stream.CantonOracleV2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto = {
-    false, false, 758, descriptor_table_protodef_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto,
+    false, false, 870, descriptor_table_protodef_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto,
     "sdk/stream/canton_oracle_v2/response.proto",
-    &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once, nullptr, 0, 5,
+    &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once, nullptr, 0, 6,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto::offsets,
     file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto,
     file_level_service_descriptors_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto,
@@ -221,11 +250,16 @@ namespace kaikosdk {
 class StreamCantonOracleServiceResponseV2::_Internal {
  public:
   static const ::kaikosdk::SignedPayloadV2& payload(const StreamCantonOracleServiceResponseV2* msg);
+  static const ::kaikosdk::VerifierContract& verifier_contract(const StreamCantonOracleServiceResponseV2* msg);
 };
 
 const ::kaikosdk::SignedPayloadV2&
 StreamCantonOracleServiceResponseV2::_Internal::payload(const StreamCantonOracleServiceResponseV2* msg) {
   return *msg->_impl_.payload_;
+}
+const ::kaikosdk::VerifierContract&
+StreamCantonOracleServiceResponseV2::_Internal::verifier_contract(const StreamCantonOracleServiceResponseV2* msg) {
+  return *msg->_impl_.verifier_contract_;
 }
 StreamCantonOracleServiceResponseV2::StreamCantonOracleServiceResponseV2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -242,8 +276,8 @@ StreamCantonOracleServiceResponseV2::StreamCantonOracleServiceResponseV2(const S
     , decltype(_impl_.feed_id_){}
     , decltype(_impl_.signature_){}
     , decltype(_impl_.canonical_hash_){}
-    , decltype(_impl_.verifier_disclosure_){}
     , decltype(_impl_.payload_){nullptr}
+    , decltype(_impl_.verifier_contract_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -287,16 +321,11 @@ StreamCantonOracleServiceResponseV2::StreamCantonOracleServiceResponseV2(const S
     _this->_impl_.canonical_hash_.Set(from._internal_canonical_hash(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.verifier_disclosure_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.verifier_disclosure_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_verifier_disclosure().empty()) {
-    _this->_impl_.verifier_disclosure_.Set(from._internal_verifier_disclosure(), 
-      _this->GetArenaForAllocation());
-  }
   if (from._internal_has_payload()) {
     _this->_impl_.payload_ = new ::kaikosdk::SignedPayloadV2(*from._impl_.payload_);
+  }
+  if (from._internal_has_verifier_contract()) {
+    _this->_impl_.verifier_contract_ = new ::kaikosdk::VerifierContract(*from._impl_.verifier_contract_);
   }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.StreamCantonOracleServiceResponseV2)
 }
@@ -311,8 +340,8 @@ inline void StreamCantonOracleServiceResponseV2::SharedCtor(
     , decltype(_impl_.feed_id_){}
     , decltype(_impl_.signature_){}
     , decltype(_impl_.canonical_hash_){}
-    , decltype(_impl_.verifier_disclosure_){}
     , decltype(_impl_.payload_){nullptr}
+    , decltype(_impl_.verifier_contract_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.network_.InitDefault();
@@ -335,10 +364,6 @@ inline void StreamCantonOracleServiceResponseV2::SharedCtor(
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.canonical_hash_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.verifier_disclosure_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.verifier_disclosure_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 StreamCantonOracleServiceResponseV2::~StreamCantonOracleServiceResponseV2() {
@@ -357,8 +382,8 @@ inline void StreamCantonOracleServiceResponseV2::SharedDtor() {
   _impl_.feed_id_.Destroy();
   _impl_.signature_.Destroy();
   _impl_.canonical_hash_.Destroy();
-  _impl_.verifier_disclosure_.Destroy();
   if (this != internal_default_instance()) delete _impl_.payload_;
+  if (this != internal_default_instance()) delete _impl_.verifier_contract_;
 }
 
 void StreamCantonOracleServiceResponseV2::SetCachedSize(int size) const {
@@ -376,11 +401,14 @@ void StreamCantonOracleServiceResponseV2::Clear() {
   _impl_.feed_id_.ClearToEmpty();
   _impl_.signature_.ClearToEmpty();
   _impl_.canonical_hash_.ClearToEmpty();
-  _impl_.verifier_disclosure_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && _impl_.payload_ != nullptr) {
     delete _impl_.payload_;
   }
   _impl_.payload_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.verifier_contract_ != nullptr) {
+    delete _impl_.verifier_contract_;
+  }
+  _impl_.verifier_contract_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -448,13 +476,11 @@ const char* StreamCantonOracleServiceResponseV2::_InternalParse(const char* ptr,
         } else
           goto handle_unusual;
         continue;
-      // string verifier_disclosure = 7;
+      // .kaikosdk.VerifierContract verifier_contract = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          auto str = _internal_mutable_verifier_disclosure();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ctx->ParseMessage(_internal_mutable_verifier_contract(), ptr);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.StreamCantonOracleServiceResponseV2.verifier_disclosure"));
         } else
           goto handle_unusual;
         continue;
@@ -544,14 +570,11 @@ uint8_t* StreamCantonOracleServiceResponseV2::_InternalSerialize(
         6, this->_internal_canonical_hash(), target);
   }
 
-  // string verifier_disclosure = 7;
-  if (!this->_internal_verifier_disclosure().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_verifier_disclosure().data(), static_cast<int>(this->_internal_verifier_disclosure().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "kaikosdk.StreamCantonOracleServiceResponseV2.verifier_disclosure");
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_verifier_disclosure(), target);
+  // .kaikosdk.VerifierContract verifier_contract = 7;
+  if (this->_internal_has_verifier_contract()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(7, _Internal::verifier_contract(this),
+        _Internal::verifier_contract(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -605,18 +628,18 @@ size_t StreamCantonOracleServiceResponseV2::ByteSizeLong() const {
         this->_internal_canonical_hash());
   }
 
-  // string verifier_disclosure = 7;
-  if (!this->_internal_verifier_disclosure().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_verifier_disclosure());
-  }
-
   // .kaikosdk.SignedPayloadV2 payload = 4;
   if (this->_internal_has_payload()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.payload_);
+  }
+
+  // .kaikosdk.VerifierContract verifier_contract = 7;
+  if (this->_internal_has_verifier_contract()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.verifier_contract_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -652,12 +675,13 @@ void StreamCantonOracleServiceResponseV2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Mes
   if (!from._internal_canonical_hash().empty()) {
     _this->_internal_set_canonical_hash(from._internal_canonical_hash());
   }
-  if (!from._internal_verifier_disclosure().empty()) {
-    _this->_internal_set_verifier_disclosure(from._internal_verifier_disclosure());
-  }
   if (from._internal_has_payload()) {
     _this->_internal_mutable_payload()->::kaikosdk::SignedPayloadV2::MergeFrom(
         from._internal_payload());
+  }
+  if (from._internal_has_verifier_contract()) {
+    _this->_internal_mutable_verifier_contract()->::kaikosdk::VerifierContract::MergeFrom(
+        from._internal_verifier_contract());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -698,17 +722,321 @@ void StreamCantonOracleServiceResponseV2::InternalSwap(StreamCantonOracleService
       &_impl_.canonical_hash_, lhs_arena,
       &other->_impl_.canonical_hash_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.verifier_disclosure_, lhs_arena,
-      &other->_impl_.verifier_disclosure_, rhs_arena
-  );
-  swap(_impl_.payload_, other->_impl_.payload_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(StreamCantonOracleServiceResponseV2, _impl_.verifier_contract_)
+      + sizeof(StreamCantonOracleServiceResponseV2::_impl_.verifier_contract_)
+      - PROTOBUF_FIELD_OFFSET(StreamCantonOracleServiceResponseV2, _impl_.payload_)>(
+          reinterpret_cast<char*>(&_impl_.payload_),
+          reinterpret_cast<char*>(&other->_impl_.payload_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StreamCantonOracleServiceResponseV2::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once,
       file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[0]);
+}
+
+// ===================================================================
+
+class VerifierContract::_Internal {
+ public:
+};
+
+VerifierContract::VerifierContract(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:kaikosdk.VerifierContract)
+}
+VerifierContract::VerifierContract(const VerifierContract& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  VerifierContract* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.templateid_){}
+    , decltype(_impl_.contractid_){}
+    , decltype(_impl_.createdeventblob_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.templateid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.templateid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_templateid().empty()) {
+    _this->_impl_.templateid_.Set(from._internal_templateid(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.contractid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.contractid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_contractid().empty()) {
+    _this->_impl_.contractid_.Set(from._internal_contractid(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.createdeventblob_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.createdeventblob_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_createdeventblob().empty()) {
+    _this->_impl_.createdeventblob_.Set(from._internal_createdeventblob(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:kaikosdk.VerifierContract)
+}
+
+inline void VerifierContract::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.templateid_){}
+    , decltype(_impl_.contractid_){}
+    , decltype(_impl_.createdeventblob_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.templateid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.templateid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.contractid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.contractid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.createdeventblob_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.createdeventblob_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+VerifierContract::~VerifierContract() {
+  // @@protoc_insertion_point(destructor:kaikosdk.VerifierContract)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void VerifierContract::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.templateid_.Destroy();
+  _impl_.contractid_.Destroy();
+  _impl_.createdeventblob_.Destroy();
+}
+
+void VerifierContract::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void VerifierContract::Clear() {
+// @@protoc_insertion_point(message_clear_start:kaikosdk.VerifierContract)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.templateid_.ClearToEmpty();
+  _impl_.contractid_.ClearToEmpty();
+  _impl_.createdeventblob_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* VerifierContract::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string templateId = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_templateid();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.VerifierContract.templateId"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string contractId = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_contractid();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.VerifierContract.contractId"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string createdEventBlob = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_createdeventblob();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.VerifierContract.createdEventBlob"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* VerifierContract::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:kaikosdk.VerifierContract)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string templateId = 1;
+  if (!this->_internal_templateid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_templateid().data(), static_cast<int>(this->_internal_templateid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.VerifierContract.templateId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_templateid(), target);
+  }
+
+  // string contractId = 2;
+  if (!this->_internal_contractid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_contractid().data(), static_cast<int>(this->_internal_contractid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.VerifierContract.contractId");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_contractid(), target);
+  }
+
+  // string createdEventBlob = 3;
+  if (!this->_internal_createdeventblob().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_createdeventblob().data(), static_cast<int>(this->_internal_createdeventblob().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.VerifierContract.createdEventBlob");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_createdeventblob(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.VerifierContract)
+  return target;
+}
+
+size_t VerifierContract::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:kaikosdk.VerifierContract)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string templateId = 1;
+  if (!this->_internal_templateid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_templateid());
+  }
+
+  // string contractId = 2;
+  if (!this->_internal_contractid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_contractid());
+  }
+
+  // string createdEventBlob = 3;
+  if (!this->_internal_createdeventblob().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_createdeventblob());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VerifierContract::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    VerifierContract::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VerifierContract::GetClassData() const { return &_class_data_; }
+
+
+void VerifierContract::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<VerifierContract*>(&to_msg);
+  auto& from = static_cast<const VerifierContract&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.VerifierContract)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_templateid().empty()) {
+    _this->_internal_set_templateid(from._internal_templateid());
+  }
+  if (!from._internal_contractid().empty()) {
+    _this->_internal_set_contractid(from._internal_contractid());
+  }
+  if (!from._internal_createdeventblob().empty()) {
+    _this->_internal_set_createdeventblob(from._internal_createdeventblob());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void VerifierContract::CopyFrom(const VerifierContract& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:kaikosdk.VerifierContract)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool VerifierContract::IsInitialized() const {
+  return true;
+}
+
+void VerifierContract::InternalSwap(VerifierContract* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.templateid_, lhs_arena,
+      &other->_impl_.templateid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.contractid_, lhs_arena,
+      &other->_impl_.contractid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.createdeventblob_, lhs_arena,
+      &other->_impl_.createdeventblob_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata VerifierContract::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once,
+      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[1]);
 }
 
 // ===================================================================
@@ -1111,7 +1439,7 @@ void SignedPayloadV2::InternalSwap(SignedPayloadV2* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SignedPayloadV2::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[1]);
+      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[2]);
 }
 
 // ===================================================================
@@ -1356,7 +1684,7 @@ void CostV2::InternalSwap(CostV2* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CostV2::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[2]);
+      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[3]);
 }
 
 // ===================================================================
@@ -1609,7 +1937,7 @@ void InstrumentIdV2::InternalSwap(InstrumentIdV2* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata InstrumentIdV2::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[3]);
+      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[4]);
 }
 
 // ===================================================================
@@ -1912,7 +2240,7 @@ void QuoteV2::InternalSwap(QuoteV2* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata QuoteV2::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[4]);
+      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[5]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -1921,6 +2249,10 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::kaikosdk::StreamCantonOracleServiceResponseV2*
 Arena::CreateMaybeMessage< ::kaikosdk::StreamCantonOracleServiceResponseV2 >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::StreamCantonOracleServiceResponseV2 >(arena);
+}
+template<> PROTOBUF_NOINLINE ::kaikosdk::VerifierContract*
+Arena::CreateMaybeMessage< ::kaikosdk::VerifierContract >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::kaikosdk::VerifierContract >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kaikosdk::SignedPayloadV2*
 Arena::CreateMaybeMessage< ::kaikosdk::SignedPayloadV2 >(Arena* arena) {

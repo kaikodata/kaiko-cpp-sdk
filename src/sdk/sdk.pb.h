@@ -66,6 +66,12 @@
 #include "sdk/stream/composite_indices_v1/response.pb.h"
 #include "sdk/stream/staking_rates_v1/request.pb.h"
 #include "sdk/stream/staking_rates_v1/response.pb.h"
+#include "sdk/stream/canton_oracle_v1/request.pb.h"
+#include "sdk/stream/canton_oracle_v1/response.pb.h"
+#include "sdk/stream/canton_oracle_v2/request.pb.h"
+#include "sdk/stream/canton_oracle_v2/response.pb.h"
+#include "sdk/stream/evm_oracle_v1/request.pb.h"
+#include "sdk/stream/evm_oracle_v1/response.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_sdk_2fsdk_2eproto
