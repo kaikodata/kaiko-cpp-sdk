@@ -51,9 +51,6 @@ extern CostV2DefaultTypeInternal _CostV2_default_instance_;
 class InstrumentIdV2;
 struct InstrumentIdV2DefaultTypeInternal;
 extern InstrumentIdV2DefaultTypeInternal _InstrumentIdV2_default_instance_;
-class QuoteV2;
-struct QuoteV2DefaultTypeInternal;
-extern QuoteV2DefaultTypeInternal _QuoteV2_default_instance_;
 class SignedPayloadV2;
 struct SignedPayloadV2DefaultTypeInternal;
 extern SignedPayloadV2DefaultTypeInternal _SignedPayloadV2_default_instance_;
@@ -67,7 +64,6 @@ extern VerifierContractDefaultTypeInternal _VerifierContract_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::kaikosdk::CostV2* Arena::CreateMaybeMessage<::kaikosdk::CostV2>(Arena*);
 template<> ::kaikosdk::InstrumentIdV2* Arena::CreateMaybeMessage<::kaikosdk::InstrumentIdV2>(Arena*);
-template<> ::kaikosdk::QuoteV2* Arena::CreateMaybeMessage<::kaikosdk::QuoteV2>(Arena*);
 template<> ::kaikosdk::SignedPayloadV2* Arena::CreateMaybeMessage<::kaikosdk::SignedPayloadV2>(Arena*);
 template<> ::kaikosdk::StreamCantonOracleServiceResponseV2* Arena::CreateMaybeMessage<::kaikosdk::StreamCantonOracleServiceResponseV2>(Arena*);
 template<> ::kaikosdk::VerifierContract* Arena::CreateMaybeMessage<::kaikosdk::VerifierContract>(Arena*);
@@ -641,9 +637,12 @@ class SignedPayloadV2 final :
   enum : int {
     kPublishedAtFieldNumber = 1,
     kExpiresAtFieldNumber = 2,
-    kPayeeFieldNumber = 5,
+    kPayeeFieldNumber = 4,
+    kSchemaVersionFieldNumber = 5,
+    kFeedIdFieldNumber = 6,
+    kPriceFieldNumber = 7,
+    kPriceTimeFieldNumber = 8,
     kCostFieldNumber = 3,
-    kQuoteFieldNumber = 4,
   };
   // string publishedAt = 1;
   void clear_publishedat();
@@ -673,7 +672,7 @@ class SignedPayloadV2 final :
   std::string* _internal_mutable_expiresat();
   public:
 
-  // string payee = 5;
+  // string payee = 4;
   void clear_payee();
   const std::string& payee() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -685,6 +684,62 @@ class SignedPayloadV2 final :
   const std::string& _internal_payee() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_payee(const std::string& value);
   std::string* _internal_mutable_payee();
+  public:
+
+  // string schemaVersion = 5;
+  void clear_schemaversion();
+  const std::string& schemaversion() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_schemaversion(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_schemaversion();
+  PROTOBUF_NODISCARD std::string* release_schemaversion();
+  void set_allocated_schemaversion(std::string* schemaversion);
+  private:
+  const std::string& _internal_schemaversion() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_schemaversion(const std::string& value);
+  std::string* _internal_mutable_schemaversion();
+  public:
+
+  // string feedId = 6;
+  void clear_feedid();
+  const std::string& feedid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_feedid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_feedid();
+  PROTOBUF_NODISCARD std::string* release_feedid();
+  void set_allocated_feedid(std::string* feedid);
+  private:
+  const std::string& _internal_feedid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_feedid(const std::string& value);
+  std::string* _internal_mutable_feedid();
+  public:
+
+  // string price = 7;
+  void clear_price();
+  const std::string& price() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_price(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price();
+  PROTOBUF_NODISCARD std::string* release_price();
+  void set_allocated_price(std::string* price);
+  private:
+  const std::string& _internal_price() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price(const std::string& value);
+  std::string* _internal_mutable_price();
+  public:
+
+  // string priceTime = 8;
+  void clear_pricetime();
+  const std::string& pricetime() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_pricetime(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_pricetime();
+  PROTOBUF_NODISCARD std::string* release_pricetime();
+  void set_allocated_pricetime(std::string* pricetime);
+  private:
+  const std::string& _internal_pricetime() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pricetime(const std::string& value);
+  std::string* _internal_mutable_pricetime();
   public:
 
   // optional .kaikosdk.CostV2 cost = 3;
@@ -705,24 +760,6 @@ class SignedPayloadV2 final :
       ::kaikosdk::CostV2* cost);
   ::kaikosdk::CostV2* unsafe_arena_release_cost();
 
-  // .kaikosdk.QuoteV2 quote = 4;
-  bool has_quote() const;
-  private:
-  bool _internal_has_quote() const;
-  public:
-  void clear_quote();
-  const ::kaikosdk::QuoteV2& quote() const;
-  PROTOBUF_NODISCARD ::kaikosdk::QuoteV2* release_quote();
-  ::kaikosdk::QuoteV2* mutable_quote();
-  void set_allocated_quote(::kaikosdk::QuoteV2* quote);
-  private:
-  const ::kaikosdk::QuoteV2& _internal_quote() const;
-  ::kaikosdk::QuoteV2* _internal_mutable_quote();
-  public:
-  void unsafe_arena_set_allocated_quote(
-      ::kaikosdk::QuoteV2* quote);
-  ::kaikosdk::QuoteV2* unsafe_arena_release_quote();
-
   // @@protoc_insertion_point(class_scope:kaikosdk.SignedPayloadV2)
  private:
   class _Internal;
@@ -736,8 +773,11 @@ class SignedPayloadV2 final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr publishedat_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expiresat_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payee_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr schemaversion_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr feedid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pricetime_;
     ::kaikosdk::CostV2* cost_;
-    ::kaikosdk::QuoteV2* quote_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto;
@@ -1079,191 +1119,6 @@ class InstrumentIdV2 final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto;
-};
-// -------------------------------------------------------------------
-
-class QuoteV2 final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:kaikosdk.QuoteV2) */ {
- public:
-  inline QuoteV2() : QuoteV2(nullptr) {}
-  ~QuoteV2() override;
-  explicit PROTOBUF_CONSTEXPR QuoteV2(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  QuoteV2(const QuoteV2& from);
-  QuoteV2(QuoteV2&& from) noexcept
-    : QuoteV2() {
-    *this = ::std::move(from);
-  }
-
-  inline QuoteV2& operator=(const QuoteV2& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline QuoteV2& operator=(QuoteV2&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const QuoteV2& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const QuoteV2* internal_default_instance() {
-    return reinterpret_cast<const QuoteV2*>(
-               &_QuoteV2_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  friend void swap(QuoteV2& a, QuoteV2& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(QuoteV2* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(QuoteV2* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  QuoteV2* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<QuoteV2>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const QuoteV2& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const QuoteV2& from) {
-    QuoteV2::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(QuoteV2* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "kaikosdk.QuoteV2";
-  }
-  protected:
-  explicit QuoteV2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kFeedIdFieldNumber = 1,
-    kPriceFieldNumber = 2,
-    kPriceTimeFieldNumber = 3,
-  };
-  // string feedId = 1;
-  void clear_feedid();
-  const std::string& feedid() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_feedid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_feedid();
-  PROTOBUF_NODISCARD std::string* release_feedid();
-  void set_allocated_feedid(std::string* feedid);
-  private:
-  const std::string& _internal_feedid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_feedid(const std::string& value);
-  std::string* _internal_mutable_feedid();
-  public:
-
-  // string price = 2;
-  void clear_price();
-  const std::string& price() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_price(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_price();
-  PROTOBUF_NODISCARD std::string* release_price();
-  void set_allocated_price(std::string* price);
-  private:
-  const std::string& _internal_price() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price(const std::string& value);
-  std::string* _internal_mutable_price();
-  public:
-
-  // string priceTime = 3;
-  void clear_pricetime();
-  const std::string& pricetime() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_pricetime(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_pricetime();
-  PROTOBUF_NODISCARD std::string* release_pricetime();
-  void set_allocated_pricetime(std::string* pricetime);
-  private:
-  const std::string& _internal_pricetime() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pricetime(const std::string& value);
-  std::string* _internal_mutable_pricetime();
-  public:
-
-  // @@protoc_insertion_point(class_scope:kaikosdk.QuoteV2)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr feedid_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pricetime_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2058,97 +1913,7 @@ inline void SignedPayloadV2::set_allocated_cost(::kaikosdk::CostV2* cost) {
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.SignedPayloadV2.cost)
 }
 
-// .kaikosdk.QuoteV2 quote = 4;
-inline bool SignedPayloadV2::_internal_has_quote() const {
-  return this != internal_default_instance() && _impl_.quote_ != nullptr;
-}
-inline bool SignedPayloadV2::has_quote() const {
-  return _internal_has_quote();
-}
-inline void SignedPayloadV2::clear_quote() {
-  if (GetArenaForAllocation() == nullptr && _impl_.quote_ != nullptr) {
-    delete _impl_.quote_;
-  }
-  _impl_.quote_ = nullptr;
-}
-inline const ::kaikosdk::QuoteV2& SignedPayloadV2::_internal_quote() const {
-  const ::kaikosdk::QuoteV2* p = _impl_.quote_;
-  return p != nullptr ? *p : reinterpret_cast<const ::kaikosdk::QuoteV2&>(
-      ::kaikosdk::_QuoteV2_default_instance_);
-}
-inline const ::kaikosdk::QuoteV2& SignedPayloadV2::quote() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.SignedPayloadV2.quote)
-  return _internal_quote();
-}
-inline void SignedPayloadV2::unsafe_arena_set_allocated_quote(
-    ::kaikosdk::QuoteV2* quote) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.quote_);
-  }
-  _impl_.quote_ = quote;
-  if (quote) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.SignedPayloadV2.quote)
-}
-inline ::kaikosdk::QuoteV2* SignedPayloadV2::release_quote() {
-  
-  ::kaikosdk::QuoteV2* temp = _impl_.quote_;
-  _impl_.quote_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::kaikosdk::QuoteV2* SignedPayloadV2::unsafe_arena_release_quote() {
-  // @@protoc_insertion_point(field_release:kaikosdk.SignedPayloadV2.quote)
-  
-  ::kaikosdk::QuoteV2* temp = _impl_.quote_;
-  _impl_.quote_ = nullptr;
-  return temp;
-}
-inline ::kaikosdk::QuoteV2* SignedPayloadV2::_internal_mutable_quote() {
-  
-  if (_impl_.quote_ == nullptr) {
-    auto* p = CreateMaybeMessage<::kaikosdk::QuoteV2>(GetArenaForAllocation());
-    _impl_.quote_ = p;
-  }
-  return _impl_.quote_;
-}
-inline ::kaikosdk::QuoteV2* SignedPayloadV2::mutable_quote() {
-  ::kaikosdk::QuoteV2* _msg = _internal_mutable_quote();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.SignedPayloadV2.quote)
-  return _msg;
-}
-inline void SignedPayloadV2::set_allocated_quote(::kaikosdk::QuoteV2* quote) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.quote_;
-  }
-  if (quote) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(quote);
-    if (message_arena != submessage_arena) {
-      quote = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, quote, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.quote_ = quote;
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.SignedPayloadV2.quote)
-}
-
-// string payee = 5;
+// string payee = 4;
 inline void SignedPayloadV2::clear_payee() {
   _impl_.payee_.ClearToEmpty();
 }
@@ -2196,6 +1961,206 @@ inline void SignedPayloadV2::set_allocated_payee(std::string* payee) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.SignedPayloadV2.payee)
+}
+
+// string schemaVersion = 5;
+inline void SignedPayloadV2::clear_schemaversion() {
+  _impl_.schemaversion_.ClearToEmpty();
+}
+inline const std::string& SignedPayloadV2::schemaversion() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.SignedPayloadV2.schemaVersion)
+  return _internal_schemaversion();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SignedPayloadV2::set_schemaversion(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.schemaversion_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.SignedPayloadV2.schemaVersion)
+}
+inline std::string* SignedPayloadV2::mutable_schemaversion() {
+  std::string* _s = _internal_mutable_schemaversion();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.SignedPayloadV2.schemaVersion)
+  return _s;
+}
+inline const std::string& SignedPayloadV2::_internal_schemaversion() const {
+  return _impl_.schemaversion_.Get();
+}
+inline void SignedPayloadV2::_internal_set_schemaversion(const std::string& value) {
+  
+  _impl_.schemaversion_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SignedPayloadV2::_internal_mutable_schemaversion() {
+  
+  return _impl_.schemaversion_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SignedPayloadV2::release_schemaversion() {
+  // @@protoc_insertion_point(field_release:kaikosdk.SignedPayloadV2.schemaVersion)
+  return _impl_.schemaversion_.Release();
+}
+inline void SignedPayloadV2::set_allocated_schemaversion(std::string* schemaversion) {
+  if (schemaversion != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.schemaversion_.SetAllocated(schemaversion, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.schemaversion_.IsDefault()) {
+    _impl_.schemaversion_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.SignedPayloadV2.schemaVersion)
+}
+
+// string feedId = 6;
+inline void SignedPayloadV2::clear_feedid() {
+  _impl_.feedid_.ClearToEmpty();
+}
+inline const std::string& SignedPayloadV2::feedid() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.SignedPayloadV2.feedId)
+  return _internal_feedid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SignedPayloadV2::set_feedid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.feedid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.SignedPayloadV2.feedId)
+}
+inline std::string* SignedPayloadV2::mutable_feedid() {
+  std::string* _s = _internal_mutable_feedid();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.SignedPayloadV2.feedId)
+  return _s;
+}
+inline const std::string& SignedPayloadV2::_internal_feedid() const {
+  return _impl_.feedid_.Get();
+}
+inline void SignedPayloadV2::_internal_set_feedid(const std::string& value) {
+  
+  _impl_.feedid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SignedPayloadV2::_internal_mutable_feedid() {
+  
+  return _impl_.feedid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SignedPayloadV2::release_feedid() {
+  // @@protoc_insertion_point(field_release:kaikosdk.SignedPayloadV2.feedId)
+  return _impl_.feedid_.Release();
+}
+inline void SignedPayloadV2::set_allocated_feedid(std::string* feedid) {
+  if (feedid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.feedid_.SetAllocated(feedid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.feedid_.IsDefault()) {
+    _impl_.feedid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.SignedPayloadV2.feedId)
+}
+
+// string price = 7;
+inline void SignedPayloadV2::clear_price() {
+  _impl_.price_.ClearToEmpty();
+}
+inline const std::string& SignedPayloadV2::price() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.SignedPayloadV2.price)
+  return _internal_price();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SignedPayloadV2::set_price(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.price_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.SignedPayloadV2.price)
+}
+inline std::string* SignedPayloadV2::mutable_price() {
+  std::string* _s = _internal_mutable_price();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.SignedPayloadV2.price)
+  return _s;
+}
+inline const std::string& SignedPayloadV2::_internal_price() const {
+  return _impl_.price_.Get();
+}
+inline void SignedPayloadV2::_internal_set_price(const std::string& value) {
+  
+  _impl_.price_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SignedPayloadV2::_internal_mutable_price() {
+  
+  return _impl_.price_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SignedPayloadV2::release_price() {
+  // @@protoc_insertion_point(field_release:kaikosdk.SignedPayloadV2.price)
+  return _impl_.price_.Release();
+}
+inline void SignedPayloadV2::set_allocated_price(std::string* price) {
+  if (price != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.price_.SetAllocated(price, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.price_.IsDefault()) {
+    _impl_.price_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.SignedPayloadV2.price)
+}
+
+// string priceTime = 8;
+inline void SignedPayloadV2::clear_pricetime() {
+  _impl_.pricetime_.ClearToEmpty();
+}
+inline const std::string& SignedPayloadV2::pricetime() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.SignedPayloadV2.priceTime)
+  return _internal_pricetime();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SignedPayloadV2::set_pricetime(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.pricetime_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.SignedPayloadV2.priceTime)
+}
+inline std::string* SignedPayloadV2::mutable_pricetime() {
+  std::string* _s = _internal_mutable_pricetime();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.SignedPayloadV2.priceTime)
+  return _s;
+}
+inline const std::string& SignedPayloadV2::_internal_pricetime() const {
+  return _impl_.pricetime_.Get();
+}
+inline void SignedPayloadV2::_internal_set_pricetime(const std::string& value) {
+  
+  _impl_.pricetime_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SignedPayloadV2::_internal_mutable_pricetime() {
+  
+  return _impl_.pricetime_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SignedPayloadV2::release_pricetime() {
+  // @@protoc_insertion_point(field_release:kaikosdk.SignedPayloadV2.priceTime)
+  return _impl_.pricetime_.Release();
+}
+inline void SignedPayloadV2::set_allocated_pricetime(std::string* pricetime) {
+  if (pricetime != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.pricetime_.SetAllocated(pricetime, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.pricetime_.IsDefault()) {
+    _impl_.pricetime_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.SignedPayloadV2.priceTime)
 }
 
 // -------------------------------------------------------------------
@@ -2446,165 +2411,9 @@ inline void InstrumentIdV2::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.InstrumentIdV2.id)
 }
 
-// -------------------------------------------------------------------
-
-// QuoteV2
-
-// string feedId = 1;
-inline void QuoteV2::clear_feedid() {
-  _impl_.feedid_.ClearToEmpty();
-}
-inline const std::string& QuoteV2::feedid() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.QuoteV2.feedId)
-  return _internal_feedid();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void QuoteV2::set_feedid(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.feedid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.QuoteV2.feedId)
-}
-inline std::string* QuoteV2::mutable_feedid() {
-  std::string* _s = _internal_mutable_feedid();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.QuoteV2.feedId)
-  return _s;
-}
-inline const std::string& QuoteV2::_internal_feedid() const {
-  return _impl_.feedid_.Get();
-}
-inline void QuoteV2::_internal_set_feedid(const std::string& value) {
-  
-  _impl_.feedid_.Set(value, GetArenaForAllocation());
-}
-inline std::string* QuoteV2::_internal_mutable_feedid() {
-  
-  return _impl_.feedid_.Mutable(GetArenaForAllocation());
-}
-inline std::string* QuoteV2::release_feedid() {
-  // @@protoc_insertion_point(field_release:kaikosdk.QuoteV2.feedId)
-  return _impl_.feedid_.Release();
-}
-inline void QuoteV2::set_allocated_feedid(std::string* feedid) {
-  if (feedid != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.feedid_.SetAllocated(feedid, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.feedid_.IsDefault()) {
-    _impl_.feedid_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.QuoteV2.feedId)
-}
-
-// string price = 2;
-inline void QuoteV2::clear_price() {
-  _impl_.price_.ClearToEmpty();
-}
-inline const std::string& QuoteV2::price() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.QuoteV2.price)
-  return _internal_price();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void QuoteV2::set_price(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.price_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.QuoteV2.price)
-}
-inline std::string* QuoteV2::mutable_price() {
-  std::string* _s = _internal_mutable_price();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.QuoteV2.price)
-  return _s;
-}
-inline const std::string& QuoteV2::_internal_price() const {
-  return _impl_.price_.Get();
-}
-inline void QuoteV2::_internal_set_price(const std::string& value) {
-  
-  _impl_.price_.Set(value, GetArenaForAllocation());
-}
-inline std::string* QuoteV2::_internal_mutable_price() {
-  
-  return _impl_.price_.Mutable(GetArenaForAllocation());
-}
-inline std::string* QuoteV2::release_price() {
-  // @@protoc_insertion_point(field_release:kaikosdk.QuoteV2.price)
-  return _impl_.price_.Release();
-}
-inline void QuoteV2::set_allocated_price(std::string* price) {
-  if (price != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.price_.SetAllocated(price, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.price_.IsDefault()) {
-    _impl_.price_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.QuoteV2.price)
-}
-
-// string priceTime = 3;
-inline void QuoteV2::clear_pricetime() {
-  _impl_.pricetime_.ClearToEmpty();
-}
-inline const std::string& QuoteV2::pricetime() const {
-  // @@protoc_insertion_point(field_get:kaikosdk.QuoteV2.priceTime)
-  return _internal_pricetime();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void QuoteV2::set_pricetime(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.pricetime_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:kaikosdk.QuoteV2.priceTime)
-}
-inline std::string* QuoteV2::mutable_pricetime() {
-  std::string* _s = _internal_mutable_pricetime();
-  // @@protoc_insertion_point(field_mutable:kaikosdk.QuoteV2.priceTime)
-  return _s;
-}
-inline const std::string& QuoteV2::_internal_pricetime() const {
-  return _impl_.pricetime_.Get();
-}
-inline void QuoteV2::_internal_set_pricetime(const std::string& value) {
-  
-  _impl_.pricetime_.Set(value, GetArenaForAllocation());
-}
-inline std::string* QuoteV2::_internal_mutable_pricetime() {
-  
-  return _impl_.pricetime_.Mutable(GetArenaForAllocation());
-}
-inline std::string* QuoteV2::release_pricetime() {
-  // @@protoc_insertion_point(field_release:kaikosdk.QuoteV2.priceTime)
-  return _impl_.pricetime_.Release();
-}
-inline void QuoteV2::set_allocated_pricetime(std::string* pricetime) {
-  if (pricetime != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.pricetime_.SetAllocated(pricetime, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.pricetime_.IsDefault()) {
-    _impl_.pricetime_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:kaikosdk.QuoteV2.priceTime)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

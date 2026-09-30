@@ -62,8 +62,11 @@ PROTOBUF_CONSTEXPR SignedPayloadV2::SignedPayloadV2(
   , /*decltype(_impl_.publishedat_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.expiresat_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.payee_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.cost_)*/nullptr
-  , /*decltype(_impl_.quote_)*/nullptr} {}
+  , /*decltype(_impl_.schemaversion_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.feedid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.price_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.pricetime_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.cost_)*/nullptr} {}
 struct SignedPayloadV2DefaultTypeInternal {
   PROTOBUF_CONSTEXPR SignedPayloadV2DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -101,23 +104,8 @@ struct InstrumentIdV2DefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InstrumentIdV2DefaultTypeInternal _InstrumentIdV2_default_instance_;
-PROTOBUF_CONSTEXPR QuoteV2::QuoteV2(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.feedid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.price_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.pricetime_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct QuoteV2DefaultTypeInternal {
-  PROTOBUF_CONSTEXPR QuoteV2DefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~QuoteV2DefaultTypeInternal() {}
-  union {
-    QuoteV2 _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 QuoteV2DefaultTypeInternal _QuoteV2_default_instance_;
 }  // namespace kaikosdk
-static ::_pb::Metadata file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[6];
+static ::_pb::Metadata file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[5];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto = nullptr;
 
@@ -153,11 +141,17 @@ const uint32_t TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eprot
   PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.publishedat_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.expiresat_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.cost_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.quote_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.payee_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.schemaversion_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.feedid_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.price_),
+  PROTOBUF_FIELD_OFFSET(::kaikosdk::SignedPayloadV2, _impl_.pricetime_),
   ~0u,
   ~0u,
   0,
+  ~0u,
+  ~0u,
+  ~0u,
   ~0u,
   ~0u,
   ~0u,  // no _has_bits_
@@ -176,23 +170,13 @@ const uint32_t TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eprot
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::kaikosdk::InstrumentIdV2, _impl_.admin_),
   PROTOBUF_FIELD_OFFSET(::kaikosdk::InstrumentIdV2, _impl_.id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::QuoteV2, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::QuoteV2, _impl_.feedid_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::QuoteV2, _impl_.price_),
-  PROTOBUF_FIELD_OFFSET(::kaikosdk::QuoteV2, _impl_.pricetime_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::kaikosdk::StreamCantonOracleServiceResponseV2)},
   { 13, -1, -1, sizeof(::kaikosdk::VerifierContract)},
-  { 22, 33, -1, sizeof(::kaikosdk::SignedPayloadV2)},
-  { 38, -1, -1, sizeof(::kaikosdk::CostV2)},
-  { 46, -1, -1, sizeof(::kaikosdk::InstrumentIdV2)},
-  { 54, -1, -1, sizeof(::kaikosdk::QuoteV2)},
+  { 22, 36, -1, sizeof(::kaikosdk::SignedPayloadV2)},
+  { 44, -1, -1, sizeof(::kaikosdk::CostV2)},
+  { 52, -1, -1, sizeof(::kaikosdk::InstrumentIdV2)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -201,7 +185,6 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::kaikosdk::_SignedPayloadV2_default_instance_._instance,
   &::kaikosdk::_CostV2_default_instance_._instance,
   &::kaikosdk::_InstrumentIdV2_default_instance_._instance,
-  &::kaikosdk::_QuoteV2_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -214,25 +197,25 @@ const char descriptor_table_protodef_sdk_2fstream_2fcanton_5foracle_5fv2_2frespo
   "\n\021verifier_contract\030\007 \001(\0132\032.kaikosdk.Ver"
   "ifierContract\"T\n\020VerifierContract\022\022\n\ntem"
   "plateId\030\001 \001(\t\022\022\n\ncontractId\030\002 \001(\t\022\030\n\020cre"
-  "atedEventBlob\030\003 \001(\t\"\230\001\n\017SignedPayloadV2\022"
+  "atedEventBlob\030\003 \001(\t\"\277\001\n\017SignedPayloadV2\022"
   "\023\n\013publishedAt\030\001 \001(\t\022\021\n\texpiresAt\030\002 \001(\t\022"
-  "#\n\004cost\030\003 \001(\0132\020.kaikosdk.CostV2H\000\210\001\001\022 \n\005"
-  "quote\030\004 \001(\0132\021.kaikosdk.QuoteV2\022\r\n\005payee\030"
-  "\005 \001(\tB\007\n\005_cost\"C\n\006CostV2\022\013\n\003fee\030\001 \001(\t\022,\n"
-  "\ninstrument\030\002 \001(\0132\030.kaikosdk.InstrumentI"
-  "dV2\"+\n\016InstrumentIdV2\022\r\n\005admin\030\001 \001(\t\022\n\n\002"
-  "id\030\002 \001(\t\";\n\007QuoteV2\022\016\n\006feedId\030\001 \001(\t\022\r\n\005p"
-  "rice\030\002 \001(\t\022\021\n\tpriceTime\030\003 \001(\tB\226\001\n%com.ka"
-  "iko.sdk.stream.canton_oracle_v2P\001ZJgithu"
-  "b.com/kaikodata/kaiko-go-sdk/stream/cant"
-  "on_oracle_v2;canton_oracle_v2\252\002\036KaikoSdk"
-  ".Stream.CantonOracleV2b\006proto3"
+  "#\n\004cost\030\003 \001(\0132\020.kaikosdk.CostV2H\000\210\001\001\022\r\n\005"
+  "payee\030\004 \001(\t\022\025\n\rschemaVersion\030\005 \001(\t\022\016\n\006fe"
+  "edId\030\006 \001(\t\022\r\n\005price\030\007 \001(\t\022\021\n\tpriceTime\030\010"
+  " \001(\tB\007\n\005_cost\"C\n\006CostV2\022\013\n\003fee\030\001 \001(\t\022,\n\n"
+  "instrument\030\002 \001(\0132\030.kaikosdk.InstrumentId"
+  "V2\"+\n\016InstrumentIdV2\022\r\n\005admin\030\001 \001(\t\022\n\n\002i"
+  "d\030\002 \001(\tB\226\001\n%com.kaiko.sdk.stream.canton_"
+  "oracle_v2P\001ZJgithub.com/kaikodata/kaiko-"
+  "go-sdk/stream/canton_oracle_v2;canton_or"
+  "acle_v2\252\002\036KaikoSdk.Stream.CantonOracleV2"
+  "b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto = {
-    false, false, 870, descriptor_table_protodef_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto,
+    false, false, 848, descriptor_table_protodef_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto,
     "sdk/stream/canton_oracle_v2/response.proto",
-    &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once, nullptr, 0, 6,
+    &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once, nullptr, 0, 5,
     schemas, file_default_instances, TableStruct_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto::offsets,
     file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto, file_level_enum_descriptors_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto,
     file_level_service_descriptors_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto,
@@ -1048,16 +1031,11 @@ class SignedPayloadV2::_Internal {
   static void set_has_cost(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static const ::kaikosdk::QuoteV2& quote(const SignedPayloadV2* msg);
 };
 
 const ::kaikosdk::CostV2&
 SignedPayloadV2::_Internal::cost(const SignedPayloadV2* msg) {
   return *msg->_impl_.cost_;
-}
-const ::kaikosdk::QuoteV2&
-SignedPayloadV2::_Internal::quote(const SignedPayloadV2* msg) {
-  return *msg->_impl_.quote_;
 }
 SignedPayloadV2::SignedPayloadV2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1074,8 +1052,11 @@ SignedPayloadV2::SignedPayloadV2(const SignedPayloadV2& from)
     , decltype(_impl_.publishedat_){}
     , decltype(_impl_.expiresat_){}
     , decltype(_impl_.payee_){}
-    , decltype(_impl_.cost_){nullptr}
-    , decltype(_impl_.quote_){nullptr}};
+    , decltype(_impl_.schemaversion_){}
+    , decltype(_impl_.feedid_){}
+    , decltype(_impl_.price_){}
+    , decltype(_impl_.pricetime_){}
+    , decltype(_impl_.cost_){nullptr}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.publishedat_.InitDefault();
@@ -1102,11 +1083,40 @@ SignedPayloadV2::SignedPayloadV2(const SignedPayloadV2& from)
     _this->_impl_.payee_.Set(from._internal_payee(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.schemaversion_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.schemaversion_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_schemaversion().empty()) {
+    _this->_impl_.schemaversion_.Set(from._internal_schemaversion(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.feedid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.feedid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_feedid().empty()) {
+    _this->_impl_.feedid_.Set(from._internal_feedid(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.price_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.price_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_price().empty()) {
+    _this->_impl_.price_.Set(from._internal_price(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.pricetime_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pricetime_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_pricetime().empty()) {
+    _this->_impl_.pricetime_.Set(from._internal_pricetime(), 
+      _this->GetArenaForAllocation());
+  }
   if (from._internal_has_cost()) {
     _this->_impl_.cost_ = new ::kaikosdk::CostV2(*from._impl_.cost_);
-  }
-  if (from._internal_has_quote()) {
-    _this->_impl_.quote_ = new ::kaikosdk::QuoteV2(*from._impl_.quote_);
   }
   // @@protoc_insertion_point(copy_constructor:kaikosdk.SignedPayloadV2)
 }
@@ -1121,8 +1131,11 @@ inline void SignedPayloadV2::SharedCtor(
     , decltype(_impl_.publishedat_){}
     , decltype(_impl_.expiresat_){}
     , decltype(_impl_.payee_){}
+    , decltype(_impl_.schemaversion_){}
+    , decltype(_impl_.feedid_){}
+    , decltype(_impl_.price_){}
+    , decltype(_impl_.pricetime_){}
     , decltype(_impl_.cost_){nullptr}
-    , decltype(_impl_.quote_){nullptr}
   };
   _impl_.publishedat_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1135,6 +1148,22 @@ inline void SignedPayloadV2::SharedCtor(
   _impl_.payee_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.payee_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.schemaversion_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.schemaversion_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.feedid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.feedid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.price_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.price_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.pricetime_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pricetime_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -1152,8 +1181,11 @@ inline void SignedPayloadV2::SharedDtor() {
   _impl_.publishedat_.Destroy();
   _impl_.expiresat_.Destroy();
   _impl_.payee_.Destroy();
+  _impl_.schemaversion_.Destroy();
+  _impl_.feedid_.Destroy();
+  _impl_.price_.Destroy();
+  _impl_.pricetime_.Destroy();
   if (this != internal_default_instance()) delete _impl_.cost_;
-  if (this != internal_default_instance()) delete _impl_.quote_;
 }
 
 void SignedPayloadV2::SetCachedSize(int size) const {
@@ -1169,15 +1201,15 @@ void SignedPayloadV2::Clear() {
   _impl_.publishedat_.ClearToEmpty();
   _impl_.expiresat_.ClearToEmpty();
   _impl_.payee_.ClearToEmpty();
+  _impl_.schemaversion_.ClearToEmpty();
+  _impl_.feedid_.ClearToEmpty();
+  _impl_.price_.ClearToEmpty();
+  _impl_.pricetime_.ClearToEmpty();
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
     GOOGLE_DCHECK(_impl_.cost_ != nullptr);
     _impl_.cost_->Clear();
   }
-  if (GetArenaForAllocation() == nullptr && _impl_.quote_ != nullptr) {
-    delete _impl_.quote_;
-  }
-  _impl_.quote_ = nullptr;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1217,21 +1249,53 @@ const char* SignedPayloadV2::_InternalParse(const char* ptr, ::_pbi::ParseContex
         } else
           goto handle_unusual;
         continue;
-      // .kaikosdk.QuoteV2 quote = 4;
+      // string payee = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_quote(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string payee = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_payee();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.SignedPayloadV2.payee"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string schemaVersion = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          auto str = _internal_mutable_schemaversion();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.SignedPayloadV2.schemaVersion"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string feedId = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_feedid();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.SignedPayloadV2.feedId"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string price = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_price();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.SignedPayloadV2.price"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string priceTime = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          auto str = _internal_mutable_pricetime();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.SignedPayloadV2.priceTime"));
         } else
           goto handle_unusual;
         continue;
@@ -1292,21 +1356,54 @@ uint8_t* SignedPayloadV2::_InternalSerialize(
         _Internal::cost(this).GetCachedSize(), target, stream);
   }
 
-  // .kaikosdk.QuoteV2 quote = 4;
-  if (this->_internal_has_quote()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, _Internal::quote(this),
-        _Internal::quote(this).GetCachedSize(), target, stream);
-  }
-
-  // string payee = 5;
+  // string payee = 4;
   if (!this->_internal_payee().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_payee().data(), static_cast<int>(this->_internal_payee().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "kaikosdk.SignedPayloadV2.payee");
     target = stream->WriteStringMaybeAliased(
-        5, this->_internal_payee(), target);
+        4, this->_internal_payee(), target);
+  }
+
+  // string schemaVersion = 5;
+  if (!this->_internal_schemaversion().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_schemaversion().data(), static_cast<int>(this->_internal_schemaversion().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.SignedPayloadV2.schemaVersion");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_schemaversion(), target);
+  }
+
+  // string feedId = 6;
+  if (!this->_internal_feedid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_feedid().data(), static_cast<int>(this->_internal_feedid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.SignedPayloadV2.feedId");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_feedid(), target);
+  }
+
+  // string price = 7;
+  if (!this->_internal_price().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_price().data(), static_cast<int>(this->_internal_price().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.SignedPayloadV2.price");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_price(), target);
+  }
+
+  // string priceTime = 8;
+  if (!this->_internal_pricetime().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_pricetime().data(), static_cast<int>(this->_internal_pricetime().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "kaikosdk.SignedPayloadV2.priceTime");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_pricetime(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1339,11 +1436,39 @@ size_t SignedPayloadV2::ByteSizeLong() const {
         this->_internal_expiresat());
   }
 
-  // string payee = 5;
+  // string payee = 4;
   if (!this->_internal_payee().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_payee());
+  }
+
+  // string schemaVersion = 5;
+  if (!this->_internal_schemaversion().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_schemaversion());
+  }
+
+  // string feedId = 6;
+  if (!this->_internal_feedid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_feedid());
+  }
+
+  // string price = 7;
+  if (!this->_internal_price().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_price());
+  }
+
+  // string priceTime = 8;
+  if (!this->_internal_pricetime().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_pricetime());
   }
 
   // optional .kaikosdk.CostV2 cost = 3;
@@ -1352,13 +1477,6 @@ size_t SignedPayloadV2::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.cost_);
-  }
-
-  // .kaikosdk.QuoteV2 quote = 4;
-  if (this->_internal_has_quote()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.quote_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1388,13 +1506,21 @@ void SignedPayloadV2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   if (!from._internal_payee().empty()) {
     _this->_internal_set_payee(from._internal_payee());
   }
+  if (!from._internal_schemaversion().empty()) {
+    _this->_internal_set_schemaversion(from._internal_schemaversion());
+  }
+  if (!from._internal_feedid().empty()) {
+    _this->_internal_set_feedid(from._internal_feedid());
+  }
+  if (!from._internal_price().empty()) {
+    _this->_internal_set_price(from._internal_price());
+  }
+  if (!from._internal_pricetime().empty()) {
+    _this->_internal_set_pricetime(from._internal_pricetime());
+  }
   if (from._internal_has_cost()) {
     _this->_internal_mutable_cost()->::kaikosdk::CostV2::MergeFrom(
         from._internal_cost());
-  }
-  if (from._internal_has_quote()) {
-    _this->_internal_mutable_quote()->::kaikosdk::QuoteV2::MergeFrom(
-        from._internal_quote());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1428,12 +1554,23 @@ void SignedPayloadV2::InternalSwap(SignedPayloadV2* other) {
       &_impl_.payee_, lhs_arena,
       &other->_impl_.payee_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SignedPayloadV2, _impl_.quote_)
-      + sizeof(SignedPayloadV2::_impl_.quote_)
-      - PROTOBUF_FIELD_OFFSET(SignedPayloadV2, _impl_.cost_)>(
-          reinterpret_cast<char*>(&_impl_.cost_),
-          reinterpret_cast<char*>(&other->_impl_.cost_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.schemaversion_, lhs_arena,
+      &other->_impl_.schemaversion_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.feedid_, lhs_arena,
+      &other->_impl_.feedid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.price_, lhs_arena,
+      &other->_impl_.price_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.pricetime_, lhs_arena,
+      &other->_impl_.pricetime_, rhs_arena
+  );
+  swap(_impl_.cost_, other->_impl_.cost_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SignedPayloadV2::GetMetadata() const {
@@ -1940,309 +2077,6 @@ void InstrumentIdV2::InternalSwap(InstrumentIdV2* other) {
       file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[4]);
 }
 
-// ===================================================================
-
-class QuoteV2::_Internal {
- public:
-};
-
-QuoteV2::QuoteV2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:kaikosdk.QuoteV2)
-}
-QuoteV2::QuoteV2(const QuoteV2& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  QuoteV2* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.feedid_){}
-    , decltype(_impl_.price_){}
-    , decltype(_impl_.pricetime_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.feedid_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.feedid_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_feedid().empty()) {
-    _this->_impl_.feedid_.Set(from._internal_feedid(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.price_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.price_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_price().empty()) {
-    _this->_impl_.price_.Set(from._internal_price(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.pricetime_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.pricetime_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_pricetime().empty()) {
-    _this->_impl_.pricetime_.Set(from._internal_pricetime(), 
-      _this->GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:kaikosdk.QuoteV2)
-}
-
-inline void QuoteV2::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.feedid_){}
-    , decltype(_impl_.price_){}
-    , decltype(_impl_.pricetime_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.feedid_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.feedid_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.price_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.price_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.pricetime_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.pricetime_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-QuoteV2::~QuoteV2() {
-  // @@protoc_insertion_point(destructor:kaikosdk.QuoteV2)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void QuoteV2::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.feedid_.Destroy();
-  _impl_.price_.Destroy();
-  _impl_.pricetime_.Destroy();
-}
-
-void QuoteV2::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void QuoteV2::Clear() {
-// @@protoc_insertion_point(message_clear_start:kaikosdk.QuoteV2)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.feedid_.ClearToEmpty();
-  _impl_.price_.ClearToEmpty();
-  _impl_.pricetime_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* QuoteV2::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string feedId = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_feedid();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.QuoteV2.feedId"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string price = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_price();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.QuoteV2.price"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string priceTime = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_pricetime();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "kaikosdk.QuoteV2.priceTime"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* QuoteV2::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:kaikosdk.QuoteV2)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string feedId = 1;
-  if (!this->_internal_feedid().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_feedid().data(), static_cast<int>(this->_internal_feedid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "kaikosdk.QuoteV2.feedId");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_feedid(), target);
-  }
-
-  // string price = 2;
-  if (!this->_internal_price().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_price().data(), static_cast<int>(this->_internal_price().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "kaikosdk.QuoteV2.price");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_price(), target);
-  }
-
-  // string priceTime = 3;
-  if (!this->_internal_pricetime().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_pricetime().data(), static_cast<int>(this->_internal_pricetime().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "kaikosdk.QuoteV2.priceTime");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_pricetime(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:kaikosdk.QuoteV2)
-  return target;
-}
-
-size_t QuoteV2::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:kaikosdk.QuoteV2)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string feedId = 1;
-  if (!this->_internal_feedid().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_feedid());
-  }
-
-  // string price = 2;
-  if (!this->_internal_price().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_price());
-  }
-
-  // string priceTime = 3;
-  if (!this->_internal_pricetime().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_pricetime());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData QuoteV2::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    QuoteV2::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*QuoteV2::GetClassData() const { return &_class_data_; }
-
-
-void QuoteV2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<QuoteV2*>(&to_msg);
-  auto& from = static_cast<const QuoteV2&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:kaikosdk.QuoteV2)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_feedid().empty()) {
-    _this->_internal_set_feedid(from._internal_feedid());
-  }
-  if (!from._internal_price().empty()) {
-    _this->_internal_set_price(from._internal_price());
-  }
-  if (!from._internal_pricetime().empty()) {
-    _this->_internal_set_pricetime(from._internal_pricetime());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void QuoteV2::CopyFrom(const QuoteV2& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:kaikosdk.QuoteV2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool QuoteV2::IsInitialized() const {
-  return true;
-}
-
-void QuoteV2::InternalSwap(QuoteV2* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.feedid_, lhs_arena,
-      &other->_impl_.feedid_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.price_, lhs_arena,
-      &other->_impl_.price_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.pricetime_, lhs_arena,
-      &other->_impl_.pricetime_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata QuoteV2::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_getter, &descriptor_table_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto_once,
-      file_level_metadata_sdk_2fstream_2fcanton_5foracle_5fv2_2fresponse_2eproto[5]);
-}
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace kaikosdk
 PROTOBUF_NAMESPACE_OPEN
@@ -2265,10 +2099,6 @@ Arena::CreateMaybeMessage< ::kaikosdk::CostV2 >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::kaikosdk::InstrumentIdV2*
 Arena::CreateMaybeMessage< ::kaikosdk::InstrumentIdV2 >(Arena* arena) {
   return Arena::CreateMessageInternal< ::kaikosdk::InstrumentIdV2 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::kaikosdk::QuoteV2*
-Arena::CreateMaybeMessage< ::kaikosdk::QuoteV2 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::kaikosdk::QuoteV2 >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
