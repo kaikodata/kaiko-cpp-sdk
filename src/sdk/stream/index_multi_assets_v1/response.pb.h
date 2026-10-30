@@ -848,11 +848,15 @@ class StreamIndexMultiAssetsServiceResponseV1 final :
     kCompositionsFieldNumber = 5,
     kIndexCodeFieldNumber = 2,
     kMainQuoteFieldNumber = 4,
+    kCorrectionIdFieldNumber = 10,
+    kIncidentIdFieldNumber = 12,
     kIntervalFieldNumber = 3,
     kPriceFieldNumber = 6,
     kTsEventFieldNumber = 7,
     kTsComputeFieldNumber = 8,
+    kInitialPublicationTsFieldNumber = 11,
     kCommodityFieldNumber = 1,
+    kRestatementStatusFieldNumber = 9,
   };
   // repeated .kaikosdk.StreamIndexMultiAssetsServiceResponseComposition compositions = 5;
   int compositions_size() const;
@@ -898,6 +902,42 @@ class StreamIndexMultiAssetsServiceResponseV1 final :
   const std::string& _internal_main_quote() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_main_quote(const std::string& value);
   std::string* _internal_mutable_main_quote();
+  public:
+
+  // optional string correction_id = 10;
+  bool has_correction_id() const;
+  private:
+  bool _internal_has_correction_id() const;
+  public:
+  void clear_correction_id();
+  const std::string& correction_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_correction_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_correction_id();
+  PROTOBUF_NODISCARD std::string* release_correction_id();
+  void set_allocated_correction_id(std::string* correction_id);
+  private:
+  const std::string& _internal_correction_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_correction_id(const std::string& value);
+  std::string* _internal_mutable_correction_id();
+  public:
+
+  // optional string incident_id = 12;
+  bool has_incident_id() const;
+  private:
+  bool _internal_has_incident_id() const;
+  public:
+  void clear_incident_id();
+  const std::string& incident_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_incident_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_incident_id();
+  PROTOBUF_NODISCARD std::string* release_incident_id();
+  void set_allocated_incident_id(std::string* incident_id);
+  private:
+  const std::string& _internal_incident_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_incident_id(const std::string& value);
+  std::string* _internal_mutable_incident_id();
   public:
 
   // .kaikosdk.DataInterval interval = 3;
@@ -972,6 +1012,24 @@ class StreamIndexMultiAssetsServiceResponseV1 final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_compute);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_ts_compute();
 
+  // optional .google.protobuf.Timestamp initial_publication_ts = 11;
+  bool has_initial_publication_ts() const;
+  private:
+  bool _internal_has_initial_publication_ts() const;
+  public:
+  void clear_initial_publication_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& initial_publication_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_initial_publication_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_initial_publication_ts();
+  void set_allocated_initial_publication_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_initial_publication_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_initial_publication_ts();
+  public:
+  void unsafe_arena_set_allocated_initial_publication_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_initial_publication_ts();
+
   // .kaikosdk.StreamIndexCommodity commodity = 1;
   void clear_commodity();
   ::kaikosdk::StreamIndexCommodity commodity() const;
@@ -979,6 +1037,19 @@ class StreamIndexMultiAssetsServiceResponseV1 final :
   private:
   ::kaikosdk::StreamIndexCommodity _internal_commodity() const;
   void _internal_set_commodity(::kaikosdk::StreamIndexCommodity value);
+  public:
+
+  // optional bool restatement_status = 9;
+  bool has_restatement_status() const;
+  private:
+  bool _internal_has_restatement_status() const;
+  public:
+  void clear_restatement_status();
+  bool restatement_status() const;
+  void set_restatement_status(bool value);
+  private:
+  bool _internal_restatement_status() const;
+  void _internal_set_restatement_status(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:kaikosdk.StreamIndexMultiAssetsServiceResponseV1)
@@ -989,15 +1060,20 @@ class StreamIndexMultiAssetsServiceResponseV1 final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::kaikosdk::StreamIndexMultiAssetsServiceResponseComposition > compositions_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr index_code_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr main_quote_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr correction_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr incident_id_;
     ::kaikosdk::DataInterval* interval_;
     ::kaikosdk::StreamIndexMultiAssetsServiceResponsePrices* price_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_event_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* ts_compute_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts_;
     int commodity_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    bool restatement_status_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_sdk_2fstream_2findex_5fmulti_5fassets_5fv1_2fresponse_2eproto;
@@ -2248,6 +2324,257 @@ inline void StreamIndexMultiAssetsServiceResponseV1::set_allocated_ts_compute(::
   }
   _impl_.ts_compute_ = ts_compute;
   // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.ts_compute)
+}
+
+// optional bool restatement_status = 9;
+inline bool StreamIndexMultiAssetsServiceResponseV1::_internal_has_restatement_status() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool StreamIndexMultiAssetsServiceResponseV1::has_restatement_status() const {
+  return _internal_has_restatement_status();
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::clear_restatement_status() {
+  _impl_.restatement_status_ = false;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline bool StreamIndexMultiAssetsServiceResponseV1::_internal_restatement_status() const {
+  return _impl_.restatement_status_;
+}
+inline bool StreamIndexMultiAssetsServiceResponseV1::restatement_status() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.restatement_status)
+  return _internal_restatement_status();
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::_internal_set_restatement_status(bool value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.restatement_status_ = value;
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::set_restatement_status(bool value) {
+  _internal_set_restatement_status(value);
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.restatement_status)
+}
+
+// optional string correction_id = 10;
+inline bool StreamIndexMultiAssetsServiceResponseV1::_internal_has_correction_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool StreamIndexMultiAssetsServiceResponseV1::has_correction_id() const {
+  return _internal_has_correction_id();
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::clear_correction_id() {
+  _impl_.correction_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& StreamIndexMultiAssetsServiceResponseV1::correction_id() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.correction_id)
+  return _internal_correction_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamIndexMultiAssetsServiceResponseV1::set_correction_id(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.correction_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.correction_id)
+}
+inline std::string* StreamIndexMultiAssetsServiceResponseV1::mutable_correction_id() {
+  std::string* _s = _internal_mutable_correction_id();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.correction_id)
+  return _s;
+}
+inline const std::string& StreamIndexMultiAssetsServiceResponseV1::_internal_correction_id() const {
+  return _impl_.correction_id_.Get();
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::_internal_set_correction_id(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.correction_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StreamIndexMultiAssetsServiceResponseV1::_internal_mutable_correction_id() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.correction_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StreamIndexMultiAssetsServiceResponseV1::release_correction_id() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.correction_id)
+  if (!_internal_has_correction_id()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.correction_id_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correction_id_.IsDefault()) {
+    _impl_.correction_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::set_allocated_correction_id(std::string* correction_id) {
+  if (correction_id != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.correction_id_.SetAllocated(correction_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correction_id_.IsDefault()) {
+    _impl_.correction_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.correction_id)
+}
+
+// optional .google.protobuf.Timestamp initial_publication_ts = 11;
+inline bool StreamIndexMultiAssetsServiceResponseV1::_internal_has_initial_publication_ts() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.initial_publication_ts_ != nullptr);
+  return value;
+}
+inline bool StreamIndexMultiAssetsServiceResponseV1::has_initial_publication_ts() const {
+  return _internal_has_initial_publication_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexMultiAssetsServiceResponseV1::_internal_initial_publication_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.initial_publication_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& StreamIndexMultiAssetsServiceResponseV1::initial_publication_ts() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.initial_publication_ts)
+  return _internal_initial_publication_ts();
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::unsafe_arena_set_allocated_initial_publication_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.initial_publication_ts_);
+  }
+  _impl_.initial_publication_ts_ = initial_publication_ts;
+  if (initial_publication_ts) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.initial_publication_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseV1::release_initial_publication_ts() {
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.initial_publication_ts_;
+  _impl_.initial_publication_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseV1::unsafe_arena_release_initial_publication_ts() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.initial_publication_ts)
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.initial_publication_ts_;
+  _impl_.initial_publication_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseV1::_internal_mutable_initial_publication_ts() {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  if (_impl_.initial_publication_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.initial_publication_ts_ = p;
+  }
+  return _impl_.initial_publication_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* StreamIndexMultiAssetsServiceResponseV1::mutable_initial_publication_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_initial_publication_ts();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.initial_publication_ts)
+  return _msg;
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::set_allocated_initial_publication_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* initial_publication_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.initial_publication_ts_);
+  }
+  if (initial_publication_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(initial_publication_ts));
+    if (message_arena != submessage_arena) {
+      initial_publication_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, initial_publication_ts, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.initial_publication_ts_ = initial_publication_ts;
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.initial_publication_ts)
+}
+
+// optional string incident_id = 12;
+inline bool StreamIndexMultiAssetsServiceResponseV1::_internal_has_incident_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool StreamIndexMultiAssetsServiceResponseV1::has_incident_id() const {
+  return _internal_has_incident_id();
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::clear_incident_id() {
+  _impl_.incident_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& StreamIndexMultiAssetsServiceResponseV1::incident_id() const {
+  // @@protoc_insertion_point(field_get:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.incident_id)
+  return _internal_incident_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StreamIndexMultiAssetsServiceResponseV1::set_incident_id(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.incident_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.incident_id)
+}
+inline std::string* StreamIndexMultiAssetsServiceResponseV1::mutable_incident_id() {
+  std::string* _s = _internal_mutable_incident_id();
+  // @@protoc_insertion_point(field_mutable:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.incident_id)
+  return _s;
+}
+inline const std::string& StreamIndexMultiAssetsServiceResponseV1::_internal_incident_id() const {
+  return _impl_.incident_id_.Get();
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::_internal_set_incident_id(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.incident_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StreamIndexMultiAssetsServiceResponseV1::_internal_mutable_incident_id() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.incident_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StreamIndexMultiAssetsServiceResponseV1::release_incident_id() {
+  // @@protoc_insertion_point(field_release:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.incident_id)
+  if (!_internal_has_incident_id()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.incident_id_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.incident_id_.IsDefault()) {
+    _impl_.incident_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void StreamIndexMultiAssetsServiceResponseV1::set_allocated_incident_id(std::string* incident_id) {
+  if (incident_id != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.incident_id_.SetAllocated(incident_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.incident_id_.IsDefault()) {
+    _impl_.incident_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:kaikosdk.StreamIndexMultiAssetsServiceResponseV1.incident_id)
 }
 
 #ifdef __GNUC__
